@@ -29,6 +29,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/myprofile', function () {
 //     return view('user.myProfile');
 // })->name('myProfile');

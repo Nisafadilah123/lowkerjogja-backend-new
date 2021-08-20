@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->string('phoneNumber');
+            $table->string('phoneNumber')->nullable();
             $table->string('utype')->default('USR')->comment('ADM for Admin, USR for Normal User, and CPY for Company');
         });
     }
