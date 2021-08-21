@@ -18,8 +18,6 @@
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
     <div class="container" data-aos="fade-up">
-
-
         <div class="row">
 
             <div class="col-lg-4">

@@ -13,27 +13,21 @@
             -moz-border-radius: 200px;
             width: 100px;
             height: 100px;
+            object-fit: cover;
         }
 </style>
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
     <div class="container" data-aos="fade-up">
-
-
         <div class="row">
-
             <div class="col-lg-4">
-
                 <div class="post-box" style="background-color: #F9FAFF;">
-
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
                                 <img src="{{  Auth::user()->profile_photo_url   }}" class="image">
-                                <br>
-                                <h6 style="font-weight: bold;">{{ Auth::user()->name }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15
-                  px;">View Profile</h6>
+                                <h6 style="font-weight: bold;padding-right:150px; float:right">{{ Auth::user()->name }}</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">View Profile</h6>
                             </div>
                         </div>
 

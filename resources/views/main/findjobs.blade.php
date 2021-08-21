@@ -484,8 +484,8 @@
 
 @endsection
 
-{{-- ini ke scirpt yang numpukin itu.
-{{-- @push('script-addon')
+{{-- ini ke scirpt yang numpukin itu. --}}
+@push('script-addon')
 <script>
     $.ajax({
         "url":"/get-provinsi",
@@ -519,4 +519,4 @@
     });
 
 </script>
-@endpush --}}
+@endpush

@@ -56,6 +56,10 @@
             -moz-border-radius: 200px;
             width: 30px;
             height: 30px;
+            object-fit: cover;
+        }
+        .nav-link{
+           text-align: center;
         }
     </style>
 </head>
@@ -80,7 +84,7 @@
                     <li><a class="nav-link scrollto" href="/aboutUser">About Us</a></li>
 
                     <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
-                    <li class="dropdown pl-5" style="padding-right: 5px;">{{ Auth::user()->name }}
+                    <li class="dropdown pl-5" style="padding-right: 50px;">{{ Auth::user()->name }}
                         <ul>
                             <li class="align-items-center"><a href="/myprofile"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
                             <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
@@ -196,6 +200,9 @@
     <script src="js/formunggahan.js"></script> <!-- rev -->
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
+
+    {{-- sweet alert CDN --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 {{-- untuk templating script --}}
     {{-- jadi nantinya di home blade kita bikin script js nanti di tumpuk di stack itu.--}}

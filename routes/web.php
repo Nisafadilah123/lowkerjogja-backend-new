@@ -17,6 +17,11 @@ use App\Http\Controllers\VacancyController;
 */
 
 Route::get("tes-rajaongkir",function(){
+    $hasil = rajaongkir_point("city");
+    return response()->json($hasil);
+});
+
+Route::get("/findjob",function(){
     $hasil = rajaongkir_point("province");
     return response()->json($hasil);
 });
@@ -71,14 +76,13 @@ Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
-Route::get('/get-provinsi', [UserController::class, 'provinsi']);
-Route::get('/get-kota', [UserController::class, 'kota']);
+// Route::get('user/get-provinsi', [UserController::class, 'provinsi']);
+// Route::get('user/get-kota', [UserController::class, 'kota']);
 
-// edit profile
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('profile', 'UserController@editPro')->name('user.editPro');
-});
-
-// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-//     Route::get('myProfile', UserController::class)->name('myProfile');
+// Route::middleware([''])->group(function () {
+//     Route::get('/findjobs', function () {
+//         // Uses first & second middleware...
+//     });
 // });
+
+Route::get("registrasi",[MainController::class,'registrasi']);

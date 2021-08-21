@@ -25,8 +25,8 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
+        {{-- method="POST" action="{{ route('register') }}"  --}}
+        <form method="POST" class="registrasi">
             @csrf
 
             <div class="class">
@@ -57,7 +57,7 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
@@ -100,3 +100,12 @@
 </section>
 
 @endsection
+
+@push('script-addon')
+    <script>
+        $(document).on("submit",".registrasi",function(){
+            swal("Regis");
+        });
+        // $(".registrasi")
+    </script>
+@endpush

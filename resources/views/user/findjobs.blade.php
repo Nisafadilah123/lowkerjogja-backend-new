@@ -25,7 +25,7 @@
 
                             <div class="col-md-6">
                                 <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
-                                <select name="provinsi" class="form-select form-select-sm province-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
+                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
                                     <option selected>-- Pilih Provinsi --</option>
                                   </select>
 
@@ -33,7 +33,7 @@
                             </div>
                           <div class="col-sm-2">
                             <label name="kota" for="kota" style="position: relative; left:370px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
-                            <select name="kota" class="form-select form-select-sm city-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
+                            <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
                                 <option selected>-- Pilih Kota --</option>
                               </select>
                             </div>
@@ -476,7 +476,7 @@
 @endsection
 
 {{-- ini ke scirpt yang numpukin itu. --}}
-{{-- @push('script-addon')
+@push('script-addon')
 <script>
     $.ajax({
         "url":"/get-provinsi",
@@ -492,7 +492,7 @@
     });
 
     $(document).on("change",".prov-data",function(){
-        var prov_sel = $(".province-data option:selected").val();
+        var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
             "url":"/get-kota",
@@ -510,4 +510,4 @@
     });
 
 </script>
-@endpush --}}
+@endpush

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Helper;
 class MainController extends Controller
 {
+
     public function provinsi(){
         $hasil = rajaongkir_point("province");
         return response()->json($hasil);
@@ -44,5 +45,11 @@ class MainController extends Controller
     public function signup()
     {
         return view('main.signup');
+    }
+
+
+    public function registrasi()
+    {
+        return view('auth.register-ajax');
     }
 }
