@@ -25,8 +25,8 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        {{-- method="POST" action="{{ route('register') }}"  --}}
-        <form method="POST" class="registrasi">
+        {{-- method="POST"  }}"  --}}
+        <form method="POST" class="registrasi" action="{{ route('register') }} ">
             @csrf
 
             <div class="class">
@@ -104,8 +104,12 @@
 @push('script-addon')
     <script>
         $(document).on("submit",".registrasi",function(){
-            swal("Regis");
+
+            swal({
+                icon: "success",
+                title: "Create Account Successfully",
+            });
         });
-        // $(".registrasi")
+
     </script>
 @endpush

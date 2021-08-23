@@ -52,4 +52,10 @@ class MainController extends Controller
     {
         return view('auth.register-ajax');
     }
+
+    public function registrasi_post(Request $request){
+        $request->validate([
+            "name"=>"required"
+        ]);
+    }
 }

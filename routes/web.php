@@ -76,13 +76,6 @@ Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
-// Route::get('user/get-provinsi', [UserController::class, 'provinsi']);
-// Route::get('user/get-kota', [UserController::class, 'kota']);
-
-// Route::middleware([''])->group(function () {
-//     Route::get('/findjobs', function () {
-//         // Uses first & second middleware...
-//     });
-// });
 
 Route::get("registrasi",[MainController::class,'registrasi']);
+Route::post("registrasi",[MainController::class,'registrasi_post']);

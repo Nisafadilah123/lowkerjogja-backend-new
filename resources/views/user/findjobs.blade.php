@@ -32,7 +32,7 @@
 
                             </div>
                           <div class="col-sm-2">
-                            <label name="kota" for="kota" style="position: relative; left:370px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
+                            <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
                             <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
                                 <option selected>-- Pilih Kota --</option>
                               </select>
