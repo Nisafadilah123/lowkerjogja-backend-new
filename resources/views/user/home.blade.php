@@ -465,6 +465,7 @@
 @endsection
 
 {{-- ini ke scirpt yang numpukin itu. --}}
+{{-- ini ke scirpt yang numpukin itu. --}}
 @push('script-addon')
 <script>
     $.ajax({

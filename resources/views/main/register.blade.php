@@ -92,3 +92,17 @@
 </section>
 
 @endsection
+
+
+@push('script-addon')
+    <script>
+        $(document).on("submit",".registrasi",function(){
+            if()
+            swal({
+                icon: "success",
+                title: "Create Account Successfully",
+            });
+        });
+
+    </script>
+@endpush

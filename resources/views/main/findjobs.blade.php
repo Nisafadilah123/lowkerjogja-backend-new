@@ -39,7 +39,7 @@
 
                             </div>
                           <div class="col-sm-2">
-                            <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
+                            <label name="kota" for="kota" style="position: relative; left:370px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
                             <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
                                 <option selected>-- Pilih Kota --</option>
                               </select>
@@ -58,7 +58,6 @@
 </section>
 <!-- end Pencarian -->
 
-
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
         <div class="row">
@@ -72,7 +71,7 @@
                             <div></div>
                         </div>
                         <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-left: 4px;" class="bi bi-clock"></i>21 Mei 2021</div>
+                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
                         </div>
                     </div>
 
@@ -480,10 +479,10 @@
 
 </section>
 <!-- End Find Jobs Section -->
-<!-- Laravel Baru -->
 
 @endsection
 
+{{-- ini ke scirpt yang numpukin itu. --}}
 {{-- ini ke scirpt yang numpukin itu. --}}
 @push('script-addon')
 <script>

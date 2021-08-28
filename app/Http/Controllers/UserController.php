@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Corp;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class UserController extends Controller
 {
@@ -110,5 +115,83 @@ class UserController extends Controller
             ]);
         }
 
+    //     public function registrasi()
+    // {
+    //     return view('auth.register-ajax');
+    // }
 
+    // public function registrasi_post(Request $request){
+    //     $request->validate([
+    //         "name"=>"required"
+    //     ]);
+    // }
+
+    public function registrasi_view(){
+        return view('auth.register_ajax');
+    }
+
+    public function registrasi(Request $request){
+        $validation = Validator::make($request->all(), [
+            'name' => 'required|min:5',
+            'address' => 'required|min:5',
+            'email' => 'required|min:10',
+            'password' => 'required|min:5',
+        ],[
+            "name.required"=>"Membutuhkan nama lengkap",
+            "address.required"=>"Membutuhkan alamat lengkap",
+            "email.required"=>"Membutuhkan alamat email",
+            "password.required"=>"Membutuhkan kata sandi",
+        ]);
+
+
+        if($validation->fails()){
+            return response()->json([
+                "status" => false,
+                "result" => $validation->errors()
+            ]);
+        }else{
+            // logic
+            $user = new User;
+
+            $user->name = $request->name;
+            $user->address = $request->address;
+            $user->email = $request->email;
+            $user->password = $request->password;
+
+            $user->save();
+            return response()->json([
+                "status" => $user->save(),
+                "result" => $user
+            ]);
+        }
+    }
 }
+
+
+
+ // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()->all()]);
+        // } else {
+        //     $user = new \App\User;
+        //     $user->name = $req->nama;
+        //     $user->address = $req->address;
+        //     $user->email = $req->email;
+        //     $user->password = $req->password;
+        //     $simpan = $user->save();
+
+
+        //     $req->request->add(['user_id' => $user->id]);
+        //     if ($simpan == 1) {
+
+        //         $status = "Tersimpan";
+
+        //     } else {
+        //         $status = "Gagal";
+        //     }
+        //     echo json_encode(array("status" => $status));
+        // }
+
+
+        // $input = $request->all();
+            // $user = User::create($input);
+            // return response()->json($user, 200);

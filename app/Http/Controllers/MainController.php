@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Corp;
+use App\Models\Jobs;
 use Illuminate\Http\Request;
-use App\Http\Helper;
+
 class MainController extends Controller
 {
-
     public function provinsi(){
         $hasil = rajaongkir_point("province");
         return response()->json($hasil);
@@ -17,10 +18,13 @@ class MainController extends Controller
         return response()->json($hasil);
     }
     //
-    public function index()
-    {
-        return view('main.home');
-    }
+    public function home()
+        {
+            $corp = Corp::all();
+            $jobs = Jobs::all();
+            return view('main.home',compact('corp', 'jobs'));
+            // return view('main.home');
+        }
 
     public function about()
     {
@@ -45,17 +49,5 @@ class MainController extends Controller
     public function signup()
     {
         return view('main.signup');
-    }
-
-
-    public function registrasi()
-    {
-        return view('auth.register-ajax');
-    }
-
-    public function registrasi_post(Request $request){
-        $request->validate([
-            "name"=>"required"
-        ]);
     }
 }

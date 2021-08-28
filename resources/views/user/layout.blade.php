@@ -201,7 +201,6 @@
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
 
-    {{-- sweet alert CDN --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 {{-- untuk templating script --}}

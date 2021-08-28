@@ -17,11 +17,6 @@ use App\Http\Controllers\VacancyController;
 */
 
 Route::get("tes-rajaongkir",function(){
-    $hasil = rajaongkir_point("city");
-    return response()->json($hasil);
-});
-
-Route::get("/findjob",function(){
     $hasil = rajaongkir_point("province");
     return response()->json($hasil);
 });
@@ -39,7 +34,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // })->name('myProfile');
 
 // Halaman Main
-// Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'home']);
 Route::get('/aboutus', [MainController::class, 'about']);
 Route::get('/findjobs', [MainController::class, 'findjobs']);
 // Route::get('/login', [MainController::class, 'login']);
@@ -76,6 +71,14 @@ Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
+// ajax
+// Route::get('/get-registrasi', [UserController::class, 'registrasi']);
 
-Route::get("registrasi",[MainController::class,'registrasi']);
-Route::post("registrasi",[MainController::class,'registrasi_post']);
+Route::get('/token', function () {
+    return csrf_token();
+});
+Route::get("/registrasi",[UserController::class,"registrasi_view"]);
+Route::post('/user/create', [UserController::class, 'registrasi']);
+
+// relasi
+Route::get('/corp', [MainController::class, 'home']);
