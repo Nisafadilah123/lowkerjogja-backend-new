@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VacancyController;
-
+use App\Http\Controllers\CompanyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +30,23 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+    return view('admin.index');
+})->name('admin.index');
 
+Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/dashboard', function () {
+    return view('company.index');
+})->name('company.index');
+
+// Route::prefix('company')
+//     ->middleware(['auth:sanctum', 'verified', 'authcompany'])
+//     ->group(function () {
+//         Route::get('/', [UserController::class, 'home'])->name('dashboard');
+//         // Route::resource('users', UserController::class);
+//         // Route::resource('food', FoodController::class);
+
+//         // Route::get('transactions/{id}/status/{status}', [TransactionController::class, 'changeStatus'])->name('transactions.changeStatus');
+//         // Route::resource('transactions', TransactionController::class);
+//     });
 // Route::middleware(['auth:sanctum', 'verified'])->get('/myprofile', function () {
 //     return view('user.myProfile');
 // })->name('myProfile');
@@ -47,6 +61,7 @@ Route::get('/succes', [MainController::class, 'succes']);
 
 
 // Routes Halaman User
+Route::get('/corp', [CompanyController::class, 'home']);
 Route::get('/homeUser', [UserController::class, 'home']);
 Route::get('/findjobsUser', [UserController::class, 'findjobs']);
 Route::get('/aboutUser', [UserController::class, 'about']);
