@@ -13,8 +13,8 @@ class Corp extends Model
     protected $fillable =[
         'id', 'user_id', 'jobs_id','nama_corp', 'description', 'logo', 'industri', 'location', 'work_day', 'founded_year',
     ];
+
     public function jobs(){
-        //setiap profil memiliki satu mahasiswa
-        return $this->hasMany(Jobs::class, 'jobs_id');
+        return $this->belongsTo(Jobs::class,'jobs_id');
     }
 }
