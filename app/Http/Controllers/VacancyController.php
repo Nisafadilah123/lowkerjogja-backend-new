@@ -53,4 +53,28 @@ class VacancyController extends Controller
      {
          return view('vacancy.formUnggahan');
      }
+
+     // halaman search candidate
+     public function searchCandidate()
+     {
+         return view('vacancy.searchCandidate');
+     }
+
+     // halaman profil corp
+     public function profilCorp()
+     {
+         return view('vacancy.profilCorp');
+     }
+
+     // halaman job corp
+     public function jobCorp()
+     {
+         return view('vacancy.jobCorp');
+     }
+
+     // halaman job corp
+     public function editCorp()
+     {
+         return view('vacancy.editCorp');
+     }
 }

@@ -25,6 +25,7 @@ class CreateJobsTable extends Migration
             $table->date('deadline');
             $table->string('job_location');
             $table->double('salary_range');
+            $table->integer('kuota');
 
             $table->softDeletes();
 

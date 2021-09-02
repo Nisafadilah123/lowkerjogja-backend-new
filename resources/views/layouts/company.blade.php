@@ -9,7 +9,7 @@
     <!-- Favicons -->
     <link href="/img/logo-1.png" rel="icon">
     <link href="/img/logo-1.png" rel="apple-touch-icon">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -61,7 +61,18 @@
                     <li><a class="nav-link scrollto" href="/about">About</a></li>
                     <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
-                    <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Login</a></li>
+                    {{-- <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Login</a></li> --}}
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
+                        @else
+                            <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
+
+                            @if (Route::has('register'))
+                                <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
+                            @endif
+                        @endauth
+                @endif
                     <li><a class="job scrollto" href="/signupCorp">Sign Up</a></li>
 
                 </ul>

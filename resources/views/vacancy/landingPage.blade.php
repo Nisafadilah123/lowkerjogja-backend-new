@@ -43,7 +43,7 @@
             <div class="col-sm-12 col-md-6">
 
                 <p>The <span style="color: #F8F01C; letter-spacing: 1px; font-weight: bold;">LOWKERJOGJA.COM</span> website and application are visited by thousands of job seekers every day with high positions for local keywords in search engines like Google</p>
-                <a href="/formUnggahan" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <a href="/editCorp" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                     <span style="padding: 5px;">Jobs Postings</span>
                     <!-- <i class="bi bi-arrow-right"></i> -->
                 </a>
@@ -54,12 +54,12 @@
             <div class="col-sm-12 col-md-6">
 
                 <p>Low <span style="color: #006AFF;">price</span> with maximum features, Google Jobs integration, free standard poster design, friendly and supportive company support service</p>
-                <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <a href="/candidate" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                     <span style="padding: 5px;">Looking for Candidate</span>
                     <!-- <i class="bi bi-arrow-right"></i> -->
                 </a>
             </div>
-            <div class="col-sm-12 col-md-6"><img src="img//vector/vector-1.png" alt="" width="400px" style="margin-left: 150px;"></div>
+            <div class="col-sm-12 col-md-6"><img src="img/vector/vector-1.png" alt="" width="400px" style="margin-left: 150px;"></div>
         </div>
     </div>
 

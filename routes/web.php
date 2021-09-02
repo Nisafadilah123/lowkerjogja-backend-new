@@ -37,19 +37,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/da
     return view('company.index');
 })->name('company.index');
 
-// Route::prefix('company')
-//     ->middleware(['auth:sanctum', 'verified', 'authcompany'])
-//     ->group(function () {
-//         Route::get('/', [UserController::class, 'home'])->name('dashboard');
-//         // Route::resource('users', UserController::class);
-//         // Route::resource('food', FoodController::class);
-
-//         // Route::get('transactions/{id}/status/{status}', [TransactionController::class, 'changeStatus'])->name('transactions.changeStatus');
-//         // Route::resource('transactions', TransactionController::class);
-//     });
-// Route::middleware(['auth:sanctum', 'verified'])->get('/myprofile', function () {
-//     return view('user.myProfile');
-// })->name('myProfile');
 
 // Halaman Main
 Route::get('/', [MainController::class, 'home']);
@@ -80,11 +67,16 @@ Route::get('/editPassword', [UserController::class, 'editPassword']);
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
 Route::get('/faq', [VacancyController::class, 'faq']);
 Route::get('/about', [VacancyController::class, 'about']);
-Route::get('/loginCorp', [VacancyController::class, 'login']);
+// Route::get('/loginCorp', [VacancyController::class, 'login']);
 Route::get('/signupCorp', [VacancyController::class, 'signup']);
 Route::get('/succesCorp', [VacancyController::class, 'succes']);
 Route::get('/service', [VacancyController::class, 'service']);
 Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
+Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
+Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
+Route::get('/job', [VacancyController::class, 'jobCorp']);
+Route::get('/editCorp', [VacancyController::class, 'editCorp']);
+
 
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);

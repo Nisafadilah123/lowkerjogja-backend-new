@@ -26,45 +26,23 @@
     <link href="css/owl.carousel.min.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/nice-select.css" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> <!-- rev>
 
-    <!-Template Main CSS File -->
+    <!-- Template Main CSS File -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-
     <style>
-        .about h6 {
-            font-weight: bold;
-            color: black;
-        }
+        .pricing .box .header-new {
 
-        .about h6:hover {
-            /* background-color: #fff; */
-            color: #4154f1;
+            /* z-index: 997; */
+            margin: 0;
 
-        }
-
-        .about:active {
-            color: #4154f1;
-        }
-
-        .rounded-image{
-            border-radius: 50%;
-            -webkit-border-radius: 200px;
-            -moz-border-radius: 200px;
-            width: 30px;
-            height: 30px;
-            object-fit: cover;
-        }
-        .nav-link{
-           text-align: center;
+            height: 50px;
+            background-color: #006AFF;
         }
     </style>
 </head>
-
-
 
 <body>
 
@@ -72,41 +50,41 @@
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-            <a href="/" class="logo d-flex align-items-center">
-                <img src="img/logo-lowker.png" alt="">
-                <!-- <span>FlexStart</span> -->
-            </a>
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo-lowker.png" alt="">
+            <!-- <span>FlexStart</span> -->
+          </a>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="/homeUser">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/findjobsUser">Find jobs</a></li>
-                    <li><a class="nav-link scrollto" href="/aboutUser">About Us</a></li>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Product And Service</a></li>
+              <li><a class="nav-link scrollto" href="corp-faq.html">FAQ</a></li>
 
-                    <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
-                    <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
-                        <ul>
-                            <li class="align-items-center"><a href="/myprofile"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
-                            <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
-                            <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
-                                @csrf
+              <li style="padding-left: 500px;">
+                <div>
+                  <ul>
+                    <li style="text-align: right; padding-right: 10px;"><a href="#"
+                        style="font-size: 23px; color: black;">Michael</a><span
+                        style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
+                  </ul>
+                </div>
+              </li>
+              <i class="bi bi-bell-fill" style="color: #FA9746;  font-size: 20px;"></i>
+              <li class="dropdown" style="padding-right: 50px;"><a href="#"><i class="bi bi-caret-down-fill"></i></a>
+                <ul style="width: 250px;">
+                  <li><a href="#"><img src="assets/img/icons/building.png" width="20px" alt=""><span
+                        style="font-size: 13px; padding-left: 10px;">Profile Corporate</span></a></li>
+                  <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><span
+                        style="font-size: 13px; padding-left: 10px;">Change Passwords</span></a></li>
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-jet-dropdown-link>
-                            </form></i></li>
-
-                        </ul>
-                    </li>
-
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+                </ul>
+              </li>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
 
         </div>
-    </header><!-- End Header -->
-
+      </header>
+    <!-- End Header -->
     @yield('container')
 
     <!-- ======= Footer ======= -->
@@ -134,12 +112,12 @@
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/homeUser">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/findjobsUser">Find Jobs</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/aboutUser">About Us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/register">Sign Up</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/landingPage">Post Vacancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Find Jobs</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Login</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Sign Up</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Post Vacancy</a></li>
                         </ul>
                     </div>
 
@@ -192,26 +170,16 @@
     <script src="vendor/purecounter/purecounter.js"></script>
     <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <!-- rev -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> <!-- rev -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> <!-- rev -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- rev -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- rev -->
-    <script src="js/formunggahan.js"></script> <!-- rev -->
+
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-{{-- untuk templating script --}}
-    {{-- jadi nantinya di home blade kita bikin script js nanti di tumpuk di stack itu.--}}
-    {{-- kalau pake stack script yang nanti dimasukin sebelumnya ga ilang, kalau misal nantinya mau bikin template
-    yang di page lain include page lain juga jadi script nya ga ketimpa
-    --}}
-    @stack('script-addon')
-{{-- nah kalau yield ini isi nya sesuai sama isi section nya kalau stack itu kaya di kumpulin gitu. --}}
-    @yield('script')
-
+ <!-- rev -->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> <!-- rev -->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> <!-- rev -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- rev -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- rev -->
+ <script src="js/formunggahan.js"></script> <!-- rev -->
 
 </body>
 
