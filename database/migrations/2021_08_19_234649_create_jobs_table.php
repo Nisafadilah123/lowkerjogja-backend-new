@@ -23,7 +23,8 @@ class CreateJobsTable extends Migration
             $table->string('job_type');
             $table->string('job_category');
             $table->date('deadline');
-            $table->string('job_location');
+            $table->string('provinces');
+            $table->string('city');
             $table->double('salary_range');
             $table->integer('kuota');
 
