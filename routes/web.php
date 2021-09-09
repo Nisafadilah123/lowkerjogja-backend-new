@@ -7,6 +7,8 @@ use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EducationController;
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CrudController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +33,33 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('/admin/dashboard', function () {
-    return view('admin.index');
-})->name('admin.index');
+// Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('/admin/dashboard', function () {
+//     return view('admin.index');
+// })->name('admin.index');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], function () {
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/company', [AdminController::class, 'company']);
+    Route::get('/jobs', [AdminController::class, 'jobs']);
+    Route::get('/candidate', [AdminController::class, 'candidate']);
+
+    //create
+    Route::get('/create/company', [CrudController::class, 'createcompany']);
+    Route::post('/create/company', [CrudController::class, 'addcompany'])->name('create/company');
+    Route::get('/create/jobs', [CrudController::class, 'createjobs']);
+    Route::post('/create/jobs', [CrudController::class, 'addjobs'])->name('create/jobs');
+
+    //edit
+    Route::get('/company/{id}/edit', [CrudController::class, 'editcompany']);
+    Route::post('/company/{id}', [CrudController::class, 'updatecompany'])->name('company');
+    Route::get('/jobs/{id}/edit', [CrudController::class, 'editjobs']);
+    Route::post('/jobs/{id}', [CrudController::class, 'updatejobs'])->name('jobs');
+
+    //delete
+    Route::delete('/company/{id}', [CrudController::class, 'deletecompany']);
+    Route::delete('/jobs/{id}', [CrudController::class, 'deletejobs']);
+});
 
 Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/dashboard', function () {
     return view('company.index');

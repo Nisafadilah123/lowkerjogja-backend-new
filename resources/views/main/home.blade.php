@@ -6,7 +6,6 @@
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -37,7 +36,6 @@
                     <div class="container px-4">
                         <div class="row">
                           <div class="col-md-2">
-
                                <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
                                <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
@@ -46,14 +44,11 @@
                                 <option value="3">S1</option>
                               </select>
                             </div>
-
                             <div class="col-md-6">
                                 <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
                                 <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
                                     <option selected>-- Pilih Provinsi --</option>
                                   </select>
-
-
                             </div>
                           <div class="col-sm-2">
                             <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
@@ -61,7 +56,6 @@
                                 <option selected>-- Pilih Kota --</option>
                               </select>
                             </div>
-
                             <div class="col-sm-2">
                                 <button type="button" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Search</a></i>
                             </div>
@@ -69,7 +63,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -77,14 +70,11 @@
 
 <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients">
-
     <div class="container" data-aos="fade-up">
-
         <header class="section-header">
             <!-- <h2>Our Clients</h2> -->
             <p>Featured Companies</p>
         </header>
-
         <div class="clients-slider swiper-container">
             <div class="swiper-wrapper align-items-center">
                 <div class="swiper-slide"><img src="img/clients/asus.png" class="img-fluid" alt=""></div>
@@ -102,25 +92,18 @@
     </div>
 
 </section><!-- End Clients Section -->
-
-
-
 <!-- ======= Recent Blog Posts Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts">
-
     <div class="container" data-aos="fade-up">
-
         <header class="section-header">
-
             <p>Our Latest Jobs Here</p>
             <span style="padding-top: 20px;">More Jobs</span>
         </header>
 
-
         @foreach($corp as $cp)
+        {{-- @foreach ($corps as $corp) --}}
         <div class="row">
             <div class="card" style="width: 25rem;">
-
                     <div class="card-body">
                     <strong>{{ $cp->work_day }}</strong>
                     <i style="float: right; color: #BEBFC0;" class="bi bi-clock">{{ $cp->founded_year }}</i>
@@ -128,36 +111,24 @@
                         <img src="img/7.png" alt="">
                     <a href="/aboutUser">{{ $cp->nama_corp }}</a> <i style="position: relative;float: right;top:5px; font-size: 20px;" class="bi bi-plus-square-fill"></i>
                     </div>
-
-
                     <br>
-                    <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->jobs->position}}</h1>
+                    {{-- <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->jobs->position}}</h1> --}}
                     <h6 style="color: #BEBFC0;">{{ $cp->location }}</h6>
-                    {{-- <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($cp->jobs->salary_large)}}</h6> --}}
-
-
+                    {{-- <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($corp->jobs->salary_large)}}</h6> --}}
                 </div>
-
             </div>
         </div>
         @endforeach
-
 </section><!-- End Recent Blog Posts Section -->
-
-
-
 <!-- ======= Job Category ======= -->
 <section id="counts" class="counts">
     <div class="container" data-aos="fade-up">
-
         <header class="section-header">
             <!-- <h2>Our Clients</h2> -->
             <p>Browse Jobs Category</p>
         </header>
 
-
         <div class="clients-slider swiper-container">
-
             <div class="swiper-wrapper align-items-center">
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
@@ -172,7 +143,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
                         <div class="container">
@@ -186,7 +156,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
                         <div class="container">
@@ -200,7 +169,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
                         <div class="container">
@@ -214,7 +182,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
                         <div class="container">
@@ -228,7 +195,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide" style="padding-right: 170px;">
                     <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
                         <div class="container">
@@ -242,30 +208,23 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <br><br><br>
             <div class="swiper-pagination"></div>
         </div>
     </div>
     </div>
-
     </div>
 </section><!-- End Jobs Category -->
-
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
-
     <div class="container" data-aos="fade-up">
-
         <header class="section-header">
             <!-- <h2>Testimonials</h2> -->
             <p>Our Customers Success Story</p>
         </header>
-
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper-wrapper">
-
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <div class="stars">
@@ -281,7 +240,6 @@
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <div class="stars">
@@ -297,7 +255,6 @@
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <div class="stars">
@@ -313,7 +270,6 @@
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <div class="stars">
@@ -329,7 +285,6 @@
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
                 <div class="swiper-slide">
                     <div class="testimonial-item">
                         <div class="stars">
@@ -345,15 +300,11 @@
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
             </div>
             <div class="swiper-pagination"></div>
         </div>
-
     </div>
-
 </section><!-- End Testimonials Section -->
-
 <div class="footer" id="footer">
     <div class="footer-newsletter">
         <div class="container">

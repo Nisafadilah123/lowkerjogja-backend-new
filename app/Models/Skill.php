@@ -9,15 +9,15 @@ class Skill extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'level',
-        'skill',
+    protected $table = "skills";
+    protected $primaryKey = 'id';
 
+    protected $guarded = [
+        'user_id',
     ];
 
     public function user()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class);
     }
 }

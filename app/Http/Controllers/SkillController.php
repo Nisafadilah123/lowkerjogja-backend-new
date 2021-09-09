@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller
@@ -13,7 +14,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        //menampilkan relasi antara model skill dan user
+        $skills = Skill::with('user')->get();
     }
 
     /**
