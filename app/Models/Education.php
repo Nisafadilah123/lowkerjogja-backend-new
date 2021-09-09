@@ -9,18 +9,19 @@ class Education extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'name',
-        'level',
-        'major',
-        'gpa'
+    protected $table = "education";
+    protected $primaryKey = 'id';
+    // protected $guarded = [
+    //     $education->user_id = auth()->user()->id
+    // ];
 
+    protected $guarded = ['user_id'];
 
-    ];
 
     public function user()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class);
     }
+
+
 }

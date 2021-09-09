@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Edit Education | Lowkerjogja.com')
+@section('title', 'Add Education | Lowkerjogja.com')
 
 @section('container')
 
@@ -40,7 +40,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/user.png" width="30px" alt="">
+                                        <img src="/img/icons/user.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -135,54 +135,46 @@
                     </h5>
                     <div class="card-body">
 
-                    @foreach ($educations as $item)
-                        <form method="post" action="/education/{{ $item->id }}">
-                         @method('PUT')
+                    {{-- @foreach ($educations as $item) --}}
+                        <form method="post" action="{{ url('education/') }}">
+                         {{-- @method('HEAD') --}}
                             @csrf
 
+                            {{-- <div class="mb-3">
+                                <label for="institut" class="form-label">Institusi / Universitas</label>
+                                <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('user_id')}}">
+                              </div> --}}
 
                             <div class="mb-3">
                               <label for="institut" class="form-label">Institusi / Universitas</label>
-                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('name', $item->name)}}">
+                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('name')}}">
                             </div>
-
-                             <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="graduate" class="form-label">Tanggal Wisuda</label>
+                              <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate')}}">
+                            </div>
+                            <div class="mb-3">
                                 <label for="jenjang" class="form-label">Jenjang</label>
-                                <select class="form-select" aria-label="Default select example" name="level" id="level">
-                                    @if ($item->level==null)
-                                        <option selected value="" >-- Pilih Jenjang -- </option>
-                                    <option value="S3" @if ($item->level == 'S3')@endif>S3</option>
-                                    <option value="S2" @if ($item->level == 'S2')@endif>S2</option>
-                                    <option value="S1/D4" @if ($item->level == 'SI/D4')@endif>S1/D4</option>
-                                    <option value="D3" @if ($item->level == 'D3')@endif>D3</option>
-                                    <option value="SMA/SMK" @if ($item->level == 'SMA/SMK')@endif>SMA/SMK</option>
-                                        @else
-                                        <option selected value="{{ $item->level }}" >{{ $item->level }}</option>
-                                        <option value="S3" @if ($item->level == 'S3')@endif>S3</option>
-                                        <option value="S2" @if ($item->level == 'S2')@endif>S2</option>
-                                        <option value="S1/D4" @if ($item->level == 'SI/D4')@endif>S1/D4</option>
-                                        <option value="D3" @if ($item->level == 'D3')@endif>D3</option>
-                                        <option value="SMA/SMK" @if ($item->level == 'SMA/SMK')@endif>SMA/SMK</option>
-                                    @endif
-
-
+                                <select class="form-select" aria-label="Default select example" name="level">
+                                    <option selected value="{{old('level')}}">-- Pilih Jenjang --</option>
+                                    <option value="S3">S3</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S1/D4">S1/D4</option>
+                                    <option value="D3">D3</option>
+                                    <option value="SMA/SMK">SMA/SMK</option>
 
                                   </select>
                             </div>
-
-                            <div class="mb-3">
-                              <label for="graduate" class="form-label">Tanggal Wisuda</label>
-                              <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate', $item->graduate)}}">
-                            </div>
-
                               <div class="mb-3">
                                 <label for="jurusan" class="form-label">Jurusan</label>
-                                <input type="text" class="form-control" name="major" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level', $item->major)}}">
+                                <input type="text" name="major" class="form-control" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level')}}">
                               </div>
                               <div class="mb-3">
                                 <label for="nilai" class="form-label">Nilai Akhir</label>
-                                <input type="text" class="form-control" name="gpa" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa', $item->gpa)}}">
+                                <input type="text" name="gpa" class="form-control" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa')}}">
                               </div>
+
+                            {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
 
                             <div class="row">
                                 <div class="col">
@@ -196,7 +188,7 @@
                             </div>
                           </form>
 
-                    @endforeach
+                    {{-- @endforeach --}}
                     </div>
                 </div>
             </div>

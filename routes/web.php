@@ -5,6 +5,8 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EducationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,8 +58,8 @@ Route::get('/profileUser', [UserController::class, 'profile']);
 Route::get('/jobsUser', [UserController::class, 'jobs']);
 Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile');
 Route::get('/editProfile', [UserController::class, 'editProfile']);
-Route::get('/education', [UserController::class, 'education']);
-Route::get('/editEdu', [UserController::class, 'editEdu']);
+// Route::get('/education', [UserController::class, 'education']);
+// Route::get('/editEdu', [UserController::class, 'editEdu']);
 Route::get('/skill', [UserController::class, 'skill']);
 Route::get('/editSkill', [UserController::class, 'editSkill']);
 Route::get('/password', [UserController::class, 'password']);
@@ -93,3 +95,15 @@ Route::post('/user/create', [UserController::class, 'registrasi']);
 
 // relasi
 Route::get('/corp', [MainController::class, 'home']);
+
+// crud edukasi
+Route::resource('education', EducationController::class);
+
+// Route::get('/education', [EducationController::class, 'index']);
+// Route::get('/education/edit/{id}', [EducationController::class, 'edit']);
+// Route::post('/education/update/{id}', [EducationController::class, 'update']);
+// Route::get('/create', [UserController::class, 'create']);
+
+// Route::get('/add', [UserController::class, 'insertRecord']);
+
+// Route::get('/user', [UserController::class, 'user']);

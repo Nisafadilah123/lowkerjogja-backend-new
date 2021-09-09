@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <!-- Favicons -->
-    <link href="img/logo-1.png" rel="icon">
-    <link href="img/logo-1.png" rel="apple-touch-icon">
+    <link href="/img/logo-1.png" rel="icon">
+    <link href="/img/logo-1.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -202,6 +202,13 @@
     <script src="js/main.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    {{-- datepicker --}}
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 {{-- untuk templating script --}}
     {{-- jadi nantinya di home blade kita bikin script js nanti di tumpuk di stack itu.--}}

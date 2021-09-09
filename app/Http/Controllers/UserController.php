@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Corp;
-
+use App\Models\Education;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 
 
 class UserController extends Controller
@@ -72,16 +73,16 @@ class UserController extends Controller
         }
 
         // halaman education
-        public function education()
-        {
-            return view('user.education');
-        }
+        // public function education()
+        // {
+        //     return view('user.education');
+        // }
 
         // halaman editEducation
-        public function editEdu()
-        {
-            return view('user.editEducation');
-        }
+        // public function editEdu()
+        // {
+        //     return view('user.editEducation');
+        // }
 
         // halaman skill
         public function skill()
@@ -165,6 +166,56 @@ class UserController extends Controller
             ]);
         }
     }
+
+    public function user(){
+        $user = User::all();
+        return view('user.education', compact('users'));
+    }
+
+    public function create()
+    {
+        return view('user.addEducation');
+    }
+
+    public function insertRecord(Request $request){
+        $education = new Education();
+
+        $education->name = $request->name;
+        $education->level = $request->level;
+        $education->graduate =$request->graduate;
+        $education->major =$request->major;
+        $education->gpa=$request->gpa;
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = encrypt($request->password);
+
+        $user->education()->save($education);
+
+        return $request;
+    }
+
+    // public function store(Request $request)
+    // {
+    //     $this->validate($request, $this->validationRules());
+    //     $user = new User();
+    //     $user->first_name = $request->first_name;
+    //     $user->last_name = $request->last_name;
+    //     $user->email = $request->email;
+    //     $user->age = $request->age;
+    //     $user->save();
+
+    //     $education = new Education();
+    //     $education->user_id = $request->user_id;
+    //     $education->name = $request->name;
+    //     $education->company = $request->company;
+    //     $education->notes = $request->notes;
+
+    //     $user->education()->save($education);
+
+
+    // }
 }
 
 

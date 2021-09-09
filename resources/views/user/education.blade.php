@@ -124,23 +124,44 @@
                     <div class="row align-items-center">
                         <div class="col align-items-center">
                             <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
+                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education
+                            <a href="{{ url('education/create') }}" class="btn btn-success" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;">Add</i></a><br><br>
+                            @foreach ($educations as $item)
+                            <table style="float: right; ">
+                                <td><a href="{{ url('education/'.$item->id.'/edit') }}">
+                                    <i class="bi bi-pencil-square"></i></a></h6></td>
+                                <td><form action="{{ url('education/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ?')">
+                                    @method('delete')
+                                    @csrf
+                                    <button><i class="fas fa-trash" style="float: right; "></i></button>
+                                </form>
+                                    <a href="" >
+                                   </a></h6></td>
+                            </table>
 
-                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education<a href="/editEdu">
-                                    <i class="bi bi-pencil-square" style="padding-left: 270px; font-size: 25px; color: #4154f1; float: right; "></i></a></h6>
 
-                        </div>
-                        <div class="row align-items-start" style="padding-top: 20px;">
-                            <div class="col-4">
-                                <h6 style="color: #A5B2C2;">September 2020</h6>
                             </div>
 
-                            <div class="col-lg-4">
-                                <h6 style="font-weight: bold;">Unjani</h6>
-                                <h6 style="color: #A5B2C2;">Level <span style="margin-left: 35px; color: black;">(S1)</span></h6>
-                                <h6 style="color: #A5B2C2;">Major <span style="margin-left: 35px; color: black;">Sistem Informasi</span></h6>
-                                <h6 style="color: #A5B2C2;">GPA <span style="margin-left: 42px; color: black;">3.5/4.0</span></h6>
-                            </div>
                         </div>
+
+                            <div class="row align-items-start" style="padding-top: 20px;">
+                            <div class="col-8">
+                                <strong style="color: black;">User id : </strong>{{ $item->user->name}}
+                                <strong style="color: black;">Graduate : </strong>{{ $item->graduate}}
+                                <br>
+                                <strong style="color: black;">Universitas / Institusi / Sekolah : </strong>{{ $item->name}}
+                                <br>
+                                <strong style="color: black;">Pendidikan Terakhir : </strong>{{ $item->level}}
+                                <br>
+                                <strong style="color: black;">Jurusan : </strong>{{ $item->major}}
+                                <br>
+                                <strong style="color: black;">Nilai Akhir : </strong>{{ $item->gpa}}/
+
+                            </div>
+
+                        </div>
+                        @endforeach
+
 
 
                     </div>
