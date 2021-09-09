@@ -15,7 +15,7 @@ class CreateCorpTable extends Migration
     {
         Schema::create('corp', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('nama_corp');
             $table->text('description');
             $table->string('logo');
