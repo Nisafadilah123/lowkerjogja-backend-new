@@ -50,6 +50,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
+                        {{-- <a href="{{url ('/')}}"></a> --}}
                         <a href="{{url ('/')}}">Admin Lowkerjogja</a>
                     </div>
                     <div class="sidebar-user">

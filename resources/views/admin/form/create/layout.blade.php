@@ -51,7 +51,8 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="{{url ('/')}}">Grand Trisula</a>
+                        {{-- <a href="{{url ('/')}}"></a> --}}
+                        <a href="{{url ('/')}}">Admin Lowkerjogja</a>
                     </div>
                     <div class="sidebar-user">
                         <div class="sidebar-user-details">
