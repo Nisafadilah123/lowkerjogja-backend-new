@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Edit Skill | Lowkerjogja.com')
+@section('title', 'Add Skill | Lowkerjogja.com')
 
 @section('container')
 <style>
@@ -22,9 +22,6 @@
   .about:active {
     color: #4154f1;
   }
-  .skill{
-      width: 300px;
-  }
 </style>
 <!-- ======= Edit Skill Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
@@ -41,7 +38,7 @@
           <div class="row align-items-start">
             <div class="col">
               <div>
-                <img src="/img/team/team-1.jpg" width="80px" style="border-radius: 50%; float:left; margin:0 8px 4px 0;" alt="">
+                <img src="img/team/team-1.jpg" width="80px" style="border-radius: 50%; float:left; margin:0 8px 4px 0;" alt="">
 
                 <br>
                 <h6 style="font-weight: bold;">John</h6>
@@ -58,7 +55,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="/img/icons/user.png" width="30px" alt="">
+                    <img src="img/icons/user.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -78,7 +75,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="/img/icons/mortarboard.png" width="35px" alt="">
+                    <img src="img/icons/mortarboard.png" width="35px" alt="">
                   </div>
                 </div>
               </div>
@@ -98,7 +95,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
+                    <img src="img/icons/bar-chart.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -118,7 +115,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="/img/icons/password.png" width="30px" alt="">
+                    <img src="img/icons/password.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -145,70 +142,49 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <h6 style="font-weight: bold; margin-top: 8px;">
-                <img src="/img/icons/bar-chart.png" width="30px" alt=""> Skill
-            </div>
+                <img src="img/icons/bar-chart.png" width="30px" alt=""> Skill
 
-            @foreach ($skills as $item)
-<div class="row align-items-start" style="padding-top: 20px;">
-              <div class="col-2">
+
+            </div>
+            <form action="{{ url('skill/') }}" method="post">
+                @csrf
+                 <div class="row align-items-start" style="padding-top: 20px;">
+              <div class="col-5">
                 <h6 style="color: #A5B2C2;">Level</h6>
               </div>
-              <div class="col-2">
+              <div class="col-5">
                 <h6 style="color: #A5B2C2;">Keterampilan</h6>
               </div>
             </div>
 
             <div class="row align-items-center" style="padding-top: 20px;">
-              <div class="col-lg-4 align-items-center">
-
+              <div class="col-lg-5 align-items-center">
 
                 <select class="form-select" aria-label="Default select example" name="level">
-                    @if ($item->level==null)
-                        <option selected value="" >-- Pilih Level -- </option>
-                        <option value="Pemula" @if ($item->level == 'Pemula')@endif>Pemula</option>
-                        <option value="Tingkat Menengah" @if ($item->level == 'Tingkat Menengah')@endif>Tingkat Menengah</option>
-                        <option value="Master" @if ($item->level == 'Master')@endif>Master</option>
-                    @else
-                        <option selected value="{{ $item->level }}" >{{ $item->level }}</option>
-                        <option value="Pemula" @if ($item->level == 'Pemula')@endif>Pemula</option>
-                        <option value="Tingkat Menengah" @if ($item->level == 'Tingkat Menengah')@endif>Tingkat Menengah</option>
-                        <option value="Master" @if ($item->level == 'Master')@endif>Master</option>
-                    @endif
+                  <option selected>-- Pilih Level --</option>
+                  <option value="Pemula">Pemula</option>
+                  <option value="Tingkat Menengah">Tingkat Menengah</option>
+                  <option value="Master">Master</option>
                 </select>
               </div>
               <div class="col-lg-6 align-items-center">
-                <input class="form-control" name="skill" id="skill" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('skill', $item->skill) }}">
+                <input class="form-control" name="skill" type="text" placeholder="Lengkapi Keterampilan Anda" aria-label="default input example" value="{{ old('skill') }}">
               </div>
-              {{-- delete --}}
-              <form action="{{ url('skill/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ?')">
-                @method('delete')
-                @csrf
-                <button><i class="fas fa-trash" style="float: right; "></i></button>
-            </form>
 
             </div>
-            <div class="row">
-                <div class="col">
-                    <a href="#" style="margin-left: 350px ;" class="btn btn-outline-primary">
-                        <span>Cancel</span>
-                    </a>
-                    <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
-                        <span style="padding: 5px;">Save</span>
-                </div>
-            </div>
-            @endforeach
-
 
             <div class="row align-items-center">
               <div class="col">
-                  <a href="{{ url('skill/create') }}">
-                      <i class="bi bi-plus-square-fill" style="float: left; color: #4154f1; margin-right: 5px;"> Tambah Keterampilan</i>
-
-                    </a>
+                <a href="#" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span>Cancel</span>
+                </a>
+                <button type="submit" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span style="padding: 5px;">Save</span>
 
               </div>
-
             </div>
+            </form>
+
 
 
           </div>

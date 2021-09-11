@@ -50,7 +50,9 @@ class EducationController extends Controller
             'graduate' => 'required',
             'level' => 'required',
             'major' => 'required',
-            'gpa' => 'required'
+            'gpa' => 'required',
+            'gpa_limit' => 'required'
+
         ]);
 
         // cara 1
@@ -60,6 +62,8 @@ class EducationController extends Controller
         $education->graduate =$request->graduate;
         $education->major =$request->major;
         $education->gpa=$request->gpa;
+        $education->gpa_limit=$request->gpa_limit;
+
         $education->user_id = Auth::user()->id;
         $education->save();
 
@@ -125,7 +129,9 @@ class EducationController extends Controller
             'level' => 'required',
             'graduate' => 'required',
             'major' => 'required',
-            'gpa' => 'required'
+            'gpa' => 'required',
+            'gpa_limit' => 'required'
+
         ]);
         // return $request;
         // cara 1
@@ -148,6 +154,8 @@ class EducationController extends Controller
         $education->graduate =$request->graduate;
         $education->major =$request->major;
         $education->gpa=$request->gpa;
+        $education->gpa_limit=$request->gpa_limit;
+
 
         $education->save();
 

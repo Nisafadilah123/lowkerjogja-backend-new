@@ -126,21 +126,26 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <img src="img/icons/bar-chart.png" alt="" width="35px" style="float: left;">
-
-              <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Skill<a href="/editSkill">
+              @foreach ($skills as $item)
+                  <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Skill<a href="{{ url('skill/'.$item->id.'/edit') }}">
                   <i class="bi bi-pencil-square" style="padding-left: 270px; font-size: 25px; color: #4154f1; float: right; "></i></a></h6>
+              @endforeach
 
             </div>
+              @foreach ($skills as $item)
+
             <div class="row align-items-center" style="padding-top: 20px;">
               <div class="col-lg-3">
-                <h6 style="color: #A5B2C2;">Expert</h6>
+                    <h6 style="color: #A5B2C2;">{{ $item->level }}</h6>
+
               </div>
 
               <div class="col-lg-4">
-                <h6 style="font-weight: bold;">Sorting</h6>
+                <h6 style="font-weight: bold;">{{ $item->skill }}</h6>
               </div>
             </div>
 
+            @endforeach
 
           </div>
         </div>

@@ -14,6 +14,10 @@
                 height: 100px;
                 object-fit: cover;
             }
+            .col-6{
+                grid-column: 1 / 2;
+            }
+
     </style>
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
@@ -40,7 +44,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/user.png" width="30px" alt="">
+                                        <img src="/img/icons/user.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +64,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/mortarboard.png" width="35px" alt="">
+                                        <img src="/img/icons/mortarboard.png" width="35px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +84,7 @@
 
 
                                 <div class="card-body">
-                                    <img src="img/icons/bar-chart.png" width="30px" alt="">
+                                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
 
                                 </div>
                             </div>
@@ -100,7 +104,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/password.png" width="30px" alt="">
+                                        <img src="/img/icons/password.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +129,7 @@
                         <div class="container px-1">
                             <div class="row">
                                 <div class="col align-items-center">
-                                    <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
+                                    <img src="/img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
 
                                     <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education<a href="corp-edit-about.html"></a></h6>
 
@@ -141,14 +145,14 @@
                             @csrf
 
 
-                            <div class="mb-3">
-                              <label for="institut" class="form-label">Institusi / Universitas</label>
+                            <div class="form-group" class="form-label">
+                              <label for="institut">Institusi / Universitas</label>
                               <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('name', $item->name)}}">
                             </div>
 
-                             <div class="mb-3">
-                                <label for="jenjang" class="form-label">Jenjang</label>
-                                <select class="form-select" aria-label="Default select example" name="level" id="level">
+                            <div class="form-group">
+                                <label for="jenjang">Jenjang</label>
+                                <select class="form-select" name="level" id="level">
                                     @if ($item->level==null)
                                         <option selected value="" >-- Pilih Jenjang -- </option>
                                     <option value="S3" @if ($item->level == 'S3')@endif>S3</option>
@@ -170,30 +174,37 @@
                                   </select>
                             </div>
 
-                            <div class="mb-3">
-                              <label for="graduate" class="form-label">Tanggal Wisuda</label>
+                            <div class="form-group">
+                                <label for="graduate" class="form-label">Tanggal Wisuda</label>
                               <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate', $item->graduate)}}">
                             </div>
 
-                              <div class="mb-3">
+                            <div class="form-group">
                                 <label for="jurusan" class="form-label">Jurusan</label>
                                 <input type="text" class="form-control" name="major" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level', $item->major)}}">
                               </div>
-                              <div class="mb-3">
+                              <div class="form-group">
                                 <label for="nilai" class="form-label">Nilai Akhir</label>
-                                <input type="text" class="form-control" name="gpa" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa', $item->gpa)}}">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" name="gpa" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa', $item->gpa)}}">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" name="gpa_limit" id="gpa_limit" placeholder="Lengkapi Batas Data Nilai Akhir Anda" value="{{old('gpa_limit', $item->gpa_limit)}}">
+                                    </div>
+                                </div>
                               </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                        <span>Cancel</span>
-                                    </a>
-                                    <button type="submit" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                        <span style="padding: 5px;">Save</span>
-                                    </a>
-                                </div>
-                            </div>
+                              <br>
+                              <div class="row">
+                                  <div class="col">
+                                      <a href="#" style="margin-left: 350px ;" class="btn btn-outline-primary">
+                                          <span>Cancel</span>
+                                      </a>
+                                      <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
+                                          <span style="padding: 5px;">Save</span>
+                                  </div>
+                              </div>
                           </form>
 
                     @endforeach

@@ -22,6 +22,7 @@ class CreateEducationTable extends Migration
             $table->date('graduate');
             $table->string('major');
             $table->double('gpa');
+            $table->double('gpa_limit');
 
             $table->timestamps();
         });

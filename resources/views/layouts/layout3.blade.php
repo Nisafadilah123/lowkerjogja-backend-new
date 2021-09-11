@@ -64,7 +64,7 @@
                 <div>
                   <ul>
                     <li style="text-align: right; padding-right: 10px;"><a href="#"
-                        style="font-size: 23px; color: black;">{{ ucfirst(Auth::user()->name) }}</a><span
+                        {{-- style="font-size: 23px; color: black;">{{ ucfirst(Auth::user()->name) }}</a><span --}}
                         style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
                   </ul>
                 </div>

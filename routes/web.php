@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EducationController;
-
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CrudController;
 /*
@@ -86,8 +86,8 @@ Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile'
 Route::get('/editProfile', [UserController::class, 'editProfile']);
 // Route::get('/education', [UserController::class, 'education']);
 // Route::get('/editEdu', [UserController::class, 'editEdu']);
-Route::get('/skill', [UserController::class, 'skill']);
-Route::get('/editSkill', [UserController::class, 'editSkill']);
+// Route::get('/skill', [UserController::class, 'skill']);
+// Route::get('/editSkill', [UserController::class, 'editSkill']);
 Route::get('/password', [UserController::class, 'password']);
 Route::get('/editPassword', [UserController::class, 'editPassword']);
 
@@ -95,7 +95,7 @@ Route::get('/editPassword', [UserController::class, 'editPassword']);
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
 Route::get('/faq', [VacancyController::class, 'faq']);
 Route::get('/about', [VacancyController::class, 'about']);
-// Route::get('/loginCorp', [VacancyController::class, 'login']);
+Route::get('/loginCorp', [VacancyController::class, 'login']);
 Route::get('/signupCorp', [VacancyController::class, 'signup']);
 Route::get('/succesCorp', [VacancyController::class, 'succes']);
 Route::get('/service', [VacancyController::class, 'service']);
@@ -125,7 +125,7 @@ Route::get('/corp', [MainController::class, 'home']);
 // crud edukasi
 Route::resource('education', EducationController::class);
 
-// Route::get('/education', [EducationController::class, 'index']);
+Route::resource('skill', SkillController::class);
 // Route::get('/education/edit/{id}', [EducationController::class, 'edit']);
 // Route::post('/education/update/{id}', [EducationController::class, 'update']);
 // Route::get('/create', [UserController::class, 'create']);

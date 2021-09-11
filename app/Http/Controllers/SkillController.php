@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Skill;
+use App\Models\User;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\New_;
+use Illuminate\Support\Facades\Auth;
 
 class SkillController extends Controller
 {
@@ -16,6 +21,8 @@ class SkillController extends Controller
     {
         //menampilkan relasi antara model skill dan user
         $skills = Skill::with('user')->get();
+        return view('user.skill', compact('skills'));
+
     }
 
     /**
@@ -25,7 +32,9 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        // membuat data baru
+        $users = User::all();
+        return view('user.addskill', compact('users'));
     }
 
     /**
@@ -37,6 +46,20 @@ class SkillController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'level' => 'required',
+            'skill' => 'required'
+        ]);
+        // return $request;
+
+        $skill = new Skill;
+        $skill->level = $request->level;
+        $skill->skill = $request->skill;
+        $skill->user_id = Auth::user()->id;
+        $skill->save();
+
+        return redirect('/skill')->with('status', 'sukses');
+
     }
 
     /**
@@ -56,9 +79,12 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Skill $skill)
     {
         //
+        $skills = Skill::all();
+
+        return view('user.editskill', compact('skills'));
     }
 
     /**
@@ -68,9 +94,22 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Skill $skill)
     {
         //
+        $request->validate([
+            'level' => 'required',
+            'skill' => 'required'
+        ]);
+
+        // return $request;
+        $skill->level = $request->level;
+        $skill->skill = $request->skill;
+        $skill->user_id = Auth::user()->id;
+        $skill->save();
+
+        return redirect('/skill')->with('status', 'sukses');
+
     }
 
     /**
@@ -79,8 +118,10 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Skill $skill)
     {
         //
+        Skill::destroy($skill->id);
+        return redirect('/skill')->with('status', 'sukses');
     }
 }

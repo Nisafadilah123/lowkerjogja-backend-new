@@ -1,4 +1,4 @@
-@extends('layouts.layout3')
+@extends('vacancy.layout')
 
 @section('title', 'Home | Lowkerjogja.com')
 
