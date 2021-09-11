@@ -22,31 +22,35 @@
   .about:active {
     color: #4154f1;
   }
+
+  .col{
+            padding-top: 20px;
+        }
+
+.image{
+            border-radius: 50%;
+            -webkit-border-radius: 200px;
+            -moz-border-radius: 200px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
 </style>
 <!-- ======= Edit Skill Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
-  <div class="container" data-aos="fade-up">
-
-
-    <div class="row">
-
-      <div class="col-lg-4">
-
-        <div class="post-box" style="background-color: #F9FAFF;">
-
-          <div class="row align-items-start">
-            <div class="col">
-              <div>
-                <img src="img/team/team-1.jpg" width="80px" style="border-radius: 50%; float:left; margin:0 8px 4px 0;" alt="">
-
-                <br>
-                <h6 style="font-weight: bold;">John</h6>
-                <h6 style="color:#A5B2C2; font-size: 15
-                    px;">View Profile</h6>
-              </div>
-            </div>
-
+    <div class="container" data-aos="fade-up" style="width: 100%">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="post-box" style="background-color: #F9FAFF;">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <div>
+                                <img src="{{  Auth::user()->profile_photo_url   }}" class="image">
+                                <h6 style="font-weight: bold;padding-right:50px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:60px;padding-right:5px;">View Profile</h6>
+                            </div>
+                        </div>
 
 
             <div class="row align-items-center mt-4">
@@ -55,7 +59,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="img/icons/user.png" width="30px" alt="">
+                    <img src="/img/icons/user.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -75,7 +79,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="img/icons/mortarboard.png" width="35px" alt="">
+                    <img src="/img/icons/mortarboard.png" width="35px" alt="">
                   </div>
                 </div>
               </div>
@@ -95,7 +99,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="img/icons/bar-chart.png" width="30px" alt="">
+                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -115,7 +119,7 @@
                 <div class="">
 
                   <div class="card-body">
-                    <img src="img/icons/password.png" width="30px" alt="">
+                    <img src="/img/icons/password.png" width="30px" alt="">
                   </div>
                 </div>
               </div>
@@ -142,7 +146,7 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <h6 style="font-weight: bold; margin-top: 8px;">
-                <img src="img/icons/bar-chart.png" width="30px" alt=""> Skill
+                <img src="/img/icons/bar-chart.png" width="30px" alt=""> Skill
 
 
             </div>
@@ -173,15 +177,15 @@
 
             </div>
 
-            <div class="row align-items-center">
-              <div class="col">
-                <a href="#" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span>Cancel</span>
-                </a>
-                <button type="submit" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span style="padding: 5px;">Save</span>
+            <div class="row">
 
-              </div>
+                <div class="col">
+                    <a href="#" style="margin-left: 350px ;" class="btn btn-outline-primary">
+                        <span>Cancel</span>
+                    </a>
+                    <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
+                        <span style="padding: 5px;">Save</span>
+                </div>
             </div>
             </form>
 

@@ -15,8 +15,8 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('corp_id');
+            $table->bigInteger('corp_id')->unsigned();
+            $table->foreign('corp_id')->references('id')->on('corp')->onDelete('cascade');
             $table->text('description');
             $table->string('position');
             $table->string('last_education');
@@ -27,9 +27,6 @@ class CreateJobsTable extends Migration
             $table->string('city');
             $table->double('salary_range');
             $table->integer('kuota');
-
-            $table->softDeletes();
-
             $table->timestamps();
         });
     }

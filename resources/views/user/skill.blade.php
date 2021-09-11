@@ -126,10 +126,10 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <img src="img/icons/bar-chart.png" alt="" width="35px" style="float: left;">
-              @foreach ($skills as $item)
-                  <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Skill<a href="{{ url('skill/'.$item->id.'/edit') }}">
-                  <i class="bi bi-pencil-square" style="padding-left: 270px; font-size: 25px; color: #4154f1; float: right; "></i></a></h6>
-              @endforeach
+                  <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Skill
+                    {{-- create --}}
+                    <a href="{{ url('skill/create') }}" class="btn btn-success" style="position: relative; float: right;">
+                  <i class="fas fa-plus" style="float: right; "> Add</i></a></h6>
 
             </div>
               @foreach ($skills as $item)
@@ -142,6 +142,11 @@
 
               <div class="col-lg-4">
                 <h6 style="font-weight: bold;">{{ $item->skill }}</h6>
+              </div>
+
+              <div class="col-lg-2">
+                    <a href="{{ url('skill/'.$item->id.'/edit') }}" class="btn btn-warning">
+                    <i class="bi bi-pencil-square" style="float: right; "></i></a>
               </div>
             </div>
 

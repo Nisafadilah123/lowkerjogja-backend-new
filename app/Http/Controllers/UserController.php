@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Corp;
+use App\Models\Jobs;
 use App\Models\Education;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -24,7 +25,10 @@ class UserController extends Controller
         // halaman home
         public function home()
         {
-            return view('user.home');
+            $corp = Corp::all();
+            $jobs = Jobs::all();
+            return view('main.home',compact('corp', 'jobs'));
+            // return view('main.home');
         }
 
         // halaman findjobs
@@ -59,18 +63,18 @@ class UserController extends Controller
 
         // Menu Profile
         // halaman myProfile
-        public function myprofile()
-        {
-            return view('user.myProfile');
-        }
+        // public function myprofile()
+        // {
+        //     return view('user.myProfile');
+        // }
 
         // halaman editProfile
-        public function editProfile(Request $request)
-        {
-            return view('user.editProfile', [
-                'user' => $request->user()
-            ]);
-        }
+        // public function editProfile(Request $request)
+        // {
+        //     return view('user.editProfile', [
+        //         'user' => $request->user()
+        //     ]);
+        // }
 
         // halaman education
         // public function education()
@@ -167,55 +171,7 @@ class UserController extends Controller
         }
     }
 
-    public function user(){
-        $user = User::all();
-        return view('user.education', compact('users'));
-    }
 
-    public function create()
-    {
-        return view('user.addEducation');
-    }
-
-    public function insertRecord(Request $request){
-        $education = new Education();
-
-        $education->name = $request->name;
-        $education->level = $request->level;
-        $education->graduate =$request->graduate;
-        $education->major =$request->major;
-        $education->gpa=$request->gpa;
-
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = encrypt($request->password);
-
-        $user->education()->save($education);
-
-        return $request;
-    }
-
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, $this->validationRules());
-    //     $user = new User();
-    //     $user->first_name = $request->first_name;
-    //     $user->last_name = $request->last_name;
-    //     $user->email = $request->email;
-    //     $user->age = $request->age;
-    //     $user->save();
-
-    //     $education = new Education();
-    //     $education->user_id = $request->user_id;
-    //     $education->name = $request->name;
-    //     $education->company = $request->company;
-    //     $education->notes = $request->notes;
-
-    //     $user->education()->save($education);
-
-
-    // }
 }
 
 

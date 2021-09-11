@@ -123,144 +123,25 @@
         </header>
 
 
+        @foreach($corp as $cp)
+        {{-- @foreach ($corps as $corp) --}}
         <div class="row">
-
-            <div class="col-lg-4">
-
-                <div class="post-box">
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">Full-time</p>
-
-                        </div>
-
-                        <div class="col">
-                            <div></div>
-
-
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
-
-
-                        </div>
+            <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                    <strong>{{ $cp->work_day }}</strong>
+                    <i style="float: right; color: #BEBFC0;" class="bi bi-clock">{{ $cp->founded_year }}</i>
+                    <div class="class">
+                        <img src="img/7.png" alt="">
+                    <a href="/aboutUser">{{ $cp->nama_corp }}</a> <i style="position: relative;float: right;top:5px; font-size: 20px;" class="bi bi-plus-square-fill"></i>
                     </div>
-
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
-
-
-                            </div>
-
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">UI Designer</h1>
-                                <h6 style="color: #BEBFC0;">Yogyakarta, Indonesia</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">Rp.5.000.000 - 7.000.000</h6>
-                            </div>
-
-
-                        </div>
-                    </div>
+                    <br>
+                    {{-- <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->jobs->position}}</h1> --}}
+                    <h6 style="color: #BEBFC0;">{{ $cp->location }}</h6>
+                    {{-- <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($corp->jobs->salary_large)}}</h6> --}}
                 </div>
             </div>
-
-            <div class="col-lg-4">
-
-                <div class="post-box">
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">Full-time</p>
-
-                        </div>
-
-                        <div class="col">
-                            <div></div>
-
-
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
-
-
-                            </div>
-
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">Product Manager</h1>
-                                <h6 style="color: #BEBFC0;">Yogyakarta, Indonesia</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">Rp.5.000.000 - 7.000.000</h6>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-
-                <div class="post-box">
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">Full-time</p>
-
-                        </div>
-
-                        <div class="col">
-                            <div></div>
-
-
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
-
-
-                            </div>
-
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">Programmer</h1>
-                                <h6 style="color: #BEBFC0;">Yogyakarta, Indonesia</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">Rp.5.000.000 - 7.000.000</h6>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+        @endforeach
 
     </div>
 

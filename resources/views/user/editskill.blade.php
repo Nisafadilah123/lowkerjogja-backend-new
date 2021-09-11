@@ -25,30 +25,34 @@
   .skill{
       width: 300px;
   }
+  .image{
+            border-radius: 50%;
+            -webkit-border-radius: 200px;
+            -moz-border-radius: 200px;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .col{
+            padding-top: 20px;
+        }
 </style>
 <!-- ======= Edit Skill Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
-  <div class="container" data-aos="fade-up">
-
-
-    <div class="row">
-
-      <div class="col-lg-4">
-
-        <div class="post-box" style="background-color: #F9FAFF;">
-
-          <div class="row align-items-start">
-            <div class="col">
-              <div>
-                <img src="/img/team/team-1.jpg" width="80px" style="border-radius: 50%; float:left; margin:0 8px 4px 0;" alt="">
-
-                <br>
-                <h6 style="font-weight: bold;">John</h6>
-                <h6 style="color:#A5B2C2; font-size: 15
-                    px;">View Profile</h6>
-              </div>
-            </div>
+    <div class="container" data-aos="fade-up" style="width: 100%">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="post-box" style="background-color: #F9FAFF;">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <div>
+                                <img src="{{  Auth::user()->profile_photo_url   }}" class="image">
+                                <h6 style="font-weight: bold;padding-right:50px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:60px;padding-right:5px;">View Profile</h6>
+                            </div>
+                        </div>
 
 
 
@@ -150,7 +154,7 @@
 
             @foreach ($skills as $item)
 <div class="row align-items-start" style="padding-top: 20px;">
-              <div class="col-2">
+              <div class="col-4">
                 <h6 style="color: #A5B2C2;">Level</h6>
               </div>
               <div class="col-2">
@@ -180,14 +184,19 @@
                 <input class="form-control" name="skill" id="skill" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('skill', $item->skill) }}">
               </div>
               {{-- delete --}}
+              <div class="col-lg-2 align-items-center">
+
               <form action="{{ url('skill/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ?')">
                 @method('delete')
                 @csrf
-                <button><i class="fas fa-trash" style="float: right; "></i></button>
+                <button class="btn btn-danger"><i class="fas fa-trash-alt" style="float: right; "></i></button>
             </form>
+              </div>
 
             </div>
+
             <div class="row">
+
                 <div class="col">
                     <a href="#" style="margin-left: 350px ;" class="btn btn-outline-primary">
                         <span>Cancel</span>
@@ -197,19 +206,6 @@
                 </div>
             </div>
             @endforeach
-
-
-            <div class="row align-items-center">
-              <div class="col">
-                  <a href="{{ url('skill/create') }}">
-                      <i class="bi bi-plus-square-fill" style="float: left; color: #4154f1; margin-right: 5px;"> Tambah Keterampilan</i>
-
-                    </a>
-
-              </div>
-
-            </div>
-
 
           </div>
         </div>
