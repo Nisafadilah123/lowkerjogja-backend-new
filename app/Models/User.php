@@ -72,4 +72,8 @@ class User extends Authenticatable
     public function skill(){
         return $this->hasOne(Skill::class);
     }
+
+    public function corp(){
+        return $this->hasOne(Corp::class);
+    }
 }

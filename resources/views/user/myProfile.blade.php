@@ -45,7 +45,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/myprofile" class="about">
+                                <a href="/profileUser" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
                                         <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
                                     </div>

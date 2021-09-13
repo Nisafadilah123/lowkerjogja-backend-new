@@ -33,6 +33,17 @@
     <link href="css/style1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
+    <style>
+        .rounded-image{
+            border-radius: 50%;
+            -webkit-border-radius: 200px;
+            -moz-border-radius: 200px;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -55,17 +66,34 @@
 
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
-                        @else
+                        <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
+                        <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
+                            <ul>
+                                <li class="align-items-center"><a href="/profileUser"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
+                                <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
+                                <li class="align-items-center">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                             onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-jet-dropdown-link>
+                                    </form>
+                                </li>
+                            </ul>
+                            @else
                             <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
 
                             @if (Route::has('register'))
                                 <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
+                                <li><a class="getstarted scrollto" href="/landingPage">Post Vacancy</a></li>
+
                             @endif
                         @endauth
                 @endif
 
-                    <li><a class="getstarted scrollto" href="/landingPage">Post Vacancy</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

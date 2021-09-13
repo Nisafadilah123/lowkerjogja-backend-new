@@ -84,8 +84,8 @@ class EducationController extends Controller
         // $data['user_id'] = Auth::id();
         // Education::create($data);
         // return $request;
-        return redirect('/education')->with('status', 'sukses');
-
+        return redirect('/education');
+        // session()->
     }
 
     /**

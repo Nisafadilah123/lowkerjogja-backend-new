@@ -20,9 +20,10 @@ class MainController extends Controller
     //
     public function home()
         {
-            $corp = Corp::all();
+            // menampilkan tabel corps dan jobs
+            $corps = Corp::all();
             $jobs = Jobs::all();
-            return view('main.home',compact('corp', 'jobs'));
+            return view('main.home',compact('corps', 'jobs'));
             // return view('main.home');
         }
 
@@ -41,13 +42,16 @@ class MainController extends Controller
         return view('main.succes');
     }
 
-    public function login()
-    {
-        return view('main.login');
-    }
+    // public function login()
+    // {
+    //     return view('main.login');
+    // }
 
-    public function signup()
-    {
-        return view('main.signup');
-    }
+    // public function signup()
+    // {
+    //     return view('main.signup');
+    // }
+
+
+
 }

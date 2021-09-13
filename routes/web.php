@@ -76,13 +76,12 @@ Route::get('/succes', [MainController::class, 'succes']);
 
 
 // Routes Halaman User
-Route::get('/corp', [CompanyController::class, 'home']);
 Route::get('/homeUser', [UserController::class, 'home']);
 Route::get('/findjobsUser', [UserController::class, 'findjobs']);
 Route::get('/aboutUser', [UserController::class, 'about']);
 Route::get('/profileUser', [UserController::class, 'profile']);
 Route::get('/jobsUser', [UserController::class, 'jobs']);
-Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile');
+// Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile');
 Route::get('/editProfile', [UserController::class, 'editProfile']);
 // Route::get('/education', [UserController::class, 'education']);
 // Route::get('/editEdu', [UserController::class, 'editEdu']);
@@ -126,10 +125,6 @@ Route::get('/corp', [MainController::class, 'home']);
 Route::resource('education', EducationController::class);
 
 Route::resource('skill', SkillController::class);
-// Route::get('/education/edit/{id}', [EducationController::class, 'edit']);
-// Route::post('/education/update/{id}', [EducationController::class, 'update']);
-// Route::get('/create', [UserController::class, 'create']);
 
-// Route::get('/add', [UserController::class, 'insertRecord']);
-
-// Route::get('/user', [UserController::class, 'user']);
+// company
+Route::get('/corp', [CompanyController::class, 'home']);

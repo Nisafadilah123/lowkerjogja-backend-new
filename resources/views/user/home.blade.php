@@ -122,9 +122,8 @@
             <span style="padding-top: 20px;">More Jobs</span>
         </header>
 
-
-        @foreach($corp as $cp)
-        {{-- @foreach ($corps as $corp) --}}
+        {{-- menampilkan relasi antar tabel corps dan jobs --}}
+        @foreach ($corps as $cp)
         <div class="row">
             <div class="card" style="width: 25rem;">
                     <div class="card-body">
@@ -132,12 +131,12 @@
                     <i style="float: right; color: #BEBFC0;" class="bi bi-clock">{{ $cp->founded_year }}</i>
                     <div class="class">
                         <img src="img/7.png" alt="">
-                    <a href="/aboutUser">{{ $cp->nama_corp }}</a> <i style="position: relative;float: right;top:5px; font-size: 20px;" class="bi bi-plus-square-fill"></i>
+                    <a href="/aboutUser">{{ ucfirst($cp->nama_corp) }}</a> <i style="position: relative;float: right;top:5px; font-size: 20px;" class="bi bi-plus-square-fill"></i>
                     </div>
                     <br>
-                    {{-- <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->jobs->position}}</h1> --}}
-                    <h6 style="color: #BEBFC0;">{{ $cp->location }}</h6>
-                    {{-- <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($corp->jobs->salary_large)}}</h6> --}}
+                    <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->jobs->position}}</h1>
+                    <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->location )}}</h6>
+                    <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($cp->jobs->salary_range)}}</h6>
                 </div>
             </div>
         </div>

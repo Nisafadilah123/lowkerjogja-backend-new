@@ -10,20 +10,11 @@ class Jobs extends Model
     use HasFactory;
     protected $table ="jobs";
     protected $primaryKey ="id";
-    protected $fillable =[
-        'id', 
-        'corp_id', 
-        'description', 
-        'position', 
-        'last_education', 
-        'job_type', 
-        'job_category', 
-        'deadline', 
-        'job_location', 
-        'salary_range'
+    protected $guarded = [
+        'corp_id',
     ];
 
     public function corp(){
-        return $this->hasMany(Corp::class);
+        return $this->belongsTo(Corp::class);
     }
 }

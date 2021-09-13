@@ -13,12 +13,14 @@ class Corp extends Model
     protected $guarded = [
         'user_id',
     ];
-    
-    protected $fillable =[
-        'id', 'user_id', 'jobs_id','nama_corp', 'description', 'logo', 'industri', 'location', 'work_day', 'founded_year',
-    ];
+
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 
     public function jobs(){
-        return $this->belongsTo(Jobs::class,'jobs_id');
+        return $this->hasOne(Jobs::class);
     }
+
 }

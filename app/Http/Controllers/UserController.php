@@ -25,9 +25,9 @@ class UserController extends Controller
         // halaman home
         public function home()
         {
-            $corp = Corp::all();
+            $corps = Corp::all();
             $jobs = Jobs::all();
-            return view('main.home',compact('corp', 'jobs'));
+            return view('main.home',compact('corps', 'jobs'));
             // return view('main.home');
         }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
         // halaman profile
         public function profile()
         {
-            return view('user.profile');
+            return view('user.myProfile');
         }
 
         // halaman jobs
