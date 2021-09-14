@@ -147,7 +147,7 @@
 
                             <div class="form-group" class="form-label">
                               <label for="institut">Institusi / Universitas</label>
-                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('name', $item->name)}}">
+                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{ucfirst(old('name', $item->name))}}">
                             </div>
 
                             <div class="form-group">

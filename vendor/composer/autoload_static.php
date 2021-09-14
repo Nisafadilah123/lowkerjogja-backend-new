@@ -604,6 +604,7 @@ class ComposerStaticInitacb31f4e7b84336e0b9c77d6386ed30c
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompanyController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CorpController' => __DIR__ . '/../..' . '/app/Http/Controllers/CorpController.php',
         'App\\Http\\Controllers\\CrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/CrudController.php',
         'App\\Http\\Controllers\\EducationController' => __DIR__ . '/../..' . '/app/Http/Controllers/EducationController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',

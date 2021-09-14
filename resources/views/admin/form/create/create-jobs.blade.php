@@ -47,12 +47,21 @@
                                     <input type="text" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
                                 </div> --}}
                                 <div class="form-group">
-                                    <label for="joblocation"><strong>Lokasi</strong></label>
-                                    <input type="text" name="job_location" id="joblocation" class="form-control" placeholder="Lokasi" required>
+                                    <label for="joblocation"><strong>Provinsi</strong></label>
+                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="provinces" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="joblocation"><strong>Kota</strong></label>
+                                    <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
                                     <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" input class="datepicker" data-date-format="mm/dd/yyyy" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="joblocation"><strong>Kuota</strong></label>
+                                    <input type="text" name="kuota" id="kuota" class="form-control" placeholder="kuota" required>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span> Tambah Data</button>

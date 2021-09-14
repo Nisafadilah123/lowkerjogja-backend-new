@@ -21,9 +21,9 @@ class MainController extends Controller
     public function home()
         {
             // menampilkan tabel corps dan jobs
-            $corps = Corp::all();
-            $jobs = Jobs::all();
-            return view('main.home',compact('corps', 'jobs'));
+            // $corps = Corp::get();
+            $jobs = Jobs::with('corp')->get();
+            return view('main.home',compact('jobs'));
             // return view('main.home');
         }
 

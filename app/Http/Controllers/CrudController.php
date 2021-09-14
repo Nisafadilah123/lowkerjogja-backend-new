@@ -23,7 +23,7 @@ class CrudController extends Controller
         // Logo | Foto
         $nm1 = $request->logo;
         $namafile1 = time() . rand(100, 999) . "." . $nm1->getClientOriginalExtension();
-            
+
         // $dtUpload->id = $request->id;
         // $dtUpload->user_id = $request->user_id;
         // $dtUpload->jobs_id = $request->jobs_id;
@@ -60,11 +60,11 @@ class CrudController extends Controller
 
         $corp = [
             'nama_corp'     =>  $request['nama_corp'],
-            'description'   =>  $request['description'], 
-            'logo'          =>  $awal1, 
-            'industri'      =>  $request['industri'], 
-            'location'      =>  $request['location'], 
-            'work_day'      =>  $request['work_day'], 
+            'description'   =>  $request['description'],
+            'logo'          =>  $awal1,
+            'industri'      =>  $request['industri'],
+            'location'      =>  $request['location'],
+            'work_day'      =>  $request['work_day'],
             'founded_year'  =>  $request['founded_year'],
         ];
         $ubah->update($corp);
@@ -92,15 +92,15 @@ class CrudController extends Controller
     public function addjobs(Request $request)
     {
         $dtUpload = new Jobs;
-        // $dtUpload->id               = $request->id; 
-        $dtUpload->corp_id          = $request->corp_id; 
-        $dtUpload->description      = $request->description; 
-        $dtUpload->position         = $request->position; 
-        $dtUpload->last_education   = $request->last_education; 
+        // $dtUpload->id               = $request->id;
+        $dtUpload->corp_id          = $request->corp_id;
+        $dtUpload->description      = $request->description;
+        $dtUpload->position         = $request->position;
+        $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
-        $dtUpload->deadline         = $request->deadline; 
-        $dtUpload->job_location     = $request->job_location; 
+        $dtUpload->deadline         = $request->deadline;
+        $dtUpload->job_location     = $request->job_location;
         $dtUpload->salary_range     = $request->salary_range;
 
         $dtUpload->save();

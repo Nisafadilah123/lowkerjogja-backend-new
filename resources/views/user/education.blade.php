@@ -129,7 +129,9 @@
                         <div class="col align-items-center">
                             <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education
-                            <a href="{{ url('education/create') }}" class="btn btn-success" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;">Add</i></a><br><br>
+                                @include('sweet::alert')
+
+                            <a href="{{ url('education/create') }}" class="btn btn-success" id="tambah" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;">Add</i></a><br><br>
 
                             <table id="data" class="table table-striped" style="width:100%">
                                 <thead>
@@ -157,7 +159,7 @@
                                                 <a href="{{ url('education/'.$item->id.'/edit') }}" class="btn btn-warning">
                                                 <i class="fas fa-edit"></i></a>
                                                 <td>
-                                                    <form action="{{ url('education/'.$item->id) }}" method="POST" onsubmit="return confirm('Yakin hapus data ?')">
+                                                    <form id="delete-education" action="{{ url('education/'.$item->id) }}" method="POST" onsubmit="confirmDelete('delete-education')">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger">
@@ -206,4 +208,23 @@
 } );
 </script>
 
+<script>
+    function confirmDelete(id) {
+
+            swal({
+                title: "Apakah kamu yakin hapus data ini ?",
+                text: "Data ini akan terhapus secara permanen",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#delete-education'+id).submit();
+                    } else {
+                        swal("Cancelled Successfully");
+                    }
+                });
+        }
+</script>
 @endpush

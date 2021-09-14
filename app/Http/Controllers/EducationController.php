@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\New_;
 use Illuminate\Support\Facades\Auth;
+// use Alert;
+use illuminate\Support\Str;
+use SweetAlert;
+
 
 class EducationController extends Controller
 {
@@ -53,6 +57,13 @@ class EducationController extends Controller
             'gpa' => 'required',
             'gpa_limit' => 'required'
 
+        ], [
+                'name.required' => 'Lengkapi Nama Institusi/Universitas Anda',
+                'graduate.required' => 'Lengkapi Tanggal Wisuda Anda',
+                'level.required' => 'Lengkapi Pendidikan Terakhir Anda',
+                'major.required' => 'Lengkapi Lulusan Anda',
+                'gpa.required' => 'Lengkapi Nilai Terakhir Anda',
+                'gpa_limit.required' => 'Lengkapi Nilai Batas Anda'
         ]);
 
         // cara 1
@@ -84,8 +95,10 @@ class EducationController extends Controller
         // $data['user_id'] = Auth::id();
         // Education::create($data);
         // return $request;
+        alert()->success('Berhasil', 'Data berhasil ditambahkan');
+
         return redirect('/education');
-        // session()->
+
     }
 
     /**
@@ -132,7 +145,14 @@ class EducationController extends Controller
             'gpa' => 'required',
             'gpa_limit' => 'required'
 
-        ]);
+        ],  [
+            'name.required' => 'Lengkapi Nama Institusi/Universitas Anda',
+            'graduate.required' => 'Lengkapi Tanggal Wisuda Anda',
+            'level.required' => 'Lengkapi Pendidikan Terakhir Anda',
+            'major.required' => 'Lengkapi Lulusan Anda',
+            'gpa.required' => 'Lengkapi Nilai Terakhir Anda',
+            'gpa_limit.required' => 'Lengkapi Nilai Batas Anda'
+    ]);
         // return $request;
         // cara 1
         // Education::where('id', $education->id)
@@ -159,8 +179,9 @@ class EducationController extends Controller
 
         $education->save();
 
+        alert()->success('Berhasil', 'Data berhasil di update');
 
-            return redirect('/education')->with('status', 'sukses');
+            return redirect('/education');
     }
 
     /**
@@ -174,6 +195,7 @@ class EducationController extends Controller
         //
         // return "delete";
         Education::destroy($education->id);
+
         return redirect('/education')->with('status', 'sukses');
     }
 }

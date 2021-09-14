@@ -14,28 +14,32 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="vendor/aos/aos.css" rel="stylesheet">
-    <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
-    <link href="css/linearicons.css" rel="stylesheet">
-    <link href="css/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/jquery-ui.min.css" rel="stylesheet">
-    <link href="css/nice-select.css" rel="stylesheet">
+    <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url('css/linearicons.css') }}" rel="stylesheet">
+    <link href="{{ url('css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/jquery-ui.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/nice-select.css') }}" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> <!-- rev>
 
     <!-Template Main CSS File -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style1.css" rel="stylesheet">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
+    <link href="{{ url('css/style1.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
     {{-- datatables --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+
+    {{-- sweet alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <style>
         .about h6 {
             font-weight: bold;
@@ -88,10 +92,9 @@
                     <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
                     <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
                         <ul>
-                            <li class="align-items-center"><a href="/profileUser"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
+                            <li class="align-items-center"><a href="/myprofile"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
                             <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
-                            <li class="align-items-center">
-                                <form method="POST" action="{{ route('logout') }}">
+                            <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
@@ -99,8 +102,7 @@
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
-                                </form>
-                            </li>
+                            </form></i></li>
 
                         </ul>
                     </li>
@@ -189,21 +191,21 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="vendor/aos/aos.js"></script>
-    <script src="vendor/php-email-form/validate.js"></script>
-    <script src="vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="vendor/purecounter/purecounter.js"></script>
-    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{ url('vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url('vendor/aos/aos.js') }}"></script>
+    <script src="{{ url('vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ url('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('vendor/purecounter/purecounter.js') }}"></script>
+    <script src="{{ url('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url('vendor/glightbox/js/glightbox.min.js') }}"></script>
     <!-- rev -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> <!-- rev -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> <!-- rev -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- rev -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- rev -->
-    <script src="js/formunggahan.js"></script> <!-- rev -->
+    <script src="{{ url('js/formunggahan.js') }}"></script> <!-- rev -->
     <!-- Template Main JS File -->
-    <script src="js/main.js"></script>
+    <script src="{{ url('js/main.js') }}"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

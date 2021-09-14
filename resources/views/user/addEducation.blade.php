@@ -137,9 +137,18 @@
                             </div>
                         </div>
                     </h5>
+
+
+
                     <div class="card-body">
 
                     {{-- @foreach ($educations as $item) --}}
+                    {{-- @if (Session::has('add'))
+                        <span style="color:green">
+                            {{ Session::get('add') }}
+                        </span>
+                    @endif --}}
+
                         <form method="post" action="{{ url('education/') }}">
                          {{-- @method('HEAD') --}}
                             @csrf
