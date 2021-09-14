@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
 {
+     public function home()
+     {
+            // menampilkan tabel corps dan jobs
+            $corp = Corp::all();
+            $jobs = Jobs::all();
+            return view('main.home',compact('corp', 'jobs'));
+            // return view('main.home');
+     }
+
      // Corp
      public function createcompany()
      {
@@ -35,6 +44,8 @@ class CrudController extends Controller
         $dtUpload->work_day     = $request->work_day;
         $dtUpload->founded_year = $request->founded_year;
         $dtUpload->logo         = $namafile1;
+        $dtUpload->user_id = Auth::user()->id;
+
 
         $nm1->move(public_path() . '/template/img/logo', $namafile1);
         $dtUpload->save();
@@ -100,7 +111,7 @@ class CrudController extends Controller
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline; 
-        $dtUpload->job_location     = $request->job_location; 
+        // $dtUpload->job_location     = $request->job_location; 
         $dtUpload->salary_range     = $request->salary_range;
 
         $dtUpload->save();
