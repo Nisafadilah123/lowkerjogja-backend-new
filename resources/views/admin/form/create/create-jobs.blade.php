@@ -42,26 +42,14 @@
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="deadline"><strong>Deadline</strong></label>
-                                    <input type="text" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
-                                </div> --}}
-<<<<<<< HEAD
                                 <div class="form-group">
-                                    <label for="joblocation"><strong>Provinsi</strong></label>
-                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="provinces" required>
+                                    <label for="provinces"><strong>Provinces</strong></label>
+                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required>
                                 </div>
-=======
-                                {{-- <div class="form-group">
-                                    <label for="joblocation"><strong>Lokasi</strong></label>
-                                    <input type="text" name="job_location" id="joblocation" class="form-control" placeholder="Lokasi" required>
-                                </div> --}}
->>>>>>> 14c221b873ed127ca83167c0d771a558557f0a71
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kota</strong></label>
                                     <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
                                     <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" input class="datepicker" data-date-format="mm/dd/yyyy" required>
