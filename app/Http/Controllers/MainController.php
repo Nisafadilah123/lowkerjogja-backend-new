@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Corp;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
+use DB;
 
 class MainController extends Controller
 {
@@ -52,6 +53,24 @@ class MainController extends Controller
     //     return view('main.signup');
     // }
 
+    public function lihatjobs(Request $request){
+        
+        // $id = DB::table('jobs')
+        // ->where('id_jobs', $id_jobs)->first();
 
+        $lihatjobs = DB::table('jobs')
+        ->select('id', 'job_type', 'created_at', 'position', 'city', 'provinces', 'salary_range' )
+        ->get();
+
+        // $logo = DB::table('companies')->select('logo')
+        // ->get();
+
+        // $namacorp = DB::table('job_id')->select('corp_id')
+        // ->get();
+
+
+        return view('user.findjobs', 
+        ['lihatjobs'=> $lihatjobs]);
+    }
 
 }
