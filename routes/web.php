@@ -69,7 +69,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/da
 // Halaman Main
 Route::get('/', [MainController::class, 'home']);
 Route::get('/aboutus', [MainController::class, 'about']);
-Route::get('/findjobs', [MainController::class, 'findjobs']);
+Route::get('/findjobs', [MainController::class, 'lihatjobs']);
 // Route::get('/login', [MainController::class, 'login']);
 // Route::get('/signup', [MainController::class, 'signup']);
 Route::get('/succes', [MainController::class, 'succes']);
@@ -77,7 +77,7 @@ Route::get('/succes', [MainController::class, 'succes']);
 
 // Routes Halaman User
 Route::get('/homeUser', [UserController::class, 'home']);
-Route::get('/findjobsUser', [UserController::class, 'findjobs']);
+Route::get('/findjobsUser', [UserController::class, 'lihatjobs']);
 Route::get('/aboutUser', [UserController::class, 'about']);
 Route::get('/profileUser', [UserController::class, 'profile']);
 Route::get('/jobsUser', [UserController::class, 'jobs']);
@@ -89,6 +89,9 @@ Route::get('/editProfile', [UserController::class, 'editProfile']);
 // Route::get('/editSkill', [UserController::class, 'editSkill']);
 Route::get('/password', [UserController::class, 'password']);
 Route::get('/editPassword', [UserController::class, 'editPassword']);
+Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
+Route::get('/detail{id}', [UserController::class, 'detail_view']);
+Route::post('/kirimcv', [UserController::class, 'insertcv']);
 
 // Route Halaman Vacancy
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
