@@ -21,7 +21,7 @@
               <h4>Perusahaan</h4>
             </div>
             <div class="card-body">
-              {{-- {{$company}} --}}
+              {{$corp}}
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
               <h4>Jobs</h4>
             </div>
             <div class="card-body">
-              {{-- {{$jobs}} --}}
+              {{$jobs}}
             </div>
           </div>
         </div>

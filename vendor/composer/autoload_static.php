@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
+class ComposerStaticInit90453db87a5810e5becb74adf22f12aa
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -648,6 +648,7 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\CompanyLayout' => __DIR__ . '/../..' . '/app/View/Components/CompanyLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
+        'App\\lowker' => __DIR__ . '/../..' . '/app/lowker.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -1505,6 +1506,7 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -3349,6 +3351,7 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'Livewire\\Controllers\\HttpConnectionHandler' => __DIR__ . '/..' . '/livewire/livewire/src/Controllers/HttpConnectionHandler.php',
         'Livewire\\Controllers\\LivewireJavaScriptAssets' => __DIR__ . '/..' . '/livewire/livewire/src/Controllers/LivewireJavaScriptAssets.php',
         'Livewire\\CreateBladeView' => __DIR__ . '/..' . '/livewire/livewire/src/CreateBladeView.php',
+        'Livewire\\DisableBrowserCache' => __DIR__ . '/..' . '/livewire/livewire/src/DisableBrowserCache.php',
         'Livewire\\Event' => __DIR__ . '/..' . '/livewire/livewire/src/Event.php',
         'Livewire\\Exceptions\\BypassViewHandler' => __DIR__ . '/..' . '/livewire/livewire/src/Exceptions/BypassViewHandler.php',
         'Livewire\\Exceptions\\CannotBindToModelDataWithoutValidationRuleException' => __DIR__ . '/..' . '/livewire/livewire/src/Exceptions/CannotBindToModelDataWithoutValidationRuleException.php',
@@ -3366,6 +3369,22 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'Livewire\\Exceptions\\PublicPropertyTypeNotAllowedException' => __DIR__ . '/..' . '/livewire/livewire/src/Exceptions/PublicPropertyTypeNotAllowedException.php',
         'Livewire\\Exceptions\\RootTagMissingFromViewException' => __DIR__ . '/..' . '/livewire/livewire/src/Exceptions/RootTagMissingFromViewException.php',
         'Livewire\\Exceptions\\S3DoesntSupportMultipleFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/Exceptions/S3DoesntSupportMultipleFileUploads.php',
+        'Livewire\\Features\\OptimizeRenderedDom' => __DIR__ . '/..' . '/livewire/livewire/src/Features/OptimizeRenderedDom.php',
+        'Livewire\\Features\\Placeholder' => __DIR__ . '/..' . '/livewire/livewire/src/Features/Placeholder.php',
+        'Livewire\\Features\\SupportActionReturns' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportActionReturns.php',
+        'Livewire\\Features\\SupportBootMethod' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportBootMethod.php',
+        'Livewire\\Features\\SupportBrowserHistory' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportBrowserHistory.php',
+        'Livewire\\Features\\SupportChildren' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportChildren.php',
+        'Livewire\\Features\\SupportCollections' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportCollections.php',
+        'Livewire\\Features\\SupportComponentTraits' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportComponentTraits.php',
+        'Livewire\\Features\\SupportDateTimes' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportDateTimes.php',
+        'Livewire\\Features\\SupportEvents' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportEvents.php',
+        'Livewire\\Features\\SupportFileDownloads' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportFileDownloads.php',
+        'Livewire\\Features\\SupportFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportFileUploads.php',
+        'Livewire\\Features\\SupportLocales' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportLocales.php',
+        'Livewire\\Features\\SupportRedirects' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportRedirects.php',
+        'Livewire\\Features\\SupportRootElementTracking' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportRootElementTracking.php',
+        'Livewire\\Features\\SupportValidation' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportValidation.php',
         'Livewire\\FileUploadConfiguration' => __DIR__ . '/..' . '/livewire/livewire/src/FileUploadConfiguration.php',
         'Livewire\\GenerateSignedUploadUrl' => __DIR__ . '/..' . '/livewire/livewire/src/GenerateSignedUploadUrl.php',
         'Livewire\\HydrationMiddleware\\AddAttributesToRootTagOfHtml' => __DIR__ . '/..' . '/livewire/livewire/src/HydrationMiddleware/AddAttributesToRootTagOfHtml.php',
@@ -3396,20 +3415,6 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'Livewire\\Macros\\ViewMacros' => __DIR__ . '/..' . '/livewire/livewire/src/Macros/ViewMacros.php',
         'Livewire\\ObjectPrybar' => __DIR__ . '/..' . '/livewire/livewire/src/ObjectPrybar.php',
         'Livewire\\Redirector' => __DIR__ . '/..' . '/livewire/livewire/src/Redirector.php',
-        'Livewire\\RenameMe\\OptimizeRenderedDom' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/OptimizeRenderedDom.php',
-        'Livewire\\RenameMe\\Placeholder' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/Placeholder.php',
-        'Livewire\\RenameMe\\SupportActionReturns' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportActionReturns.php',
-        'Livewire\\RenameMe\\SupportBrowserHistory' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportBrowserHistory.php',
-        'Livewire\\RenameMe\\SupportChildren' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportChildren.php',
-        'Livewire\\RenameMe\\SupportCollections' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportCollections.php',
-        'Livewire\\RenameMe\\SupportComponentTraits' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportComponentTraits.php',
-        'Livewire\\RenameMe\\SupportDateTimes' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportDateTimes.php',
-        'Livewire\\RenameMe\\SupportEvents' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportEvents.php',
-        'Livewire\\RenameMe\\SupportFileDownloads' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportFileDownloads.php',
-        'Livewire\\RenameMe\\SupportFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportFileUploads.php',
-        'Livewire\\RenameMe\\SupportLocales' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportLocales.php',
-        'Livewire\\RenameMe\\SupportRedirects' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportRedirects.php',
-        'Livewire\\RenameMe\\SupportValidation' => __DIR__ . '/..' . '/livewire/livewire/src/RenameMe/SupportValidation.php',
         'Livewire\\Request' => __DIR__ . '/..' . '/livewire/livewire/src/Request.php',
         'Livewire\\Response' => __DIR__ . '/..' . '/livewire/livewire/src/Response.php',
         'Livewire\\TemporaryUploadedFile' => __DIR__ . '/..' . '/livewire/livewire/src/TemporaryUploadedFile.php',
@@ -3419,6 +3424,7 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
         'Livewire\\Testing\\MakesHttpRequestsWrapper' => __DIR__ . '/..' . '/livewire/livewire/src/Testing/MakesHttpRequestsWrapper.php',
         'Livewire\\Testing\\TestableLivewire' => __DIR__ . '/..' . '/livewire/livewire/src/Testing/TestableLivewire.php',
         'Livewire\\WireDirective' => __DIR__ . '/..' . '/livewire/livewire/src/WireDirective.php',
+        'Livewire\\Wireable' => __DIR__ . '/..' . '/livewire/livewire/src/Wireable.php',
         'Livewire\\WithFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/WithFileUploads.php',
         'Livewire\\WithPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithPagination.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
@@ -5944,10 +5950,10 @@ class ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7b3b549a60a5b34e436cdabb0c338da5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit90453db87a5810e5becb74adf22f12aa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit90453db87a5810e5becb74adf22f12aa::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit90453db87a5810e5becb74adf22f12aa::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit90453db87a5810e5becb74adf22f12aa::$classMap;
 
         }, null, ClassLoader::class);
     }

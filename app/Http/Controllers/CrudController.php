@@ -33,10 +33,8 @@ class CrudController extends Controller
         $nm1 = $request->logo;
         $namafile1 = time() . rand(100, 999) . "." . $nm1->getClientOriginalExtension();
 
-        // $dtUpload->id = $request->id;
-        // $dtUpload->user_id = $request->user_id;
-        // $dtUpload->jobs_id = $request->jobs_id;
         $dtUpload = new Corp;
+        $dtUpload->user_id = Auth::user()->id;
         $dtUpload->nama_corp    = $request->nama_corp;
         $dtUpload->description  = $request->description;
         $dtUpload->industri     = $request->industri;
@@ -44,8 +42,7 @@ class CrudController extends Controller
         $dtUpload->work_day     = $request->work_day;
         $dtUpload->founded_year = $request->founded_year;
         $dtUpload->logo         = $namafile1;
-        $dtUpload->user_id = Auth::user()->id;
-
+       
 
         $nm1->move(public_path() . '/template/img/logo', $namafile1);
         $dtUpload->save();
@@ -103,16 +100,21 @@ class CrudController extends Controller
     public function addjobs(Request $request)
     {
         $dtUpload = new Jobs;
-        // $dtUpload->id               = $request->id;
-        $dtUpload->corp_id          = $request->corp_id;
         $dtUpload->description      = $request->description;
         $dtUpload->position         = $request->position;
         $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
+<<<<<<< HEAD
         $dtUpload->deadline         = $request->deadline;
         // $dtUpload->job_location     = $request->job_location;
+=======
+        $dtUpload->deadline         = $request->deadline; 
+        $dtUpload->provinces        = $request->provinces; 
+        $dtUpload->city             = $request->city; 
+>>>>>>> 504f767ccdb06b69d45e977440acca11af39c1ef
         $dtUpload->salary_range     = $request->salary_range;
+        $dtUpload->kuota            = $request->kuota; 
 
         $dtUpload->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
@@ -137,8 +139,10 @@ class CrudController extends Controller
             'job_category'      => $request['job_category'],
             'last_date'         => $request['last_date'],
             'deadline'          => $request['deadline'],
-            'job_location'      => $request['job_location'],
-            'salary_range'      => $request['salary_range']
+            'provinces'         => $request['provinces'], 
+            'city'              => $request['city'] ,
+            'salary_range'      => $request['salary_range'],
+            'kuota'             => $request['kuota']
         ];
         $ubah->update($jobs);
 

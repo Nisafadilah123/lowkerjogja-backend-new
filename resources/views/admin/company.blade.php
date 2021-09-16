@@ -33,7 +33,7 @@
                                         <th>Year</th>
                                         <th>Aksi</th>
                                     </tr>
-                                    @foreach ($corps as $corp)
+                                    @foreach ($corp as $corp)
                                     <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$corp->nama_corp}}</td>

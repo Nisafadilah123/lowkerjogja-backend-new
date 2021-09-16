@@ -30,7 +30,10 @@
                                         <th>Job Type</th>
                                         <th>Job Category</th>
                                         <th>Deadline</th>
-                                        <th>Salary Range</th>
+                                        <th>Provinsi</th>
+                                        <th>Kota</th>
+                                        <th>Range Gaji</th>
+                                        <th>Kuota</th>
                                         <th>Aksi</th>
                                         {{-- description	position	last_education	job_type	job_category	deadline	job_location	salary_range --}}
                                     </tr>
@@ -43,7 +46,10 @@
                                         <td style="vertical-align: middle;">{{$job->job_type}}</td>
                                         <td style="vertical-align: middle;">{{$job->job_category}}</td>
                                         <td style="vertical-align: middle;">{{$job->deadline}}</td>
+                                        <td style="vertical-align: middle;">{{$job->provinces}}</td>
+                                        <td style="vertical-align: middle;">{{$job->city}}</td>
                                         <td style="vertical-align: middle;">{{$job->salary_range}}</td>
+                                        <td style="vertical-align: middle;">{{$job->kuota}}</td>
                                         
                                        
                                         

@@ -14,23 +14,22 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $corp = Corp::count();
+        $jobs = Jobs::count();
+        return view('admin.dashboard',compact('corp', 'jobs'));
     }
 
-    public function admin()
-    {
-        $company = Corp::count();
-        $jobs = jobs::count();
-        // $candidate = candidate::all()->count();
-        return view('admin.dashboard', compact('company', 'jobs'));
-    }
+    // public function admin()
+    // {
+
+    // }
 
     public function company()
     {
         $i = 0;
         $i++;
-        $corps = Corp::latest()->get();
-        return view('admin.company', compact(['corps', 'i']));
+        $corp = Corp::latest()->get();
+        return view('admin.company', compact(['corp', 'i']));
     }
 
     public function jobs()
