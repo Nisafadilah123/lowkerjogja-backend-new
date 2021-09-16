@@ -49,6 +49,9 @@ class SkillController extends Controller
         $request->validate([
             'level' => 'required',
             'skill' => 'required'
+        ], [
+            'level.required' => 'Lengkapi Tingkatan Keterampilan Anda',
+            'skill.required' => 'Lengkapi Keterampilan Anda'
         ]);
         // return $request;
 
@@ -57,8 +60,9 @@ class SkillController extends Controller
         $skill->skill = $request->skill;
         $skill->user_id = Auth::user()->id;
         $skill->save();
+        alert()->success('Berhasil', 'Data berhasil ditambahkan');
 
-        return redirect('/skill')->with('status', 'sukses');
+        return redirect('/skill');
 
     }
 
@@ -100,6 +104,9 @@ class SkillController extends Controller
         $request->validate([
             'level' => 'required',
             'skill' => 'required'
+        ], [
+            'level.required' => 'Lengkapi Tingkatan Keterampilan Anda',
+            'skill.required' => 'Lengkapi Keterampilan Anda'
         ]);
 
         // return $request;
@@ -107,8 +114,9 @@ class SkillController extends Controller
         $skill->skill = $request->skill;
         $skill->user_id = Auth::user()->id;
         $skill->save();
+        alert()->success('Berhasil', 'Data berhasil di update');
 
-        return redirect('/skill')->with('status', 'sukses');
+        return redirect('/skill');
 
     }
 

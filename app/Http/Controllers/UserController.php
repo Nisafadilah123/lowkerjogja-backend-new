@@ -58,7 +58,7 @@ class UserController extends Controller
         // halaman logout
         public function logout()
         {
-            return view('user.logout');
+            return redirect()->route('login');
         }
 
         // Menu Profile
@@ -170,6 +170,7 @@ class UserController extends Controller
             ]);
         }
     }
+
 
 
 }

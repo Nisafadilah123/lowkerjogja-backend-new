@@ -159,10 +159,10 @@
                                                 <a href="{{ url('education/'.$item->id.'/edit') }}" class="btn btn-warning">
                                                 <i class="fas fa-edit"></i></a>
                                                 <td>
-                                                    <form id="delete-education" action="{{ url('education/'.$item->id) }}" method="POST" onsubmit="confirmDelete('delete-education')">
+                                                    <form id="delete-education" action="{{ url('education/'.$item->id) }}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                    <button class="btn btn-danger">
+                                                    <button type="submit" class="btn btn-danger delete">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
@@ -209,22 +209,23 @@
 </script>
 
 <script>
-    function confirmDelete(id) {
+    $('.delete').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+            title: `Apakah anda yakin ingin menghapus data ini ?`,
+              text: "Jika anda menghapusnya maka datanya akan di hapus secara permanen",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
 
-            swal({
-                title: "Apakah kamu yakin hapus data ini ?",
-                text: "Data ini akan terhapus secara permanen",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        $('#delete-education'+id).submit();
-                    } else {
-                        swal("Cancelled Successfully");
-                    }
-                });
-        }
 </script>
 @endpush

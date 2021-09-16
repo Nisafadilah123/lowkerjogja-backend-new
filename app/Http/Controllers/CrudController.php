@@ -110,13 +110,8 @@ class CrudController extends Controller
         $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
-<<<<<<< HEAD
         $dtUpload->deadline         = $request->deadline;
-        $dtUpload->job_location     = $request->job_location;
-=======
-        $dtUpload->deadline         = $request->deadline; 
-        // $dtUpload->job_location     = $request->job_location; 
->>>>>>> 14c221b873ed127ca83167c0d771a558557f0a71
+        // $dtUpload->job_location     = $request->job_location;
         $dtUpload->salary_range     = $request->salary_range;
 
         $dtUpload->save();

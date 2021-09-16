@@ -128,3 +128,5 @@ Route::resource('skill', SkillController::class);
 
 // company
 Route::get('/corp', [CompanyController::class, 'home']);
+
+Route::post('logged_in', [LoginController::class, 'authenticate']);

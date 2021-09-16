@@ -88,6 +88,8 @@
               <div class="col-sm-6">
                 <a href="/skill" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
+                    @include('sweet::alert')
+
                     <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
                   </div>
                 </a>
@@ -148,6 +150,16 @@
                     <a href="{{ url('skill/'.$item->id.'/edit') }}" class="btn btn-warning">
                     <i class="bi bi-pencil-square" style="float: right; "></i></a>
               </div>
+
+               {{-- delete --}}
+               <div class="col-lg-2 align-items-center">
+
+                <form action="{{ url('skill/'.$item->id) }}" method="POST" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button type="submit" class="btn btn-danger delete"><i class="fas fa-trash-alt" style="float: right; "></i></button>
+              </form>
+                </div>
             </div>
 
             @endforeach
@@ -165,3 +177,26 @@
 
 </section><!-- End Recent Blog Posts Section -->
 @endsection
+@push('script-addon')
+
+<script>
+    $('.delete').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Apakah anda yakin ingin menghapus data ini ?`,
+              text: "Jika anda menghapusnya maka datanya akan di hapus secara permanen",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+
+</script>
+@endpush
