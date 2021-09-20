@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ec6811e6587e503a91c65225ccd4b58515ab230b',
+    'reference' => 'bec10e2f1e3bbbca1e98f5b31de6f4f402af64b6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -186,12 +186,12 @@ private static $installed = array (
     ),
     'filp/whoops' => 
     array (
-      'pretty_version' => '2.14.1',
-      'version' => '2.14.1.0',
+      'pretty_version' => '2.14.3',
+      'version' => '2.14.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '15ead64e9828f0fc90932114429c4f7923570cb1',
+      'reference' => '89584ce67dd32307f1063cc43846674f4679feda',
     ),
     'fruitcake/laravel-cors' => 
     array (
@@ -523,7 +523,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ec6811e6587e503a91c65225ccd4b58515ab230b',
+      'reference' => 'bec10e2f1e3bbbca1e98f5b31de6f4f402af64b6',
     ),
     'laravel/sail' => 
     array (
@@ -590,12 +590,12 @@ private static $installed = array (
     ),
     'livewire/livewire' => 
     array (
-      'pretty_version' => 'v2.6.1',
-      'version' => '2.6.1.0',
+      'pretty_version' => 'v2.6.5',
+      'version' => '2.6.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0d8e44fb558a3f77835f0a8eefdaa98d766bc372',
+      'reference' => 'e39edcae6b1971b2d0f327a8e25c40e3d68cb7a0',
     ),
     'mobiledetect/mobiledetectlib' => 
     array (
@@ -617,12 +617,12 @@ private static $installed = array (
     ),
     'monolog/monolog' => 
     array (
-      'pretty_version' => '2.3.3',
-      'version' => '2.3.3.0',
+      'pretty_version' => '2.3.4',
+      'version' => '2.3.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '3962ebfe206ac7ce6c754c79e2fee0c64bf1818d',
+      'reference' => '437e7a1c50044b92773b361af77620efb76fff59',
     ),
     'mtdowling/cron-expression' => 
     array (
@@ -664,12 +664,12 @@ private static $installed = array (
     ),
     'nette/utils' => 
     array (
-      'pretty_version' => 'v3.2.3',
-      'version' => '3.2.3.0',
+      'pretty_version' => 'v3.2.4',
+      'version' => '3.2.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5c36cc1ba9bb6abb8a9e425cf054e0c3fd5b9822',
+      'reference' => '8b90ef7f5d02df449e632aff4d4a3ba5fc5b4312',
     ),
     'nikic/php-parser' => 
     array (
@@ -745,12 +745,12 @@ private static $installed = array (
     ),
     'phpdocumentor/type-resolver' => 
     array (
-      'pretty_version' => '1.4.0',
-      'version' => '1.4.0.0',
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+      'reference' => '30f38bffc6f24293dadd1823936372dfa9e86e2f',
     ),
     'phpoption/phpoption' => 
     array (
@@ -772,12 +772,12 @@ private static $installed = array (
     ),
     'phpunit/php-code-coverage' => 
     array (
-      'pretty_version' => '9.2.6',
-      'version' => '9.2.6.0',
+      'pretty_version' => '9.2.7',
+      'version' => '9.2.7.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f6293e1b30a2354e8428e004689671b83871edde',
+      'reference' => 'd4c798ed8d51506800b441f7a13ecb0f76f12218',
     ),
     'phpunit/php-file-iterator' => 
     array (
@@ -926,8 +926,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0 || 2.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
