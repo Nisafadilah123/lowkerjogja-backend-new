@@ -32,15 +32,7 @@ class UserController extends Controller
         {
             $corps = Corp::all();
             $jobs = Jobs::all();
-
-            // if(Route::has('register')){
-            //     alert()->success('Berhasil', 'Akun behasil terbuat');
                 return view('main.home',compact('corps', 'jobs'));
-
-            // }
-
-
-            // return view('main.home');
         }
 
         // halaman findjobs
@@ -72,34 +64,6 @@ class UserController extends Controller
         {
             return redirect()->route('login');
         }
-
-        // Menu Profile
-        // halaman myProfile
-        // public function myprofile()
-        // {
-        //     return view('user.myProfile');
-        // }
-
-        // halaman editProfile
-        // public function editProfile(Request $request)
-        // {
-        //     return view('user.editProfile', [
-        //         'user' => $request->user()
-        //     ]);
-        // }
-
-        // halaman education
-        // public function education()
-        // {
-        //     return view('user.education');
-        // }
-
-        // halaman editEducation
-        // public function editEdu()
-        // {
-        //     return view('user.editEducation');
-        // }
-
         // halaman skill
         public function skill()
         {
@@ -132,55 +96,6 @@ class UserController extends Controller
             ]);
         }
 
-    //     public function registrasi()
-    // {
-    //     return view('auth.register-ajax');
-    // }
-
-    // public function registrasi_post(Request $request){
-    //     $request->validate([
-    //         "name"=>"required"
-    //     ]);
-    // }
-
-    // public function registrasi_view(){
-    //     return view('auth.register_ajax');
-    // }
-
-    // public function create(Request $request){
-    //     $validation = Validator::make($request->all(), [
-    //         'name' => 'required|min:5',
-    //         'address' => 'required|min:5',
-    //         'email' => 'required|min:10',
-    //         'password' => 'required|min:5',
-    //     ],[
-    //         "name.required"=>"Membutuhkan nama lengkap",
-    //         "address.required"=>"Membutuhkan alamat lengkap",
-    //         "email.required"=>"Membutuhkan alamat email",
-    //         "password.required"=>"Membutuhkan kata sandi",
-    //     ]);
-
-
-    //     if($validation->fails()){
-    //         return response()->json([
-    //             "status" => false,
-    //             "result" => $validation->errors()
-    //         ]);
-    //     }else{
-    //         // logic
-    //         $user = new User;
-
-    //         $user->name = $request->name;
-    //         $user->address = $request->address;
-    //         $user->email = $request->email;
-    //         $user->password = $request->password;
-
-    //         $user->save();
-    //         alert()->success('Berhasil', 'Data berhasil ditambahkan');
-
-    //         return redirect('/home');
-    //     }
-    // }
 
     public function lihatjobs(Request $request){
 
@@ -251,65 +166,7 @@ class UserController extends Controller
         return view('user.detail', ['jobs' => $jobs]);
     }
 
-    public function registration()
-    {
-        return view('auth.register');
-    }
 
 
-    public function customRegistration(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-
-        $data = $request->all();
-        $check = $this->create($data);
-        alert()->success('Berhasil', 'Data berhasil ditambahkan');
-
-
-        return redirect("/home");
-    }
-
-
-    // public function create(array $data)
-    // {
-    //   return User::create([
-    //     'name' => $data['name'],
-    //     'email' => $data['email'],
-    //     'password' => Hash::make($data['password'])
-    //   ]);
-    // }
 
 }
-
-
-
- // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors()->all()]);
-        // } else {
-        //     $user = new \App\User;
-        //     $user->name = $req->nama;
-        //     $user->address = $req->address;
-        //     $user->email = $req->email;
-        //     $user->password = $req->password;
-        //     $simpan = $user->save();
-
-
-        //     $req->request->add(['user_id' => $user->id]);
-        //     if ($simpan == 1) {
-
-        //         $status = "Tersimpan";
-
-        //     } else {
-        //         $status = "Gagal";
-        //     }
-        //     echo json_encode(array("status" => $status));
-        // }
-
-
-        // $input = $request->all();
-            // $user = User::create($input);
-            // return response()->json($user, 200);
