@@ -92,6 +92,8 @@ Route::get('/editPassword', [UserController::class, 'editPassword']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
 Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
+Route::post('/register', [UserController::class, 'store']);
+
 
 // Route Halaman Vacancy
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
@@ -131,3 +133,11 @@ Route::resource('skill', SkillController::class);
 
 // company
 Route::get('/corp', [CompanyController::class, 'home']);
+
+Route::post('logged_in', [LoginController::class, 'authenticate']);
+
+Route::get('login', [UserController::class, 'index'])->name('login');
+Route::post('custom-login', [UserController::class, 'customLogin'])->name('login-custom');
+Route::get('registration', [UserController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [UserController::class, 'customRegistration'])->name('register-custom');
+Route::get('signout', [UserController::class, 'signOut'])->name('signout');

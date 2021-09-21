@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class CreateNewUser implements CreatesNewUsers
 {
     use PasswordValidationRules;
@@ -28,7 +28,14 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
+
         ])->validate();
+
+        // memberi pesan sukses
+        Alert::success('Congrats', 'You have Successfully Registered');
+
+
+
 
         return DB::transaction(function () use ($input) {
             return tap(User::create([

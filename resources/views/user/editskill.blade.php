@@ -70,7 +70,7 @@
               <div class="col-sm-6">
                 <a href="/profileUser" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">My Profile</h6>
                   </div>
                 </a>
               </div>
@@ -90,7 +90,7 @@
               <div class="col-sm-6">
                 <a href="/education" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight:bold; padding-right: 50px;">Education</h6>
+                    <h6 style="font-weight:bold; padding-right: 50px;text-decoration:none">Education</h6>
                   </div>
                 </a>
               </div>
@@ -110,7 +110,7 @@
               <div class="col-sm-6">
                 <a href="/skill" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Skills</h6>
                   </div>
                 </a>
               </div>
@@ -130,7 +130,7 @@
               <div class="col-sm-6">
                 <a href="/password" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Password</h6>
                   </div>
                 </a>
               </div>
@@ -153,6 +153,9 @@
             </div>
 
             @foreach ($skills as $item)
+            <form method="post" action="/skill/{{ $item->id }}">
+                @method('PUT')
+                   @csrf
 <div class="row align-items-start" style="padding-top: 20px;">
               <div class="col-4">
                 <h6 style="color: #A5B2C2;">Level</h6>
@@ -183,15 +186,7 @@
               <div class="col-lg-6 align-items-center">
                 <input class="form-control" name="skill" id="skill" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('skill', $item->skill) }}">
               </div>
-              {{-- delete --}}
-              <div class="col-lg-2 align-items-center">
 
-              <form action="{{ url('skill/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus data ?')">
-                @method('delete')
-                @csrf
-                <button class="btn btn-danger"><i class="fas fa-trash-alt" style="float: right; "></i></button>
-            </form>
-              </div>
 
             </div>
 
@@ -205,6 +200,8 @@
                         <span style="padding: 5px;">Save</span>
                 </div>
             </div>
+        </form>
+
             @endforeach
 
           </div>

@@ -5,6 +5,16 @@
 @section('container')
 
 <!-- ======= Hero Section ======= -->
+@if (session()->has('message'))
+<div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
+    role="alert">
+    <div class="flex">
+        <div>
+            <p class="text-sm">{{ session('message') }}</p>
+        </div>
+    </div>
+</div>
+@endif
 <section id="hero" class="hero d-flex align-items-center">
     <div class="container">
         <div class="row">
@@ -115,7 +125,7 @@
                     <br>
                     <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->position}}</h1>
                     <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->corp->location )}}</h6>
-                    <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($cp->salary_range)}}</h6>
+                    <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ ($cp->salary_range)}}</h6>
                 </div>
             </div> --}}
              <!--Row Satu-->
@@ -146,7 +156,7 @@
                            <div class="col" style="padding-top: 15px;">
                             <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->position}}</h1>
                             <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->corp->location )}}</h6>
-                            <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($cp->salary_range)}}</h6>
+                            <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ ($cp->salary_range)}}</h6>
                            </div>                         
                          </div>
                      </div>

@@ -42,10 +42,21 @@
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
                                 </div>
+<<<<<<< HEAD
+                                {{-- <div class="form-group">
+                                    <label for="deadline"><strong>Deadline</strong></label>
+                                    <input type="text" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
+                                </div> --}}
+                                {{-- <div class="form-group">
+                                    <label for="joblocation"><strong>Lokasi</strong></label>
+                                    <input type="text" name="job_location" id="joblocation" class="form-control" placeholder="Lokasi" required>
+                                </div> --}}
+=======
                                 <div class="form-group">
                                     <label for="provinces"><strong>Provinces</strong></label>
                                     <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required>
                                 </div>
+>>>>>>> 504f767ccdb06b69d45e977440acca11af39c1ef
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kota</strong></label>
                                     <input type="text" name="city" id="city" class="form-control" placeholder="city" required>

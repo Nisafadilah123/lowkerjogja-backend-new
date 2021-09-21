@@ -90,9 +90,9 @@
                     <li><a class="nav-link scrollto" href="/aboutUser">About Us</a></li>
 
                     <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
-                    <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
+                    <li class="dropdown pl-5" style="position:relative;right:50px">{{ ucfirst( Auth::user()->name) }}
                         <ul>
-                            <li class="align-items-center"><a href="/myprofile"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Profile</a></li>
+                            <li class="align-items-center"><a href="/profileUser "><i class="bi bi-person-circle" style="font-size: 20px;"></i>View Profile</a></li>
                             <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
                             <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -208,6 +208,7 @@
     <script src="{{ url('js/main.js') }}"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweetalert::alert')
 
     {{-- datepicker --}}
 

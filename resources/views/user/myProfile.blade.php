@@ -47,7 +47,7 @@
                             <div class="col-sm-6">
                                 <a href="/profileUser" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                        <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
+                                        <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">My Profile</h6>
                                     </div>
                                 </a>
                             </div>
@@ -67,7 +67,7 @@
                             <div class="col-sm-6">
                                 <a href="/education" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                        <h6 style="font-weight: bold;" style="padding-right: 50px;">Education</h6>
+                                        <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Education</h6>
                                     </div>
                                 </a>
                             </div>
@@ -87,7 +87,7 @@
                             <div class="col-sm-6">
                                 <a href="/skill" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                        <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
+                                        <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Skills</h6>
                                     </div>
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
                             <div class="col-sm-6">
                                 <a href="/password" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                        <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
+                                        <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Password</h6>
                                     </div>
                                 </a>
                             </div>

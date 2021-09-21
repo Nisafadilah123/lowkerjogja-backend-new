@@ -10,7 +10,7 @@ use PhpParser\Node\Expr\New_;
 use Illuminate\Support\Facades\Auth;
 // use Alert;
 use illuminate\Support\Str;
-use SweetAlert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class EducationController extends Controller
@@ -95,7 +95,7 @@ class EducationController extends Controller
         // $data['user_id'] = Auth::id();
         // Education::create($data);
         // return $request;
-        alert()->success('Berhasil', 'Data berhasil ditambahkan');
+        Alert::success('Success', 'You have Successfully Added');
 
         return redirect('/education');
 
@@ -179,7 +179,7 @@ class EducationController extends Controller
 
         $education->save();
 
-        alert()->success('Berhasil', 'Data berhasil di update');
+        Alert::success('Success', 'You have Successfully Updated');
 
             return redirect('/education');
     }
