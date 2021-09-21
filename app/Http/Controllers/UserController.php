@@ -7,12 +7,14 @@ use App\Models\Corp;
 use App\Models\Jobs;
 use App\Models\Education;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use DB;
+// use DB;
 use App\Post;
 use \App\lowker;
-
-
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -30,7 +32,14 @@ class UserController extends Controller
         {
             $corps = Corp::all();
             $jobs = Jobs::all();
-            return view('main.home',compact('corps', 'jobs'));
+
+            // if(Route::has('register')){
+            //     alert()->success('Berhasil', 'Akun behasil terbuat');
+                return view('main.home',compact('corps', 'jobs'));
+
+            // }
+
+
             // return view('main.home');
         }
 
@@ -134,48 +143,47 @@ class UserController extends Controller
     //     ]);
     // }
 
-    public function registrasi_view(){
-        return view('auth.register_ajax');
-    }
+    // public function registrasi_view(){
+    //     return view('auth.register_ajax');
+    // }
 
-    public function registrasi(Request $request){
-        $validation = Validator::make($request->all(), [
-            'name' => 'required|min:5',
-            'address' => 'required|min:5',
-            'email' => 'required|min:10',
-            'password' => 'required|min:5',
-        ],[
-            "name.required"=>"Membutuhkan nama lengkap",
-            "address.required"=>"Membutuhkan alamat lengkap",
-            "email.required"=>"Membutuhkan alamat email",
-            "password.required"=>"Membutuhkan kata sandi",
-        ]);
+    // public function create(Request $request){
+    //     $validation = Validator::make($request->all(), [
+    //         'name' => 'required|min:5',
+    //         'address' => 'required|min:5',
+    //         'email' => 'required|min:10',
+    //         'password' => 'required|min:5',
+    //     ],[
+    //         "name.required"=>"Membutuhkan nama lengkap",
+    //         "address.required"=>"Membutuhkan alamat lengkap",
+    //         "email.required"=>"Membutuhkan alamat email",
+    //         "password.required"=>"Membutuhkan kata sandi",
+    //     ]);
 
 
-        if($validation->fails()){
-            return response()->json([
-                "status" => false,
-                "result" => $validation->errors()
-            ]);
-        }else{
-            // logic
-            $user = new User;
+    //     if($validation->fails()){
+    //         return response()->json([
+    //             "status" => false,
+    //             "result" => $validation->errors()
+    //         ]);
+    //     }else{
+    //         // logic
+    //         $user = new User;
 
-            $user->name = $request->name;
-            $user->address = $request->address;
-            $user->email = $request->email;
-            $user->password = $request->password;
+    //         $user->name = $request->name;
+    //         $user->address = $request->address;
+    //         $user->email = $request->email;
+    //         $user->password = $request->password;
 
-            $user->save();
-            return response()->json([
-                "status" => $user->save(),
-                "result" => $user
-            ]);
-        }
-    }
+    //         $user->save();
+    //         alert()->success('Berhasil', 'Data berhasil ditambahkan');
+
+    //         return redirect('/home');
+    //     }
+    // }
 
     public function lihatjobs(Request $request){
-        
+
         // $id = DB::table('jobs')
         // ->where('id_jobs', $id_jobs)->first();
 
@@ -190,7 +198,7 @@ class UserController extends Controller
         // ->get();
 
 
-        return view('user.findjobs', 
+        return view('user.findjobs',
         ['lihatjobs'=> $lihatjobs]);
     }
 
@@ -202,11 +210,11 @@ class UserController extends Controller
     }
 
     public function insertcv(Request $request){
-        
+
         $myString = auth()->user()->email;
         $namauser = auth()->user()->name;
         $uid = auth()->user()->id;
-        
+
         $userid = DB::table('users')->select('id')
             ->where('id', $uid)
             ->orWhere('email', $myString)
@@ -237,12 +245,43 @@ class UserController extends Controller
         return redirect('/findjobsUser')->with('success', 'CV anda berhasil dikirim');
     }
 
-    public function detail_view($id) 
+    public function detail_view($id)
     {
         $jobs = DB::table('jobs')->where('id', $id)->get();
         return view('user.detail', ['jobs' => $jobs]);
-    }   
+    }
 
+    public function registration()
+    {
+        return view('auth.register');
+    }
+
+
+    public function customRegistration(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ]);
+
+        $data = $request->all();
+        $check = $this->create($data);
+        alert()->success('Berhasil', 'Data berhasil ditambahkan');
+
+
+        return redirect("/home");
+    }
+
+
+    // public function create(array $data)
+    // {
+    //   return User::create([
+    //     'name' => $data['name'],
+    //     'email' => $data['email'],
+    //     'password' => Hash::make($data['password'])
+    //   ]);
+    // }
 
 }
 

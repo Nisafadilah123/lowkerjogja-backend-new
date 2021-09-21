@@ -42,7 +42,7 @@ class CrudController extends Controller
         $dtUpload->work_day     = $request->work_day;
         $dtUpload->founded_year = $request->founded_year;
         $dtUpload->logo         = $namafile1;
-       
+
 
         $nm1->move(public_path() . '/template/img/logo', $namafile1);
         $dtUpload->save();
@@ -105,16 +105,11 @@ class CrudController extends Controller
         $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
-<<<<<<< HEAD
         $dtUpload->deadline         = $request->deadline;
-        // $dtUpload->job_location     = $request->job_location;
-=======
-        $dtUpload->deadline         = $request->deadline; 
-        $dtUpload->provinces        = $request->provinces; 
-        $dtUpload->city             = $request->city; 
->>>>>>> 504f767ccdb06b69d45e977440acca11af39c1ef
+        $dtUpload->provinces        = $request->provinces;
+        $dtUpload->city             = $request->city;
         $dtUpload->salary_range     = $request->salary_range;
-        $dtUpload->kuota            = $request->kuota; 
+        $dtUpload->kuota            = $request->kuota;
 
         $dtUpload->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
@@ -139,7 +134,7 @@ class CrudController extends Controller
             'job_category'      => $request['job_category'],
             'last_date'         => $request['last_date'],
             'deadline'          => $request['deadline'],
-            'provinces'         => $request['provinces'], 
+            'provinces'         => $request['provinces'],
             'city'              => $request['city'] ,
             'salary_range'      => $request['salary_range'],
             'kuota'             => $request['kuota']

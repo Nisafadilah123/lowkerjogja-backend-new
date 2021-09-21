@@ -88,7 +88,6 @@
               <div class="col-sm-6">
                 <a href="/skill" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    @include('sweet::alert')
 
                     <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
                   </div>
