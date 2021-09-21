@@ -176,6 +176,10 @@ class UserController extends Controller
 
     public function lihatjobs(Request $request){
         
+        //untuk merelasikan tabel corp dgn jobs | 
+        // $jobs = Jobs::with('corp')->get();
+        // return view('user.findjobs',compact('jobs'));
+        
         // $id = DB::table('jobs')
         // ->where('id_jobs', $id_jobs)->first();
 

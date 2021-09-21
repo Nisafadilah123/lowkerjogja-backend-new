@@ -42,15 +42,14 @@
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required value="{{$jobs->deadline}}">
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="deadline"><strong>Deadline</strong></label>
-                                    <input type="text" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required value={{$jobs->deadline}}>
-                                </div> --}}
-                                {{-- rev
-                                <div class="form-group"> rev
-                                    <label for="joblocation"><strong>Lokasi</strong></label>rev
-                                    <input type="text" name="job_location" id="joblocation" class="form-control" placeholder="Lokasi" required value={{$jobs->job_location}}>rev
-                                </div> rev --}}
+                                <div class="form-group">
+                                    <label for="provinces"><strong>Provinces</strong></label>
+                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required value="{{$jobs->provinces}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="joblocation"><strong>Kota</strong></label>
+                                    <input type="text" name="city" id="city" class="form-control" placeholder="city" required value="{{$jobs->city}}">
+                                </div>
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
                                     <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" required value={{$jobs->salary_range}}>
