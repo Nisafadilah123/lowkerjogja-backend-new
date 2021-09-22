@@ -17,7 +17,7 @@
                     <div class="block-options p-3">
                         <a href="{{url('create/company')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Baru</a>
                     </div>
-                    <div class="card"> 
+                    <div class="card">
 
                         <div class="card-body">
                             <div class="table-responsive">
@@ -45,9 +45,9 @@
                                         <td style="vertical-align: middle;">{{$corp->location}}</td>
                                         <td style="vertical-align: middle;">{{$corp->work_day}}</td>
                                         <td style="vertical-align: middle;">{{$corp->founded_year}}</td>
-                                        
-                                       
-                                        
+
+
+
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
                                             <a href="/company/{{$corp->id}}/edit" class="btn btn-sm btn-primary btn-circle " style="float:left"><i class="far fa-edit"></i></a>
                                             <form action="/company/{{$corp->id}}" method="post">
@@ -63,7 +63,7 @@
 
                                 </table>
                             </div>
-                        </div> 
+                        </div>
 
-    
+
 @endsection

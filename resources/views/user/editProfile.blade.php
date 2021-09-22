@@ -38,7 +38,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/user.png" width="30px" alt="">
+                                        <img src="/img/icons/user.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/mortarboard.png" width="35px" alt="">
+                                        <img src="/img/icons/mortarboard.png" width="35px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
 
 
                                 <div class="card-body">
-                                    <img src="img/icons/bar-chart.png" width="30px" alt="">
+                                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
 
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/password.png" width="30px" alt="">
+                                        <img src="/img/icons/password.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                         <div class="container px-1">
                             <div class="row">
                                 <div class="col align-items-center">
-                                    <img src="img/icons/user.png" alt="" width="35px" style="float: left;">
+                                    <img src="/img/icons/user.png" alt="" width="35px" style="float: left;">
 
                                     <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">My Profile<a href="corp-edit-about.html"></a></h6>
 
@@ -133,129 +133,79 @@
                         </div>
                     </h5>
                     <div class="card-body">
-                        <!-- nama -->
-                        {{-- <div class="row g-3">
-                            <label for="nama">Nama</label>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Jhons" aria-label="First name">
-                            </div>
-                        </div> --}}
+                        {{-- @foreach ($users as $item) --}}
 
-                        <br>
-                        <!-- address -->
-                        {{-- <div class="row g-3">
-                            <label for="nama">Address</label>
-                            <div class="col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Yogyakarta</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>DIY Yogyakarta</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br> --}}
-
-                        <!-- email -->
-                        {{-- <div class="row g-3">
-                            <label for="nama">Email</label>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Jhons@gmail.com" aria-label="First name">
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center">
-                            <div class="col mt-4">
-                                <div class="fileUpload btn btn-outline-dark">
-                                    <span style="font-size: 13px;">Browse...</span>
-                                    <input id="uploadBtn" type="file" class="upload" />
-                                </div>
-
-                            </div>
-                            <div class="col">
-                                <a href="#about" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span>Cancel</span>
-                                </a>
-                                <a href="#about" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span style="padding: 5px;">Save</span>
-                                </a>
-                            </div>
-                        </div> --}}
-
-                        @foreach ($users as $item)
-
-                        <form method="post" action="/profil/{{ $item->id }}">
+                        <form method="post" action="/user/{{ (Auth::user()->id) }}" enctype="multipart/form-data">
                             @method('PUT')
                                @csrf
             <div class="row align-items-start" style="padding-top: 20px;">
-                          <div class="col-4">
+                          <div class="col-12">
                             <!-- nama -->
-                        <div class="row g-3">
-                            <label for="nama">Nama</label>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Jhons" aria-label="First name">
+                        <div class="row">
+                            <label for="nama">Nama Lengkap</label>
+                            <div class="col-12">
+                                <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda">
                             </div>
                         </div>
 
                         <br>
-                        <!-- address -->
-                        <div class="row g-3">
-                            <label for="nama">Address</label>
-                            <div class="col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Yogyakarta</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                        <!-- provinsi dan kota -->
+                        <div class="row">
+                            <div class="col-6">
+                                <label name="provinsi" for="provinsi">Provinsi</label>
+                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
+                                    <option selected>-- Pilih Provinsi --</option>
                                 </select>
                             </div>
-                            <div class="col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>DIY Yogyakarta</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+
+                            <div class="col-6">
+                                <label name="kota" for="kota">Kota</label>
+                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
+                                <option selected>-- Pilih Kota --</option>
+                            </select>
                             </div>
                         </div>
                         <br>
 
                         <!-- email -->
                         <div class="row g-3">
+                            <label for="nama">Alamat</label>
+                            <div class="col">
+                                <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda">
+                            </div>
+                        </div>
+
+
+                        <!-- email -->
+                        <div class="row g-3">
                             <label for="nama">Email</label>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Jhons@gmail.com" aria-label="First name">
+                                <input name="email" type="text" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda">
                             </div>
                         </div>
 
                         <div class="row align-items-center">
-                            <div class="col mt-4">
-                                <div class="fileUpload btn btn-outline-dark">
-                                    <span style="font-size: 13px;">Browse...</span>
-                                    <input id="uploadBtn" type="file" class="upload" />
-                                </div>
-
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
+                                <img src="{{asset('template/img/user/'. Auth::user()->profile_photo_path)}}" class="img-thumbnail" width="200px">
+                                <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{ (Auth::user()->profile_photo_path) }}" class="form-control-file" id="hidden_image">
                             </div>
-                            <div class="col">
-                                <a href="#about" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span>Cancel</span>
-                                </a>
-                                <a href="#about" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span style="padding: 5px;">Save</span>
-                                </a>
+
+                            <div class="row">
+
+                                <div class="col">
+                                    <a href="/user" style="margin-left: 350px ;" class="btn btn-outline-primary">
+                                        <span>Cancel</span>
+                                    </a>
+                                    <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
+                                        <span style="padding: 5px;">Save</span>
+                                </div>
                             </div>
                         </div>
                     </form>
 
-                    @endforeach
+                    {{-- @endforeach --}}
 
 
                     </div>
@@ -272,3 +222,39 @@
 
 
 @endsection
+
+@push('script-addon')
+<script>
+    $.ajax({
+        "url":"/get-provinsi",
+        "type":"GET",
+        success:function(hasil_result){
+            console.log("prov",hasil_result)
+            var option_prov="<option>-- Pilih Provinsi --</option>";
+            hasil_result.forEach(element => {
+                option_prov+=`<option value="${element.province_id}">${element.province}</option>`;
+            });
+            $(".prov-data").html(option_prov);
+        }
+    });
+
+    $(document).on("change",".prov-data",function(){
+        var prov_sel = $(".prov-data option:selected").val();
+        console.log("pilih prov",prov_sel)
+        $.ajax({
+            "url":"/get-kota",
+            "data":{prov_id:prov_sel},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("kota",hasil_result)
+                var option_prov="<option>-- Pilih Kota --</option>";
+                hasil_result.forEach(element => {
+                    option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
+                });
+                $(".kota-data").html(option_prov);
+            }
+        });
+    });
+
+</script>
+@endpush

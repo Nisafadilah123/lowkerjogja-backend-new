@@ -48,10 +48,10 @@ class UserController extends Controller
         }
 
         // halaman profile
-        public function profile()
-        {
-            return view('user.myProfile');
-        }
+        // public function profile()
+        // {
+        //     return view('user.myProfile');
+        // }
 
         // halaman jobs
         public function jobs()
@@ -59,11 +59,6 @@ class UserController extends Controller
             return view('user.jobs');
         }
 
-        // halaman logout
-        public function logout()
-        {
-            return redirect()->route('login');
-        }
         // halaman skill
         public function skill()
         {
@@ -87,15 +82,6 @@ class UserController extends Controller
         {
             return view('user.editPassword');
         }
-
-        // halaman editProfile
-        public function editPro(Request $request)
-        {
-            return view('user.editPro', [
-                'user' => $request->user()
-            ]);
-        }
-
 
     public function lihatjobs(Request $request){
 

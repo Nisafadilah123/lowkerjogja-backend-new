@@ -94,7 +94,7 @@
 @endsection
 
 
-@push('script-addon')
+{{-- @push('script-addon')
     <script>
         $(document).on("submit",".registrasi",function(){
             if()
@@ -105,4 +105,4 @@
         });
 
     </script>
-@endpush
+@endpush --}}
