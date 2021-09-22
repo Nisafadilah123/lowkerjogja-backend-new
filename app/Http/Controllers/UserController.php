@@ -263,13 +263,3 @@ class UserController extends Controller
 
         //         $status = "Tersimpan";
 
-        //     } else {
-        //         $status = "Gagal";
-        //     }
-        //     echo json_encode(array("status" => $status));
-        // }
-
-
-        // $input = $request->all();
-            // $user = User::create($input);
-            // return response()->json($user, 200);

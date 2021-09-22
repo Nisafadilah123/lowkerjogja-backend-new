@@ -9,6 +9,9 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ProfillUserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,14 +82,8 @@ Route::get('/succes', [MainController::class, 'succes']);
 Route::get('/homeUser', [UserController::class, 'home']);
 Route::get('/findjobsUser', [UserController::class, 'lihatjobs']);
 Route::get('/aboutUser', [UserController::class, 'about']);
-Route::get('/profileUser', [UserController::class, 'profile']);
 Route::get('/jobsUser', [UserController::class, 'jobs']);
 // Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile');
-Route::get('/editProfile', [UserController::class, 'editProfile']);
-// Route::get('/education', [UserController::class, 'education']);
-// Route::get('/editEdu', [UserController::class, 'editEdu']);
-// Route::get('/skill', [UserController::class, 'skill']);
-// Route::get('/editSkill', [UserController::class, 'editSkill']);
 Route::get('/password', [UserController::class, 'password']);
 Route::get('/editPassword', [UserController::class, 'editPassword']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
@@ -94,6 +91,8 @@ Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
 Route::post('/register', [UserController::class, 'store']);
 
+// Routes Halaman Profil User
+Route::resource('profil', ProfillUserController::class);
 
 // Route Halaman Vacancy
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
@@ -133,11 +132,3 @@ Route::resource('skill', SkillController::class);
 
 // company
 Route::get('/corp', [CompanyController::class, 'home']);
-
-Route::post('logged_in', [LoginController::class, 'authenticate']);
-
-Route::get('login', [UserController::class, 'index'])->name('login');
-Route::post('custom-login', [UserController::class, 'customLogin'])->name('login-custom');
-Route::get('registration', [UserController::class, 'registration'])->name('register-user');
-Route::post('custom-registration', [UserController::class, 'customRegistration'])->name('register-custom');
-Route::get('signout', [UserController::class, 'signOut'])->name('signout');

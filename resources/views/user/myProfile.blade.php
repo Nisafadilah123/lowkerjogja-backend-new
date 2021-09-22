@@ -31,8 +31,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="row align-items-center mt-4">
 
                             <div class="col-sm-2">
@@ -127,9 +125,12 @@
                             <img src="img/icons/user.png" alt="" width="35px" style="float: left;">
 
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">My Profile</h6>
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                    <i class="bi bi-pencil-square" style="font-size: 18px; color: #4154f1; float: right; "></i>
-                                </x-jet-dropdown-link>
+                            @foreach ($users as $item)
+                            <a href="{{ url('profil/'.$item->id.'/edit') }}">
+                                <i class="bi bi-pencil-square" style="font-size: 18px; color: #4154f1; float: right; "></i>
+                            </a>
+                            @endforeach
+
 
                         </div>
                         <div class="row align-items-center" style="padding-top: 20px;">
