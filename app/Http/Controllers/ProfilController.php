@@ -32,7 +32,7 @@ class ProfilController extends Controller
         $nm1->move(public_path() . '/template/img/user', $namafile1);
         $dtUpload->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
-        return redirect('/profileUser');
+        return redirect('/user');
     }
 
     public function editProfile(User $user)
@@ -60,7 +60,7 @@ class ProfilController extends Controller
         $ubah->update($user);
 
         alert()->success('Berhasil', 'Data berhasil diubah');
-        return redirect('/profileUser');
+        return redirect('/user');
     }
 
     public function deletecompany($id)
@@ -68,7 +68,7 @@ class ProfilController extends Controller
         $user = User::find($id);
         $user->delete();
         alert()->success('Berhasil', 'Data Berhasil dihapus');
-        return redirect('/profileUser');
+        return redirect('/user');
 
     }
 

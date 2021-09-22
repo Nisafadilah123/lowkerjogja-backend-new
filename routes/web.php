@@ -92,7 +92,7 @@ Route::post('/kirimcv', [UserController::class, 'insertcv']);
 Route::post('/register', [UserController::class, 'store']);
 
 // Routes Halaman Profil User
-Route::resource('profil', ProfillUserController::class);
+Route::resource('user', ProfillUserController::class);
 
 // Route Halaman Vacancy
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);

@@ -43,7 +43,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/profileUser" class="about">
+                                <a href="/user" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
                                         <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">My Profile</h6>
                                     </div>
@@ -126,7 +126,7 @@
 
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">My Profile</h6>
                             @foreach ($users as $item)
-                            <a href="{{ url('profil/'.$item->id.'/edit') }}">
+                            <a href="{{ url('user/'. $item->id.'/edit') }}">
                                 <i class="bi bi-pencil-square" style="font-size: 18px; color: #4154f1; float: right; "></i>
                             </a>
                             @endforeach

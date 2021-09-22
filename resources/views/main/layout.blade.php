@@ -69,7 +69,7 @@
                         <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
                         <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
                             <ul>
-                                <li class="align-items-center"><a href="/profileUser"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
+                                <li class="align-items-center"><a href="/user"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
                                 <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
                                 <li class="align-items-center">
                                     <form method="POST" action="{{ route('logout') }}">

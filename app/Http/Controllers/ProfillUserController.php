@@ -16,7 +16,7 @@ class ProfillUserController extends Controller
     {
         //
         $users = User::all();
-            return view('user.myProfile');
+            return view('user.myProfile', compact('users'));
     }
 
     /**
