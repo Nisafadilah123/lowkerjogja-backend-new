@@ -73,7 +73,7 @@ class MainController extends Controller
         // ->get();
 
 
-        return view('user.findjobs', 
+        return view('main.findjobs', 
         ['lihatjobs'=> $lihatjobs]);
     }
 
