@@ -52,7 +52,8 @@
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
         <div class="row">
-        @foreach($lihatjobs as $l)
+        @foreach ($lihatjobs as $l)
+        {{-- pilihan kedua jika error @foreach($jobs as $l) --}}
             <div class="col-lg-4">
                 <div class="post-box">
                     <div class="row align-items-start">
@@ -71,8 +72,10 @@
                         <div class="col">
                             <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
                                 <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
+                                {{-- otomatis <img src="{{ asset('template/img/logo/'.$l->corp->logo)}}" style="float:left; margin:0 8px 4px 0;" /> --}}
                                 <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
+                                <h6 style="color:#4154f1; font-weight: bold;">Link Aja, Indonesian</h6>
+                                {{-- otomatis <h6 style="color:#4154f1; font-weight: bold;">{{ ucfirst($l->corp->nama_corp) }}, Indonesian</h6> --}}
                             </div>
                         </div>
                         <div class="row align-items-start">

@@ -50,7 +50,7 @@
                                     <input type="text" name="founded_year" id="foundedyear" class="form-control" placeholder="Founded Year" required value={{$corp->founded_year}}>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="far fa-edit"> </span>Edit Room</button>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="far fa-edit"> </span> Edit Perusahaan</button>
                                 </div>
                             </div>
                         </div>

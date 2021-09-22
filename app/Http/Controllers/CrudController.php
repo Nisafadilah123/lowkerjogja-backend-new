@@ -106,10 +106,21 @@ class CrudController extends Controller
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline;
-        $dtUpload->provinces        = $request->provinces;
-        $dtUpload->city             = $request->city;
+        // $dtUpload->provinces        = $request->provinces;
+        // $dtUpload->city             = $request->city;
         $dtUpload->salary_range     = $request->salary_range;
         $dtUpload->kuota            = $request->kuota;
+        $dtUpload->gender           = $request->gender;
+        $dtUpload->age              = $request->age;
+        $dtUpload->location         = $request->location;
+        $dtUpload->syarat           = $request->syarat;
+        $dtUpload->email            = $request->email;
+        $dtUpload->telp             = $request->telp;
+
+
+
+
+
 
         $dtUpload->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
@@ -126,6 +137,7 @@ class CrudController extends Controller
     {
         $ubah = Jobs::findorfail($id);
 
+        return $request;
         $jobs = [
             'description'       => $request['description'],
             'position'          => $request['position'],
@@ -134,10 +146,15 @@ class CrudController extends Controller
             'job_category'      => $request['job_category'],
             'last_date'         => $request['last_date'],
             'deadline'          => $request['deadline'],
-            'provinces'         => $request['provinces'],
-            'city'              => $request['city'] ,
+            // 'provinces'         => $request['provinces'],
+            // 'city'              => $request['city'] ,
             'salary_range'      => $request['salary_range'],
-            'kuota'             => $request['kuota']
+            'kuota'             => $request['kuota'],
+            'gender'            => $request['gender'],
+            'age'               => $request['age'],
+            'location'          => $request['location'],
+            'email'             => $request['email'],
+            'telp'              => $request['telp']
         ];
         $ubah->update($jobs);
 

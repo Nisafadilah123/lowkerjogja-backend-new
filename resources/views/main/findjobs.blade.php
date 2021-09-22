@@ -12,20 +12,6 @@
     }
 </style>
 <!-- Pencarian -->
-@extends('main.layout')
-
-@section('title', 'Find Jobs | Lowkerjogja.com')
-
-@section('container')
-
-<!-- find jobs section -->
-<style>
-    #graduate option[selected]{
-        background-image: url('mortarboard.png');
-    }
-    }
-</style>
-<!-- Pencarian -->
 <section id="find" class="find">
     <div class="container" data-aos="fade-up" style="margin-top: 100px;">
         <div class="row">
