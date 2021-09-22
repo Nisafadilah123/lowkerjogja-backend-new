@@ -89,7 +89,7 @@ Route::get('/editPassword', [UserController::class, 'editPassword']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
 Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
-Route::post('/register', [UserController::class, 'store']);
+// Route::post('/register', [UserController::class, 'store']);
 
 // Routes Halaman Profil User
 Route::resource('profil', ProfillUserController::class);
