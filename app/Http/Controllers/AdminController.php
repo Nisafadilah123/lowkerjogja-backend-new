@@ -12,17 +12,19 @@ use Alert;
 
 class AdminController extends Controller
 {
-    public function dashboard()
+    public function admin()
     {
         $corp = Corp::count();
         $jobs = Jobs::count();
         return view('admin.dashboard',compact('corp', 'jobs'));
     }
 
-    // public function admin()
-    // {
-
-    // }
+    public function dashbiard()
+    {
+        $corp = Corp::count();
+        $jobs = Jobs::count();
+        return view('admin.dashboard',compact('corp', 'jobs'));
+    }
 
     public function company()
     {

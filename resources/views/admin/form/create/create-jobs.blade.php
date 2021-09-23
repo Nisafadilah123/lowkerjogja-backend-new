@@ -35,40 +35,65 @@
                                     <input type="text" name="job_type" id="jobtype" class="form-control" placeholder="Tipe Pekerjaan" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jobcategory"><strong>category Pekerjaan</strong></label>
-                                    <input type="text" name="job_category" id="jobcategory" class="form-control" id="datepicker" placeholder="category Pekerjaan" required>
+                                    <label for="jobcategory"><strong>Kategori Pekerjaan</strong></label>
+                                    <input type="text" name="job_category" id="jobcategory" class="form-control" placeholder="Kategori Pekerjaan" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
                                 </div>
-<<<<<<< HEAD
                                 {{-- <div class="form-group">
-                                    <label for="deadline"><strong>Deadline</strong></label>
-                                    <input type="text" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
-                                </div> --}}
-                                {{-- <div class="form-group">
-                                    <label for="joblocation"><strong>Lokasi</strong></label>
-                                    <input type="text" name="job_location" id="joblocation" class="form-control" placeholder="Lokasi" required>
-                                </div> --}}
-=======
-                                <div class="form-group">
                                     <label for="provinces"><strong>Provinces</strong></label>
                                     <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required>
                                 </div>
->>>>>>> 504f767ccdb06b69d45e977440acca11af39c1ef
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kota</strong></label>
                                     <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
                                     <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" input class="datepicker" data-date-format="mm/dd/yyyy" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kuota</strong></label>
-                                    <input type="text" name="kuota" id="kuota" class="form-control" placeholder="kuota" required>
+                                    <input type="text" name="kuota" id="kuota" class="form-control" placeholder="Kuota" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="gender"><strong>Gender</strong></label>
+                                    <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age"><strong>Umur</strong></label>
+                                    <input type="text" name="age" id="age" class="form-control" placeholder="Umur" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location"><strong>Lokasi</strong></label>
+                                    <input type="text" name="location" id="location" class="form-control" placeholder="Lokasi" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="syarat"><strong>Syarat</strong></label>
+                                    <input type="text" name="syarat" id="syarat" class="form-control" placeholder="Syarat" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"><strong>Email</strong></label>
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telp"><strong>Telp</strong></label>
+                                    <input type="text" name="telp" id="telp" class="form-control" placeholder="Telp" required>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label name="provinces" for="provinces" style=""><strong>Provinsi</strong></label>
+                                    <select name="provinces" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                        <option selected>-- Pilih Provinsi --</option>
+                                      </select>
+                                </div>
+                                <div class="form-group col-sm-2">
+                                    <label name="city" for="city"><strong>City</strong></label>
+                                    <select name="city" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                        <option selected>-- Pilih Kota --</option>
+                                      </select>
+                                    </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span> Tambah Data</button>
                                 </div>
@@ -93,3 +118,39 @@
     });
 </script>
 @endpush
+@push('script-addon')
+<script>
+    $.ajax({
+        "url":"/get-provinsi",
+        "type":"GET",
+        success:function(hasil_result){
+            console.log("prov",hasil_result)
+            var option_prov="<option>-- Pilih Provinsi --</option>";
+            hasil_result.forEach(element => {
+                option_prov+=`<option value="${element.province_id}">${element.province}</option>`;
+            });
+            $(".prov-data").html(option_prov);
+        }
+    });
+
+    $(document).on("change",".prov-data",function(){
+        var prov_sel = $(".prov-data option:selected").val();
+        console.log("pilih prov",prov_sel)
+        $.ajax({
+            "url":"/get-kota",
+            "data":{prov_id:prov_sel},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("kota",hasil_result)
+                var option_prov="<option>-- Pilih Kota --</option>";
+                hasil_result.forEach(element => {
+                    option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
+                });
+                $(".kota-data").html(option_prov);
+            }
+        });
+    });
+
+</script>
+@endpush
+
