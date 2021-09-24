@@ -23,7 +23,7 @@ use App\Http\Controllers\ProfillUserController;
 |
 */
 
-Route::get("tes-rajaongkir",function(){
+Route::post("tes-rajaongkir",function(){
     $hasil = rajaongkir_point("province");
     return response()->json($hasil);
 });
@@ -114,7 +114,8 @@ Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
 // ajax
-// Route::get('/get-registrasi', [UserController::class, 'registrasi']);
+Route::post('/get-provinsi', [ProfillUserController::class, 'province']);
+Route::post('/get-kota', [ProfillUserController::class, 'city']);
 
 Route::get('/token', function () {
     return csrf_token();

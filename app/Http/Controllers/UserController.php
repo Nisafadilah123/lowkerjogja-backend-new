@@ -8,23 +8,12 @@ use App\Models\Jobs;
 use App\Models\Education;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use DB;
+// use DB;
 use App\Post;
 use \App\lowker;
-
-
-
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
-    public function province(){
-        $hasil = rajaongkir_point("province");
-        return response()->json($hasil);
-    }
-
-    public function city(Request $request){
-        $hasil = rajaongkir_point("city",["province=$request->prov_id"]);
-        return response()->json($hasil);
-    }
         // halaman home
         public function home()
         {
@@ -58,7 +47,7 @@ class UserController extends Controller
             return view('user.jobs');
         }
 
-     
+
         public function logout()
         {
             return view('user.logout');
@@ -115,9 +104,6 @@ class UserController extends Controller
             return view('user.editPassword');
         }
 
-<<<<<<< HEAD
-    public function lihatjobs(Request $request){
-=======
         // halaman editProfile
         public function editPro(Request $request)
         {
@@ -176,10 +162,9 @@ class UserController extends Controller
             ]);
         }
     }
->>>>>>> e14cfe9359c99fcc165eae38d278773fce0be415
 
     public function lihatjobs(Request $request){
-        
+
         // $id = DB::table('jobs')
         // ->where('id_jobs', $id_jobs)->first();
 
@@ -194,7 +179,7 @@ class UserController extends Controller
         // ->get();
 
 
-        return view('user.findjobs', 
+        return view('user.findjobs',
         ['lihatjobs'=> $lihatjobs]);
     }
 
@@ -206,11 +191,11 @@ class UserController extends Controller
     }
 
     public function insertcv(Request $request){
-        
+
         $myString = auth()->user()->email;
         $namauser = auth()->user()->name;
         $uid = auth()->user()->id;
-        
+
         $userid = DB::table('users')->select('id')
             ->where('id', $uid)
             ->orWhere('email', $myString)
@@ -241,15 +226,12 @@ class UserController extends Controller
         return redirect('/findjobsUser')->with('success', 'CV anda berhasil dikirim');
     }
 
-    public function detail_view($id) 
+    public function detail_view($id)
     {
         $jobs = DB::table('jobs')->where('id', $id)->get();
         return view('user.detail', ['jobs' => $jobs]);
-    }   
+    }
 
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -269,5 +251,3 @@ class UserController extends Controller
         //     if ($simpan == 1) {
 
         //         $status = "Tersimpan";
-
->>>>>>> e14cfe9359c99fcc165eae38d278773fce0be415

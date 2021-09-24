@@ -88,88 +88,36 @@ class ProfillUserController extends Controller
                             'kota.required' => 'Lengkapi Kota Anda',
 
                 ]);
-                $input = $request->all();
+                // $input = array(
+                //     'name' => $request->name,
+                //     'email' => $request->email,
+                //     'address' => $request->address,
+                //     'provinsi' =>$request->province_id,
+                //     'kota' => $request->city,
+
+                // );
+                // $input = $request->all();
+                // dd($input);
+                $user->name = $request->name;
+                $user->email = $request->email;
+                $user->address = $request->address;
+                $user->provinsi = $request->provinsi;
+                $user->kota = $request->kota;
+
 
                 if ($image = $request->file('profile_photo_path')) {
-                    $destinationPath = 'profile_photos/';
+                    // $destinationPath = 'profile_photos/';
                     $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-                    $image->move($destinationPath, $profileImage);
-                    $input['profile_photo_path'] = "$profileImage";
+                    $image->move(public_path().'/profile_photos', $profileImage);
+                    $user['profile_photo_path'] = "$profileImage";
                 }else{
-                    unset($input['profile_photo_path']);
+                    unset($user['profile_photo_path']);
                 }
+                $user->save();
 
-                $user->update($input);
+                // $user->update($input);
 
-
-        //
-        // $old_image_name = $request->hidden_image;
-        // $image = $request->file('profile_photo_path');
-
-        // if ($image != '') {
-        //     # code...
-        //     $request->validate([
-        //         'name' => 'required',
-        //         'email' => 'required',
-        //         'address' => 'required',
-        //         'provinsi' => 'required',
-        //         'kota' => 'required',
-        //         'profile_photo_path'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        //     ],
-        // );
-        //     $image_name = $old_image_name;
-        //     $image->move(public_path('profile_photo_path'), $image_name);
-        // }else{
-        //     $request->validate([
-        //         'name' => 'required',
-        //         'email' => 'required',
-        //         'address' => 'required',
-        //         'provinsi' => 'required',
-        //         'kota' => 'required',
-        //         ], [
-        //                 'name.required' => 'Lengkapi Nama Anda',
-        //                 'email.required' => 'Lengkapi Email Anda',
-        //                 'address.required' => 'Lengkapi Alamat Anda',
-        //                 'provinsi.required' => 'Lengkapi Provinsi Anda',
-        //                 'kota.required' => 'Lengkapi Kota Anda',
-
-        //     ]);
-        //     $image_name = $old_image_name;
-        // }
-
-
-
-        // // return $request;
-        // $user->user_id = Auth::user()->id;
-        // $user->name = $request->name;
-        // $user->address = $request->address;
-        // $user->provinsi = $request->provinsi;
-        // $user->kota = $request->email;
-        // $user->email = $request->email;
-        // $user->profile_photo_path = $image_name;
-
-        // dd($user);
-        // // $user->save();
-        // alert()->success('Berhasil', 'Data berhasil di update');
-
-        // return redirect('/user');
-
-        // $ubah = User::findorfail($id);
-        // $awal1 = $ubah->profile_photo_path;
-
-        // if ($request['profile_photo_path'] != null) {
-
-        //     $request->profile_photo_path->move(public_path() . '/template/img/user', $awal1);
-        // }
-
-        // $user = [
-        //     'name'     =>  $request['name'],
-        //     'email'   =>  $request['email'],
-        //     'address'      =>  $request['address'],
-        //     'profile_photo_path'          =>  $awal1,
-        // ];
-        // $ubah->update($user);
-
+// dd($user);
         alert()->success('Berhasil', 'Data berhasil diubah');
         return redirect('/user');
     }
@@ -183,5 +131,15 @@ class ProfillUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function province(){
+        $hasil = rajaongkir_point_post("province");
+        return response()->json($hasil);
+    }
+
+    public function city(Request $request){
+        $hasil = rajaongkir_point_post("city",["province=$request->province"]);
+        return response()->json($hasil);
     }
 }

@@ -27,7 +27,7 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
-                                <img src="{{  Auth::user()->profile_photo_url   }}" class="image">
+                                <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                                 <h6 style="font-weight: bold;padding-right:150px; float:right">{{ ucfirst(Auth::user()->name) }}</h6>
                                 <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">View Profile</h6>
                             </div>

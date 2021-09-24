@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Corp;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
-use DB;
-
+use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     public function provinsi(){
@@ -54,8 +53,8 @@ class MainController extends Controller
     // }
 
     public function lihatjobs(Request $request){
-        
-        //untuk merelasikan tabel corp dgn jobs | 
+
+        //untuk merelasikan tabel corp dgn jobs |
         // $jobs = Jobs::with('corp')->get();
         // return view('user.findjobs',compact('jobs'));
 
@@ -73,7 +72,7 @@ class MainController extends Controller
         // ->get();
 
 
-        return view('main.findjobs', 
+        return view('main.findjobs',
         ['lihatjobs'=> $lihatjobs]);
     }
 

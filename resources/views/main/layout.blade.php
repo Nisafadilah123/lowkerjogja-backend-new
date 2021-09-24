@@ -66,7 +66,7 @@
 
                     @if (Route::has('login'))
                         @auth
-                        <li style="position:relative; left:100px"><img src="{{  Auth::user()->profile_photo_url   }}" class="rounded-image"></li>
+                        <li style="position:relative; left:100px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
                         <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
                             <ul>
                                 <li class="align-items-center"><a href="/user"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>

@@ -76,4 +76,14 @@ class User extends Authenticatable
     public function corp(){
         return $this->hasOne(Corp::class);
     }
+
+    public function setProvinsiAttribute($value)
+    {
+        $this->attributes['provinsi'] = json_encode($value);
+    }
+
+    public function getProvinsiAttribute($value)
+    {
+        return $this->attributes['provinsi'] = json_decode($value);
+    }
 }

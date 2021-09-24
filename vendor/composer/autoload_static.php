@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInit51e95137e0b58b6232d9ea175f74c653
-=======
-class ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb
->>>>>>> e14cfe9359c99fcc165eae38d278773fce0be415
+class ComposerStaticInit6d93e64f2d6cc3841c902edd993497f0
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -1518,6 +1514,7 @@ class ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -5985,17 +5982,10 @@ class ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit51e95137e0b58b6232d9ea175f74c653::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit51e95137e0b58b6232d9ea175f74c653::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit51e95137e0b58b6232d9ea175f74c653::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit51e95137e0b58b6232d9ea175f74c653::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6f8766ea7b24c691ea1e73f30cb7d4eb::$classMap;
->>>>>>> e14cfe9359c99fcc165eae38d278773fce0be415
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6d93e64f2d6cc3841c902edd993497f0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6d93e64f2d6cc3841c902edd993497f0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit6d93e64f2d6cc3841c902edd993497f0::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit6d93e64f2d6cc3841c902edd993497f0::$classMap;
 
         }, null, ClassLoader::class);
     }

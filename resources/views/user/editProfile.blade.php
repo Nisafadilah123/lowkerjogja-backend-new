@@ -26,7 +26,7 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
-                                <img src="{{  Auth::user()->profile_photo_url   }}" class="image">
+                                <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                                 <h6 style="font-weight: bold;padding-right:150px; float:right">{{ ucfirst(Auth::user()->name)  }}</h6>
                                 <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">View Profile</h6>
                             </div>
@@ -188,8 +188,8 @@
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file input</label>
                                 <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
-                                <img src="{{asset('template/img/user/'. Auth::user()->profile_photo_path)}}" class="img-thumbnail" width="200px">
-                                <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{ (Auth::user()->profile_photo_path) }}" class="form-control-file" id="hidden_image">
+                                <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
+                                <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">
                             </div>
 
                             <div class="row">
@@ -232,7 +232,7 @@
             console.log("prov",hasil_result)
             var option_prov="<option>-- Pilih Provinsi --</option>";
             hasil_result.forEach(element => {
-                option_prov+=`<option value="${element.province_id}">${element.province}</option>`;
+                option_prov+=`<option value="${element.province}">${element.province}</option>`;
             });
             $(".prov-data").html(option_prov);
         }
@@ -243,13 +243,13 @@
         console.log("pilih prov",prov_sel)
         $.ajax({
             "url":"/get-kota",
-            "data":{prov_id:prov_sel},
+            "data":{province:prov_sel},
             "type":"GET",
             success:function(hasil_result){
                 console.log("kota",hasil_result)
                 var option_prov="<option>-- Pilih Kota --</option>";
                 hasil_result.forEach(element => {
-                    option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
+                    option_prov+=`<option value="${element.city_name}">${element.city_name}</option>`;
                 });
                 $(".kota-data").html(option_prov);
             }
