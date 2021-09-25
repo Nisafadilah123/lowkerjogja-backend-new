@@ -159,7 +159,7 @@
                             </div>
 
                             <div class="col-lg-4">
-                                <h6 style="font-weight: bold;">{{ Auth::user()->address }}, {{ Auth::user()->provinsi }}</h6>
+                                <h6 style="font-weight: bold;">{{ Auth::user()->address }}, {{ $city->city_name }}, {{ $province->province }}</h6>
                             </div>
                         </div>
 

@@ -114,8 +114,8 @@ Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
 // ajax
-Route::post('/get-provinsi', [ProfillUserController::class, 'province']);
-Route::post('/get-kota', [ProfillUserController::class, 'city']);
+Route::get('/get-provinsi2', [ProfillUserController::class, 'province']);
+Route::get('/get-kota3', [ProfillUserController::class, 'city']);
 
 Route::get('/token', function () {
     return csrf_token();

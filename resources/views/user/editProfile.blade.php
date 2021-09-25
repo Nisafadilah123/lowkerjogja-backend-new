@@ -223,16 +223,19 @@
 
 @endsection
 
+
+{{-- ini ke scirpt yang numpukin itu. --}}
+{{-- ini ke scirpt yang numpukin itu. --}}
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi",
+        "url":"/get-provinsi2",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
             var option_prov="<option>-- Pilih Provinsi --</option>";
             hasil_result.forEach(element => {
-                option_prov+=`<option value="${element.province}">${element.province}</option>`;
+                option_prov+=`<option value="${element.province_id}">${element.province}</option>`;
             });
             $(".prov-data").html(option_prov);
         }
@@ -242,14 +245,14 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota",
-            "data":{province:prov_sel},
+            "url":"/get-kota3",
+            "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){
                 console.log("kota",hasil_result)
                 var option_prov="<option>-- Pilih Kota --</option>";
                 hasil_result.forEach(element => {
-                    option_prov+=`<option value="${element.city_name}">${element.city_name}</option>`;
+                    option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
                 });
                 $(".kota-data").html(option_prov);
             }
