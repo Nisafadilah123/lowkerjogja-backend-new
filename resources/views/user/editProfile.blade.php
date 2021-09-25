@@ -153,16 +153,29 @@
                         <div class="row">
                             <div class="col-6">
                                 <label name="provinsi" for="provinsi">Provinsi</label>
-                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
-                                    <option selected>-- Pilih Provinsi --</option>
-                                </select>
+                                @if ($province->province==null)
+                                    <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
+                                        <option value="">-- Pilih Provinsi --</option>
+                                    </select>
+                                @endif
+
                             </div>
 
                             <div class="col-6">
                                 <label name="kota" for="kota">Kota</label>
-                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
-                                <option selected>-- Pilih Kota --</option>
-                            </select>
+                                @if ($city->city_name==null)
+                                    <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
+                                        <option selected>-- Pilih Kota --</option>
+                                    </select>
+                                    @else
+                                    <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
+                                        {{-- <option value="Auth::user()->kota">{{ $city->city_name }}</option> --}}
+                                        {{-- <option selected>-- Pilih Kota --</option> --}}
+
+                                    </select>
+
+                                @endif
+
                             </div>
                         </div>
                         <br>

@@ -18,8 +18,8 @@ class ProfillUserController extends Controller
         //
         $users = Auth::user();
         $province = rajaongkir_point('province', 'GET', ['id=' . $users->provinsi]);
-        $city = rajaongkir_point('city', 'GET', ['city_id=' . '&'.$users->kota]);
-        dd($city);
+        $city = rajaongkir_point('city', 'GET', ['id=' .$users->kota. 'province='.$users->provinsi]);
+        // dd($city);
 
         // return response()->json($hasil);
         // dd($province);
@@ -69,8 +69,11 @@ class ProfillUserController extends Controller
     {
         //
         $users = User::find($id);
+        $users = Auth::user();
+        $province = rajaongkir_point('province', 'GET', ['id=' . $users->provinsi]);
+        $city = rajaongkir_point('city', 'GET', ['id=' .$users->kota. 'province='.$users->provinsi]);
 
-        return view('user.editProfile', compact('users'));
+        return view('user.editProfile', compact('users', 'province', 'city'));
     }
 
     /**
