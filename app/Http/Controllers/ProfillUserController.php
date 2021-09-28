@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Rules\MatchOldPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfillUserController extends Controller
 {
@@ -153,4 +155,60 @@ class ProfillUserController extends Controller
         $hasil = rajaongkir_point("city",["province=$request->prov_id"]);
         return response()->json($hasil);
     }
+
+    public function editPassword($id){
+        $users = User::find($id);
+
+        return view('user.editPassword', compact('users'));
+
+    }
+
+    public function updatePassword(Request $request){
+        $request->validate([
+            // 'old_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        $user= User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+
+        // dd($user);
+        // $request->validate([
+        //     'old_password' => 'required',
+        //     'new_password' => 'required|min:8',
+        //     'password_confirmation' => 'required|same:new_password'
+        //     ], [
+        //             'old_password' => 'Lengkapi Kata Sandi Anda, Kata Sandi Min. 8 Karakter',
+        //             'new_password' => 'Lengkapi Kata Sandi Anda, Kata Sandi Min. 8 Karakter',
+        //             'password_confirmation' => 'Ulangi Kata Sandi Anda'
+
+        // ]);
+
+        // $current_user=auth()->user();
+
+        // dd($current_user);
+        // if (Hash::check($request->old_password, $current_user->password)) {
+        //     $user->save();
+        //     return redirect('/password')->with('success', 'Old password sesuai');
+        // }else{
+        //     return redirect()->back()->with('error', 'Old Password tak sesuai');
+        // }
+
+        // $user->password = Hash::make($request->password);
+
+        // return view('user.editPassword', compact('users'));
+        // $user = $request->all();
+
+        // if(!Hash::check($user['password'], auth()->user()->password)){
+        //     alert()->danger('error','You have entered wrong password');
+        //      return back();
+
+        // }else{
+
+        return view('user.password');
+
+        // }
+
+    }
+
 }

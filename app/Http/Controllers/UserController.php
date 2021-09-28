@@ -11,7 +11,10 @@ use Illuminate\Support\Facades\Validator;
 // use DB;
 use App\Post;
 use \App\lowker;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
         // halaman home
@@ -35,12 +38,6 @@ class UserController extends Controller
             return view('user.about');
         }
 
-        // halaman profile
-        // public function profile()
-        // {
-        //     return view('user.myProfile');
-        // }
-
         // halaman jobs
         public function jobs()
         {
@@ -48,120 +45,10 @@ class UserController extends Controller
         }
 
 
-        public function logout()
-        {
-            return view('user.logout');
-        }
-
-        // Menu Profile
-        // halaman myProfile
-        // public function myprofile()
-        // {
-        //     return view('user.myProfile');
-        // }
-
-        // halaman editProfile
-        // public function editProfile(Request $request)
-        // {
-        //     return view('user.editProfile', [
-        //         'user' => $request->user()
-        //     ]);
-        // }
-
-        // halaman education
-        // public function education()
-        // {
-        //     return view('user.education');
-        // }
-
-        // halaman editEducation
-        // public function editEdu()
-        // {
-        //     return view('user.editEducation');
-        // }
-
-        // halaman skill
-        public function skill()
-        {
-            return view('user.skill');
-        }
-
-        // halaman editSkill
-        public function editSkill()
-        {
-            return view('user.editSkill');
-        }
-
-        // halaman password
         public function password()
         {
             return view('user.password');
         }
-
-        // halaman editPassword
-        public function editPassword()
-        {
-            return view('user.editPassword');
-        }
-
-        // halaman editProfile
-        public function editPro(Request $request)
-        {
-            return view('user.editPro', [
-                'user' => $request->user()
-            ]);
-        }
-
-    //     public function registrasi()
-    // {
-    //     return view('auth.register-ajax');
-    // }
-
-    // public function registrasi_post(Request $request){
-    //     $request->validate([
-    //         "name"=>"required"
-    //     ]);
-    // }
-
-    public function registrasi_view(){
-        return view('auth.register_ajax');
-    }
-
-    public function registrasi(Request $request){
-        $validation = Validator::make($request->all(), [
-            'name' => 'required|min:5',
-            'address' => 'required|min:5',
-            'email' => 'required|min:10',
-            'password' => 'required|min:5',
-        ],[
-            "name.required"=>"Membutuhkan nama lengkap",
-            "address.required"=>"Membutuhkan alamat lengkap",
-            "email.required"=>"Membutuhkan alamat email",
-            "password.required"=>"Membutuhkan kata sandi",
-        ]);
-
-
-        if($validation->fails()){
-            return response()->json([
-                "status" => false,
-                "result" => $validation->errors()
-            ]);
-        }else{
-            // logic
-            $user = new User;
-
-            $user->name = $request->name;
-            $user->address = $request->address;
-            $user->email = $request->email;
-            $user->password = $request->password;
-
-            $user->save();
-            return response()->json([
-                "status" => $user->save(),
-                "result" => $user
-            ]);
-        }
-    }
 
     public function lihatjobs(Request $request){
 
@@ -232,22 +119,10 @@ class UserController extends Controller
         return view('user.detail', ['jobs' => $jobs]);
     }
 
+    public function edit($id){
+        $users = User::find($id);
+        return view('user.editPassword', compact('users'));
+
+    }
+
 }
-
-
-
- // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors()->all()]);
-        // } else {
-        //     $user = new \App\User;
-        //     $user->name = $req->nama;
-        //     $user->address = $req->address;
-        //     $user->email = $req->email;
-        //     $user->password = $req->password;
-        //     $simpan = $user->save();
-
-
-        //     $req->request->add(['user_id' => $user->id]);
-        //     if ($simpan == 1) {
-
-        //         $status = "Tersimpan";

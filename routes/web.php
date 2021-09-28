@@ -85,14 +85,16 @@ Route::get('/aboutUser', [UserController::class, 'about']);
 Route::get('/jobsUser', [UserController::class, 'jobs']);
 // Route::get('/myprofile', [UserController::class, 'myprofile'])->name('myprofile');
 Route::get('/password', [UserController::class, 'password']);
-Route::get('/editPassword', [UserController::class, 'editPassword']);
+Route::get('/editPassword/{$id}', [UserController::class, 'edit']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
 Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
-// Route::post('/register', [UserController::class, 'store']);
 
 // Routes Halaman Profil User
+Route::get('/user/{id}/editPassword', [ProfillUserController::class, 'editPassword']);
+Route::post('/user/{id}/updatePassword', [ProfillUserController::class, 'updatePassword']);
 Route::resource('user', ProfillUserController::class);
+// Route::get('/user/{$id}/editPassword', [ProfillUserController::class, 'editPassword']);
 
 // Route Halaman Vacancy
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);

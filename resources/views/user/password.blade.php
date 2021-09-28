@@ -41,7 +41,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/user.png" width="30px" alt="">
+                                        <img src="/img/icons/user.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/mortarboard.png" width="35px" alt="">
+                                        <img src="/img/icons/mortarboard.png" width="35px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
 
 
                                 <div class="card-body">
-                                    <img src="img/icons/bar-chart.png" width="30px" alt="">
+                                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
 
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <img src="img/icons/password.png" width="30px" alt="">
+                                        <img src="/img/icons/password.png" width="30px" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -126,12 +126,12 @@
 
                     <div class="row align-items-center">
                         <div class="col align-items-center">
-                            <img src="img/icons/password.png" alt="" width="30px" style="float: left;">
+                            <img src="/img/icons/password.png" alt="" width="30px" style="float: left;">
 
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Password
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}">
                                 <i class="bi bi-pencil-square" style="font-size: 18px; color: #4154f1; float: right; "></i>
-                            </x-jet-dropdown-link>
+                            </a>
                         </div>
                         <div class="row align-items-center" style="padding-top: 20px;">
                             <div class="col-lg-3">
@@ -139,7 +139,7 @@
                             </div>
 
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="inputPassword2" value="{{ Auth::user()->password }}">
+                                <input name="old_password" type="password" class="form-control" id="old_password" value="{{ Auth::user()->password }}">
                             </div>
                         </div>
 

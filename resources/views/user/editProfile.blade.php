@@ -106,7 +106,7 @@
                             <div class="col-sm-6">
                                 <a href="/password" class="about">
                                     <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                        <h6 style="font-weight: bold;" style="padding-right: 50px;text-decoration:none">Password</h6>
+                                        <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
                                     </div>
                                 </a>
                             </div>
@@ -138,7 +138,7 @@
                         <form method="post" action="/user/{{ (Auth::user()->id) }}" enctype="multipart/form-data">
                             @method('PUT')
                                @csrf
-            <div class="row align-items-start" style="padding-top: 20px;">
+                        <div class="row align-items-start" style="padding-top: 20px;">
                           <div class="col-12">
                             <!-- nama -->
                         <div class="row">
@@ -147,41 +147,30 @@
                                 <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda">
                             </div>
                         </div>
+                          </div>
+                    </div>
 
                         <br>
                         <!-- provinsi dan kota -->
                         <div class="row">
                             <div class="col-6">
                                 <label name="provinsi" for="provinsi">Provinsi</label>
-                                @if ($province->province==null)
-                                    <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
-                                        <option value="">-- Pilih Provinsi --</option>
-                                    </select>
-                                @endif
-
+                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
+                                    <option selected>-- Pilih Provinsi --</option>
+                                </select>
                             </div>
 
                             <div class="col-6">
                                 <label name="kota" for="kota">Kota</label>
-                                @if ($city->city_name==null)
-                                    <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
-                                        <option selected>-- Pilih Kota --</option>
-                                    </select>
-                                    @else
-                                    <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
-                                        {{-- <option value="Auth::user()->kota">{{ $city->city_name }}</option> --}}
-                                        {{-- <option selected>-- Pilih Kota --</option> --}}
-
-                                    </select>
-
-                                @endif
-
+                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
+                                <option selected>-- Pilih Kota --</option>
+                            </select>
                             </div>
                         </div>
                         <br>
 
                         <!-- email -->
-                        <div class="row g-3">
+                        <div class="row">
                             <label for="nama">Alamat</label>
                             <div class="col">
                                 <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda">
@@ -190,12 +179,13 @@
 
 
                         <!-- email -->
-                        <div class="row g-3">
+                        <div class="row" style="padding-top: 20px;">
                             <label for="nama">Email</label>
                             <div class="col">
                                 <input name="email" type="text" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda">
                             </div>
                         </div>
+
 
                         <div class="row align-items-center">
                             <div class="form-group">

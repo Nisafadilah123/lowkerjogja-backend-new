@@ -97,22 +97,22 @@
 
             <div class="row align-items-center">
 
-              <div class="col-sm-2">
-                <div class="">
+                <div class="col-sm-2">
+                    <div class="">
 
-                  <div class="card-body">
-                    <img src="img/icons/password.png" width="30px" alt="">
-                  </div>
+                        <div class="card-body">
+                            <img src="/img/icons/password.png" width="30px" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <br><br>
-              <div class="col-sm-6">
-                <a href="/password" class="about">
-                  <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
-                  </div>
-                </a>
-              </div>
+                <br><br>
+                <div class="col-sm-6">
+                    <a href="/password" class="about">
+                        <div class="card-body" style="width: 300px; padding-left: 30px;">
+                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
+                        </div>
+                    </a>
+                </div>
             </div>
 
           </div>
