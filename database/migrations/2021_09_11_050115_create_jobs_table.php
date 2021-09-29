@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->bigInteger('corp_id')->unsigned();
             $table->foreign('corp_id')->references('id')->on('corp')->onDelete('cascade');
-            $table->text('description');
+            $table->text('description_job');
             $table->string('position');
             $table->string('last_education');
             $table->string('job_type');

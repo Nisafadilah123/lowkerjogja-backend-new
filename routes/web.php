@@ -76,6 +76,7 @@ Route::get('/findjobs', [MainController::class, 'lihatjobs']);
 // Route::get('/login', [MainController::class, 'login']);
 // Route::get('/signup', [MainController::class, 'signup']);
 Route::get('/succes', [MainController::class, 'succes']);
+Route::get('/detailmain{id}', [MainController::class, 'detailmain']);
 
 
 // Routes Halaman User

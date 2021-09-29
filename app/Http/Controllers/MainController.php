@@ -53,27 +53,25 @@ class MainController extends Controller
     // }
 
     public function lihatjobs(Request $request){
-
-        //untuk merelasikan tabel corp dgn jobs |
-        // $jobs = Jobs::with('corp')->get();
-        // return view('user.findjobs',compact('jobs'));
-
-        // $id = DB::table('jobs')
-        // ->where('id_jobs', $id_jobs)->first();
-
         $lihatjobs = DB::table('jobs')
-        ->select('id', 'job_type', 'created_at', 'position', 'city', 'provinces', 'salary_range' )
+        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+        'jobs.city', 'jobs.provinces', 'jobs.salary_range')
         ->get();
 
-        // $logo = DB::table('companies')->select('logo')
-        // ->get();
-
-        // $namacorp = DB::table('job_id')->select('corp_id')
-        // ->get();
-
-
-        return view('main.findjobs',
+        return view('main.findjobs', 
         ['lihatjobs'=> $lihatjobs]);
+    }
+
+    public function detailmain($id) 
+    {
+        $jobs = DB::table('jobs')
+        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+        'jobs.city', 'jobs.provinces', 'jobs.salary_range', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
+        ->where('jobs.id', $id)
+        ->get();
+        return view('main.detailmain', ['jobs' => $jobs]);
     }
 
 }

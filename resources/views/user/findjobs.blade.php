@@ -4,6 +4,13 @@
 
 @section('container')
 
+<!-- find jobs section -->
+<style>
+    #graduate option[selected]{
+        background-image: url('mortarboard.png');
+    }
+    }
+</style>
 <!-- Pencarian -->
 <section id="find" class="find">
     <div class="container" data-aos="fade-up" style="margin-top: 100px;">
@@ -25,7 +32,7 @@
 
                             <div class="col-md-6">
                                 <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
-                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
+                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
                                     <option selected>-- Pilih Provinsi --</option>
                                 </select>
 
@@ -52,8 +59,7 @@
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
         <div class="row">
-        @foreach ($lihatjobs as $l)
-        {{-- pilihan kedua jika error @foreach($jobs as $l) --}}
+        @foreach($lihatjobs as $l)
             <div class="col-lg-4">
                 <div class="post-box">
                     <div class="row align-items-start">
@@ -67,23 +73,23 @@
                             <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $l->created_at }}</div>
                         </div>
                     </div>
-
                     <div class="row align-items-start">
                         <div class="col">
                             <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
-                                {{-- otomatis <img src="{{ asset('template/img/logo/'.$l->corp->logo)}}" style="float:left; margin:0 8px 4px 0;" /> --}}
+                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
                                 <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link Aja, Indonesian</h6>
-                                {{-- otomatis <h6 style="color:#4154f1; font-weight: bold;">{{ ucfirst($l->corp->nama_corp) }}, Indonesian</h6> --}}
+                                <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                             </div>
                         </div>
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
                                 <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
+                                <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>
+                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>                    
+                                <!-- Button lamar -->
                                 <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
+                                <!-- Button detail --> 
                                 <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>

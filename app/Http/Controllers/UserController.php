@@ -22,7 +22,7 @@ class UserController extends Controller
         {
             $corps = Corp::all();
             $jobs = Jobs::all();
-            return view('main.home',compact('corps', 'jobs'));
+            return view('user.home',compact('corps', 'jobs'));
             // return view('main.home');
         }
 
@@ -50,79 +50,73 @@ class UserController extends Controller
             return view('user.password');
         }
 
-    public function lihatjobs(Request $request){
-
-        // $id = DB::table('jobs')
-        // ->where('id_jobs', $id_jobs)->first();
-
-        $lihatjobs = DB::table('jobs')
-        ->select('id', 'job_type', 'created_at', 'position', 'city', 'provinces', 'salary_range' )
-        ->get();
-
-        // $logo = DB::table('companies')->select('logo')
-        // ->get();
-
-        // $namacorp = DB::table('job_id')->select('corp_id')
-        // ->get();
-
-
-        return view('user.findjobs',
-        ['lihatjobs'=> $lihatjobs]);
-    }
-
-    public function lamar_view($id){
-        $idjob = DB::table('jobs')->where('id', $id)
-        ->get();
-
-        return view('user.lamar', ['jobs' => $idjob]);
-    }
-
-    public function insertcv(Request $request){
-
-        $myString = auth()->user()->email;
-        $namauser = auth()->user()->name;
-        $uid = auth()->user()->id;
-
-        $userid = DB::table('users')->select('id')
-            ->where('id', $uid)
-            ->orWhere('email', $myString)
-            ->orWhere('name', $namauser)
+        public function lihatjobs(Request $request){
+            $lihatjobs = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->get();
-
-        $data = new lowker;
-        if ($request->file('cv')) {
-            $file = $request->file('cv');
-            $namauser = $namauser;
-            $ext = $file->getClientOriginalExtension();
-            $nama_file = $namauser . "." . $file->getClientOriginalExtension();
-            $path = 'CV';
-            $file->getMimeType();
-            $file->move($path, $nama_file);
-            $data->file = $nama_file;
+    
+            return view('user.findjobs', 
+            ['lihatjobs'=> $lihatjobs]);
         }
-
-        DB::table('apply_jobs')->insert(
-            [
-                'user_id' => $uid,
-                'job_id' => $request->idjob,
-                'cv' => $data->file,
-                'status' => $request->letter
-            ]
-        );
-
-        return redirect('/findjobsUser')->with('success', 'CV anda berhasil dikirim');
-    }
-
-    public function detail_view($id)
-    {
-        $jobs = DB::table('jobs')->where('id', $id)->get();
-        return view('user.detail', ['jobs' => $jobs]);
-    }
-
-    public function edit($id){
-        $users = User::find($id);
-        return view('user.editPassword', compact('users'));
-
-    }
+    
+        public function lamar_view($id){
+            $lamarview = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            ->where('jobs.id', $id)
+            ->get();
+    
+            return view('user.lamar', ['lamarview' => $lamarview]);
+        }
+    
+        public function insertcv(Request $request){
+    
+            $myString = auth()->user()->email;
+            $namauser = auth()->user()->name;
+            $uid = auth()->user()->id;
+    
+            $userid = DB::table('users')->select('id')
+                ->where('id', $uid)
+                ->orWhere('email', $myString)
+                ->orWhere('name', $namauser)
+                ->get();
+    
+            $data = new lowker;
+            if ($request->file('cv')) {
+                $file = $request->file('cv');
+                $namauser = $namauser;
+                $ext = $file->getClientOriginalExtension();
+                $nama_file = $namauser . "." . $file->getClientOriginalExtension();
+                $path = 'CV';
+                $file->getMimeType();
+                $file->move($path, $nama_file);
+                $data->file = $nama_file;
+            }
+    
+            DB::table('apply_jobs')->insert(
+                [
+                    'user_id' => $uid,
+                    'job_id' => $request->idjob,
+                    'cv' => $data->file,
+                    'status' => $request->letter
+                ]
+            );
+            alert()->success('Berhasil', 'CV anda berhasil dikirim');
+            return redirect('/findjobsUser');
+        }
+    
+        public function detail_view($id) 
+        {
+            $jobs = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.salary_range', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
+            ->where('jobs.id', $id)
+            ->get();
+            return view('user.detail', ['jobs' => $jobs]);
+        }
 
 }

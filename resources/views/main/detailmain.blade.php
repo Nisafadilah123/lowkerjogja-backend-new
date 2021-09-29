@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('main.layout')
 
 @section('title', 'Find Jobs | Detail Pekerjaan')
 
@@ -84,10 +84,10 @@
 
             <div class="row">
                 <div class="col">
-                        <a href="/findjobsUser" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                        <a href="/findjobs" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                             <span>Kembali</span>
                         </a>
-                        <a href="/lamar{{ $i->id }}" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                        <a href="/login" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                             <span style="padding: 5px;">Lamar</span>
                         </a>
                 </div>

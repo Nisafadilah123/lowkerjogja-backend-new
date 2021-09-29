@@ -6,7 +6,7 @@
 
 <!-- ======= Recent Blog Posts Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
-@foreach($jobs as $i)
+@foreach($lamarview as $i)
 <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-12">
@@ -15,16 +15,16 @@
                         <div class="col">
                         </div>
                         <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-left: 400px;" class="bi bi-clock"></i>21 Mei 2021</div>
+                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-left: 400px;" class="bi bi-clock"></i>{{ $i->created_at}}</div>
                         </div>
                     </div>
                     <div class="row align-items-start">
                         <div class="col">
                             <div> <i style="padding-left: 990px; padding-top: 10px; z-index: 1; font-size: 30px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" width="180" height="180" alt="400" style="float:left; margin:0 10px 10px 0;" />
+                                <img src="/template/img/logo/{{$i->logo}}" width="180" height="180" alt="400" style="float:left; margin:0 10px 10px 0;" />
                                 <br>
                                 <h1><b>{{ $i->position }}<b></h1>
-                                <h2 style="color:#4154f1;">Link aja</h2>
+                                <h2 style="color:#4154f1;">{{ $i->nama_corp }}</h2>
                                 <h3 style="color:#808080;">{{ $i->city }}, {{ $i->provinces }}</h3>
                                 <h3 style="color:#4154f1;">{{ $i->salary_range }}</h3>
                             </div>

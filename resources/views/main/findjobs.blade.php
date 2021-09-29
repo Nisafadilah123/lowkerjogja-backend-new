@@ -73,24 +73,24 @@
                             <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $l->created_at }}</div>
                         </div>
                     </div>
-
                     <div class="row align-items-start">
                         <div class="col">
                             <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
+                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
                                 <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
+                                <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                             </div>
                         </div>
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
                                 <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
+                                <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
                                 <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>                    
-                                <!-- Button lamar -->
-                                <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
-                                <!-- Button detail --> 
-                                <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
+                                <!-- Button lamar/harusnya login -->
+                                <a class="btn btn-primary" href="/login" role="button">Lamar</a>
+                                <!-- Button detail/perlu revisi --> 
+                                <a class="btn btn-primary" href="/detailmain{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>
                     </div>
