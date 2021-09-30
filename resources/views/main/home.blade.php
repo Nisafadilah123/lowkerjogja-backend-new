@@ -122,6 +122,7 @@
                     <h6 style="color: #28A59F; padding-top: 5px;">{{ ($cp->salary_range)}}</h6>
                 </div>
             </div> --}}
+<<<<<<< HEAD
             <!--Row Satu-->
             @foreach($lihatjobs as $l)
             <div class="col-lg-4">
@@ -163,6 +164,76 @@
             @endforeach
         </div>
         <!--Row Dua-->
+=======
+             <!--Row Satu-->
+             @foreach($jobs as $cp)
+             <div class="col-lg-4">
+                 <div class="post-box">
+                   <div class="row align-items-start">
+                       <div class="col">
+                         <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $cp->corp->work_day }}</p>
+                       </div>
+                       <div class="col">
+                        <div></div>
+                       </div>
+                       <div class="col">
+                           <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $cp->corp->founded_year }}</div>
+                          </div>
+                     </div>
+                     <div class="row align-items-start">
+                         <div class="col">
+                           <div >
+                               <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
+                               <img src="{{ asset('template/img/logo/'.$cp->corp->logo)}}" style="float:left; margin:0 8px 4px 0;"/>
+                               <br>
+                               <h6 style="color:#4154f1; font-weight: bold;">{{ ucfirst($cp->corp->nama_corp) }}, Indonesian</h6>
+                           </div>
+                         </div>
+                         <div class="row align-items-start">
+                           <div class="col" style="padding-top: 15px;">
+                            <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->position}}</h1>
+                            <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->corp->location )}}</h6>
+                            <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ ($cp->salary_range)}}</h6>
+                           </div>
+                         </div>
+                     </div>
+                 </div>
+               </div>
+               @endforeach
+               {{-- <div class="col-lg-4">
+                 <div class="post-box">
+                   <div class="row align-items-start">
+                       <div class="col">
+                         <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">Full-time</p>
+                       </div>
+                       <div class="col">
+                        <div></div>
+                       </div>
+                       <div class="col">
+                           <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
+                          </div>
+                     </div>
+                     <div class="row align-items-start">
+                         <div class="col">
+                           <div >  <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
+                               <img src="assets/img/7.png" style="float:left; margin:0 8px 4px 0;"/>
+                               <br>
+                               <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
+                           </div>
+                         </div>
+                         <div class="row align-items-start">
+                           <div class="col" style="padding-top: 15px;">
+                            <h1 style="font-weight: bold; font-size: 27px;">Programmer</h1>
+                            <h6 style="color: #BEBFC0;">Yogyakarta, Indonesia</h6>
+                            <h6 style="color: #28A59F; padding-top: 5px;">Rp.5.000.000 - 7.000.000</h6>
+                           </div>
+                         </div>
+                     </div>
+                 </div>
+               </div> --}}
+           </div>
+           <!--Row Dua-->
+>>>>>>> ef7ac89781608022e6636e6c48921d1088a25af2
         </div>
 </section><!-- End Recent Blog Posts Section -->
 <!-- ======= Job Category ======= -->
