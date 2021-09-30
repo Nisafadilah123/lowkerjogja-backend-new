@@ -23,7 +23,9 @@ class EducationController extends Controller
     public function index()
     {
         // menampilkan relasi antara model education dan user
-        $educations = Education::with('user')->get();
+        $educations = Education::where('user_id', Auth::user()->id)->get();
+
+        // dd($educations);
         return view('user.education', compact('educations'));
 
     }
@@ -120,7 +122,7 @@ class EducationController extends Controller
      */
     public function edit(Education $education)
     {
-        $educations = Education::all();
+        $educations = Education::where('user_id', Auth::user()->id)->get();
 
         return view('user.editEducation', compact('educations'));
 
@@ -175,6 +177,7 @@ class EducationController extends Controller
         $education->major =$request->major;
         $education->gpa=$request->gpa;
         $education->gpa_limit=$request->gpa_limit;
+        $education->user_id = Auth::user()->id;
 
 
         $education->save();

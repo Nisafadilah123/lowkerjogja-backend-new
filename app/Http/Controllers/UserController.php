@@ -56,11 +56,11 @@ class UserController extends Controller
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->get();
-    
-            return view('user.findjobs', 
+
+            return view('user.findjobs',
             ['lihatjobs'=> $lihatjobs]);
         }
-    
+
         public function lamar_view($id){
             $lamarview = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
@@ -68,22 +68,22 @@ class UserController extends Controller
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->where('jobs.id', $id)
             ->get();
-    
+
             return view('user.lamar', ['lamarview' => $lamarview]);
         }
-    
+
         public function insertcv(Request $request){
-    
+
             $myString = auth()->user()->email;
             $namauser = auth()->user()->name;
             $uid = auth()->user()->id;
-    
+
             $userid = DB::table('users')->select('id')
                 ->where('id', $uid)
                 ->orWhere('email', $myString)
                 ->orWhere('name', $namauser)
                 ->get();
-    
+
             $data = new lowker;
             if ($request->file('cv')) {
                 $file = $request->file('cv');
@@ -95,7 +95,7 @@ class UserController extends Controller
                 $file->move($path, $nama_file);
                 $data->file = $nama_file;
             }
-    
+
             DB::table('apply_jobs')->insert(
                 [
                     'user_id' => $uid,
@@ -107,8 +107,8 @@ class UserController extends Controller
             alert()->success('Berhasil', 'CV anda berhasil dikirim');
             return redirect('/findjobsUser');
         }
-    
-        public function detail_view($id) 
+
+        public function detail_view($id)
         {
             $jobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')

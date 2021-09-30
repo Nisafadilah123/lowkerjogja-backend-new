@@ -151,10 +151,10 @@
                                         @foreach ($educations as $item)
 
                                         <tr>
-                                            <td><p style="color: #A5B2C2;font-size:14px;">{{ date('d-m-Y', strtotime($item->graduate)) }}
+                                            <td><p style="color: #A5B2C2;font-size:14px;">{{ date('d-m-Y', strtotime($item->graduate )) }}
                                                 </p></td>
                                             <td>
-                                                <strong>{{ $item->name }}</strong>
+                                                <strong>{{$item->name }}</strong>
                                                 <p>{{ $item->major }}</p>
                                             </td>
                                             <td class="text-center">

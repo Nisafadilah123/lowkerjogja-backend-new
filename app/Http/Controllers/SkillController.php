@@ -21,7 +21,7 @@ class SkillController extends Controller
     public function index()
     {
         //menampilkan relasi antara model skill dan user
-        $skills = Skill::with('user')->get();
+        $skills = Skill::where('user_id', Auth::user()->id)->get();
         return view('user.skill', compact('skills'));
 
     }
@@ -87,7 +87,7 @@ class SkillController extends Controller
     public function edit(Skill $skill)
     {
         //
-        $skills = Skill::all();
+        $skills = Skill::where('user_id', Auth::user()->id)->get();
 
         return view('user.editskill', compact('skills'));
     }
