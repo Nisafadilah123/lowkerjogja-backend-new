@@ -17,9 +17,11 @@
                             <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
                             <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
-                                <option value="1">SMA/SMK</option>
-                                <option value="2">Diploma</option>
-                                <option value="3">S1</option>
+                                <option value="1">S3</option>
+                                <option value="2">S2</option>
+                                <option value="3">S1/D4</option>
+                                <option value="4">SMA/SMK</option>
+
                             </select>
                             </div>
 

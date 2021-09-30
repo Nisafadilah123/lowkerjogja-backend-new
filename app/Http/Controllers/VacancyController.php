@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VacancyController extends Controller
 {
@@ -60,6 +63,19 @@ class VacancyController extends Controller
          return view('vacancy.searchCandidate');
      }
 
+     // sistem search candidate
+     public function search (Request $request){
+
+        $user = DB::table('users')
+                ->where("provinsi",$request->provinsi)
+                ->where("kota", $request->kota )
+                ->get();
+
+        // $education = Education::select->get();
+
+        return view("vacancy.searchCandidate",compact("user","education"));
+     }
+
      // halaman profil corp
      public function profilCorp()
      {
@@ -77,4 +93,7 @@ class VacancyController extends Controller
      {
          return view('vacancy.editCorp');
      }
+
+
+
 }

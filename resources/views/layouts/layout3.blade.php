@@ -181,6 +181,16 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- rev -->
  <script src="/js/formunggahan.js"></script> <!-- rev -->
 
+
+    {{-- untuk templating script --}}
+    {{-- jadi nantinya di home blade kita bikin script js nanti di tumpuk di stack itu.--}}
+    {{-- kalau pake stack script yang nanti dimasukin sebelumnya ga ilang, kalau misal nantinya mau bikin template
+    yang di page lain include page lain juga jadi script nya ga ketimpa
+    --}}
+    @stack('script-addon')
+{{-- nah kalau yield ini isi nya sesuai sama isi section nya kalau stack itu kaya di kumpulin gitu. --}}
+    @yield('script')
+
 </body>
 
 </html>

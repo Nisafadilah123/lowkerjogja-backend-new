@@ -109,6 +109,7 @@ Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 Route::get('/job', [VacancyController::class, 'jobCorp']);
 Route::get('/editCorp', [VacancyController::class, 'editCorp']);
+Route::get('/search', [VacancyController::class, 'search']);
 
 
 // ajax
