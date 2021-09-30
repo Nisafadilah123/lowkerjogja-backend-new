@@ -28,7 +28,7 @@
                         <div class="col-md-4">
                             <label name="provinsi" for="provinsi" style="position: relative; left:100px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
                             <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="form-select-sm example" style="position: relative; left:100px;width: 250px;height:40px">
-                                <option selected>-- Pilih Provinsi --</option>
+                                <option selected>--Pilih Provinsi--</option>
                             </select>
                         </div>
 
