@@ -90,6 +90,8 @@ Route::get('/editPassword/{$id}', [UserController::class, 'edit']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
 Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
+Route::post('/simpanjob', [UserController::class, 'simpanjob']);
+Route::post('/deletejob', [UserController::class, 'deletejob']);
 
 // Routes Halaman Profil User
 Route::get('/user/{id}/editPassword', [ProfillUserController::class, 'editPassword']);

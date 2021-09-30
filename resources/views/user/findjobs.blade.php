@@ -24,11 +24,9 @@
                             <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
                             <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
-                                <option value="1">S3</option>
-                                <option value="2">S2</option>
-                                <option value="3">S1/D4</option>
-                                <option value="4">SMA/SMK</option>
-
+                                <option value="1">SMA/SMK</option>
+                                <option value="2">Diploma</option>
+                                <option value="3">S1</option>
                             </select>
                             </div>
 
@@ -77,11 +75,17 @@
                     </div>
                     <div class="row align-items-start">
                         <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
+                            <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/simpanjob">
+                                {{csrf_field()}}
+                                <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $l->id }}">
+                            <div>   
+                                <button class="btn" style="padding-left: 150px;"><i class="bi bi-plus-square-fill"></i></button>
+                                <!-- <button class="btn"><i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i></button> -->
                                 <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
                                 <br>
                                 <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                             </div>
+                            </form>
                         </div>
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">

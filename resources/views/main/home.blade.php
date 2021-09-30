@@ -5,7 +5,16 @@
 @section('container')
 
 <!-- ======= Hero Section ======= -->
-
+@if (session()->has('message'))
+<div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
+    role="alert">
+    <div class="flex">
+        <div>
+            <p class="text-sm">{{ session('message') }}</p>
+        </div>
+    </div>
+</div>
+@endif
 <section id="hero" class="hero d-flex align-items-center">
     <div class="container">
         <div class="row">
@@ -36,18 +45,15 @@
                 <div class="form-group">
                     <div class="container px-4">
                         <div class="row">
-                            <div class="col-md-2">
-                                <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
-                                <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
-                                 <option selected> Semua Lulusan</option>
-                                 <option value="1">S3</option>
-                                 <option value="2">S2</option>
-                                 <option value="3">S1/D4</option>
-                                 <option value="4">D3</option>
-                                 <option value="5">SMA/SMK</option>
-
-                               </select>
-                             </div>
+                          <div class="col-md-2">
+                               <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
+                               <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
+                                <option selected> Semua Lulusan</option>
+                                <option value="1">SMA/SMK</option>
+                                <option value="2">Diploma</option>
+                                <option value="3">S1</option>
+                              </select>
+                            </div>
                             <div class="col-md-6">
                                 <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
                                 <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
@@ -122,41 +128,36 @@
                     <h6 style="color: #28A59F; padding-top: 5px;">{{ ($cp->salary_range)}}</h6>
                 </div>
             </div> --}}
-<<<<<<< HEAD
             <!--Row Satu-->
-            @foreach($lihatjobs as $l)
-            <div class="col-lg-4">
+            @foreach($jobs as $cp)
+            <div class="col-lg-4">            
                 <div class="post-box">
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $l->job_type }}</p>
-                        </div>
-                        <div class="col">
-                            <div></div>
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $l->created_at }}</div>
-                        </div>
+                <div class="row align-items-start">
+                    <div class="col">
+                        <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $cp->corp->work_day }}</p>                 
+                    </div>                 
+                    <div class="col">
+                        <div></div>
                     </div>
+                    <div class="col">
+                        <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $cp->corp->founded_year }}</div>                     
+                        </div>
+                    </div> 
                     <div class="row align-items-start">
                         <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
-                            </div>
+                        <div >  
+                            <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
+                            <img src="{{ asset('template/img/logo/'.$cp->corp->logo)}}" style="float:left; margin:0 8px 4px 0;"/>
+                            <br>
+                            <h6 style="color:#4154f1; font-weight: bold;">{{ ucfirst($cp->corp->nama_corp) }}, Indonesian</h6>                         
+                        </div>
                         </div>
                         <div class="row align-items-start">
-                            <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
-                                <h6 style="color: #000000;">{{$l->last_education}}</h6>
-                                <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>
-                                <!-- Button lamar/harusnya login -->
-                                <a class="btn btn-primary" href="/login" role="button">Lamar</a>
-                                <!-- Button detail/perlu revisi -->
-                                <a class="btn btn-primary" href="/detailmain{{ $l->id }}" role="button">Detail</a>
-                            </div>
+                        <div class="col" style="padding-top: 15px;">
+                            <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->position}}</h1>
+                            <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->corp->location )}}</h6>
+                            <h6 style="color: #28A59F; padding-top: 5px;">{{ ($cp->salary_range)}}</h6>
+                        </div>                         
                         </div>
                     </div>
                 </div>
@@ -164,76 +165,6 @@
             @endforeach
         </div>
         <!--Row Dua-->
-=======
-             <!--Row Satu-->
-             @foreach($jobs as $cp)
-             <div class="col-lg-4">
-                 <div class="post-box">
-                   <div class="row align-items-start">
-                       <div class="col">
-                         <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $cp->corp->work_day }}</p>
-                       </div>
-                       <div class="col">
-                        <div></div>
-                       </div>
-                       <div class="col">
-                           <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $cp->corp->founded_year }}</div>
-                          </div>
-                     </div>
-                     <div class="row align-items-start">
-                         <div class="col">
-                           <div >
-                               <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                               <img src="{{ asset('template/img/logo/'.$cp->corp->logo)}}" style="float:left; margin:0 8px 4px 0;"/>
-                               <br>
-                               <h6 style="color:#4154f1; font-weight: bold;">{{ ucfirst($cp->corp->nama_corp) }}, Indonesian</h6>
-                           </div>
-                         </div>
-                         <div class="row align-items-start">
-                           <div class="col" style="padding-top: 15px;">
-                            <h1 style="font-weight: bold; font-size: 27px;">{{ $cp->position}}</h1>
-                            <h6 style="color: #BEBFC0;">{{ ucfirst( $cp->corp->location )}}</h6>
-                            <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ ($cp->salary_range)}}</h6>
-                           </div>
-                         </div>
-                     </div>
-                 </div>
-               </div>
-               @endforeach
-               {{-- <div class="col-lg-4">
-                 <div class="post-box">
-                   <div class="row align-items-start">
-                       <div class="col">
-                         <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">Full-time</p>
-                       </div>
-                       <div class="col">
-                        <div></div>
-                       </div>
-                       <div class="col">
-                           <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>21 Mei 2021</div>
-                          </div>
-                     </div>
-                     <div class="row align-items-start">
-                         <div class="col">
-                           <div >  <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                               <img src="assets/img/7.png" style="float:left; margin:0 8px 4px 0;"/>
-                               <br>
-                               <h6 style="color:#4154f1; font-weight: bold;">Link aja, Indonesian</h6>
-                           </div>
-                         </div>
-                         <div class="row align-items-start">
-                           <div class="col" style="padding-top: 15px;">
-                            <h1 style="font-weight: bold; font-size: 27px;">Programmer</h1>
-                            <h6 style="color: #BEBFC0;">Yogyakarta, Indonesia</h6>
-                            <h6 style="color: #28A59F; padding-top: 5px;">Rp.5.000.000 - 7.000.000</h6>
-                           </div>
-                         </div>
-                     </div>
-                 </div>
-               </div> --}}
-           </div>
-           <!--Row Dua-->
->>>>>>> ef7ac89781608022e6636e6c48921d1088a25af2
         </div>
 </section><!-- End Recent Blog Posts Section -->
 <!-- ======= Job Category ======= -->
