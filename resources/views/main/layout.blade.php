@@ -59,9 +59,9 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="/">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/findjobs">Find jobs</a></li>
-                    <li><a class="nav-link scrollto" href="/aboutus">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="/">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="/findjobs">Temukan Karir</a></li>
+                    <li><a class="nav-link scrollto" href="/aboutus">Tentang Kami</a></li>
                     {{-- <li><a class="nav-link scrollto" href="/login">Login</a></li> --}}
 
                     @if (Route::has('login'))
@@ -70,7 +70,7 @@
                         <li class="dropdown pl-5" style="padding-right: 50px;">{{ ucfirst( Auth::user()->name) }}
                             <ul>
                                 <li class="align-items-center"><a href="/user"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
-                                <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
+                                <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
                                 <li class="align-items-center">
                                     <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -84,11 +84,11 @@
                                 </li>
                             </ul>
                             @else
-                            <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
+                            <li><a href="{{ route('login') }}" class="nav-link scrollto">Masuk</a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
-                                <li><a class="getstarted scrollto" href="/landingPage">Post Vacancy</a></li>
+                                <li><a href="{{ route('register') }}" class="job scrollto">Daftar</a></li>
+                                <li><a class="getstarted scrollto" href="/landingPage">Posting Lowongan</a></li>
 
                             @endif
                         @endauth
@@ -129,11 +129,11 @@
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/findjobs">Find Jobs</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/aboutus">About Us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/findjobs">Temukan Karir</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/aboutus">Tentang Kami</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="/register">Sign Up</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/home">Post Vacancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/home">Posting Lowongan</a></li>
                         </ul>
                     </div>
 

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title' , 'Company | Admin')
+@section('title' , 'Perusahaan | Admin')
 
 @section('container')
 
@@ -8,14 +8,14 @@
 <div class="main-content">
     <section class="section">
         <h1 class="section-header">
-            <div>Company</div>
+            <div>Perusahaan</div>
         </h1>
 
         <div class="section-body">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-12">
                     <div class="block-options p-3">
-                        <a href="{{url('create/company')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Baru</a>
+                        <a href="{{url('create/company')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Perusahaan</a>
                     </div>
                     <div class="card">
 
@@ -28,9 +28,9 @@
                                         <th>Desc</th>
                                         <th>Logo</th>
                                         <th>Industri</th>
-                                        <th>Location</th>
-                                        <th>Work day</th>
-                                        <th>Year</th>
+                                        <th>Lokasi</th>
+                                        <th>Hari Kerja</th>
+                                        <th>Tahun Berdiri</th>
                                         <th>Aksi</th>
                                     </tr>
                                     @foreach ($corp as $corp)

@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Application Letter User | Lowkerjogja.com')
+@section('title', 'Pengguna Surat Lamaran | Lowkerjogja.com')
 
 @section('container')
 
@@ -49,18 +49,18 @@
               <form class="row g-3">
 
                 <div class="mb-3">
-                    <h5 class="card-title"><strong>Upload CV</strong> </h5>
+                    <h5 class="card-title"><strong>Unggah CV</strong> </h5>
                     <input class="form-control" type="file" id="formFile">
                 </div>
 
                 <div class="col-sm-12">
-                    <h5 class="card-title"><strong>Application Letter</strong></h5>
+                    <h5 class="card-title"><strong>Surat Lamaran</strong></h5>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Tulis surat lamaran kamu"></textarea>
                 </div>
                 <br><br><br>
     <center>
     <button type="submit" class="btn btn-primary btn-block" style="width: 580px;margin-left: 20px;margin-top: 20px;">
-        <center><strong>Send Application</strong> </center>
+        <center><strong>Kirim Lamaran</strong> </center>
     </button></center>
               </form>
 

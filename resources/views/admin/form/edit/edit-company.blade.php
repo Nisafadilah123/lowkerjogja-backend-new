@@ -1,13 +1,13 @@
 @extends('admin.form.create.layout')
 
-@section('title' , 'Company | Admin')
+@section('title' , 'Perusahaan | Admin')
 
 @section('container')
 <!-- Main Container -->
 <div class="main-content">
     <section class="section">
         <h1 class="section-header">
-            <div>Edit Company</div>
+            <div>Edit Perusahaan</div>
         </h1>
 
         <!-- Page Content -->
@@ -46,8 +46,8 @@
                                     <input type="text" name="work_day" id="workday" class="form-control" placeholder="Hari Kerja" required value={{$corp->work_day}}>
                                 </div>
                                 <div class="form-group">
-                                    <label for="foundedyear"><strong>Founded Year</strong></label>
-                                    <input type="text" name="founded_year" id="foundedyear" class="form-control" placeholder="Founded Year" required value={{$corp->founded_year}}>
+                                    <label for="foundedyear"><strong>Tahun Berdiri</strong></label>
+                                    <input type="text" name="founded_year" id="foundedyear" class="form-control" placeholder="Tahun Berdiri" required value={{$corp->founded_year}}>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="far fa-edit"> </span> Edit Perusahaan</button>

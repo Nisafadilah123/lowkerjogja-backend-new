@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use illuminate\Support\Str;
 use App\Models\Corp;
 use App\Models\Jobs;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
@@ -90,7 +90,18 @@ class CrudController extends Controller
 
     }
 
-    //Jobs
+    //Jobs 
+    
+    //select provinsi dan kota
+    public function province(){
+        $hasil = rajaongkir_point("province");
+        return response()->json($hasil);
+    }
+
+    public function city(Request $request){
+        $hasil = rajaongkir_point("city",["province=$request->prov_id"]);
+        return response()->json($hasil);
+    }
 
     public function createjobs()
     {
@@ -100,14 +111,14 @@ class CrudController extends Controller
     public function addjobs(Request $request)
     {
         $dtUpload = new Jobs;
-        $dtUpload->description      = $request->description;
+        $dtUpload->description_job      = $request->description_job;
         $dtUpload->position         = $request->position;
         $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline;
-        // $dtUpload->provinces        = $request->provinces;
-        // $dtUpload->city             = $request->city;
+        $dtUpload->provinces        = $request->provinces;
+        $dtUpload->city             = $request->city;
         $dtUpload->salary_range     = $request->salary_range;
         $dtUpload->kuota            = $request->kuota;
         $dtUpload->gender           = $request->gender;
@@ -116,10 +127,6 @@ class CrudController extends Controller
         $dtUpload->syarat           = $request->syarat;
         $dtUpload->email            = $request->email;
         $dtUpload->telp             = $request->telp;
-
-
-
-
 
 
         $dtUpload->save();
@@ -137,7 +144,7 @@ class CrudController extends Controller
     {
         $ubah = Jobs::findorfail($id);
 
-        return $request;
+        // return $request;
         $jobs = [
             'description'       => $request['description'],
             'position'          => $request['position'],
@@ -146,8 +153,8 @@ class CrudController extends Controller
             'job_category'      => $request['job_category'],
             'last_date'         => $request['last_date'],
             'deadline'          => $request['deadline'],
-            // 'provinces'         => $request['provinces'],
-            // 'city'              => $request['city'] ,
+            'provinces'         => $request['provinces'],
+            'city'              => $request['city'] ,
             'salary_range'      => $request['salary_range'],
             'kuota'             => $request['kuota'],
             'gender'            => $request['gender'],

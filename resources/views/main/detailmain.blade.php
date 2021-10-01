@@ -1,6 +1,6 @@
 @extends('main.layout')
 
-@section('title', 'Find Jobs | Detail Pekerjaan')
+@section('title', 'Temukan Karir | Detail Pekerjaan')
 
 @section('container')
 

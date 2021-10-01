@@ -1,6 +1,6 @@
 @extends('layouts.layout3')
 
-@section('title', 'Edit Corp | Lowkerjogja.com')
+@section('title', 'Edit Perusahaan | Lowkerjogja.com')
 
 @section('container')
 
@@ -14,11 +14,11 @@
 									<div class="row gx-5">
 									  <div class="col">
 
-										   <label for="job" style="padding-bottom: 10px;"><strong>Job Position</strong> </label>
+										   <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
 										   <input id="job" type="job" class="form-control" name="job" placeholder="Job Position">
 										</div>
 									  <div class="col">
-										<label for="job" style="padding-bottom: 10px;"><strong>Corporate</strong> </label>
+										<label for="job" style="padding-bottom: 10px;"><strong>Perusahaan</strong> </label>
 										<input id="corporate" type="corporate" class="form-control" name="corporate" placeholder="Bukalapak">                                          </div>
 									</div>
 								  </div>
@@ -29,9 +29,9 @@
 								<div class="row gx-4">
 								  <div class="col">
 
-									   <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lost Education</strong> </label>
+									   <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Pendidikan Terakhir</strong> </label>
 									   <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
-										<option selected>Select Lost Education</option>
+										<option selected>Pilih Pendidikan Terakhir</option>
 										<option value="1">SMA</option>
 										<option value="2">D3</option>
 										<option value="3">D4/S1</option>
@@ -39,9 +39,9 @@
 									</div>
 
 								  <div class="col">
-									<label for="jobtype" style="padding-bottom: 10px;padding-top: 10px; padding-left: 15px;"><strong>Job Type</strong></label>
+									<label for="jobtype" style="padding-bottom: 10px;padding-top: 10px; padding-left: 15px;"><strong>Tipe Pekerjaan</strong></label>
 									<select class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; left:13px;width: 435px;">
-										<option selected>Select Job Type</option>
+										<option selected>Pilih Tipe Pekerjaan</option>
 										<option value="1">One</option>
 										<option value="2">Two</option>
 										<option value="3">Three</option>
@@ -56,15 +56,15 @@
 						<div class="container px-4">
 							<div class="row gx-4">
 							  <div class="coldeadline">
-								   <label for="job" style="padding-bottom: 10px;padding-top: 10px;"><strong>Deadline for submitting application</strong> </label>
+								   <label for="job" style="padding-bottom: 10px;padding-top: 10px;"><strong>Batas waktu untuk mengajukan lamaran</strong> </label>
 								   <input id="password" type="password" class="form-control" name="password" placeholder="	Select date" style="width: 300px;">
 									<i class="fas fa-calendar-week"></i>
 								</div>
 
 							  <div class="col">
-								<label for="job" style="padding-bottom: 10px;padding-top: 10px;position: relative;left: 484px;bottom: 80px;"><strong>Job Category</strong> </label>
+								<label for="job" style="padding-bottom: 10px;padding-top: 10px;position: relative;left: 484px;bottom: 80px;"><strong>Kategori Pekerjaan</strong> </label>
 								<select class="form-select form-select-sm" aria-label=".form-select-sm example" style="width: 435px;position: relative;left: 484px;bottom: 80px;">
-									<option selected>Select Job Category</option>
+									<option selected>Pilih Kategori Pekerjaan</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
 									<option value="3">Three</option>

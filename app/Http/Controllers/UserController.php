@@ -151,7 +151,7 @@ class UserController extends Controller
                     'job_id' => $request->idjob,
                 ]
             );
-            alert()->success('Berhasil', 'Job anda berhasil disimpan');
+            alert()->success('Berhasil', 'Karir anda berhasil disimpan');
             return redirect('/findjobsUser');
         }
 
@@ -162,7 +162,7 @@ class UserController extends Controller
                     'id' => $request->idsimpan
                 ]
             );
-            alert()->success('Berhasil', 'Job anda berhasil dihapus');
+            alert()->success('Berhasil', 'Karir anda berhasil dihapus');
             return redirect('/jobsUser');
         }
 

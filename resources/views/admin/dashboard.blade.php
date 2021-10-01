@@ -33,7 +33,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Jobs</h4>
+              <h4>Pekerjaan</h4>
             </div>
             <div class="card-body">
               {{$jobs}}
@@ -48,7 +48,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Candidate</h4>
+              <h4>Kandidat</h4>
             </div>
             <div class="card-body">
               {{-- {{$candidate}} --}}
@@ -63,7 +63,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>User</h4>
+              <h4>Pengguna</h4>
             </div>
             <div class="card-body">
               {{-- {{$user}} --}}

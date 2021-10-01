@@ -1,6 +1,6 @@
 @extends('user.layout2')
 
-@section('title', 'About Corp | Lowkerjogja.com')
+@section('title', 'Tentang Perusahaan | Lowkerjogja.com')
 
 @section('container')
 
@@ -29,7 +29,7 @@
       <div class="col-sm-2" style="padding-left: 50px;width: 330px;">
           <div class="card">
               <div class="card-body">
-                  <h5 class="card-title"><strong> Similiar Company</strong></h5>
+                  <h5 class="card-title"><strong> Perusahaan Serupa</strong></h5>
                   <!-- Tokopedia -->
                   <div class="row">
                       <div class="col-sm-2">
@@ -95,7 +95,7 @@
       <div class="col-sm-8" style="width: 700px; padding-top: 20px;">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">About Corporate</h5>
+              <h5 class="card-title">Tentang Perusahaan</h5>
               <p class="card-text">Our dream to offer mobile games to the entire planet through our products is about to become a reality. We owe our success to the talent and passion of our teams. It is because of their dedication to excellence and attention to detail that we can offer games of unparalleled quality to our millions of fans. We also have a great network of partners to help us deliver cool new games to your favorite device. Think Universal, Illumination Disney®, Marvel®, Hasbro®, Fox Digital Entertainment, Mattel®, Ferrari® and many more.</p>
             </div>
           </div>

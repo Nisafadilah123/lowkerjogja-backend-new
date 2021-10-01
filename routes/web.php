@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/company', [AdminController::class, 'company']);
     Route::get('/jobs', [AdminController::class, 'jobs']);
-    Route::get('/candidate', [AdminController::class, 'candidate']);
+    Route::get('/kandidat', [AdminController::class, 'kandidat']);
 
     //create
     Route::get('/create/company', [CrudController::class, 'createcompany']);
@@ -122,6 +122,10 @@ Route::get('/get-kota', [MainController::class, 'kota']);
 // ajax
 Route::get('/get-provinsi2', [ProfillUserController::class, 'province']);
 Route::get('/get-kota3', [ProfillUserController::class, 'city']);
+
+//ajax
+Route::get('/get-provinsi3', [CrudController::class, 'province']);
+Route::get('/get-kota4', [CrudController::class, 'city']);
 
 Route::get('/token', function () {
     return csrf_token();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83fe38784d87bd4ec4a2c4a835d1960c",
+    "content-hash": "3c4073e9166f95f2dcc48386307b7547",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1406,16 +1406,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "bfa133775780e01d7923c81ded9f627d19642202"
+                "reference": "2708f1fd249c88341f7f8e2fc5ac17c35280dec8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/bfa133775780e01d7923c81ded9f627d19642202",
-                "reference": "bfa133775780e01d7923c81ded9f627d19642202",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/2708f1fd249c88341f7f8e2fc5ac17c35280dec8",
+                "reference": "2708f1fd249c88341f7f8e2fc5ac17c35280dec8",
                 "shasum": ""
             },
             "require": {
@@ -1468,7 +1468,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2021-09-28T15:22:21+00:00"
+            "time": "2021-09-30T16:12:47+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -5916,72 +5916,6 @@
             "time": "2020-07-13T06:12:54+00:00"
         },
         {
-            "name": "uxweb/sweet-alert",
-            "version": "2.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/uxweb/sweet-alert.git",
-                "reference": "e9eb83d7d991de0fcb74398a698e0cdfef6d189d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/uxweb/sweet-alert/zipball/e9eb83d7d991de0fcb74398a698e0cdfef6d189d",
-                "reference": "e9eb83d7d991de0fcb74398a698e0cdfef6d189d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/session": "~5.0|^6.0|^7.0|^8.0",
-                "illuminate/support": "~5.0|^6.0|^7.0|^8.0",
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "UxWeb\\SweetAlert\\SweetAlertServiceProvider"
-                    ],
-                    "aliases": {
-                        "Alert": "UxWeb\\SweetAlert\\SweetAlert"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "UxWeb\\SweetAlert\\": "src/SweetAlert/"
-                },
-                "files": [
-                    "src/SweetAlert/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Uziel Bueno",
-                    "email": "ux.webs@gmail.com"
-                }
-            ],
-            "description": "A simple PHP package to show Sweet Alerts with the Laravel Framework",
-            "keywords": [
-                "alert",
-                "laravel",
-                "notifier",
-                "sweet"
-            ],
-            "support": {
-                "issues": "https://github.com/uxweb/sweet-alert/issues",
-                "source": "https://github.com/uxweb/sweet-alert/tree/2.0.5"
-            },
-            "time": "2020-09-14T23:22:32+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v5.3.0",
             "source": {
@@ -8704,5 +8638,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }

@@ -8,7 +8,6 @@ use illuminate\Support\Str;
 use App\Models\Corp;
 use App\Models\Jobs;
 use App\Models\Candidate;
-use Alert;
 
 class AdminController extends Controller
 {
@@ -19,7 +18,7 @@ class AdminController extends Controller
         return view('admin.dashboard',compact('corp', 'jobs'));
     }
 
-    public function dashbiard()
+    public function dashboard()
     {
         $corp = Corp::count();
         $jobs = Jobs::count();
@@ -42,7 +41,7 @@ class AdminController extends Controller
         return view('admin.jobs', compact(['jobs', 'i']));
     }
 
-    public function candidate()
+    public function kandidat()
     {
         $i = 0;
         $i++;

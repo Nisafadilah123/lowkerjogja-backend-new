@@ -85,15 +85,15 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="/homeUser">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/findjobsUser">Find jobs</a></li>
-                    <li><a class="nav-link scrollto" href="/aboutUser">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="/homeUser">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="/findjobsUser">Temukan karir</a></li>
+                    <li><a class="nav-link scrollto" href="/aboutUser">Tentang Kami</a></li>
 
                     <li style="position:relative; left:100px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
                     <li class="dropdown pl-5" style="position:relative;right:50px">{{ ucfirst( Auth::user()->name) }}
                         <ul>
-                            <li class="align-items-center"><a href="/user "><i class="bi bi-person-circle" style="font-size: 20px;"></i>View Profile</a></li>
-                            <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Saved Jobs</a></li>
+                            <li class="align-items-center"><a href="/user "><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
+                            <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
                             <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
@@ -140,12 +140,12 @@
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/homeUser">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/findjobsUser">Find Jobs</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/aboutUser">About Us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/register">Sign Up</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/landingPage">Post Vacancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/homeUser">Beranda</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/findjobsUser">Temukan Karir</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/aboutUser">Tentang Kami</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/login">Masuk</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/register">Daftar</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/landingPage">Posting Lowongan</a></li>
                         </ul>
                     </div>
 

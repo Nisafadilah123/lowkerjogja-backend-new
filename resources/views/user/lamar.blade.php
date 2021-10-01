@@ -51,15 +51,15 @@
                             <div> 
                                 <br>
                                 <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $i->id }}">
-                                <h2><b>UPLOAD CV<b></h2>
+                                <h2><b>UNGGAH CV<b></h2>
                                 <input type="file" class="form-control-file" id="cv" name="cv" required="required">
                                 <br><br>
-                                <h2><b>Application Letter</b></h2>
+                                <h2><b>Surat Lamaran</b></h2>
                                 <br>
                                 <textarea class="form-control" id="letter" name="letter" rows="3" required="required" placeholder="Tulis surat lamaran kamu"></textarea>
                                 <br>
                                 <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary" name="Submit">Send Application</button>
+                                <button type="submit" class="btn btn-primary" name="Submit">Kirim Lamaran</button>
                                 <a class="btn btn-primary" href="/findjobsUser" role="button">Kembali</a>
                             </div>
                             </div>

@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Add Skill | Lowkerjogja.com')
+@section('title', 'Tambah Keahlian | Lowkerjogja.com')
 
 @section('container')
 <style>
@@ -48,7 +48,7 @@
                             <div>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                                 <h6 style="font-weight: bold;padding-right:50px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:60px;padding-right:5px;">View Profile</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:60px;padding-right:5px;">Lihat Profil</h6>
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@
               <div class="col-sm-6">
                 <a href="/user" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Profil Saya</h6>
                   </div>
                 </a>
               </div>
@@ -87,7 +87,7 @@
               <div class="col-sm-6">
                 <a href="/education" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight:bold; padding-right: 50px;">Education</h6>
+                    <h6 style="font-weight:bold; padding-right: 50px;">Pendidikan</h6>
                   </div>
                 </a>
               </div>
@@ -107,7 +107,7 @@
               <div class="col-sm-6">
                 <a href="/skill" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Keahlian</h6>
                   </div>
                 </a>
               </div>
@@ -127,7 +127,7 @@
                 <div class="col-sm-6">
                     <a href="/password" class="about">
                         <div class="card-body" style="width: 300px; padding-left: 30px;">
-                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
+                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Kata Sandi</h6>
                         </div>
                     </a>
                 </div>
@@ -146,7 +146,7 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <h6 style="font-weight: bold; margin-top: 8px;">
-                <img src="/img/icons/bar-chart.png" width="30px" alt=""> Skill
+                <img src="/img/icons/bar-chart.png" width="30px" alt=""> Keahlian
 
 
             </div>
@@ -181,10 +181,10 @@
 
                 <div class="col">
                     <a href="#" style="margin-left: 350px ;" class="btn btn-outline-primary">
-                        <span>Cancel</span>
+                        <span>Batalkan</span>
                     </a>
                     <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
-                        <span style="padding: 5px;">Save</span>
+                        <span style="padding: 5px;">Simpan</span>
                 </div>
             </div>
             </form>

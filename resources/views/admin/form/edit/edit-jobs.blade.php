@@ -1,6 +1,6 @@
 @extends('admin.form.create.layout')
 
-@section('title' , 'Company | Admin')
+@section('title' , 'Karir | Admin')
 
 @section('container')
 <!-- Main Container -->
@@ -20,7 +20,7 @@
                             <div class="block-content">
                                 <label for="description"><strong>Deskripsi Perusahaan</strong></label>
                                 <div class="form-group">
-                                    <textarea type="text" name="description" id="description" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{$jobs->description}}></textarea>
+                                    <textarea type="text" name="description_job" id="description" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{$jobs->description_job}}></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="position"><strong>Posisi</strong></label>
@@ -42,14 +42,6 @@
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required value="{{$jobs->deadline}}">
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="provinces"><strong>Provinces</strong></label>
-                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="joblocation"><strong>Kota</strong></label>
-                                    <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
-                                </div> --}}
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
                                     <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" required value={{$jobs->salary_range}}>
@@ -59,7 +51,7 @@
                                     <input type="text" name="kuota" id="kuota" class="form-control" placeholder="kuota" required value={{$jobs->kuota}}>
                                 </div>
                                 <div class="form-group">
-                                    <label for="gender"><strong>Gender</strong></label>
+                                    <label for="gender"><strong>Jenis Kelamin</strong></label>
                                     <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required value={{$jobs->gender}}>
                                 </div>
                                 <div class="form-group">
@@ -83,19 +75,19 @@
                                     <input type="text" name="telp" id="telp" class="form-control" placeholder="Telp" required value={{$jobs->telp}}>
                                 </div>
                                 <div class="form-group col-md-2">
-                                    <label name="provinsi" for="provinsi" style=""><strong>Province</strong></label>
-                                    <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
-                                        <option selected>-- Pilih Provinsi --</option>
+                                    <label name="provinces" for="provinces" style=""><strong>Provinsi</strong></label>
+                                    <select name="provinces" class="form-select form-select-sm prov-data" aria-label="form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                        <option selected> -- Pilih Provinsi --</option>
                                       </select>
                                 </div>
                                 <div class="form-group col-sm-2">
-                                    <label name="kota" for="kota"><strong>City</strong></label>
-                                    <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                    <label name="city" for="city"><strong>Kota</strong></label>
+                                    <select name="city" class="form-select form-select-sm kota-data" aria-label="form-select-sm example" style="position: relative; width: 250px;height:25px">
                                         <option selected>-- Pilih Kota --</option>
                                       </select>
                                     </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span> Tambah Data</button>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="far fa-edit"> </span> Edit Karir</button>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +106,7 @@
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi",
+        "url":"/get-provinsi3",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
@@ -130,7 +122,7 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota",
+            "url":"/get-kota4",
             "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){

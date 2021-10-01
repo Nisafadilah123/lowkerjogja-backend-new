@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Find Jobs | Detail Pekerjaan')
+@section('title', 'Temukan Karir | Detail Pekerjaan')
 
 @section('container')
 
@@ -28,7 +28,7 @@
             <div class=" row">
                 <ul class="col-5" style="overflow: unset; white-space: nowrap;">
                     <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-graduation-cap"></span><span style="display:inline-block; width: 15px;"></span>Pendidikan</h4></li>
-                    <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-venus-mars"></span><span style="display:inline-block; width: 15px;"></span>Gender</h4></li>
+                    <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-venus-mars"></span><span style="display:inline-block; width: 15px;"></span>Jenis Kelamin</h4></li>
                     <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-universal-access"></span><span style="display:inline-block; width: 15px;"></span>Umur</h4></li>
                     <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-user-circle"></span><span style="display:inline-block; width: 15px;"></span>Status Kerja</h4></li>
                     <li><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-money"></span><span style="display:inline-block; width: 15px;"></span>Besaran Gaji</h4></li>

@@ -112,12 +112,12 @@
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Find Jobs</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Login</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Sign Up</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Post Vacancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Beranda/a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Temukan Karir</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Tentang Kami</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Masuk</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Daftar</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Posting Lowongan</a></li>
                         </ul>
                     </div>
 

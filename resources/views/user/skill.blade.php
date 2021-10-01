@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Skill | Lowkerjogja.com')
+@section('title', 'Keahlian | Lowkerjogja.com')
 
 @section('container')
 <!-- ======= Recent Blog Posts Section ======= -->
@@ -30,7 +30,7 @@
                 <div>
                     <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                     <h6 style="font-weight: bold;padding-right:150px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
-                    <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">View Profile</h6>
+                    <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
               <div class="col-sm-6">
                 <a href="/user" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Profil Saya</h6>
                   </div>
                 </a>
               </div>
@@ -68,7 +68,7 @@
               <div class="col-sm-6">
                 <a href="/education" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Education</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Pendidikan</h6>
                   </div>
                 </a>
               </div>
@@ -89,7 +89,7 @@
                 <a href="/skill" class="about">
                   <div class="card-body" style="width: 300px; padding-left: 30px;">
 
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
+                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Keahlian</h6>
                   </div>
                 </a>
               </div>
@@ -109,7 +109,7 @@
                 <div class="col-sm-6">
                     <a href="/password" class="about">
                         <div class="card-body" style="width: 300px; padding-left: 30px;">
-                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
+                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Kata Sandi</h6>
                         </div>
                     </a>
                 </div>
@@ -127,10 +127,10 @@
           <div class="row align-items-center">
             <div class="col align-items-center">
               <img src="img/icons/bar-chart.png" alt="" width="35px" style="float: left;">
-                  <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Skill
+                  <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Keahlian
                     {{-- create --}}
                     <a href="{{ url('skill/create') }}" class="btn btn-success" style="position: relative; float: right;">
-                  <i class="fas fa-plus" style="float: right; "> Add</i></a></h6>
+                  <i class="fas fa-plus" style="float: right; "> Tambah</i></a></h6>
 
             </div>
               @foreach ($skills as $item)
@@ -196,6 +196,5 @@
             }
           });
       });
-
 </script>
 @endpush

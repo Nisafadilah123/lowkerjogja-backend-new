@@ -1,6 +1,6 @@
 @extends('main.layout')
 
-@section('title', 'Home | Lowkerjogja.com')
+@section('title', 'Beranda | Lowkerjogja.com')
 
 @section('container')
 

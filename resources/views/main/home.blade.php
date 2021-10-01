@@ -1,6 +1,6 @@
 @extends('main.layout')
 
-@section('title', 'Home | Lowkerjogja.com')
+@section('title', 'Beranda | Lowkerjogja.com')
 
 @section('container')
 
@@ -19,12 +19,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h1 data-aos="fade-up">Finds Your Dream Jobs</h1>
-                <h2 data-aos="fade-up" data-aos-delay="400">With Us Easily</h2>
+                <h1 data-aos="fade-up">Temukan Karir Impianmu</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">Mudah Bersama Kami</h2>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-center text-lg-start">
                         <a href="/findjobs" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                            <span>Get Started</span>
+                            <span>Mulai Sekarang</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="container px-4">
                         <div class="row">
                           <div class="col-md-2">
-                               <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Graduate</strong> </label>
+                               <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lulusan</strong> </label>
                                <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
                                 <option value="1">SMA/SMK</option>
@@ -55,19 +55,19 @@
                               </select>
                             </div>
                             <div class="col-md-6">
-                                <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
+                                <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Provinsi</strong></label>
                                 <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
                                     <option selected>-- Pilih Provinsi --</option>
                                   </select>
                             </div>
                           <div class="col-sm-2">
-                            <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
+                            <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Kota</strong></label>
                             <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
                                 <option selected>-- Pilih Kota --</option>
                               </select>
                             </div>
                             <div class="col-sm-2">
-                                <button type="button" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Search</a></i>
+                                <button type="button" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Cari</a></i>
                             </div>
                       </div>
                     </div>
@@ -83,7 +83,7 @@
     <div class="container" data-aos="fade-up">
         <header class="section-header">
             <!-- <h2>Our Clients</h2> -->
-            <p>Featured Companies</p>
+            <p>Perusahaan Unggulan</p>
         </header>
         <div class="clients-slider swiper-container">
             <div class="swiper-wrapper align-items-center">
@@ -106,8 +106,8 @@
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
         <header class="section-header">
-            <p>Our Latest Jobs Here</p>
-            <span style="padding-top: 20px;">More Jobs</span>
+            <p>Karir Terbaru Kami disini</p>
+            <span style="padding-top: 20px;">Lebih Banyak Karir</span>
         </header>
 
         {{-- menampilkan relasi antar tabel corps dan jobs --}}
@@ -172,7 +172,7 @@
     <div class="container" data-aos="fade-up">
         <header class="section-header">
             <!-- <h2>Our Clients</h2> -->
-            <p>Browse Jobs Category</p>
+            <p>Telusuri Kategori Karir</p>
         </header>
 
         <div class="clients-slider swiper-container">
@@ -268,7 +268,7 @@
     <div class="container" data-aos="fade-up">
         <header class="section-header">
             <!-- <h2>Testimonials</h2> -->
-            <p>Our Customers Success Story</p>
+            <p>Pengalaman Sukses Kustomer Kami</p>
         </header>
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper-wrapper">
@@ -386,7 +386,6 @@
             $(".prov-data").html(option_prov);
         }
     });
-
     $(document).on("change",".prov-data",function(){
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
@@ -404,6 +403,5 @@
             }
         });
     });
-
 </script>
 @endpush

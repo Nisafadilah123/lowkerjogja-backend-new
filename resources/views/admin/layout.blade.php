@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
-    <title>@yield('title')</title>
+    <title> @yield('title')</title>
 
     <link rel="stylesheet" href="/template/dist/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/template/dist/modules/ionicons/css/ionicons.min.css">
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/template/dist/css/style.css">
     <link rel="stylesheet" href="/template/dist/css/style.css">
     <link rel="stylesheet" href="/template/dist/css/style.css">
+    {{-- sweet alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -56,9 +58,9 @@
                     <div class="sidebar-user">
                         <div class="sidebar-user-details">
                             <div class="user-name">{{ auth()->user()->name }}</div>
-                            <div class="user-role">
+                            {{-- <div class="user-role">
                                 Administrator
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <ul class="sidebar-menu">
@@ -69,17 +71,17 @@
 
                         <li class="menu-header">Menu</li>
                         <li>
-                            <a href="{{ url('/company') }}"><i class="fa fa-building"></i><span>Company</span></a>
+                            <a href="{{ url('/company') }}"><i class="fa fa-building"></i><span>Perusahaan</span></a>
 
                         </li>
                         <li>
-                            <a href="{{ url('/jobs') }}"><i class="ion ion-android-clipboard"></i><span>Jobs</span></a>
+                            <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Jobs</span></a>
                         </li>
                         <li>
-                            <a href="{{ url('/candidate') }}"><i class="fas fa-users"></i><span>Candidate</span></a>
+                            <a href="{{ url('/kandidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="ion ion-ios-person"></i><span>User</span></a>
+                            <a href=""><i class="fa fa-user"></i><span>User</span></a>
                         </li>
                 </aside>
             </div>
@@ -185,10 +187,8 @@
                 });
                 CKEDITOR.config.allowedContent = true;
             </script>
-
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            @include('sweet::alert')
-
+            @include('sweetalert::alert')
 </body>
 
 </html>

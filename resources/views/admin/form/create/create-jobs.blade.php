@@ -1,13 +1,13 @@
 @extends('admin.form.create.layout')
 
-@section('title' , 'Jobs | Admin')
+@section('title' , 'Karir | Admin')
 
 @section('container')
 <!-- Main Container -->
 <div class="main-content">
     <section class="section">
         <h1 class="section-header">
-            <div>Tambah Data Pekerjaan</div>
+            <div>Tambah Data Karir</div>
         </h1>
 
         <!-- Page Content -->
@@ -18,9 +18,9 @@
                     <div class="col-md-12">
                         <div class="block">
                             <div class="block-content">
-                                <label for="description"><strong>Deskripsi Perusahaan</strong></label>
+                                <label for="descriptionjob"><strong>Deskripsi Perusahaan</strong></label>
                                 <div class="form-group">
-                                    <textarea type="text" name="description" id="description" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required></textarea>
+                                    <textarea type="text" name="description_job" id="descriptionjob" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="position"><strong>Posisi</strong></label>
@@ -59,7 +59,7 @@
                                     <input type="text" name="kuota" id="kuota" class="form-control" placeholder="Kuota" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="gender"><strong>Gender</strong></label>
+                                    <label for="gender"><strong>Jenis Kelamin</strong></label>
                                     <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required>
                                 </div>
                                 <div class="form-group">
@@ -89,13 +89,13 @@
                                       </select>
                                 </div>
                                 <div class="form-group col-sm-2">
-                                    <label name="city" for="city"><strong>City</strong></label>
+                                    <label name="city" for="city"><strong>Kota</strong></label>
                                     <select name="city" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                         <option selected>-- Pilih Kota --</option>
                                       </select>
                                     </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span> Tambah Data</button>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span> Tambah Karir</button>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi",
+        "url":"/get-provinsi3",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
@@ -137,7 +137,7 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota",
+            "url":"/get-kota4",
             "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){

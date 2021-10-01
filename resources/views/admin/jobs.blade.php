@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title' , 'Job | Admin')
+@section('title' , 'Karir | Admin')
 
 @section('container')
 
@@ -8,14 +8,14 @@
 <div class="main-content">
     <section class="section">
         <h1 class="section-header">
-            <div>Job</div>
+            <div>Karir</div>
         </h1>
 
         <div class="section-body">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-12">
                     <div class="block-options p-3">
-                        <a href="{{url('create/jobs')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Baru</a>
+                        <a href="{{url('create/jobs')}}" class="btn btn-primary"><span class="fa fa-plus"></span>   Tambah Karir</a>
                     </div>
                     <div class="card"> 
 
@@ -34,7 +34,7 @@
                                         <th>Kota</th>
                                         <th>Range Gaji</th>
                                         <th>Kuota</th>
-                                        <th>Gender</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Umur</th>
                                         <th>Lokasi</th>
                                         <th>Syarat</th>
@@ -46,14 +46,14 @@
                                     @foreach ($jobs as $job)
                                     <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
-                                        <td style="vertical-align: middle;">{{$job->description}}</td>
+                                        <td style="vertical-align: middle;">{{$job->description_job}}</td>
                                         <td style="vertical-align: middle;">{{$job->position}}</td>
                                         <td style="vertical-align: middle;">{{$job->last_education}}</td>
                                         <td style="vertical-align: middle;">{{$job->job_type}}</td>
                                         <td style="vertical-align: middle;">{{$job->job_category}}</td>
                                         <td style="vertical-align: middle;">{{$job->deadline}}</td>
-                                        <td style="vertical-align: middle;"></td>
-                                        <td style="vertical-align: middle;"></td>
+                                        <td style="vertical-align: middle;">{{$job->provinces}}</td>
+                                        <td style="vertical-align: middle;">{{$job->city}}</td>
                                         <td style="vertical-align: middle;">{{$job->salary_range}}</td>
                                         <td style="vertical-align: middle;">{{$job->kuota}}</td>
                                         <td style="vertical-align: middle;">{{$job->gender}}</td>
