@@ -78,9 +78,10 @@
                             <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/simpanjob">
                                 {{csrf_field()}}
                                 <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $l->id }}">
-                            <div>   
-                                <button class="btn" style="padding-left: 150px;"><i class="bi bi-plus-square-fill"></i></button>
-                                <!-- <button class="btn"><i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i></button> -->
+                            <div>
+                                <button class="btn" style="float: right;">
+                                    <i class="bi bi-plus-square-fill"></i>
+                                </button>
                                 <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
                                 <br>
                                 <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
@@ -92,10 +93,10 @@
                                 <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
                                 <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>                    
+                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>
                                 <!-- Button lamar -->
                                 <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
-                                <!-- Button detail --> 
+                                <!-- Button detail -->
                                 <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>
