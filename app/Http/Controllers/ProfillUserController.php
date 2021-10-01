@@ -7,6 +7,7 @@ use App\Rules\MatchOldPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfillUserController extends Controller
 {
@@ -131,8 +132,8 @@ class ProfillUserController extends Controller
                 // $user->update($input);
 
 // dd($user);
-        alert()->success('Berhasil', 'Data berhasil diubah');
-        return redirect('/user');
+        Alert::success('Success', 'You have Successfully Updated');
+return redirect('/user');
     }
 
     /**
@@ -172,42 +173,9 @@ class ProfillUserController extends Controller
 
         $user= User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
 
-        // dd($user);
-        // $request->validate([
-        //     'old_password' => 'required',
-        //     'new_password' => 'required|min:8',
-        //     'password_confirmation' => 'required|same:new_password'
-        //     ], [
-        //             'old_password' => 'Lengkapi Kata Sandi Anda, Kata Sandi Min. 8 Karakter',
-        //             'new_password' => 'Lengkapi Kata Sandi Anda, Kata Sandi Min. 8 Karakter',
-        //             'password_confirmation' => 'Ulangi Kata Sandi Anda'
-
-        // ]);
-
-        // $current_user=auth()->user();
-
-        // dd($current_user);
-        // if (Hash::check($request->old_password, $current_user->password)) {
-        //     $user->save();
-        //     return redirect('/password')->with('success', 'Old password sesuai');
-        // }else{
-        //     return redirect()->back()->with('error', 'Old Password tak sesuai');
-        // }
-
-        // $user->password = Hash::make($request->password);
-
-        // return view('user.editPassword', compact('users'));
-        // $user = $request->all();
-
-        // if(!Hash::check($user['password'], auth()->user()->password)){
-        //     alert()->danger('error','You have entered wrong password');
-        //      return back();
-
-        // }else{
+        alert()->success('Berhasil', 'Password berhasil diubah');
 
         return view('user.password');
-
-        // }
 
     }
 

@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Pendidikan | Lowkerjogja.com')
+@section('title', 'Education | Lowkerjogja.com')
 
 @section('container')
 
@@ -21,12 +21,14 @@
             border-collapse: collapse;
             width: 100%;
         }
+
         table, th, td {
             border: 1px solid white;
         }
         th, td {
             padding: 10px;
         }
+
 </style>
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
@@ -42,7 +44,7 @@
                       <div>
                           <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                           <h6 style="font-weight: bold;padding-right:150px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
-                          <h6 style="color:#A5B2C2; font-size:15 px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
+                          <h6 style="color:#A5B2C2; font-size:15 px; float:right;position:relative; bottom:70px;padding-right:100px;">View Profile</h6>
                       </div>
                   </div>
 
@@ -60,7 +62,7 @@
                     <div class="col-sm-6">
                       <a href="/user" class="about">
                         <div class="card-body" style="width: 300px; padding-left: 30px;">
-                          <h6 style="font-weight: bold;" style="padding-right: 50px;">Profil Saya</h6>
+                          <h6 style="font-weight: bold;" style="padding-right: 50px;">My Profile</h6>
                         </div>
                       </a>
                     </div>
@@ -80,7 +82,7 @@
                     <div class="col-sm-6">
                       <a href="/education" class="about">
                         <div class="card-body" style="width: 300px; padding-left: 30px;">
-                          <h6 style="font-weight: bold;" style="padding-right: 50px;">Pendidikan</h6>
+                          <h6 style="font-weight: bold;" style="padding-right: 50px;">Education</h6>
                         </div>
                       </a>
                     </div>
@@ -100,7 +102,7 @@
                     <div class="col-sm-6">
                       <a href="/skill" class="about">
                         <div class="card-body" style="width: 300px; padding-left: 30px;">
-                          <h6 style="font-weight: bold;" style="padding-right: 50px;">Keahlian</h6>
+                          <h6 style="font-weight: bold;" style="padding-right: 50px;">Skills</h6>
                         </div>
                       </a>
                     </div>
@@ -120,7 +122,7 @@
                     <div class="col-sm-6">
                         <a href="/password" class="about">
                             <div class="card-body" style="width: 300px; padding-left: 30px;">
-                                <h6 style="font-weight: bold;" style="padding-right: 50px;">Kata Sandi</h6>
+                                <h6 style="font-weight: bold;" style="padding-right: 50px;">Password</h6>
                             </div>
                         </a>
                     </div>
@@ -139,9 +141,9 @@
                     <div class="row align-items-center">
                         <div class="col align-items-center">
                             <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
-                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Pendidikan
+                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education
 
-                            <a href="{{ url('education/create') }}" class="btn btn-success" id="tambah" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;"> Tambah</i></a><br><br>
+                            <a href="{{ url('education/create') }}" class="btn btn-success" id="tambah" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;">Add</i></a><br><br>
 
                             <table>
 
@@ -224,5 +226,6 @@
             }
           });
       });
+
 </script>
 @endpush
