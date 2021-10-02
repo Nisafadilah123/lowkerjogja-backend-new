@@ -75,13 +75,13 @@
 
                         </li>
                         <li>
-                            <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Jobs</span></a>
+                            <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Karir</span></a>
                         </li>
                         <li>
                             <a href="{{ url('/kandidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-user"></i><span>User</span></a>
+                            <a href=""><i class="fa fa-user"></i><span>Pengguna</span></a>
                         </li>
                 </aside>
             </div>

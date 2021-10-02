@@ -61,7 +61,7 @@
                     <li><a class="nav-link scrollto" href="/about">About</a></li>
                     <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
-                    {{-- <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Login</a></li> --}}
+                    {{-- <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Masuk</a></li> --}}
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
@@ -69,11 +69,11 @@
                             <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
+                                <li><a href="{{ route('register') }}" class="job scrollto">Daftar</a></li>
                             @endif
                         @endauth
                 @endif
-                    <li><a class="job scrollto" href="/signupCorp">Sign Up</a></li>
+                    <li><a class="job scrollto" href="/signupCorp">Daftar</a></li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -106,19 +106,19 @@
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Menu Utama</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Find Jobs</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Login</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Sign Up</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Post Vacancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Beranda</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Temukan Karir</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Tentang Kami</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Masuk</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Daftar</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Posting Lowongan</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Jobs Category</h4>
+                        <h4>Kategori Karir</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Photography</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Business</a></li>
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                        <h4>Contact Us</h4>
+                        <h4>Hubungi Kami</h4>
                         <p>
                             A108 Adam Street <br>
                             New York, NY 535022<br>

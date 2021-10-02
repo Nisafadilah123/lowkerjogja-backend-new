@@ -62,7 +62,7 @@
                     <li><a class="nav-link scrollto" href="/">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="/findjobs">Temukan Karir</a></li>
                     <li><a class="nav-link scrollto" href="/aboutus">Tentang Kami</a></li>
-                    {{-- <li><a class="nav-link scrollto" href="/login">Login</a></li> --}}
+                    {{-- <li><a class="nav-link scrollto" href="/login">Masuk</a></li> --}}
 
                     @if (Route::has('login'))
                         @auth
@@ -126,19 +126,19 @@
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Menu Utama</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/">Beranda</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="/findjobs">Temukan Karir</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="/aboutus">Tentang Kami</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/register">Sign Up</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/login">Masuk</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/register">Daftar</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="/home">Posting Lowongan</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Jobs Category</h4>
+                        <h4>Kategori Karir</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Photography</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Business</a></li>
@@ -151,7 +151,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                        <h4>Contact Us</h4>
+                        <h4>Hubungi Kami</h4>
                         <p>
                             A108 Adam Street <br>
                             New York, NY 535022<br>

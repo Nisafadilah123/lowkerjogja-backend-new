@@ -1,6 +1,6 @@
 @extends('vacancy.layout')
 
-@section('title', 'Home | Lowkerjogja.com')
+@section('title', 'Beranda | Lowkerjogja.com')
 
 @section('container')
 <!-- first -->
@@ -8,10 +8,10 @@
 <div class="container" style="margin-top: 120px;" data-aos="fade-up">
     <div class="row align-items-center">
         <div class="col-sm-12 col-md-6">
-            <h1 style="font-weight: bold;">Posts Jobs</h1>
-            <p style="color: #BEBFC0;">Whether you prefer flexibility or higher efficiency, have <br> it your way. Pick a plan to start connecting with talent <br> passionate about tech & startups.</p>
+            <h1 style="font-weight: bold;">Posting Lowongan</h1>
+            <p style="color: #BEBFC0;">Apakah Anda lebih suka fleksibilitas atau efisiensi yang lebih tinggi, miliki <br> itu dengan cara Anda. Pilih rencana untuk mulai terhubung dengan bakat <br> berpengalaman tentang teknologi &startups.</p>
             <a href="/service" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span style="padding:5px;">Get Premium</span>
+                <span style="padding:5px;">Dapatkan Premium</span>
                 <!-- <i class="bi bi-arrow-right"></i> -->
             </a>
         </div>
@@ -31,7 +31,7 @@
 
             <div class="row align-items-center">
                 <div class="col-sm-12 col-md-6">
-                    <p style="color: #000000;">The reason you should use </p>
+                    <p style="color: #000000;">Alasan Harus Menggunakan </p>
 
                 </div>
                 <div class="col-sm-12 col-md-6"> <img src="img/vector/logo-new.png" alt="" width="400px" style="padding-top: 20px;"></div>
@@ -42,9 +42,9 @@
         <div class="row align-items-center">
             <div class="col-sm-12 col-md-6">
 
-                <p>The <span style="color: #F8F01C; letter-spacing: 1px; font-weight: bold;">LOWKERJOGJA.COM</span> website and application are visited by thousands of job seekers every day with high positions for local keywords in search engines like Google</p>
+                <p>Situs <span style="color: #F8F01C; letter-spacing: 1px; font-weight: bold;">LOWKERJOGJA.COM</span> Website dan aplikasi dikunjungi oleh ribuan pencari kerja setiap hari dengan posisi tinggi untuk kata kunci lokal di mesin pencari seperti Google.</p>
                 <a href="/formUnggahan" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span style="padding: 5px;">Jobs Postings</span>
+                    <span style="padding: 5px;">Lowongan Pekerjaan</span>
                     <!-- <i class="bi bi-arrow-right"></i> -->
                 </a>
             </div>
@@ -53,9 +53,9 @@
         <div class="row align-items-center">
             <div class="col-sm-12 col-md-6">
 
-                <p>Low <span style="color: #006AFF;">price</span> with maximum features, Google Jobs integration, free standard poster design, friendly and supportive company support service</p>
+                <p>Harga<span style="color: #006AFF;"> Terjangkau</span> dengan fitur maksimum, integrasi Google Jobs, desain poster standar gratis, layanan dukungan perusahaan yang ramah dan mendukung</p>
                 <a href="/candidate" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span style="padding: 5px;">Looking for Candidate</span>
+                    <span style="padding: 5px;">Mencari Kandidat</span>
                     <!-- <i class="bi bi-arrow-right"></i> -->
                 </a>
             </div>

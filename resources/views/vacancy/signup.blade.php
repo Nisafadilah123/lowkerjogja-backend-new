@@ -1,6 +1,6 @@
 @extends('vacancy.layout')
 
-@section('title', 'Sign Up | Lowkerjogja.com')
+@section('title', 'Daftar | Lowkerjogja.com')
 
 @section('container')
 
@@ -20,45 +20,45 @@
             <div class="card" style="width: 360px">
                 <div class="card-body">
                     <h4 class="card-title" style="color: #006aff">
-                        <center><strong>Sign Up</strong></center>
+                        <center><strong>Daftar</strong></center>
                     </h4>
                     <form method="POST" class="my-login-validation" novalidate="">
                         <div class="form-group">
                             <label for="email"><strong>Email</strong></label><br />
                             <input id="email" type="email" class="form-control" name="email" value="" required autofocus placeholder="jhons" />
-                            <div class="invalid-feedback">Email is invalid</div>
+                            <div class="invalid-feedback">Email tidak valid</div>
                         </div>
 
                         <br />
                         <div class="form-group">
                             <label for="nama"><strong>Nama</strong></label>
                             <input id="nama" type="text" class="form-control" name="nama" value="" required autofocus placeholder="adfastas@gmail.com" />
-                            <div class="invalid-feedback">Email is invalid</div>
+                            <div class="invalid-feedback">Email tidak valid</div>
                         </div>
                         <br />
                         <div class="grouppassword">
-                            <label for="password"><strong>Password</strong> </label>
+                            <label for="password"><strong>Kata Sandi</strong> </label>
                             <input id="password" type="password" class="form-control" name="password" placeholder="******************" />
                             <i class="far fa-eye" aria-hidden="true"></i>
-                            <div class="invalid-feedback">Password is required</div>
+                            <div class="invalid-feedback">Perlu kata sandi</div>
                         </div>
                         <br />
                         <div class="grouppassword">
-                            <label for="password"><strong>Password</strong></label><br />
+                            <label for="password"><strong>Kata Sandi</strong></label><br />
                             <input id="password" type="password" class="form-control" name="password" placeholder="******************" />
                             <i class="far fa-eye" aria-hidden="true"></i>
-                            <div class="invalid-feedback">Password is required</div>
+                            <div class="invalid-feedback">Perlu kata sandi</div>
                         </div>
 
                         <br />
                         <div class="form-group">
                             <br />
                             <a href=""></a>
-                            <label for="" style="color: #006aff"><strong><a href="" style="color: #006aff">Forgot Password ?</a></strong></label>
+                            <label for="" style="color: #006aff"><strong><a href="" style="color: #006aff">Lupa kata sandi ?</a></strong></label>
                         </div>
 
                         <div class="form-group mt-2">
-                            <a href="/succesCorp" class=" btn btn-primary " style="width: 330px; font-size: 20px">Sign Up</a>
+                            <a href="/succesCorp" class=" btn btn-primary " style="width: 330px; font-size: 20px">Daftar</a>
                         </div>
                     </form>
                 </div>

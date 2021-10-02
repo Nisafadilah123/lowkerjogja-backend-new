@@ -357,8 +357,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
-                    <h4>Subscribe NewsLetter</h4>
-                    <p>And get company News.</p>
+                    <h4>Berlangganan Email</h4>
+                    <p>Dan dapatkan berita baru perusahaan.</p>
                 </div>
                 <div class="col-lg-6">
                     <form action="" method="post">
