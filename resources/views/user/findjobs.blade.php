@@ -24,9 +24,11 @@
                             <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lulusan</strong> </label>
                             <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
-                                <option value="1">SMA/SMK</option>
-                                <option value="2">Diploma</option>
-                                <option value="3">S1</option>
+                                <option value="S3">S3</option>
+                                <option value="S2">S2</option>
+                                <option value="S1/D4">S1/D4</option>
+                                <option value="D3">D3</option>
+                                <option value="SMA/SMK">SMA/SMK</option>
                             </select>
                             </div>
 
@@ -93,7 +95,7 @@
                                 <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
                                 <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">{{ $l->salary_range }}</h6>
+                                <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->salary_range) }}</h6>
                                 <!-- Button lamar -->
                                 <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
                                 <!-- Button detail -->

@@ -4,8 +4,11 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
+        {{-- <div class="mb-4 text-sm text-gray-600">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        </div> --}}
+        <div class="mb-4 text-sm text-gray-600">
+            {{ __('Lupa Password? Jangan khawatir. Cukup beri tahu kami alamat email Anda dan kami akan mengirimkan email kepada Anda tautan pengaturan ulang kata sandi yang memungkinkan Anda memilih yang baru.') }}
         </div>
 
         @if (session('status'))

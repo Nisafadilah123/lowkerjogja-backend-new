@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Corp;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
@@ -18,15 +19,17 @@ class MainController extends Controller
         return response()->json($hasil);
     }
     //
-    public function home()
-        {
-            // menampilkan tabel corps dan jobs
-            // $corps = Corp::get();
-            $jobs = Jobs::with('corp')->get();
-            return view('main.home',compact('jobs'));
-            // return view('main.home');
-        }
+    public function home(Request $request)
+    {
+        $lihatjobs = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            ->get();
 
+            return view('main.home',
+            ['lihatjobs'=> $lihatjobs]);
+    }
     public function about()
     {
         return view('main.about');
@@ -34,7 +37,14 @@ class MainController extends Controller
 
     public function findjobs()
     {
-        return view('main.findjobs');
+        $lihatjobs = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            ->get();
+
+            return view('main.findjobs',
+            ['lihatjobs'=> $lihatjobs]);
     }
 
     public function succes()
@@ -42,28 +52,7 @@ class MainController extends Controller
         return view('main.succes');
     }
 
-    // public function login()
-    // {
-    //     return view('main.login');
-    // }
-
-    // public function signup()
-    // {
-    //     return view('main.signup');
-    // }
-
-    public function lihatjobs(Request $request){
-        $lihatjobs = DB::table('jobs')
-        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-        'jobs.city', 'jobs.provinces', 'jobs.salary_range')
-        ->get();
-
-        return view('main.findjobs', 
-        ['lihatjobs'=> $lihatjobs]);
-    }
-
-    public function detailmain($id) 
+    public function detailmain($id)
     {
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
@@ -73,5 +62,4 @@ class MainController extends Controller
         ->get();
         return view('main.detailmain', ['jobs' => $jobs]);
     }
-
 }

@@ -70,9 +70,15 @@ Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/da
 
 
 // Halaman Main
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::get('/simpanjobs', [MainController::class, 'simpanjobs']);
+
+// });
+
+
 Route::get('/', [MainController::class, 'home']);
 Route::get('/aboutus', [MainController::class, 'about']);
-Route::get('/findjobs', [MainController::class, 'lihatjobs']);
+Route::get('/findjobs', [MainController::class, 'findjobs']);
 // Route::get('/login', [MainController::class, 'login']);
 // Route::get('/signup', [MainController::class, 'signup']);
 Route::get('/succes', [MainController::class, 'succes']);

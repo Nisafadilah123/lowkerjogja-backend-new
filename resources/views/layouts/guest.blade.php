@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Profile') }}</title>
+        {{-- <title>{{ config('app.name', 'Profile') }}</title> --}}
+        <title>{{ ('Lupa Kata Sandi') }}</title>
 
         <link href="img/logo-1.png" rel="icon">
         <link href="img/logo-1.png" rel="apple-touch-icon">

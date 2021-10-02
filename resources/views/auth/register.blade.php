@@ -73,12 +73,12 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Sudah Punya Akun ?') }}
                 </a>
 
                 <x-jet-button class="ml-4">
 
-                        {{ __('Register') }}
+                        {{ __('Daftar') }}
 
                 </x-jet-button>
 
@@ -96,67 +96,3 @@
 
 @endsection
 
-@push('script-addon')
-    <script>
-        // $(document).ready(function(){
-        // $.ajax({
-        //     type: "POST",
-        //     url: "{{ url('/user/create') }}",
-        //     data: {
-        //     name:$("#name").val(),
-        //     address:$("#address").val(),
-        //     email:$("#email").val(),
-        //     password:$("#password").val()
-        //     },
-        //     success: function (result){
-        //         if(result.status){
-        //             swal("Good job!", "You clicked the button!", "success");
-        //         }else{
-        //             alert("gagal");
-        //         }
-        //     },
-        //     dataType: "json"
-        // });
-        // });
-//         $(document).on('submit', '.registrasi', function (e) {
-//             e.preventDefault();
-//             var name = $(this).data('name');
-//             var address = $(this).data('address');
-//             var email = $(this).data('email');
-//             var password = $(this).data('password');
-
-//         function() {
-//             $.ajax({
-//                 type: "POST",
-//                 url: "{{url('/registrasi')}}",
-//                 data: {
-//                     name:name,
-//                     address:address,
-//                     email:email,
-//                     password:password
-//                     },
-//                 success: function (data) {
-//                               //
-//                               if(result.status){
-//                                 swal({
-//                                     title: "Are you sure!",
-//                                     type: "success",
-//                                     confirmButtonClass: "btn-danger",
-//                                     confirmButtonText: "Yes!",
-//                                     showCancelButton: true,
-//                                 }),
-//                               }else{
-//                                 swal({
-//                                     title: "Are you sure!",
-//                                     type: "error",
-//                                     confirmButtonClass: "btn-danger",
-//                                     confirmButtonText: "Yes!",
-//                                     showCancelButton: true,
-//                                 }),
-//                               }
-//                     }
-//             });
-//     });
-// });
-    </script>
-@endpush
