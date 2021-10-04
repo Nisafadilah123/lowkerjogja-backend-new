@@ -106,6 +106,8 @@ Route::resource('user', ProfillUserController::class);
 // Route::get('/user/{$id}/editPassword', [ProfillUserController::class, 'editPassword']);
 
 // Route Halaman Vacancy
+Route::get('/vacancy', [VacancyController::class, 'vacancy']);
+Route::get('/landingPageCorp', [VacancyController::class, 'vacancy']);
 Route::get('/landingPage', [VacancyController::class, 'landingPage']);
 Route::get('/faq', [VacancyController::class, 'faq']);
 Route::get('/about', [VacancyController::class, 'about']);

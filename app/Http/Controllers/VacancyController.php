@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class VacancyController extends Controller
 {
+    public function vacancy()
+    {
+        return view('vacancy.landingPageCorp');
+    }
+
+
     //halaman landing page
     public function landingPage()
     {

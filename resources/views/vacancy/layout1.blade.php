@@ -41,13 +41,14 @@
             height: 50px;
             background-color: #006AFF;
         }
+        
     </style>
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top">
+   <!-- ======= Header ======= -->
+   <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo d-flex align-items-center">
@@ -55,32 +56,38 @@
                 <!-- <span>FlexStart</span> -->
             </a>
 
-            <nav id="navbar" class="navbar">
+            <nav id="navbar" class="navbar" style="position:relative;left:1px">
                 <ul>
-                    <li><a class="nav-link scrollto" href="/service">Product & Service</a></li>
+                <li><a class="nav-link scrollto" href="/service">Product & Service</a></li>
                     <li><a class="nav-link scrollto" href="/about">About</a></li>
                     <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
+                        
 
-                    <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Login</a></li>
-                    {{-- @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
-                        @else
-                            <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
+                    <li style="position:relative; left:10px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
+                    <li class="dropdown pl-5" style="position:relative;left:40px">{{ ucfirst( Auth::user()->name) }}
+                        <ul>
+                            
+                            <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
+                                @csrf
 
-                            @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
-                            @endif
-                        @endauth
-                @endif --}}
-                    <li><a class="job scrollto" href="/signupCorp">Sign Up for Company</a></li>
+                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-jet-dropdown-link>
+                            </form></i></li>
 
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
+                        </ul>
+                    </li>
+
+                    <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
         </div>
-    </header><!-- End Header -->
+    </header><!-- End Header -->  
+
+
+
     @yield('container')
 
     <!-- ======= Footer ======= -->
@@ -116,11 +123,7 @@
                         @auth
                             <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
                         @else
-                            <li><a href="{{ route('login') }}" class="nav-link scrollto">Log in</a></li>
-
-                            @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
-                            @endif
+                            
                         @endauth
                 @endif --}}
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Daftar</a></li>

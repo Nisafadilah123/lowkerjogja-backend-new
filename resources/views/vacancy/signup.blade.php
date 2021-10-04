@@ -1,71 +1,168 @@
 @extends('vacancy.layout')
 
-@section('title', 'Daftar | Lowkerjogja.com')
+@section('title', 'Sign Up | Lowkerjogja.com')
 
 @section('container')
 
 <!-- ======= Sign Up Section ======= -->
 
-<div class="container" style="position: relative; top: 100px; height: 700px">
+<section>
+    <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <div class="">
+            <div class="class">
                 <div class="card-body">
                     <img src="img/2.png" alt="logo" class="float-right" width="500px" />
                 </div>
             </div>
         </div>
-        <br /><br /><br /><br />
+
         <div class="col-sm-6">
-            <div class="card" style="width: 360px">
-                <div class="card-body">
-                    <h4 class="card-title" style="color: #006aff">
-                        <center><strong>Daftar</strong></center>
-                    </h4>
-                    <form method="POST" class="my-login-validation" novalidate="">
-                        <div class="form-group">
-                            <label for="email"><strong>Email</strong></label><br />
-                            <input id="email" type="email" class="form-control" name="email" value="" required autofocus placeholder="jhons" />
-                            <div class="invalid-feedback">Email tidak valid</div>
-                        </div>
+{{-- main --}}
+<x-guest-layout>
+    <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
 
-                        <br />
-                        <div class="form-group">
-                            <label for="nama"><strong>Nama</strong></label>
-                            <input id="nama" type="text" class="form-control" name="nama" value="" required autofocus placeholder="adfastas@gmail.com" />
-                            <div class="invalid-feedback">Email tidak valid</div>
-                        </div>
-                        <br />
-                        <div class="grouppassword">
-                            <label for="password"><strong>Kata Sandi</strong> </label>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="******************" />
-                            <i class="far fa-eye" aria-hidden="true"></i>
-                            <div class="invalid-feedback">Perlu kata sandi</div>
-                        </div>
-                        <br />
-                        <div class="grouppassword">
-                            <label for="password"><strong>Kata Sandi</strong></label><br />
-                            <input id="password" type="password" class="form-control" name="password" placeholder="******************" />
-                            <i class="far fa-eye" aria-hidden="true"></i>
-                            <div class="invalid-feedback">Perlu kata sandi</div>
-                        </div>
+        <x-jet-validation-errors class="mb-4" />
 
-                        <br />
-                        <div class="form-group">
-                            <br />
-                            <a href=""></a>
-                            <label for="" style="color: #006aff"><strong><a href="" style="color: #006aff">Lupa kata sandi ?</a></strong></label>
-                        </div>
+        <form method="POST" action="{{ route('register') }}" class="registrasi">
+            @csrf
 
-                        <div class="form-group mt-2">
-                            <a href="/succesCorp" class=" btn btn-primary " style="width: 330px; font-size: 20px">Daftar</a>
-                        </div>
-                    </form>
-                </div>
+            <div class="class">
+                <p class="mb-3 text-center">SIGN UP</p>
             </div>
-        </div>
-    </div>
+            <div>
+                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            <div class="mt-4">
+                <!-- <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" /> -->
+                <x-jet-input id="utype" class="block mt-1 w-full" type="hidden" name="utype" value="CPY" required autocomplete="utype" />
+            </div>
+
+
+
+            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                <div class="mt-4">
+                    <x-jet-label for="terms">
+                        <div class="flex items-center">
+                            <x-jet-checkbox name="terms" id="terms"/>
+
+                            <div class="ml-2">
+                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                ]) !!}
+                            </div>
+                        </div>
+                    </x-jet-label>
+                </div>
+            @endif
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+
+                <x-jet-button class="ml-4">
+
+                        {{ __('Register') }}
+
+                </x-jet-button>
+
+            </div>
+        </form>
+    </x-jet-authentication-card>
+</x-guest-layout>
+
+{{-- end main --}}
+
 </div>
-<!-- End Sign Up Section -->
+</div>
+</div>
+</section>
 
 @endsection
+
+@push('script-addon')
+    <script>
+        // $(document).ready(function(){
+        // $.ajax({
+        //     type: "POST",
+        //     url: "{{ url('/user/create') }}",
+        //     data: {
+        //     name:$("#name").val(),
+        //     address:$("#address").val(),
+        //     email:$("#email").val(),
+        //     password:$("#password").val()
+        //     },
+        //     success: function (result){
+        //         if(result.status){
+        //             swal("Good job!", "You clicked the button!", "success");
+        //         }else{
+        //             alert("gagal");
+        //         }
+        //     },
+        //     dataType: "json"
+        // });
+        // });
+//         $(document).on('submit', '.registrasi', function (e) {
+//             e.preventDefault();
+//             var name = $(this).data('name');
+//             var address = $(this).data('address');
+//             var email = $(this).data('email');
+//             var password = $(this).data('password');
+
+//         function() {
+//             $.ajax({
+//                 type: "POST",
+//                 url: "{{url('/registrasi')}}",
+//                 data: {
+//                     name:name,
+//                     address:address,
+//                     email:email,
+//                     password:password
+//                     },
+//                 success: function (data) {
+//                               //
+//                               if(result.status){
+//                                 swal({
+//                                     title: "Are you sure!",
+//                                     type: "success",
+//                                     confirmButtonClass: "btn-danger",
+//                                     confirmButtonText: "Yes!",
+//                                     showCancelButton: true,
+//                                 }),
+//                               }else{
+//                                 swal({
+//                                     title: "Are you sure!",
+//                                     type: "error",
+//                                     confirmButtonClass: "btn-danger",
+//                                     confirmButtonText: "Yes!",
+//                                     showCancelButton: true,
+//                                 }),
+//                               }
+//                     }
+//             });
+//     });
+// });
+    </script>
+@endpush

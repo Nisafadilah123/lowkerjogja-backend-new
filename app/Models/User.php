@@ -30,7 +30,7 @@ class User extends Authenticatable
         'name', 'email', 'password', 'address',
         'phoneNumber',
         'profile_photo_path',
-        'roles',
+        'utype',
         'provinsi',
         'kota'
     ];
