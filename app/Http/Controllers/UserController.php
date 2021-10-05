@@ -68,6 +68,19 @@ class UserController extends Controller
             return view('user.password');
         }
 
+    //     public function cari(Request $request){
+    //     $user = DB::table('jobs')
+    //             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+    //             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+    //             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+    //             ->where("last_education",$request->last_education)
+    //             ->where("provinces",$request->provinces)
+    //             ->where("city", $request->city)
+    //             ->get();
+
+    //     return view('user.findjobs', compact('lihatjobs'));
+    //  }
+
         public function cari(Request $request)
         {
             $lihatjobs = DB::table('jobs')
@@ -117,6 +130,7 @@ class UserController extends Controller
             $myString = auth()->user()->email;
             $namauser = auth()->user()->name;
             $uid = auth()->user()->id;
+            $i = $request->idjob;
 
             $userid = DB::table('users')->select('id')
                 ->where('id', $uid)
@@ -144,9 +158,21 @@ class UserController extends Controller
                     'status' => $request->letter
                 ]
             );
+
+            DB::table('candidates')->insert(
+                [
+                    'user_id' => $uid,
+                    'apply_jobs_id' => $i,
+                    'status'=> $request->letter
+                    
+                ]
+            );
+
             alert()->success('Berhasil', 'CV anda berhasil dikirim');
             return redirect('/findjobsUser');
         }
+
+
 
         public function detail_view($id)
         {

@@ -9,6 +9,8 @@ use App\Models\Corp;
 use App\Models\Jobs;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+
 
 class CrudController extends Controller
 {
@@ -17,7 +19,8 @@ class CrudController extends Controller
             // menampilkan tabel corps dan jobs
             $corp = Corp::all();
             $jobs = Jobs::all();
-            return view('main.home',compact('corp', 'jobs'));
+            $user = User::all();
+            return view('main.home',compact('corp', 'jobs', 'user'));
             // return view('main.home');
      }
 
@@ -176,4 +179,14 @@ class CrudController extends Controller
         alert()->success('Berhasil', 'Data berhasil dihapus');
         return redirect('/jobs');
     }
+
+    // Pengguna
+    public function deleteuser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        alert()->success('Berhasil', 'Data berhasil dihapus');
+        return redirect('/users');
+    }
+
 }

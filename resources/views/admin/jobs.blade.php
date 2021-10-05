@@ -79,6 +79,11 @@
 
 
                                 </table>
+                                    <div class="d-felx justify-content-center">
+
+                                        {{ $jobs->links() }}
+
+                                    </div>
                             </div>
                         </div> 
 

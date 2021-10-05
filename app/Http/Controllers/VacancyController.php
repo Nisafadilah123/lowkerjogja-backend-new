@@ -70,17 +70,17 @@ class VacancyController extends Controller
      }
 
      // sistem search candidate
-     public function search (Request $request){
+    //  public function search (Request $request){
 
-        $user = DB::table('users')
-                ->where("provinsi",$request->provinsi)
-                ->where("kota", $request->kota )
-                ->get();
+    //     $user = DB::table('users')
+    //             ->where("provinsi",$request->provinsi)
+    //             ->where("kota", $request->kota )
+    //             ->get();
 
-        // $education = Education::select->get();
+    //     // $education = Education::select->get();
 
-        return view("vacancy.searchCandidate",compact("user","education"));
-     }
+    //     return view("vacancy.searchCandidate",compact("user","education"));
+    //  }
 
      // halaman profil corp
      public function profilCorp()

@@ -50,7 +50,7 @@
                         <div class="col">
                             <div> 
                                 <br>
-                                <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $i->id }}">
+                                <input type="text" class="form-control" name="idjob" id="idjob" value="{{ $i->id }}">
                                 <h2><b>UNGGAH CV<b></h2>
                                 <input type="file" class="form-control-file" id="cv" name="cv" required="required">
                                 <br><br>

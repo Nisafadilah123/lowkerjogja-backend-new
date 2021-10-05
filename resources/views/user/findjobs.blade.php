@@ -20,7 +20,7 @@
                     <div class="container px-4">
                         <div class="row">
                         <div class="col-md-2">
-
+                        <form action="cari" method="GET">
                             <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lulusan</strong> </label>
                             <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
                                 <option selected> Semua Lulusan</option>
@@ -37,18 +37,19 @@
                                 <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
                                     <option selected>-- Pilih Provinsi --</option>
                                 </select>
-
-
                             </div>
-                        <div class="col-sm-2">
+
+                            <div class="col-sm-2">
                             <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Kota</strong></label>
                             <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
                                 <option selected>-- Pilih Kota --</option>
                             </select>
                             </div>
+                            
                             <div class="col-sm-2">
-                                <button type="button" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Cari</a></i>
+                                <button type="search" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px" value="cari">   Cari</a></i>
                             </div>
+                        </form>
                     </div>
                     </div>
                 </div>

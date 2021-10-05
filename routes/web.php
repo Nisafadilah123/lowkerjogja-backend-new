@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::get('/company', [AdminController::class, 'company']);
     Route::get('/jobs', [AdminController::class, 'jobs']);
     Route::get('/kandidat', [AdminController::class, 'kandidat']);
+    Route::get('/users', [AdminController::class, 'user']);
 
     //create
     Route::get('/create/company', [CrudController::class, 'createcompany']);
@@ -62,6 +63,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     //delete
     Route::delete('/company/{id}', [CrudController::class, 'deletecompany']);
     Route::delete('/jobs/{id}', [CrudController::class, 'deletejobs']);
+    Route::delete('/users/{id}', [CrudController::class, 'deleteuser']);
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/dashboard', function () {
@@ -98,6 +100,8 @@ Route::get('/detail{id}', [UserController::class, 'detail_view']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
 Route::post('/simpanjob', [UserController::class, 'simpanjob']);
 Route::post('/deletejob', [UserController::class, 'deletejob']);
+Route::get('/cari', [USerController::class, 'cari']);
+
 
 // Routes Halaman Profil User
 Route::get('/user/{id}/editPassword', [ProfillUserController::class, 'editPassword']);
@@ -120,7 +124,7 @@ Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 Route::get('/job', [VacancyController::class, 'jobCorp']);
 Route::get('/editCorp', [VacancyController::class, 'editCorp']);
-Route::get('/search', [VacancyController::class, 'search']);
+// Route::get('/search', [VacancyController::class, 'search']);
 
 
 // ajax

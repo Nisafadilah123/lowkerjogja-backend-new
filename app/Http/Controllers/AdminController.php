@@ -8,6 +8,8 @@ use illuminate\Support\Str;
 use App\Models\Corp;
 use App\Models\Jobs;
 use App\Models\Candidate;
+use App\Models\User;
+
 
 class AdminController extends Controller
 {
@@ -15,14 +17,16 @@ class AdminController extends Controller
     {
         $corp = Corp::count();
         $jobs = Jobs::count();
-        return view('admin.dashboard',compact('corp', 'jobs'));
+        $user = User::count();
+        return view('admin.dashboard',compact('corp', 'jobs', 'user'));
     }
 
     public function dashboard()
     {
         $corp = Corp::count();
         $jobs = Jobs::count();
-        return view('admin.dashboard',compact('corp', 'jobs'));
+        $user = User::count();
+        return view('admin.dashboard',compact('corp', 'jobs', 'user'));
     }
 
     public function company()
@@ -37,7 +41,8 @@ class AdminController extends Controller
     {
         $i = 0;
         $i++;
-        $jobs = Jobs::latest()->get();
+        $jobs = Jobs::latest()-> paginate(3);
+        
         return view('admin.jobs', compact(['jobs', 'i']));
     }
 
@@ -47,6 +52,14 @@ class AdminController extends Controller
         $i++;
         $candidate = candidate::latest()->get();
         return view('admin.candidate', compact(['candidate', 'i']));
+    }
+
+    public function user()
+    {
+        $i = 0;
+        $i++;
+        $users = User::all();
+        return view('admin.users', compact(['users', 'i']));
     }
 
 }

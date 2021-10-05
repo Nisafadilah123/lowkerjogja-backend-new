@@ -66,7 +66,7 @@
               <h4>Pengguna</h4>
             </div>
             <div class="card-body">
-              {{-- {{$user}} --}}
+               {{$user}}
             </div>
           </div>
         </div>
