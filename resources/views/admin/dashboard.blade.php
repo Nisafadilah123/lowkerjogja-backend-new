@@ -51,7 +51,7 @@
               <h4>Kandidat</h4>
             </div>
             <div class="card-body">
-              {{$candidate}} 
+              {{$candidate}}
             </div>
           </div>
         </div>

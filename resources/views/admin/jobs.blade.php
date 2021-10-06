@@ -17,12 +17,13 @@
                     <div class="block-options p-3">
                         <a href="{{url('create/jobs')}}" class="btn btn-primary"><span class="fa fa-plus"></span>   Tambah Karir</a>
                     </div>
-                    <div class="card"> 
+                    <div class="card">
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered ">
-                                    <tr>
+                                <table class="table table-striped table-bordered data" id="add-row">
+                                    <thead>
+                                        <tr>
                                         <th>No</th>
                                         <th>Nama Perusahaan</th>
                                         <th>Deskripsi Pekerjaan</th>
@@ -44,7 +45,10 @@
                                         <th>Aksi</th>
                                         {{-- description	position	last_education	job_type	job_category	deadline	job_location	salary_range --}}
                                     </tr>
-                                    @foreach ($jobs as $job)
+                                    </thead>
+
+                                    <tbody>
+                                         @foreach ($jobs as $job)
                                     <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$job->nama_corp}}</td>
@@ -64,8 +68,8 @@
                                         <td style="vertical-align: middle;">{{$job->syarat}}</td>
                                         <td style="vertical-align: middle;">{{$job->email}}</td>
                                         <td style="vertical-align: middle;">{{$job->telp}}</td>
-                                        
-                                        
+
+
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
                                             <a href="/jobs/{{$job->id}}/edit" class="btn btn-sm btn-primary btn-circle"><i class="far fa-edit"></i></a>
                                             <form action="/jobs/{{$job->id}}" method="post">
@@ -77,11 +81,27 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    </tbody>
+
 
 
                                 </table>
                             </div>
-                        </div> 
+                        </div>
 
-    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
 @endsection
+
+@push('script-addon')
+<script>
+    $(document).ready(function () {
+        $('.data').dataTable();
+    });
+</script>
+@endpush

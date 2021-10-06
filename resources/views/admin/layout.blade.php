@@ -93,7 +93,7 @@
                             <a href="{{ url('/kandidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-user"></i><span>Pengguna</span></a>
+                            <a href="{{ url('/users') }}"><i class="fa fa-user"></i><span>Pengguna</span></a>
                         </li>
                 </aside>
             </div>
