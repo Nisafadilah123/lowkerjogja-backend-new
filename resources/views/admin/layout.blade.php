@@ -6,20 +6,32 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
     <title> @yield('title')</title>
 
-    <link rel="stylesheet" href="/template/dist/modules/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/template/dist/modules/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="/template/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="{{ asset('templates/dist/modules/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('templates/dist/modules/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('templates/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css')}}">
 
-    <link rel="stylesheet" href="/template/dist/modules/summernote/summernote-lite.css">
-    <link rel="stylesheet" href="/template/dist/modules/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/template/dist/css/demo.css">
-    <link rel="stylesheet" href="/template/dist/css/style.css">
-    <link rel="stylesheet" href="/template/dist/css/style.css">
-    <link rel="stylesheet" href="/template/dist/css/style.css">
+    <link rel="stylesheet" href="{{ asset('templates/dist/css/demo.css')}}">
+    <link rel="stylesheet" href="{{ asset('templates/dist/css/style.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('templates/dist/modules/bootstrap/css/bootstrap.css') }}">
+
+
     {{-- sweet alert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    {{-- datatables --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Fonts -->
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <body>
     <div id="app">
         <div class="main-wrapper">
@@ -81,114 +93,33 @@
                             <a href="{{ url('/kandidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li>
-                        <a href="{{ url('/users') }}"><i class="fa fa-user"></i><span>Pengguna</span></a>
+                            <a href=""><i class="fa fa-user"></i><span>Pengguna</span></a>
                         </li>
                 </aside>
             </div>
+        </div>
+    </div>
             @yield('container')
 
-            <script src="/template/dist/modules/jquery.min.js"></script>
-            <script src="/template/dist/modules/popper.js"></script>
-            <script src="/template/dist/modules/tooltip.js"></script>
-            <script src="/template/dist/modules/bootstrap/js/bootstrap.min.js"></script>
-            <script src="/template/dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
-            <script src="/template/dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
-            <script src="/template/dist/js/sa-functions.js"></script>
+            <script src="{{ asset('templates/dist/modules/jquery.min.js') }}"></script>
+            <script src="{{ asset('templates/dist/modules/popper.js')}}"></script>
+            <script src="{{ asset('templates/dist/modules/tooltip.js')}}"></script>
+            <script src="{{ asset('templates/dist/modules/bootstrap/js/bootstrap.min.js')}}"></script>
+            <script src="{{ asset('templates/dist/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
+            <script src="{{ asset('templates/dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js')}}"></script>
+            <script src="{{ asset('templates/dist/js/sa-functions.js')}}"></script>
 
-            <script src="/template/dist/modules/chart.min.js"></script>
-            <script src="/template/dist/modules/summernote/summernote-lite.js"></script>
+            <script src="{{ asset('templates/dist/js/scripts.js')}}"></script>
+            <script src="{{ asset('templates/dist/js/custom.js')}}"></script>
+            <script src="{{ asset('templates/dist/js/demo.js')}}"></script>
 
-            <script>
-                var ctx = document.getElementById("myChart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                        datasets: [{
-                            label: 'Statistics',
-                            data: [460, 458, 330, 502, 430, 610, 488],
-                            borderWidth: 2,
-                            backgroundColor: 'rgb(87,75,144)',
-                            borderColor: 'rgb(87,75,144)',
-                            borderWidth: 2.5,
-                            pointBackgroundColor: '#ffffff',
-                            pointRadius: 4
-                        }]
-                    },
-                    options: {
-                        legend: {
-                            display: false
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    stepSize: 150
-                                }
-                            }],
-                            xAxes: [{
-                                gridLines: {
-                                    display: false
-                                }
-                            }]
-                        },
-                    }
-                });
-
-                var ctx = document.getElementById("myChart2").getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                        datasets: [{
-                            label: 'Statistics',
-                            data: [460, 458, 330, 502, 430, 610, 488],
-                            borderWidth: 2,
-                            backgroundColor: 'rgb(87,75,144)',
-                            borderColor: 'rgb(87,75,144)',
-                            borderWidth: 2.5,
-                            pointBackgroundColor: '#ffffff',
-                            pointRadius: 4
-                        }]
-                    },
-                    options: {
-                        legend: {
-                            display: false
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    stepSize: 150
-                                }
-                            }],
-                            xAxes: [{
-                                ticks: {
-                                    display: false
-                                },
-                                gridLines: {
-                                    display: false
-                                }
-                            }]
-                        },
-                    }
-                });
-            </script>
-            <script src="/template/dist/js/scripts.js"></script>
-            <script src="/template/dist/js/custom.js"></script>
-            <script src="/template/dist/js/demo.js"></script>
-            <script src="/template/js/dropify.min.js"></script>
-            <script src="/template/js/ckeditor/ckeditor.js">
-            </script>
-            <script>
-                var konten = document.getElementById("konten");
-                CKEDITOR.replace(konten, {
-                    language: 'en-gb'
-                });
-                CKEDITOR.config.allowedContent = true;
-            </script>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            {{-- js datatables --}}
+            <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
             @include('sweetalert::alert')
+
+            @stack('script-addon')
+            {{-- nah kalau yield ini isi nya sesuai sama isi section nya kalau stack itu kaya di kumpulin gitu. --}}
+            @yield('script')
 </body>
 
 </html>

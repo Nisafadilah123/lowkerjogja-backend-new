@@ -37,23 +37,47 @@ class AdminController extends Controller
     {
         $i = 0;
         $i++;
-        $corp = Corp::latest()->get();
+        $corp = Corp::all();
         return view('admin.company', compact(['corp', 'i']));
     }
 
-    public function jobs()
+    public function jobs(Request $request)
     {
+        $keyword = $request->keyword;
+
         $i = 0;
         $i++;
-        $jobs = DB::table('jobs')
-        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        ->select('corp.id', 'corp.nama_corp', 'jobs.corp_id', 'jobs.description_job', 'jobs.position', 
-        'jobs.last_education', 'job_type', 'job_category', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.salary_range', 'jobs.kuota', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.created_at', 'jobs.updated_at')
-        ->get();
-        // $jobs = Jobs::latest()-> paginate(3);
-        
+        // $jobs = DB::table('jobs')->simplePaginate(3);
+        $jobs = Jobs::all();
+        // $jobs = Jobs::where('description_job', 'LIKE', '%'.$keyword.'%')
+        //         ->get();
+
+
+        // //     // set column
+        //     foreach($jobs as $job){
+
+        //         $provinceId = $job->provinces;
+
+        //         $province = rajaongkir_point( 'province', 'GET', ['id=' . $provinceId] );
+        //         $city = rajaongkir_point('city', 'GET', ['id=' .$job->city. 'province='.$provinceId]);
+        //         $provinceName = $province->province;
+        //         $cityName = $city->city_name;
+        //         $provinceName = preg_split("/[,]/",$provinceName);
+        //         $cityName = preg_split("/[,]/",$cityName);
+
+        //         // var_dump($cityName);
+
+        //     }
+        // return view('admin.jobs', compact('jobs', 'i','provinceName','cityName'));
         return view('admin.jobs', compact(['jobs', 'i']));
+
+
+
+
+
+
     }
+
 
     public function kandidat()
     {
@@ -66,7 +90,7 @@ class AdminController extends Controller
         ->join('jobs', 'jobs.id', '=', 'apply_jobs.job_id')
         ->select('users.id', 'users.name', 'users.address', 'apply_jobs.cv','jobs.position', 'candidates.status')
         ->get();
-        
+
         return view('admin.candidate', compact(['candidate', 'i']));
     }
 

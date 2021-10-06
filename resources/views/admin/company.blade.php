@@ -20,9 +20,10 @@
                     <div class="card">
 
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered ">
-                                    <tr>
+                            <div class="table-responsive" >
+                                <table class="table table-striped table-bordered data" id="add-row">
+                                    <thead>
+                                         <tr>
                                         <th>No</th>
                                         <th>Perusahaan</th>
                                         <th>Desc</th>
@@ -33,8 +34,12 @@
                                         <th>Tahun Berdiri</th>
                                         <th>Aksi</th>
                                     </tr>
-                                    @foreach ($corp as $corp)
-                                    <tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach ($corp as $corp)
+                                         <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$corp->nama_corp}}</td>
                                         <td style="vertical-align: middle;">{{$corp->description}}</td>
@@ -59,11 +64,30 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    </tbody>
+
+
 
 
                                 </table>
                             </div>
                         </div>
 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+</div>
 
 @endsection
+
+@push('script-addon')
+<script>
+    $(document).ready(function () {
+        $('.data').dataTable();
+    });
+</script>
+@endpush
