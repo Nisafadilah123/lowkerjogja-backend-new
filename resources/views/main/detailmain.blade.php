@@ -40,7 +40,7 @@
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->gender }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->age }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->job_type }}</h4>
-                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->salary_range }}</h4>
+                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: Rp {{ number_format($i->salary_range) }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->deadline }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->location }}<h4>
                 </ul>

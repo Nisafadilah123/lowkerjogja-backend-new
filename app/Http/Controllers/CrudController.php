@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use illuminate\Support\Str;
 use App\Models\Corp;
 use App\Models\Jobs;
+use App\Models\Candidate;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -108,12 +109,15 @@ class CrudController extends Controller
 
     public function createjobs()
     {
-        return view('admin/form.create.create-jobs');
+        $corp = DB::table('corp')
+            ->get();
+        return view('admin/form.create.create-jobs', ['corp' => $corp]);
     }
 
     public function addjobs(Request $request)
     {
         $dtUpload = new Jobs;
+        $dtUpload->corp_id               = $request->idcorp;
         $dtUpload->description_job      = $request->description_job;
         $dtUpload->position         = $request->position;
         $dtUpload->last_education   = $request->last_education;

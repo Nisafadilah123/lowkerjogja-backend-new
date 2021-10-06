@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::get('/jobs', [AdminController::class, 'jobs']);
     Route::get('/kandidat', [AdminController::class, 'kandidat']);
     Route::get('/users', [AdminController::class, 'user']);
+    Route::get('/opencv/{id}', [AdminController::class, 'opencv']);
 
     //create
     Route::get('/create/company', [CrudController::class, 'createcompany']);

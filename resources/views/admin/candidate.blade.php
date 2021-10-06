@@ -21,7 +21,7 @@
                                 <table class="table table-bordered ">
                                     <tr>
                                         <th>No</th>
-                                        <th colspan="2">Nama </th>
+                                        <th>Nama </th>
 
 
                                         <th>Alamat</th>
@@ -31,7 +31,31 @@
 
                                         <th>Aksi</th>
                                     </tr>
+                                    @foreach ($candidate as $c)
+                                    <tr>
+                                        <td style="vertical-align: middle;">{{$i++}}</td>
+                                        <td style="vertical-align: middle;">{{$c->name}}</td>
+                                        <td style="vertical-align: middle;">{{$c->address}}</td>
+                                        <td style="vertical-align: middle;">{{$c->position}}</td>
+                                        <td>
+                                            <a href="/opencv/{{$c->id}}" target="_blank" class="btn btn-primary">
+                                                View File <span class="glyphicon glyphicon-eye-open">
+                                            </a>
+                                        </td>
+                                        <td style="vertical-align: middle;">{{$c->status}}</td>
+                                        
+                                        <td style="width: 120px;text-align: center;vertical-align: middle; ">
+                                            <form action="" method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-primary btn-circle" onclick="return confirm('anda yakin ingin menghapus data?');"><span class="far fa-trash-alt"></span></button>
+                                                <!-- <input type="submit" class="btn btn-danger btn-sm" value="Delete" onclick="return confirm('anda yakin ingin menghapus data?');"> -->
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </table>
+                                
                             </div>
                         </div>
 @endsection

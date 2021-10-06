@@ -28,7 +28,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="lasteducation"><strong>Pendidikan Terakhir</strong></label>
-                                    <input type="text" name="last_education" id="lasteducation" class="form-control" placeholder="Pendidikan Terakhir" required value={{$jobs->last_education}}>
+                                    <select class="form-control" id="last_education" name="last_education">
+                                        <option value="SMA/SMK">SMA/SMK</option>
+                                        <option value="Diploma">Diploma</option>
+                                        <option value="S1/D4">S1/D4</option>
+                                        <option value="S2">S2</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="jobtype"><strong>Tipe Pekerjaan</strong></label>
@@ -51,8 +56,12 @@
                                     <input type="text" name="kuota" id="kuota" class="form-control" placeholder="kuota" required value={{$jobs->kuota}}>
                                 </div>
                                 <div class="form-group">
-                                    <label for="gender"><strong>Jenis Kelamin</strong></label>
-                                    <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required value={{$jobs->gender}}>
+                                    <label for="lasteducation"><strong>Jenis Kelamin</strong></label>
+                                    <select class="form-control" id="gender" name="gender">
+                                        <option value="Pria">Pria</option>
+                                        <option value="Wanita">Wanita</option>
+                                        <option value="Pria/Wanita">Pria/Wanita</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="age"><strong>Umur</strong></label>

@@ -24,6 +24,7 @@
                                 <table class="table table-bordered ">
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama Perusahaan</th>
                                         <th>Deskripsi Pekerjaan</th>
                                         <th>Posisi Kerja</th>
                                         <th>Pendidikan Terakhir</th>
@@ -46,6 +47,7 @@
                                     @foreach ($jobs as $job)
                                     <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
+                                        <td style="vertical-align: middle;">{{$job->nama_corp}}</td>
                                         <td style="vertical-align: middle;">{{$job->description_job}}</td>
                                         <td style="vertical-align: middle;">{{$job->position}}</td>
                                         <td style="vertical-align: middle;">{{$job->last_education}}</td>
@@ -63,7 +65,6 @@
                                         <td style="vertical-align: middle;">{{$job->email}}</td>
                                         <td style="vertical-align: middle;">{{$job->telp}}</td>
                                         
-                                       
                                         
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
                                             <a href="/jobs/{{$job->id}}/edit" class="btn btn-sm btn-primary btn-circle"><i class="far fa-edit"></i></a>
@@ -79,11 +80,6 @@
 
 
                                 </table>
-                                    <div class="d-felx justify-content-center">
-
-                                        {{ $jobs->links() }}
-
-                                    </div>
                             </div>
                         </div> 
 

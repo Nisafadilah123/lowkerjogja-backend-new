@@ -97,9 +97,9 @@
                                 <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
                                 <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->salary_range) }}</h6>
                                 <!-- Button lamar -->
-                                <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
+                                <a class="btn btn-primary" href="/login" role="button">Lamar</a>
                                 <!-- Button detail -->
-                                <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
+                                <a class="btn btn-primary" href="/detailmain{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>
                     </div>

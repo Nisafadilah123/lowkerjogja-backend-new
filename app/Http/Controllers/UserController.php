@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Corp;
 use App\Models\Jobs;
 use App\Models\Education;
+use App\Models\Apply_job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 // use DB;
@@ -141,9 +142,12 @@ class UserController extends Controller
             $data = new lowker;
             if ($request->file('cv')) {
                 $file = $request->file('cv');
-                $namauser = $namauser;
+                // $namauser = $namauser;
                 $ext = $file->getClientOriginalExtension();
-                $nama_file = $namauser . "." . $file->getClientOriginalExtension();
+                // $nama_file = $namauser . "." . $file->getClientOriginalExtension();
+                // $nama_file = time() . rand(100, 999) . "." . $file->getClientOriginalExtension();
+                // $nama_file = date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $nama_file = $uid . "." . $file->getClientOriginalExtension();
                 $path = 'CV';
                 $file->getMimeType();
                 $file->move($path, $nama_file);
@@ -163,8 +167,6 @@ class UserController extends Controller
                 [
                     'user_id' => $uid,
                     'apply_jobs_id' => $i,
-                    'status'=> $request->letter
-                    
                 ]
             );
 

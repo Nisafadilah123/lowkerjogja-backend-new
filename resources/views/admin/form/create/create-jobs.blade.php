@@ -18,6 +18,15 @@
                     <div class="col-md-12">
                         <div class="block">
                             <div class="block-content">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Perusahaan</label>
+                                    <select class="form-control" id="idcorp" name="idcorp">
+                                    @foreach ($corp as $c)
+                                        <option value="{{$c->id }}">  {{$c->id }} {{ $c->nama_corp }}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                                <br>
                                 <label for="descriptionjob"><strong>Deskripsi Perusahaan</strong></label>
                                 <div class="form-group">
                                     <textarea type="text" name="description_job" id="descriptionjob" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required></textarea>
@@ -28,7 +37,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="lasteducation"><strong>Pendidikan Terakhir</strong></label>
-                                    <input type="text" name="last_education" id="lasteducation" class="form-control" placeholder="Pendidikan Terakhir" required>
+                                    <select class="form-control" id="last_education" name="last_education">
+                                        <option value="0">Pilih Pedidikan Terakhir</option>
+                                        <option value="SMA/SMK">SMA/SMK</option>
+                                        <option value="Diploma">Diploma</option>
+                                        <option value="S1/D4">S1/D4</option>
+                                        <option value="S2">S2</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="jobtype"><strong>Tipe Pekerjaan</strong></label>
@@ -59,8 +74,13 @@
                                     <input type="text" name="kuota" id="kuota" class="form-control" placeholder="Kuota" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="gender"><strong>Jenis Kelamin</strong></label>
-                                    <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required>
+                                    <label for="lasteducation"><strong>Jenis Kelamin</strong></label>
+                                    <select class="form-control" id="gender" name="gender">
+                                        <option value="0">Pilih Jenis Kelamin</option>
+                                        <option value="Pria">Pria</option>
+                                        <option value="Wanita">Wanita</option>
+                                        <option value="Pria/Wanita">Pria/Wanita</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="age"><strong>Umur</strong></label>
@@ -86,7 +106,7 @@
                                     <label name="provinces" for="provinces" style=""><strong>Provinsi</strong></label>
                                     <select name="provinces" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                         <option selected>-- Pilih Provinsi --</option>
-                                      </select>
+                                    </select>
                                 </div>
                                 <div class="form-group col-sm-2">
                                     <label name="city" for="city"><strong>Kota</strong></label>

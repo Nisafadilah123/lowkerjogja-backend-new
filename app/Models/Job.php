@@ -11,13 +11,16 @@ class Job extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'company_id',
-        'decription',
+        'corp_id',
+        'decription_job',
         'position',
         'last_education',
         'job_type',
         'job_category',
         'last_date',
+        'deadline',
+        'provinces',
+        'city',
         'job_location',
         'salary_range'
 
