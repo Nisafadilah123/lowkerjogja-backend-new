@@ -89,7 +89,7 @@ class UserController extends Controller
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->get();
-    
+
             if( $request->last_education){
                 $lihatjobs = $lihatjobs->where('last_education', 'LIKE', "%" . $request->last_education . "%");
             }
@@ -99,7 +99,7 @@ class UserController extends Controller
             if( $request->city){
                 $lihatjobs = $lihatjobs->where('city', 'LIKE', "%" . $request->city . "%");
             }
-           
+
             $lihatjobs = $lihatjobs;
             return view('user.findjobs', compact('lihatjobs'));
         }

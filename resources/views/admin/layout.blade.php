@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('templates/dist/css/demo.css')}}">
     <link rel="stylesheet" href="{{ asset('templates/dist/css/style.css')}}">
 
+    {{-- <link rel="stylesheet" href="{{ asset('templates/dist/modules/bootstrap/css/bootstrap.css') }}"> --}}
+
     <link rel="stylesheet" href="{{ asset('templates/dist/modules/bootstrap/css/bootstrap.css') }}">
 
 
@@ -22,8 +24,10 @@
 
     {{-- datatables --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ asset('templates/DataTables/media/css/jquery.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('templates/DataTables/media/css/dataTables.bootstrap.css') }}">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <!-- Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -31,7 +35,7 @@
 
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 <body>
     <div id="app">
         <div class="main-wrapper">
@@ -115,6 +119,9 @@
 
             {{-- js datatables --}}
             <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+            <script rel="stylesheet" href="{{ asset('templates/DataTables/media/js/jquery.dataTables.js') }}"></script>
+            <script rel="stylesheet" href="{{ asset('templates/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+
             @include('sweetalert::alert')
 
             @stack('script-addon')

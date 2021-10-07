@@ -28,49 +28,6 @@
     </div>
 </section><!-- End Hero -->
 
-<!-- Pencarian -->
-<section id="find" class="find">
-    <div class="container" data-aos="fade-up" style="margin-top: 100px;">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <div class="container px-4">
-                        <div class="row">
-                          <div class="col-md-2">
-                               <label for="graduate" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lulusan</strong> </label>
-                               <select id="graduate" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
-                                <option selected> Semua Lulusan</option>
-                                <option value="S3">S3</option>
-                                <option value="S2">S2</option>
-                                <option value="S1/D4">S1/D4</option>
-                                <option value="D3">D3</option>
-                                <option value="SMA/SMK">SMA/SMK</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label name="provinsi" for="provinsi" style="position: relative; left:200px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Provinsi</strong></label>
-                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; left:200px;width: 250px;height:40px">
-                                    <option selected>-- Pilih Provinsi --</option>
-                                  </select>
-                            </div>
-                          <div class="col-sm-2">
-                            <label name="kota" for="kota" style="position: relative; left:320px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Kota</strong></label>
-                            <select name="kota" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; left:320px;width: 250px;height:40px">
-                                <option selected>-- Pilih Kota --</option>
-                              </select>
-                            </div>
-                            <div class="col-sm-2">
-                                <button type="button" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Cari</a></i>
-                            </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end Pencarian -->
-
 <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients">
     <div class="container" data-aos="fade-up">
