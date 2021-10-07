@@ -167,6 +167,7 @@ class UserController extends Controller
                 [
                     'user_id' => $uid,
                     'apply_jobs_id' => $i,
+                    'status' => '0',
                 ]
             );
 
