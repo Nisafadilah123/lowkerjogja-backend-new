@@ -97,7 +97,7 @@ class EducationController extends Controller
         // $data['user_id'] = Auth::id();
         // Education::create($data);
         // return $request;
-        Alert::success('Success', 'You have Successfully Added');
+        Alert::success('Berhasil', 'Data berhasil di tambahkan');
 
         return redirect('/education');
 
@@ -182,7 +182,7 @@ class EducationController extends Controller
 
         $education->save();
 
-        Alert::success('Success', 'You have Successfully Updated');
+        Alert::success('Berhasil', 'Data berhasil di ubah');
 
             return redirect('/education');
     }

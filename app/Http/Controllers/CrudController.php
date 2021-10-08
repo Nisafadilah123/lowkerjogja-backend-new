@@ -48,7 +48,7 @@ class CrudController extends Controller
         $dtUpload->logo         = $namafile1;
 
 
-        $nm1->move(public_path() . '/template/img/logo', $namafile1);
+        $nm1->move(public_path() . '/logo', $namafile1);
         $dtUpload->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
         return redirect('/company');
@@ -67,7 +67,7 @@ class CrudController extends Controller
 
         if ($request['logo'] != null) {
 
-            $request->logo->move(public_path() . '/template/img/logo', $awal1);
+            $request->logo->move(public_path() . '/logo', $awal1);
         }
 
         $corp = [
@@ -191,6 +191,17 @@ class CrudController extends Controller
         $user->delete();
         alert()->success('Berhasil', 'Data berhasil dihapus');
         return redirect('/users');
+    }
+
+    public function deletecandidate($id)
+    {
+        $candidate = Candidate::findOrFail($id);
+        $candidate->delete();
+        // Candidate::destroy($candidate->id);
+        // DB::table('candidates')->where('id',$id)->delete();
+        dd($candidate);
+        alert()->success('Berhasil', 'Data berhasil dihapus');
+        // return redirect('/kandidat');
     }
 
 }

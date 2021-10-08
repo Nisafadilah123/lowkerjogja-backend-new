@@ -65,18 +65,14 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::delete('/company/{id}', [CrudController::class, 'deletecompany']);
     Route::delete('/jobs/{id}', [CrudController::class, 'deletejobs']);
     Route::delete('/users/{id}', [CrudController::class, 'deleteuser']);
+    Route::delete('/users/{id}', [CrudController::class, 'deleteuser']);
+    Route::delete('/candidate/deletecandidate/{id}', [CrudController::class, 'deletecandidate']);
+
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'authcompany'])->get('/company/dashboard', function () {
     return view('company.index');
 })->name('company.index');
-
-
-// Halaman Main
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::get('/simpanjobs', [MainController::class, 'simpanjobs']);
-
-// });
 
 
 Route::get('/', [MainController::class, 'home']);

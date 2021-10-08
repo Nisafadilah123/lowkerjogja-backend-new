@@ -24,14 +24,14 @@
                                 </div>
                                 <label for="deskripsi"><strong>Deskripsi Perusahaan</strong></label>
                                 <div class="form-group">
-                                    <textarea type="text" name="description" id="deskripsi" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{$corp->description}}></textarea>
+                                    <textarea type="text" name="description" id="deskripsi" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{old('description',$corp->description)}}>{{ $corp->description }}</textarea>
                                 </div>
                                 <label for="gambar1">Logo</label>
                                 <div class="form-group">
                                     <input type="file" name="logo" id="logo" class="dropify" data-height="190" >
                                 </div>
                                 <div class="form-group">
-                                    <img src="{{ asset('template/img/logo/'.$corp->logo)}}" height="10%" width="30%" alt="">
+                                    <img src="{{ asset('logo/'.$corp->logo)}}" height="10%" width="30%" alt="">
                                 </div>
                                 <div class="form-group">
                                     <label for="industri"><strong>Industri</strong></label>

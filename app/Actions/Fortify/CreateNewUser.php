@@ -32,7 +32,7 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         // memberi pesan sukses
-        Alert::success('Congrats', 'You have Successfully Registered');
+        Alert::success('Selamat', 'Register Berhasil');
 
 
 

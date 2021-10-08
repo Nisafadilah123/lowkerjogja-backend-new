@@ -24,7 +24,8 @@
                                         <th>No</th>
                                         <th>Nama </th>
                                         <th>Email</th>
-
+                                        <th>Foto Pengguna</th>
+                                        <th>Role Pengguna</th>
                                         <th>Aksi</th>
                                     </tr>
 
@@ -37,12 +38,15 @@
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$user->name}}</td>
                                         <td style="vertical-align: middle;">{{$user->email}}</td>
-
+                                        <td style="vertical-align: middle;">
+                                            <img style="margin-bottom: 5px;" src="{{asset('profile_photos/'. $user->profile_photo_path)}}" width="100" alt="Foto Pengguna">
+                                        </td>
+                                        <td style="vertical-align: middle;">{{$user->utype}}</td>
                                         <td style="width: 50px;text-align: center;vertical-align: middle; ">
-                                            <form action="/users/{{$user->id}}" method="post">
+                                            <form id="delete-user" action="/users/{{$user->id}}" method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-primary btn-circle" style="float:right" onclick="return confirm('anda yakin ingin menghapus data?');"><span class="far fa-trash-alt"></span></button>
+                                                <button type="submit" class="btn btn-sm btn-primary btn-circle delete" style="float:right" ><span class="far fa-trash-alt"></span></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -66,5 +70,26 @@
     $(document).ready(function () {
         $('.data').dataTable();
     });
+</script>
+
+<script>
+    $('.delete').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+            title: `Apakah anda yakin ingin menghapus data ini ?`,
+              text: "Jika anda menghapusnya maka datanya akan di hapus secara permanen",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+
 </script>
 @endpush

@@ -60,10 +60,10 @@
                                         </td>
 
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
-                                            <form action="" method="post">
+                                            <form id="delete-kandidat" action="/candidate/deletecandidate/{{$c->id}}" method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-primary btn-circle" onclick="return confirm('anda yakin ingin menghapus data?');"><span class="far fa-trash-alt"></span></button>
+                                                <button type="submit" class="btn btn-sm btn-primary btn-circle delete"><span class="far fa-trash-alt"></span></button>
                                                 <!-- <input type="submit" class="btn btn-danger btn-sm" value="Delete" onclick="return confirm('anda yakin ingin menghapus data?');"> -->
                                             </form>
                                         </td>
@@ -90,5 +90,26 @@
     $(document).ready(function () {
         $('.data').dataTable();
     });
+</script>
+
+<script>
+    $('.delete').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+            title: `Apakah anda yakin ingin menghapus data ini ?`,
+              text: "Jika anda menghapusnya maka datanya akan di hapus secara permanen",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+
 </script>
 @endpush
