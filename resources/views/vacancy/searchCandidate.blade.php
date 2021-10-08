@@ -61,40 +61,38 @@
                         <div class="col">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                         </div>
-                        <div class="col">
-                            <div></div>
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i></div>
-                        </div>
+                            <div>
+                                {{-- saved candidate/rekrut atau tidak --}}
+                                <button class="btn" type="button" data-toggle="modal" data-target="#modalSaya" style="float: right">
+                                    <i class="far fa-save"></i>
+
+                                </button>
+
+
+                                {{-- foto user --}}
+                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
+                                {{-- foreach candidate --}}
+                                <h6>Nama Candidate</h6>
+                                <h6>Lamar sebagai</h6>
+                            </div>
                     </div>
 
-                    <div class="row align-items-start">
-                        <div class="col">
-                            <div> <i style="padding-left: 200px; padding-top: 10px; z-index: 1; font-size: 20px;" class="bi bi-plus-square-fill"></i>
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;"></h6>
-                            </div>
-                        </div>
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;"></h1>
-                                <h6 style="color: #BEBFC0;"></h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;"></h6>
-                                <a class="btn btn-primary" href="/lamar" role="button">Lamar</a>
-                                <a class="btn btn-primary" href="/detail" role="button">Detail</a>
+                                {{-- foreach skill --}}
+                                <h1 style="font-weight: bold; font-size: 12px;">Skill</h1>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             {{-- @endforeach --}}
 
+            <!-- bikin modal -->
 
+        </div>
     </div>
-
 </section>
+
 <!-- End Find Jobs Section -->
 
 @endsection
@@ -135,4 +133,5 @@
     });
 
 </script>
+
 @endpush

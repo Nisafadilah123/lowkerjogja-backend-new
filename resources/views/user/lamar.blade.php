@@ -5,10 +5,10 @@
 @section('container')
 
 <!-- ======= Recent Blog Posts Section ======= -->
-<section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
+<section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 130px;">
 @foreach($lamarview as $i)
 <div class="container" data-aos="fade-up">
-        <div class="row">
+        <div class="row" style="padding-bottom:20px ">
             <div class="col-lg-12">
                 <div class="post-box">
                     <div class="row align-items-start">
@@ -20,13 +20,13 @@
                     </div>
                     <div class="row align-items-start">
                         <div class="col">
-                            <div> <i style="padding-left: 990px; padding-top: 10px; z-index: 1; font-size: 30px;" class="bi bi-plus-square-fill"></i>
-                                <img src="/template/img/logo/{{$i->logo}}" width="180" height="180" alt="400" style="float:left; margin:0 10px 10px 0;" />
+                            <div>
+                                <img src="/template/img/logo/{{$i->logo}}" width="150px" height="150px" alt="400" style="float:left; margin:0 10px 10px 0;" />
                                 <br>
                                 <h1><b>{{ $i->position }}<b></h1>
-                                <h2 style="color:#4154f1;">{{ $i->nama_corp }}</h2>
-                                <h3 style="color:#808080;">{{ $i->city }}, {{ $i->provinces }}</h3>
-                                <h3 style="color:#4154f1;">{{ $i->salary_range }}</h3>
+                                <h5>{{ $i->nama_corp }}</h5>
+                                <h6 style="color:#808080;">{{ $i->city }}, {{ $i->provinces }}</h6>
+                                <h6 style="color:#4154f1;">Rp {{ number_format($i->salary_range) }}</h6>
                             </div>
                         </div>
                     </div>
@@ -48,15 +48,16 @@
                     {{csrf_field()}}
                     <div class="row align-items-start">
                         <div class="col">
-                            <div> 
+                            <div>
                                 <br>
                                 <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $i->id }}">
                                 <h2><b>UNGGAH CV<b></h2>
                                 <input type="file" class="form-control-file" id="cv" name="cv" required="required">
-                                <br><br>
-                                <h2><b>Surat Lamaran</b></h2>
+                                <p style="font-size: 10px">* Harap Mengupload File Pdf</p>
                                 <br>
-                                <textarea class="form-control" id="letter" name="letter" rows="3" required="required" placeholder="Tulis surat lamaran kamu"></textarea>
+                                <strong>Deskripsi Anda</strong>
+                                <br>
+                                <textarea class="form-control" id="letter" name="letter" rows="3" required="required" placeholder="Tulis Deskripsi Anda"></textarea>
                                 <br>
                                 <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary" name="Submit">Kirim Lamaran</button>

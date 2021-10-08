@@ -69,18 +69,10 @@ class VacancyController extends Controller
          return view('vacancy.searchCandidate');
      }
 
-     // sistem search candidate
-    //  public function search (Request $request){
-
-    //     $user = DB::table('users')
-    //             ->where("provinsi",$request->provinsi)
-    //             ->where("kota", $request->kota )
-    //             ->get();
-
-    //     // $education = Education::select->get();
-
-    //     return view("vacancy.searchCandidate",compact("user","education"));
-    //  }
+     //halaman profil candidate
+     public function profilCandidate(){
+         return view('vacancy.profilCandidate');
+     }
 
      // halaman profil corp
      public function profilCorp()

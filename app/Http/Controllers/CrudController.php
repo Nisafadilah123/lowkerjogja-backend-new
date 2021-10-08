@@ -94,8 +94,8 @@ class CrudController extends Controller
 
     }
 
-    //Jobs 
-    
+    //Jobs
+
     //select provinsi dan kota
     public function province(){
         $hasil = rajaongkir_point("province");
@@ -117,8 +117,8 @@ class CrudController extends Controller
     public function addjobs(Request $request)
     {
         $dtUpload = new Jobs;
-        $dtUpload->corp_id               = $request->idcorp;
-        $dtUpload->description_job      = $request->description_job;
+        $dtUpload->corp_id          = $request->idcorp;
+        $dtUpload->description_job  = $request->description_job;
         $dtUpload->position         = $request->position;
         $dtUpload->last_education   = $request->last_education;
         $dtUpload->job_type         = $request->job_type;

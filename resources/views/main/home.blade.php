@@ -37,7 +37,6 @@
         </header>
         <div class="clients-slider swiper-container">
             <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="img/clients/asus.png" class="img-fluid" alt=""></div>
                 <div class="swiper-slide"><img src="img/clients/oracle.png" class="img-fluid" alt=""></div>
                 <div class="swiper-slide"><img src="img/clients/gojek.png" class="img-fluid" alt=""></div>
                 <div class="swiper-slide"><img src="img/clients/fb.png" class="img-fluid" alt=""></div>
@@ -85,7 +84,7 @@
                                         <button class="btn" style="float: right;">
                                             <i class="bi bi-plus-square-fill"></i>
                                         </button>
-                                        <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
+                                        <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px" />
                                         <br>
                                         <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                                     </div>
@@ -315,37 +314,3 @@
 </div>
 
 @endsection
-{{-- ini ke scirpt yang numpukin itu. --}}
-@push('script-addon')
-<script>
-    $.ajax({
-        "url":"/get-provinsi",
-        "type":"GET",
-        success:function(hasil_result){
-            console.log("prov",hasil_result)
-            var option_prov="<option>-- Pilih Provinsi --</option>";
-            hasil_result.forEach(element => {
-                option_prov+=`<option value="${element.province_id}">${element.province}</option>`;
-            });
-            $(".prov-data").html(option_prov);
-        }
-    });
-    $(document).on("change",".prov-data",function(){
-        var prov_sel = $(".prov-data option:selected").val();
-        console.log("pilih prov",prov_sel)
-        $.ajax({
-            "url":"/get-kota",
-            "data":{prov_id:prov_sel},
-            "type":"GET",
-            success:function(hasil_result){
-                console.log("kota",hasil_result)
-                var option_prov="<option>-- Pilih Kota --</option>";
-                hasil_result.forEach(element => {
-                    option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
-                });
-                $(".kota-data").html(option_prov);
-            }
-        });
-    });
-</script>
-@endpush

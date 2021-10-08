@@ -45,7 +45,7 @@
                                 <option selected>-- Pilih Kota --</option>
                             </select>
                             </div>
-                            
+
                             <div class="col-sm-2">
                                 <button type="search" class="btn btn-primary" style="position: relative; left:550px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px" value="cari">   Cari</a></i>
                             </div>
@@ -85,7 +85,7 @@
                                 <button class="btn" style="float: right;">
                                     <i class="bi bi-plus-square-fill"></i>
                                 </button>
-                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" />
+                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px" />
                                 <br>
                                 <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                             </div>
@@ -116,7 +116,7 @@
 
 {{-- ini ke scirpt yang numpukin itu. --}}
 {{-- ini ke scirpt yang numpukin itu. --}}
-@push('script-addon')
+{{-- @push('script-addon')
 <script>
     $.ajax({
         "url":"/get-provinsi",
@@ -148,4 +148,4 @@
         });
     });
 </script>
-@endpush
+@endpush --}}

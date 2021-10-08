@@ -125,16 +125,13 @@ Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 Route::get('/job', [VacancyController::class, 'jobCorp']);
 Route::get('/editCorp', [VacancyController::class, 'editCorp']);
-// Route::get('/search', [VacancyController::class, 'search']);
+Route::get('/profilCandidate', [VacancyController::class, 'profilCandidate']);
 
 
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
 
-// ajax
-Route::get('/get-provinsi2', [ProfillUserController::class, 'province']);
-Route::get('/get-kota3', [ProfillUserController::class, 'city']);
 
 //ajax
 Route::get('/get-provinsi3', [CrudController::class, 'province']);
