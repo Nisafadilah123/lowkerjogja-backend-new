@@ -21,7 +21,7 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
-                                <img src="/template/img/logo/{{$i->logo}}" width="150px" height="150px" alt="400" style="float:left; margin:0 10px 10px 0;" />
+                                <img src="logo/{{$i->logo}}" width="150px" height="150px" alt="400" style="float:left; margin:0 10px 10px 0;" />
                                 <br>
                                 <h1><b>{{ $i->position }}<b></h1>
                                 <h5>{{ $i->nama_corp }}</h5>

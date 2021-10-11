@@ -141,7 +141,7 @@
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi3",
+        "url":"/get-provinsi",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
@@ -157,7 +157,7 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota4",
+            "url":"/get-kota",
             "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){

@@ -25,7 +25,7 @@ class UserController extends Controller
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
-            ->get();
+            ->paginate(3);
 
             // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
@@ -146,7 +146,7 @@ class UserController extends Controller
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
-            ->get();
+            ->paginate(3);
 
         // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
