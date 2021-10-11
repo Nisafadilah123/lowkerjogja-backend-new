@@ -1,6 +1,6 @@
 @extends('vacancy.layout')
 
-@section('title', 'Sign Up | Lowkerjogja.com')
+@section('title', 'Daftar | Lowkerjogja.com')
 
 @section('container')
 
@@ -31,7 +31,7 @@
             @csrf
 
             <div class="class">
-                <p class="mb-3 text-center">SIGN UP</p>
+                <p class="mb-3 text-center">DAFTAR</p>
             </div>
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />

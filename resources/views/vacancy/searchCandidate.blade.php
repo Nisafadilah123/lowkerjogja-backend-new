@@ -1,6 +1,6 @@
 @extends('layouts.layout3')
 
-@section('title', 'Search Candidate | Lowkerjogja.com')
+@section('title', 'Cari Kandidat | Lowkerjogja.com')
 
 @section('container')
 
@@ -72,7 +72,7 @@
                                 {{-- foto user --}}
                                 <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
                                 {{-- foreach candidate --}}
-                                <h6>Nama Candidate</h6>
+                                <h6>Nama Kandidat</h6>
                                 <h6>Lamar sebagai</h6>
                             </div>
                     </div>
@@ -80,7 +80,7 @@
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
                                 {{-- foreach skill --}}
-                                <h1 style="font-weight: bold; font-size: 12px;">Skill</h1>
+                                <h1 style="font-weight: bold; font-size: 12px;">Keahlian</h1>
                             </div>
                         </div>
                 </div>

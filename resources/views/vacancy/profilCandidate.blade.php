@@ -1,6 +1,6 @@
 @extends('layouts.layout3')
 
-@section('title', 'Profil Candidate | Lowkerjogja.com')
+@section('title', 'Profil Kandidat | Lowkerjogja.com')
 
 @section('container')
 
@@ -22,7 +22,7 @@
                                             {{-- foto user --}}
                                             <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
                                             {{-- foreach candidate --}}
-                                            <h6>Nama Candidate</h6>
+                                            <h6>Nama Kandidat</h6>
                                             <h6>Lamar sebagai</h6>
                                         </div>
                                         <div class="row">
@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             {{-- tahun graduate candidate --}}
-                            <h6>Graduate</h6>
+                            <h6>Tahun Lulus</h6>
                         </div>
                         <div class="col-sm-4">
                             {{-- universitas candidate --}}
@@ -99,11 +99,11 @@
                     <div class="row">
                         <div class="col-sm-4">
                             {{-- tingkat skill candidate --}}
-                            <h6>Tingkatan Skill</h6>
+                            <h6>Tingkatan Keahlian</h6>
                         </div>
                         <div class="col-sm-4">
                             {{-- skill candidate --}}
-                            <h6>Skill</h6>
+                            <h6>Keahlian</h6>
                         </div>
                     </div>
                     <hr>

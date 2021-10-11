@@ -57,7 +57,7 @@
 
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="#hero">Product And Service</a></li>
+              <li><a class="nav-link scrollto active" href="#hero">Produk & Layanan</a></li>
               <li><a class="nav-link scrollto" href="corp-faq.html">FAQ</a></li>
 
               <li style="padding-left: 500px;">
@@ -73,9 +73,9 @@
               <li class="dropdown" style="padding-right: 50px;"><a href="#"><i class="bi bi-caret-down-fill"></i></a>
                 <ul style="width: 250px;">
                   <li><a href="#"><img src="assets/img/icons/building.png" width="20px" alt=""><span
-                        style="font-size: 13px; padding-left: 10px;">Profile Corporate</span></a></li>
+                        style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
                   <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><span
-                        style="font-size: 13px; padding-left: 10px;">Change Passwords</span></a></li>
+                        style="font-size: 13px; padding-left: 10px;">Ubah Kata Sandi</span></a></li>
 
                 </ul>
               </li>
