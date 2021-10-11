@@ -22,7 +22,8 @@ class Job extends Model
         'provinces',
         'city',
         'job_location',
-        'salary_range'
+        'starting_salary',
+        'final_salary'
 
     ];
 

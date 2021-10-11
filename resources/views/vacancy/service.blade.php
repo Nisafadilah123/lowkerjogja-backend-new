@@ -1,6 +1,6 @@
 @extends('vacancy.layout')
 
-@section('title', 'About | Lowkerjogja.com')
+@section('title', 'Tentang | Lowkerjogja.com')
 
 @section('container')
 
@@ -8,23 +8,23 @@
 <section>
     <div class="container" style="position: relative;top: 60px;height: 750px;">
         <h6 style="font-size: 34px;">
-            <center><strong>Product And Service</strong></center>
+            <center><strong>Produk & Layanan</strong></center>
         </h6>
         <br><br>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card" style="width:250px;position: relative;left: 300px;height: 610px;">
                     <div class="card-header" style="background-color: #006AFF;color: white;">
-                        <center><strong>Job Postings</strong> </center>
+                        <center><strong>Lowongan Pekerjaan</strong> </center>
                     </div>
 
                     <div class="card-body">
-                        <center style="color: #006AFF;"><strong> Job Postings</strong></center>
-                        <center>Pay for only what you need</center>
+                        <center style="color: #006AFF;"><strong> Lowongan Pekerjaan</strong></center>
+                        <center>Bayar hanya untuk apa yang Anda butuhkan</center>
 
                         <center>
                             <a href="" class="btn btn-outline-primary" style="margin-top: 50px;width: 200px;border-radius: 10px;position: relative;top: 400px;
-                ">Try Now</a>
+                ">Coba Sekarang</a>
                         </center>
 
                     </div>
@@ -35,14 +35,14 @@
             <div class="col-sm-4">
                 <div class="card" style="width:250px;position: relative;left: 50px;">
                     <div class="card-header" style="background-color: #006AFF;color: white;">
-                        <center><strong>Search Candidate</strong> </center>
+                        <center><strong>Cari Kandidat</strong> </center>
                     </div>
 
                     <div class="card-body">
-                        <center style="color: #006AFF;"><strong> Job Postings</strong></center>
-                        <center>Unlimited</center>
+                        <center style="color: #006AFF;"><strong> Lowongan Pekerjaan</strong></center>
+                        <center>Tak Terbatas</center>
                         <p style="color: #006AFF; position: relative; top: 30px;text-align: center;">
-                            <strong>Features</strong>
+                            <strong>Fitur</strong>
                         </p>
                         <p style="position: relative; top: 10px;text-align: center;">
                             5 Featured Job posts

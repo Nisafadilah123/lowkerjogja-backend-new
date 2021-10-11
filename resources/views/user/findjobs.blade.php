@@ -85,7 +85,7 @@
                                 <button class="btn" style="float: right;">
                                     <i class="bi bi-plus-square-fill"></i>
                                 </button>
-                                <img src="/template/img/logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px" />
+                                <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px" />
                                 <br>
                                 <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
                             </div>
@@ -107,6 +107,9 @@
                 </div>
             </div>
             @endforeach
+            <div style="padding-left:500px">
+                {{ $lihatjobs->links() }}
+            </div>
     </div>
 
 </section>

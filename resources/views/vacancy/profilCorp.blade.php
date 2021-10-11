@@ -1,6 +1,6 @@
 @extends('layouts.layout3')
 
-@section('title', 'Profil Corp | Lowkerjogja.com')
+@section('title', 'Profil Perusahaan | Lowkerjogja.com')
 
 @section('container')
 
@@ -40,7 +40,7 @@
                       <br><br>
                       <div class="col-sm-6">
                           <div class="card-body" style="width: 300px; padding-left: 30px;">
-                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> About Corporate</strong></h6>
+                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> Tentang Perusahaan</strong></h6>
                           </div>
                       </div>
                   </div>
@@ -57,7 +57,7 @@
                       <br><br>
                       <div class="col-sm-6">
                           <div class="card-body" style="width: 300px; padding-left: 30px;">
-                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> Saved Candidate</strong></h6>
+                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> Simpan Kandidat</strong></h6>
                           </div>
                       </div>
                   </div>
@@ -75,7 +75,7 @@
               <h6 class="card-title"><strong>Best Payment</strong></h6>
               <p class="card-text" style="color: #dcdcdc;">technology company Jakarta, Indonesian</p>
               <p class="card-text">
-                  <a href="/profilCorp" style="text-decoration: none;"><strong style="padding-right: 20px;">About</strong></a> | <a href="/job" style="text-decoration: none;"><strong style="text-decoration: none; padding-left: 20px;">Jobs</strong></a>
+                  <a href="/profilCorp" style="text-decoration: none;"><strong style="padding-right: 20px;">Tentang</strong></a> | <a href="/job" style="text-decoration: none;"><strong style="text-decoration: none; padding-left: 20px;">Jobs</strong></a>
             </p>
             </div>
           </div>
@@ -91,7 +91,7 @@
 <div class="col-sm-8" style="padding-left: 485px; width: 1215px; padding-top: 150px;">
 <div class="card">
 <div class="card-body">
-<strong>About Corporate</strong>
+<strong>Tentang Perusahaan</strong>
   <p>
       Our dream to offer mobile games to the entire planet through our products is about to become a reality. We owe our success to the talent and passion of our teams. It is because of their dedication to excellence and attention to detail that we can offer games of unparalleled quality to our millions of fans. We also have a great network of partners to help us deliver cool new games to your favorite device. Think Universal, Illumination Disney®, Marvel®, Hasbro®, Fox Digital Entertainment, Mattel®, Ferrari® and many more.
 
