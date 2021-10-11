@@ -107,7 +107,7 @@
                                 <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
                                 <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>
-                                <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->salary_range) }}</h6>
+                                <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->starting_salary) }} - Rp {{ number_format($l->final_salary) }}</h6>
                                 <!-- Button lamar -->
                                 <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
                                 <!-- Button detail -->

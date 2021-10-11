@@ -68,7 +68,7 @@
                                         <td style="vertical-align: middle;">{{date('d-m-Y', strtotime($job->deadline))}}</td>
                                         <td style="vertical-align: middle;">{{$job->province_name}}</td>
                                         <td style="vertical-align: middle;">{{$job->city_name}}</td>
-                                        <td style="vertical-align: middle;">{{$job->salary_range}}</td>
+                                        <td style="vertical-align: middle;">Rp {{number_format($job->starting_salary)}} - Rp {{number_format($job->final_salary)}} </td>
                                         <td style="vertical-align: middle;">{{$job->kuota}}</td>
                                         <td style="vertical-align: middle;">{{$job->gender}}</td>
                                         <td style="vertical-align: middle;">{{$job->age}}</td>

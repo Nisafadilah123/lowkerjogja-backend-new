@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="deadline"><strong>Deadline</strong></label>
-                                    <input type="date" name="deadline" id="deadline" class="form-control" placeholder="Deadline" required>
+                                    <input type="date" name="deadline" id="deadline" placeholder="Deadline" required class="datepicker" data-date-format="mm/dd/yyyy" >
                                 </div>
                                 {{-- <div class="form-group">
                                     <label for="provinces"><strong>Provinces</strong></label>
@@ -66,9 +66,18 @@
                                     <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
                                 </div> --}}
                                 <div class="form-group">
-                                    <label for="salaryrange"><strong>Range Gaji</strong></label>
-                                    <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" input class="datepicker" data-date-format="mm/dd/yyyy" required>
+                                    <label for="starting_salary"><strong>Range Gaji</strong></label>
+                                    <div class="row">
+                                         <div class="col-sm-6">
+                                        <input type="text" name="starting_salary" id="starting_salary" class="form-control" placeholder="Range Gaji" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="final_salary" id="final_salary" class="form-control" placeholder="Range Gaji" required>
+                                    </div>
+                                    </div>
+
                                 </div>
+
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kuota</strong></label>
                                     <input type="text" name="kuota" id="kuota" class="form-control" placeholder="Kuota" required>
@@ -141,7 +150,7 @@
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi3",
+        "url":"/get-provinsi",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
@@ -157,7 +166,7 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota4",
+            "url":"/get-kota",
             "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){

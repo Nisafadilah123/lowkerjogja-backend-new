@@ -26,7 +26,7 @@
                                 <h1><b>{{ $i->position }}<b></h1>
                                 <h5>{{ $i->nama_corp }}</h5>
                                 <h6 style="color:#808080;">{{ $i->city_name }}, {{ $i->province_name }}</h6>
-                                <h6 style="color:#4154f1;">Rp {{ number_format($i->salary_range) }}</h6>
+                                <h6 style="color:#4154f1;">Rp {{ number_format($i->starting_salary) }} - Rp {{ number_format($i->final_salary) }}</h6>
                             </div>
                         </div>
                     </div>

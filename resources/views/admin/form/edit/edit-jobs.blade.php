@@ -49,7 +49,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="salaryrange"><strong>Range Gaji</strong></label>
-                                    <input type="text" name="salary_range" id="salaryrange" class="form-control" placeholder="Range Gaji" required value={{$jobs->salary_range}}>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="starting_salary" id="starting_salary" class="form-control" placeholder="Range Gaji" required value={{$jobs->starting_salary}}>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="final_salary" id="final_salary" class="form-control" placeholder="Range Gaji" required value={{$jobs->final_salary}}>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="joblocation"><strong>Kuota</strong></label>
@@ -115,7 +125,7 @@
 @push('script-addon')
 <script>
     $.ajax({
-        "url":"/get-provinsi3",
+        "url":"/get-provinsi",
         "type":"GET",
         success:function(hasil_result){
             console.log("prov",hasil_result)
@@ -131,7 +141,7 @@
         var prov_sel = $(".prov-data option:selected").val();
         console.log("pilih prov",prov_sel)
         $.ajax({
-            "url":"/get-kota4",
+            "url":"/get-kota",
             "data":{prov_id:prov_sel},
             "type":"GET",
             success:function(hasil_result){

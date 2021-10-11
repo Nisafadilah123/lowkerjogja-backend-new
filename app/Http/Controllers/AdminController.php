@@ -48,7 +48,7 @@ class AdminController extends Controller
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
         ->select('corp.id', 'corp.nama_corp', 'jobs.corp_id', 'jobs.description_job', 'jobs.position',
-        'jobs.last_education', 'job_type', 'job_category', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.salary_range', 'jobs.kuota', 'jobs.gender',
+        'jobs.last_education', 'job_type', 'job_category', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.starting_salary','jobs.final_salary', 'jobs.kuota', 'jobs.gender',
          'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.created_at', 'jobs.updated_at')
         ->get();
 

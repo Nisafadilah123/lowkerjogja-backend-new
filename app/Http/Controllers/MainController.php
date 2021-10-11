@@ -25,7 +25,7 @@ class MainController extends Controller
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
             ->paginate(1);
         // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
@@ -89,7 +89,7 @@ class MainController extends Controller
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
             ->get();
 
             // -- start --
@@ -155,7 +155,7 @@ class MainController extends Controller
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
         ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-        'jobs.city', 'jobs.provinces', 'jobs.salary_range', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
+        'jobs.city', 'jobs.provinces','jobs.starting_salary', 'jobs.final_salary', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
         ->where('jobs.id', $id)
         ->get();
         return view('main.detailmain', ['jobs' => $jobs]);

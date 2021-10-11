@@ -124,13 +124,10 @@ class CrudController extends Controller
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline;
-        $dtUpload->provinces      = $request->provinces;
-        // $dtUpload->province_id      = $request->province_id;
-
-        // $dtUpload->city_id          = $request->city_id;
-
+        $dtUpload->provinces        = $request->provinces;
         $dtUpload->city             = $request->city;
-        $dtUpload->salary_range     = $request->salary_range;
+        $dtUpload->starting_salary  = $request->starting_salary;
+        $dtUpload->final_salary     = $request->final_salary;
         $dtUpload->kuota            = $request->kuota;
         $dtUpload->gender           = $request->gender;
         $dtUpload->age              = $request->age;
@@ -166,7 +163,8 @@ class CrudController extends Controller
             'deadline'          => $request['deadline'],
             'provinces'         => $request['provinces'],
             'city'              => $request['city'] ,
-            'salary_range'      => $request['salary_range'],
+            'starting_salary'   => $request['starting_salary'],
+            'final_salary'      => $request['final_salary'],
             'kuota'             => $request['kuota'],
             'gender'            => $request['gender'],
             'age'               => $request['age'],
