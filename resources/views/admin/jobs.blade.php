@@ -19,6 +19,7 @@
                     </div>
                     <div class="card">
 
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered data" id="add-row">
@@ -47,6 +48,13 @@
                                     </tr>
                                     </thead>
 
+                                    {{-- @php
+                                            $provinceId = $job->provinces;
+                                            $province = rajaongkir_point( 'province', 'GET', ['id=' . $provinceId] );
+                                            $city = rajaongkir_point('city', 'GET', ['id=' .$job->city. 'province='.$provinceId]);
+                                            $provinceName = $province->province;
+                                            $cityName = $city->city_name;
+                                    @endphp --}}
                                     <tbody>
                                          @foreach ($jobs as $job)
                                     <tr>
@@ -57,9 +65,9 @@
                                         <td style="vertical-align: middle;">{{$job->last_education}}</td>
                                         <td style="vertical-align: middle;">{{$job->job_type}}</td>
                                         <td style="vertical-align: middle;">{{$job->job_category}}</td>
-                                        <td style="vertical-align: middle;">{{$job->deadline}}</td>
-                                        <td style="vertical-align: middle;">{{$job->provinces}}</td>
-                                        <td style="vertical-align: middle;">{{$job->city}}</td>
+                                        <td style="vertical-align: middle;">{{date('d-m-Y', strtotime($job->deadline))}}</td>
+                                        <td style="vertical-align: middle;">{{$job->province_name}}</td>
+                                        <td style="vertical-align: middle;">{{$job->city_name}}</td>
                                         <td style="vertical-align: middle;">{{$job->salary_range}}</td>
                                         <td style="vertical-align: middle;">{{$job->kuota}}</td>
                                         <td style="vertical-align: middle;">{{$job->gender}}</td>

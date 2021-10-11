@@ -94,7 +94,7 @@
                                     <div class="col" style="padding-top: 15px;">
                                         <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
                                         <h6 style="color: #000000;">{{$l->last_education}}</h6>
-                                        <h6 style="color: #BEBFC0;">{{$l->city}}, {{$l->provinces}}</h6>
+                                        <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>
                                         <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->salary_range) }}</h6>
                                         <!-- Button lamar -->
                                         <a class="btn btn-primary" href="/login" role="button">Lamar</a>
@@ -106,7 +106,9 @@
                         </div>
                     </div>
                     @endforeach
-
+                    <div style="padding-left:500px">
+                        {{ $lihatjobs->links() }}
+                    </div>
         <!--Row Dua-->
         </div>
 </section><!-- End Recent Blog Posts Section -->

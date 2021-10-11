@@ -18,9 +18,9 @@
                     <div class="col-md-12">
                         <div class="block">
                             <div class="block-content">
-                                <label for="description"><strong>Deskripsi Perusahaan</strong></label>
+                                <label for="description"><strong>Deskripsi Pekerjaan</strong></label>
                                 <div class="form-group">
-                                    <textarea type="text" name="description_job" id="description" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{$jobs->description_job}}></textarea>
+                                    <textarea type="text" name="description_job" id="description" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required value={{$jobs->description_job}}>{{$jobs->description_job}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="position"><strong>Posisi</strong></label>

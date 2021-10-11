@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::delete('/jobs/{id}', [CrudController::class, 'deletejobs']);
     Route::delete('/users/{id}', [CrudController::class, 'deleteuser']);
     Route::delete('/users/{id}', [CrudController::class, 'deleteuser']);
-    Route::delete('/candidate/deletecandidate/{id}', [CrudController::class, 'deletecandidate']);
+    Route::delete('/kandidat/{id}', [CrudController::class, 'deletekandidat']);
 
 });
 
@@ -127,11 +127,6 @@ Route::get('/profilCandidate', [VacancyController::class, 'profilCandidate']);
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
 Route::get('/get-kota', [MainController::class, 'kota']);
-
-
-//ajax
-Route::get('/get-provinsi3', [CrudController::class, 'province']);
-Route::get('/get-kota4', [CrudController::class, 'city']);
 
 Route::get('/token', function () {
     return csrf_token();

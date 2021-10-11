@@ -60,7 +60,7 @@
                                         </td>
 
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
-                                            <form id="delete-kandidat" action="/candidate/deletecandidate/{{$c->id}}" method="post">
+                                            <form action="/kandidat/{{$c->id}}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-sm btn-primary btn-circle delete"><span class="far fa-trash-alt"></span></button>

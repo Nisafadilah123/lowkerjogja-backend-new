@@ -27,7 +27,7 @@
                                     </select>
                                 </div>
                                 <br>
-                                <label for="descriptionjob"><strong>Deskripsi Perusahaan</strong></label>
+                                <label for="descriptionjob"><strong>Deskripsi Pekerjaan</strong></label>
                                 <div class="form-group">
                                     <textarea type="text" name="description_job" id="descriptionjob" cols="70%" rows="3" placeholder="Deskripsi Perusahaan" required></textarea>
                                 </div>

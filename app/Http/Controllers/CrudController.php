@@ -124,7 +124,11 @@ class CrudController extends Controller
         $dtUpload->job_type         = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline;
-        $dtUpload->provinces        = $request->provinces;
+        $dtUpload->provinces      = $request->provinces;
+        // $dtUpload->province_id      = $request->province_id;
+
+        // $dtUpload->city_id          = $request->city_id;
+
         $dtUpload->city             = $request->city;
         $dtUpload->salary_range     = $request->salary_range;
         $dtUpload->kuota            = $request->kuota;
@@ -193,15 +197,13 @@ class CrudController extends Controller
         return redirect('/users');
     }
 
-    public function deletecandidate($id)
+    public function deletekandidat($id)
     {
-        $candidate = Candidate::findOrFail($id);
-        $candidate->delete();
-        // Candidate::destroy($candidate->id);
-        // DB::table('candidates')->where('id',$id)->delete();
-        dd($candidate);
-        alert()->success('Berhasil', 'Data berhasil dihapus');
-        // return redirect('/kandidat');
+        $c = DB::table('candidates')->where('id', $id)->delete();
+        alert()->success('Berhasil', 'Kandidat berhasil dihapus');
+        return redirect('/kandidat');
+       // $c = DB::table('candidates')->where('id', $id);
+       // dd($c);
     }
 
 }

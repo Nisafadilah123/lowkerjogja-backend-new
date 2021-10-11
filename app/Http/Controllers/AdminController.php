@@ -43,39 +43,64 @@ class AdminController extends Controller
 
     public function jobs(Request $request)
     {
-        $keyword = $request->keyword;
-
         $i = 0;
         $i++;
-        // $jobs = DB::table('jobs')->simplePaginate(3);
-        $jobs = Jobs::all();
-        // $jobs = Jobs::where('description_job', 'LIKE', '%'.$keyword.'%')
-        //         ->get();
+        $jobs = DB::table('jobs')
+        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        ->select('corp.id', 'corp.nama_corp', 'jobs.corp_id', 'jobs.description_job', 'jobs.position',
+        'jobs.last_education', 'job_type', 'job_category', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.salary_range', 'jobs.kuota', 'jobs.gender',
+         'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.created_at', 'jobs.updated_at')
+        ->get();
 
+        // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
 
-        // //     // set column
-        //     foreach($jobs as $job){
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($jobs as $key => $job) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $job->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $job->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
 
-        //         $provinceId = $job->provinces;
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
 
-        //         $province = rajaongkir_point( 'province', 'GET', ['id=' . $provinceId] );
-        //         $city = rajaongkir_point('city', 'GET', ['id=' .$job->city. 'province='.$provinceId]);
-        //         $provinceName = $province->province;
-        //         $cityName = $city->city_name;
-        //         $provinceName = preg_split("/[,]/",$provinceName);
-        //         $cityName = preg_split("/[,]/",$cityName);
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
 
-        //         // var_dump($cityName);
+            // update data jobs dengan menambahkan nama provinsi
+            $job->province_name = $provinceName;
+            $job->city_name = $cityName;
 
-        //     }
-        // return view('admin.jobs', compact('jobs', 'i','provinceName','cityName'));
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
+// dd($jobs);
         return view('admin.jobs', compact(['jobs', 'i']));
-
-
-
-
-
-
     }
 
 
@@ -88,7 +113,7 @@ class AdminController extends Controller
         ->join('users', 'users.id', '=', 'candidates.user_id')
         ->join('apply_jobs', 'apply_jobs.id', '=', 'candidates.apply_jobs_id')
         ->join('jobs', 'jobs.id', '=', 'apply_jobs.job_id')
-        ->select('users.id', 'users.name', 'users.address', 'apply_jobs.cv','jobs.position', 'candidates.status')
+        ->select('users.id', 'users.name', 'users.address', 'apply_jobs.cv','jobs.position', 'candidates.status', 'candidates.id')
         ->get();
 
         return view('admin.candidate', compact(['candidate', 'i']));

@@ -27,6 +27,56 @@ class UserController extends Controller
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->get();
 
+            // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($lihatjobs as $key => $l) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $l->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $l->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $l->province_name = $provinceName;
+            $l->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
+// dd($l);
+
+
             return view('user.home',
             ['lihatjobs'=> $lihatjobs]);
         }
@@ -69,19 +119,6 @@ class UserController extends Controller
             return view('user.password');
         }
 
-    //     public function cari(Request $request){
-    //     $user = DB::table('jobs')
-    //             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-    //             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-    //             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
-    //             ->where("last_education",$request->last_education)
-    //             ->where("provinces",$request->provinces)
-    //             ->where("city", $request->city)
-    //             ->get();
-
-    //     return view('user.findjobs', compact('lihatjobs'));
-    //  }
-
         public function cari(Request $request)
         {
             $lihatjobs = DB::table('jobs')
@@ -111,6 +148,56 @@ class UserController extends Controller
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->get();
 
+        // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($lihatjobs as $key => $l) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $l->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $l->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $l->province_name = $provinceName;
+            $l->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
+// dd($l);
+
+
             return view('user.findjobs',
             ['lihatjobs'=> $lihatjobs]);
         }
@@ -122,6 +209,56 @@ class UserController extends Controller
             'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->where('jobs.id', $id)
             ->get();
+
+            // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($lamarview as $key => $i) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $i->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $i->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $i->province_name = $provinceName;
+            $i->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
+// dd($i);
+
 
             return view('user.lamar', ['lamarview' => $lamarview]);
         }
