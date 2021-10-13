@@ -121,24 +121,18 @@ class UserController extends Controller
 
         public function cari(Request $request)
         {
+            $cari = $request->cari;
+            
             $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
-            ->get();
-
-            if( $request->last_education){
-                $lihatjobs = $lihatjobs->where('last_education', 'LIKE', "%" . $request->last_education . "%");
-            }
-            if( $request->provinces){
-                $lihatjobs = $lihatjobs->where('provinces', 'LIKE', "%" . $request->provinces . "%");
-            }
-            if( $request->city){
-                $lihatjobs = $lihatjobs->where('city', 'LIKE', "%" . $request->city . "%");
-            }
-
-            $lihatjobs = $lihatjobs;
-            return view('user.findjobs', compact('lihatjobs'));
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')        
+            ->where('position','like',"%".$cari."%")
+            
+            ->paginate(6);
+    
+            return view('user.findjobs',['lihatjobs' => $lihatjobs]);
+    
         }
 
         public function lihatjobs(Request $request){

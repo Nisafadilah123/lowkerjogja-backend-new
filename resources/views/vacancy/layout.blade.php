@@ -61,7 +61,7 @@
                     <li><a class="nav-link scrollto" href="/about">Tentang</a></li>
                     <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
-                    <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Masuk</a></li>
+                    <!-- <li><a class="job scrollto" href="/loginCorp" style="background-color: white; color: black; border: 1px solid #000000; margin-left: 350px;">Masuk</a></li>
                     {{-- @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">User</a>
@@ -72,7 +72,7 @@
                                 <li><a href="{{ route('register') }}" class="job scrollto">Sign Up</a></li>
                             @endif
                         @endauth
-                @endif --}}
+                @endif --}} -->
                     <li><a class="job scrollto" href="/signupCorp">Daftar untuk Perusahaan</a></li>
 
                 </ul>

@@ -13,7 +13,6 @@ class VacancyController extends Controller
 {
     public function vacancy()
     {
-        dd(Auth::user());
         return view('vacancy.landingPageCorp');
     }
 
