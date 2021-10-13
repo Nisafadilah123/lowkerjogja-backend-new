@@ -25,13 +25,8 @@ class MainController extends Controller
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-<<<<<<< HEAD
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
-            ->paginate(1);
-=======
-            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->paginate(3);
->>>>>>> 5128998539a76e3d04711614e9a57d9358ae3f67
         // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
         $listProvinces = rajaongkir_point( 'province', 'GET', [] );
@@ -94,13 +89,8 @@ class MainController extends Controller
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-<<<<<<< HEAD
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
-            ->get();
-=======
-            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
             ->paginate(3);
->>>>>>> 5128998539a76e3d04711614e9a57d9358ae3f67
 
             // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya

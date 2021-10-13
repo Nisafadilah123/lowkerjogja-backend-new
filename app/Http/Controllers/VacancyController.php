@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 
 class VacancyController extends Controller
 {
     public function vacancy()
     {
+        dd(Auth::user());
         return view('vacancy.landingPageCorp');
     }
 
