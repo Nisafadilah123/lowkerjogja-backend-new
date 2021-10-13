@@ -24,7 +24,7 @@ class UserController extends Controller
             $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.salary_range')
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
             ->paginate(3);
 
             // -- start --
