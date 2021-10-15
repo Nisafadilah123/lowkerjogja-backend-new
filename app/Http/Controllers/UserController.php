@@ -122,7 +122,6 @@ class UserController extends Controller
         public function cari(Request $request)
         {
             $cari = $request->cari;
-            
             $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
@@ -130,7 +129,12 @@ class UserController extends Controller
             ->where('position','like',"%".$cari."%")
             
             ->paginate(6);
-    
+            if(count($lihatjobs)){
+                return view('user.findjobs',['lihatjobs' => $lihatjobs]);
+            }else{ 
+                alert()->error('Data tidak ada', 'Posisi yang anda cari tidak ada');
+            return redirect('/findjobsUser');
+            }
             return view('user.findjobs',['lihatjobs' => $lihatjobs]);
     
         }

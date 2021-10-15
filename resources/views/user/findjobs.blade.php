@@ -115,9 +115,13 @@
                 </div>
             </div>
             @endforeach
+
+         
+              
             <div style="padding-left:500px">
                 <!-- {{ $lihatjobs->links() }} -->
             </div>
+        
     </div>
 
 </section>

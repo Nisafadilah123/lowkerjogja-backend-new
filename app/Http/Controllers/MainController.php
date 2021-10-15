@@ -160,4 +160,25 @@ class MainController extends Controller
         ->get();
         return view('main.detailmain', ['jobs' => $jobs]);
     }
+
+    public function carimain(Request $request)
+        {
+            $cari = $request->cari;
+            $lihatjobs = DB::table('jobs')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')        
+            ->where('position','like',"%".$cari."%")
+            
+            ->paginate(6);
+            if(count($lihatjobs)){
+                return view('main.findjobs',['lihatjobs' => $lihatjobs]);
+            }else{ 
+                alert()->error('Data tidak ada', 'Posisi yang anda cari tidak ada');
+            return redirect('/findjobs');
+            }
+            return view('main.findjobs',['lihatjobs' => $lihatjobs]);
+    
+        }
+
 }
