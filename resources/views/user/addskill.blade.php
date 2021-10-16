@@ -41,99 +41,116 @@
 
     <div class="container" data-aos="fade-up" style="width: 100%">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="post-box" style="background-color: #F9FAFF;">
+
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
-                                <h6 style="font-weight: bold;padding-right:50px; float:right">{{ ucfirst (Auth::user()->name) }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:60px;padding-right:5px;">Lihat Profil</h6>
+                                <h6 style="font-weight: bold;padding-right:100px; float:right">{{ ucfirst(Auth::user()->name)  }}</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
                             </div>
                         </div>
 
+                        <div class="row align-items-center mt-4">
 
-            <div class="row align-items-center mt-4">
+                            <div class="col-sm-2">
+                                <div class="">
 
-              <div class="col-sm-2">
-                <div class="">
-
-                  <div class="card-body">
-                    <img src="/img/icons/user.png" width="30px" alt="">
-                  </div>
-                </div>
-              </div>
-              <br><br>
-              <div class="col-sm-6">
-                <a href="/user" class="about">
-                  <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Profil Saya</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="row align-items-center">
-
-              <div class="col-sm-2">
-                <div class="">
-
-                  <div class="card-body">
-                    <img src="/img/icons/mortarboard.png" width="35px" alt="">
-                  </div>
-                </div>
-              </div>
-              <br><br>
-              <div class="col-sm-6">
-                <a href="/education" class="about">
-                  <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight:bold; padding-right: 50px;">Pendidikan</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class=" row align-items-center">
-
-              <div class="col-sm-2">
-                <div class="">
-
-                  <div class="card-body">
-                    <img src="/img/icons/bar-chart.png" width="30px" alt="">
-                  </div>
-                </div>
-              </div>
-              <br><br>
-              <div class="col-sm-6">
-                <a href="/skill" class="about">
-                  <div class="card-body" style="width: 300px; padding-left: 30px;">
-                    <h6 style="font-weight: bold;" style="padding-right: 50px;">Keahlian</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="row align-items-center">
-
-                <div class="col-sm-2">
-                    <div class="">
-
-                        <div class="card-body">
-                            <img src="/img/icons/password.png" width="30px" alt="">
+                                    <div class="card-body">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="col-sm-6">
+                                <a href="/user" class="about">
+                                    <div class="card-body" style="width: 300px;">
+                                        <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <br><br>
-                <div class="col-sm-6">
-                    <a href="/password" class="about">
-                        <div class="card-body" style="width: 300px; padding-left: 30px;">
-                            <h6 style="font-weight: bold;" style="padding-right: 50px;">Kata Sandi</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
 
-          </div>
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-2">
+                                <div class="">
+
+                                    <div class="card-body">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="col-sm-6">
+                                <a href="/education" class="about">
+                                    <div class="card-body" style="width: 300px;">
+                                        <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-2">
+
+
+                                <div class="card-body">
+                                    <i class="far fa-chart-bar"></i>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="col-sm-6">
+                                <a href="/skill" class="about">
+                                    <div class="card-body" style="width: 300px;">
+                                        <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-2">
+                                <div class="">
+
+                                    <div class="card-body">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        <br><br>
+                        <div class="col-sm-6">
+                            <a href="/password" class="about">
+                                <div class="card-body" style="width: 200px;">
+                                    <h6 style="font-weight: bold;">Kata Sandi</h6>
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-2">
+                                <div class="">
+
+                                    <div class="card-body">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        <br><br>
+                        <div class="col-sm-6">
+                            <a href="/password" class="about">
+                                <div class="card-body" style="width: 300px;">
+                                    <h6 style="font-weight: bold;">Status</h6>
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+                </div>
         </div>
       </div>
 

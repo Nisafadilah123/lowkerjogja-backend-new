@@ -18,7 +18,7 @@
             <div class="col-4 text-right" style="width: 100px;height: 100px;">
                     <a href="">
                     <img style="width: 25px;height: 25px;margin-bottom: 45%;margin-left: 45%" src="https://areakerja.com/img/link.png" class="position-absolute">
-                    <img class="gg5" src="/template/img/logo/{{$i->logo}}" style="margin: auto;margin-top: 3%;margin-left: 5% ">
+                    <img class="gg5" src="/logo/{{$i->logo}}" style="margin: auto;margin-top: 3%;margin-left: 5% ">
                 </a>
             </div>
             <hr class="d-flex flex-row" style="width: 100%; margin-left: 0%; margin-top: 12px">
