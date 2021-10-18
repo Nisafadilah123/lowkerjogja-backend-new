@@ -51,7 +51,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
           <a href="/" class="logo d-flex align-items-center">
-            <img src="assets/img/logo-lowker.png" alt="">
+            <img src="img/logo-lowker.png" alt="">
             <!-- <span>FlexStart</span> -->
           </a>
 
@@ -64,7 +64,7 @@
                 <div>
                   <ul>
                     <li style="text-align: right; padding-right: 10px;"><a href="#"
-                        style="font-size: 23px; color: black;">Michael</a><span
+                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image">{{ ucfirst( Auth::user()->name) }}</a><span
                         style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
                   </ul>
                 </div>
@@ -72,10 +72,20 @@
               <i class="bi bi-bell-fill" style="color: #FA9746;  font-size: 20px;"></i>
               <li class="dropdown" style="padding-right: 50px;"><a href="#"><i class="bi bi-caret-down-fill"></i></a>
                 <ul style="width: 250px;">
-                  <li><a href="#"><img src="assets/img/icons/building.png" width="20px" alt=""><span
+                  <li><a href="/profilCorp"><i class="fas fa-building"></i><span
                         style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
                   <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><span
                         style="font-size: 13px; padding-left: 10px;">Ubah Kata Sandi</span></a></li>
+                        <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-jet-dropdown-link>
+                        </form></i></li>
+
 
                 </ul>
               </li>

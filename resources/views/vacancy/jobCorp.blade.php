@@ -1,4 +1,4 @@
-@extends('layouts.layout3')
+@extends('vacancy.layout2')
 
 @section('title', 'Jobs Corp | Lowkerjogja.com')
 
@@ -11,38 +11,40 @@
               <div class="card-body">
                   <!-- Buka Lapak -->
                   <div class="row">
-                      <div class="col-sm-2">
-                          <div class="">
-                              <div class="card-body">
-                                  <img src="/img/8.png" alt="logo"width="50px">
-                              </div>
+                    @foreach ($corps as $c )
+                    <div class="col-sm-2">
+                        <div class="">
+                            <div class="card-body">
+                              <img src="logo/{{$c->logo}}"  id="gambar2" width="50px"><br>
                           </div>
-                      </div>
-                      <br><br>
-                      <div class="col-sm-6">
-                          <div class="card-body" style="width: 230px; padding-left: 30px;">
-                              <h6 class="card-text" style="padding-right: 50px;"><strong>Bukalapak</strong></h6>
-                              <p class="card-text" style="color: #dcdcdc;">View My Profile</p>
-                          </div>
-                      </div>
-                  </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="col-sm-6">
+
+                        <div class="card-body" style="width: 230px; padding-left: 30px;">
+                            <h6 class="card-text" style="padding-right: 50px;"><strong>{{ $c->nama_corp }}</strong></h6>
+                        </div>
+                    </div>
+                </div>
+
 
                   <!-- Logo 1-->
                   <div class="row">
-                      <div class="col-sm-2">
-                          <div class="">
-                              <div class="card-body">
-                                  <i class="far fa-building fa-2x"></i>
-                              </div>
+                    <div class="col-sm-2">
+                        <div class="">
+                            <div class="card-body">
+                              <i class="fas fa-user-tie fa-2x"></i>
                           </div>
-                      </div>
-                      <br><br>
-                      <div class="col-sm-6">
-                          <div class="card-body" style="width: 300px; padding-left: 30px;">
-                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> About Corporate</strong></h6>
-                          </div>
-                      </div>
-                  </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="col-sm-6">
+                        <div class="card-body" style="width: 300px; padding-left: 30px;">
+                            <h6 class="card-text" style="padding-right: 50px;"><strong><a href="/owner">Tentang Owner</a> </strong></h6>
+                        </div>
+                    </div>
+                </div>
 
                   <!-- Logo 2-->
                   <div class="row">
@@ -56,7 +58,7 @@
                       <br><br>
                       <div class="col-sm-6">
                           <div class="card-body" style="width: 300px; padding-left: 30px;">
-                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href=""></a> Saved Candidate</strong></h6>
+                              <h6 class="card-text" style="padding-right: 50px;"><strong><a href="">Simpan Kandidat</a></strong></h6>
                           </div>
                       </div>
                   </div>
@@ -66,18 +68,19 @@
       </div>
 
       <div class="col-sm-2" style="padding-left: 10px; width: 750px;">
-          <div class="card">
-            <img src="/img/4.png" class="card-img-top" id="gambar1">
-            <div class="card-body">
-                <img src="/img/8.png"  id="gambar2" width="50px" style="z-index: 2;top: 185px;position: absolute;"><br>
-              <h5 class="card-title"><strong>Link Aja</strong> </h5><br>
-              <h6 class="card-title"><strong>Best Payment</strong></h6>
-              <p class="card-text" style="color: #dcdcdc;">technology company Jakarta, Indonesian</p>
-              <p class="card-text">
-                  <a href="/about" style="text-decoration: none;"><strong style="padding-right: 20px;">About</strong></a> | <a href="/job" style="text-decoration: none;"><strong style="text-decoration: none; padding-left: 20px;">Jobs</strong></a>
-            </p>
-            </div>
+        <div class="card">
+            <img src="logo/{{$c->logo}}" height="300px"/>
+
+            @endforeach
+          <div class="card-body">
+              <img src="logo/{{$c->logo}}"  id="gambar2" width="50px" style="z-index: 2;top: 185px;position: absolute;"><br>
+            <h5 class="card-title"><strong>{{ $c->nama_corp }}</strong> </h5><br>
+            <p class="card-text" style="color: #dcdcdc;">{{ $c->industri }}, {{ $c->location }}</p>
+            <p class="card-text">
+                <a href="/profilCorp" style="text-decoration: none;"><strong style="padding-right: 20px;">Tentang</strong></a> | <a href="/job" style="text-decoration: none;"><strong style="text-decoration: none; padding-left: 20px;">Jobs</strong></a>
+          </p>
           </div>
+        </div>
         </div>
 
       </div>

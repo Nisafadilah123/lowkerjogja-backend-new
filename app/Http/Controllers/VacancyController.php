@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Corp;
 use App\Models\Education;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -79,13 +80,15 @@ class VacancyController extends Controller
      // halaman profil corp
      public function profilCorp()
      {
-         return view('vacancy.profilCorp');
+         $corps = Corp::all();
+         return view('vacancy.profilCorp', compact('corps'));
      }
 
      // halaman job corp
      public function jobCorp()
      {
-         return view('vacancy.jobCorp');
+        $corps = Corp::all();
+         return view('vacancy.jobCorp', compact('corps'));
      }
 
      // halaman job corp

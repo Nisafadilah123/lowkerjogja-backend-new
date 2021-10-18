@@ -10,18 +10,20 @@
 {{ $slot }}
 
 {{-- Subcopy --}}
-@isset($subcopy)
+{{-- @isset($subcopy)
 @slot('subcopy')
 @component('mail::subcopy')
 {{ $subcopy }}
 @endcomponent
 @endslot
-@endisset
+@endisset --}}
 
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-© {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.')
+{{-- © {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.') --}}
+© LowkerJogja.com | 2021
+
 @endcomponent
 @endslot
 @endcomponent
