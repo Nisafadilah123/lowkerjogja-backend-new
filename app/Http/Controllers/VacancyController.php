@@ -87,16 +87,24 @@ class VacancyController extends Controller
      // halaman job corp
      public function jobCorp()
      {
-        $corps = Corp::all();
+        $corps = Corp::where('user_id', Auth::user()->id)->get();
          return view('vacancy.jobCorp', compact('corps'));
      }
 
      // halaman job corp
-     public function editCorp()
+     public function editCorp($id)
      {
+         $corps = Corp::findOrFail($id);
          return view('vacancy.editCorp');
      }
 
+     // halaman job corp
+     public function updateCorp(Request $request, $id)
+     {
+         $corps = Corp::find($id)->update($request->all());         return view('vacancy.editCorp');
+     }
 
-
+     public function passwordCorp(){
+        return view('vacancy.passwordCorp');
+    }
 }

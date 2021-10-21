@@ -28,29 +28,6 @@
     </div>
 </section><!-- End Hero -->
 
-<!-- ======= Clients Section ======= -->
-<section id="clients" class="clients">
-    <div class="container" data-aos="fade-up">
-        <header class="section-header">
-            <!-- <h2>Our Clients</h2> -->
-            <p>Perusahaan Unggulan</p>
-        </header>
-        <div class="clients-slider swiper-container">
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="img/clients/oracle.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/gojek.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/fb.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/ig.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/grab.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/client-7.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/client-8.png" class="img-fluid" alt=""></div>
-            </div>
-            <br>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-</section><!-- End Clients Section -->
 <!-- ======= Recent Blog Posts Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
@@ -112,102 +89,7 @@
         <!--Row Dua-->
         </div>
 </section><!-- End Recent Blog Posts Section -->
-<!-- ======= Job Category ======= -->
-<section id="counts" class="counts">
-    <div class="container" data-aos="fade-up">
-        <header class="section-header">
-            <!-- <h2>Our Clients</h2> -->
-            <p>Telusuri Kategori Karir</p>
-        </header>
 
-        <div class="clients-slider swiper-container">
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-1.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">Photography</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">10 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-2.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">Business</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">8 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-6.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">UI/UX Designer</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">12 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-3.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">Education</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">10 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-5.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">Web Development</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">7 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 220px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <div class="row pt-4">
-                                <div class="col text-center">
-                                    <img src="img/icons/icons-4.png" alt="" style="width: 65px;">
-                                    <p style="font-size: 18px; font-weight: bold; padding-top: 20px;">Account</p>
-                                    <p style="font-size: 18px; font-weight: bold; color: #006AFF; padding-top: 15px;">5 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br><br><br>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-    </div>
-    </div>
-</section><!-- End Jobs Category -->
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
     <div class="container" data-aos="fade-up">
@@ -297,22 +179,6 @@
         </div>
     </div>
 </section><!-- End Testimonials Section -->
-<div class="footer" id="footer">
-    <div class="footer-newsletter">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12 text-center">
-                    <h4>Subscribe NewsLetter</h4>
-                    <p>And get company News.</p>
-                </div>
-                <div class="col-lg-6">
-                    <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 @endsection

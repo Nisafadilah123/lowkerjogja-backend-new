@@ -7,29 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <!-- Favicons -->
-    <link href="img/logo-1.png" rel="icon">
-    <link href="img/logo-1.png" rel="apple-touch-icon">
+    <link href="{{ url('img/logo-1.png') }}" rel="icon">
+    <link href="{{ url('img/logo-1.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="vendor/aos/aos.css" rel="stylesheet">
-    <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
-    <link href="css/linearicons.css" rel="stylesheet">
-    <link href="css/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/jquery-ui.min.css" rel="stylesheet">
-    <link href="css/nice-select.css" rel="stylesheet">
+    <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ url('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url('css/linearicons.css') }}" rel="stylesheet">
+    <link href="{{ url('css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/jquery-ui.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/nice-select.css') }}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style1.css" rel="stylesheet">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
+    <link href="{{ url('css/style1.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
     <style>
@@ -41,6 +41,14 @@
             height: 50px;
             background-color: #006AFF;
         }
+        .rounded-image{
+                border-radius: 50%;
+                -webkit-border-radius: 200px;
+                -moz-border-radius: 200px;
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
     </style>
 </head>
 
@@ -51,7 +59,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
           <a href="/" class="logo d-flex align-items-center">
-            <img src="img/logo-lowker.png" alt="">
+            <img src="{{ asset('img/logo-lowker.png') }}" alt="">
             <!-- <span>FlexStart</span> -->
           </a>
 
@@ -64,7 +72,7 @@
                 <div>
                   <ul>
                     <li style="text-align: right; padding-right: 10px;"><a href="#"
-                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image">{{ ucfirst( Auth::user()->name) }}</a><span
+                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image" width="20px" height="20px">{{ ucfirst( Auth::user()->name) }}</a><span
                         style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
                   </ul>
                 </div>
@@ -72,10 +80,12 @@
               <i class="bi bi-bell-fill" style="color: #FA9746;  font-size: 20px;"></i>
               <li class="dropdown" style="padding-right: 50px;"><a href="#"><i class="bi bi-caret-down-fill"></i></a>
                 <ul style="width: 250px;">
+                    <li><a href="/owner"><i class="fas fa-user-tie"></i><span
+                        style="font-size: 13px; padding-right: 118px;">Profil Saya</span></a></li>
                   <li><a href="/profilCorp"><i class="fas fa-building"></i><span
                         style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
-                  <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><span
-                        style="font-size: 13px; padding-left: 10px;">Ubah Kata Sandi</span></a></li>
+                  <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><i class="far fa-bookmark"></i>
+                    <span style="font-size: 13px; padding-left: 10px;">Simpan Kandidat</span></a></li>
                         <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
                             @csrf
 
@@ -107,7 +117,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
                         <a href="/" class="logo d-flex align-items-center">
-                            <img src="img/logo-lowker.png" alt="">
+                            <img src="{{ asset('img/logo-lowker.png') }}" alt="">
 
                         </a>
                         <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
@@ -173,16 +183,16 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="vendor/aos/aos.js"></script>
-    <script src="vendor/php-email-form/validate.js"></script>
-    <script src="vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="vendor/purecounter/purecounter.js"></script>
-    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{ url('vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url('vendor/aos/aos.js') }}"></script>
+    <script src="{{ url('vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ url('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('vendor/purecounter/purecounter.js') }}"></script>
+    <script src="{{ url('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url('vendor/glightbox/js/glightbox.min.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="js/main.js"></script>
+    <script src="{{ url('js/main.js') }}"></script>
 
  <!-- rev -->
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> <!-- rev -->

@@ -149,18 +149,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-2 col-6 footer-links">
-                        <h4>Kategori Karir</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Photography</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Business</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">UI/UX Design</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Education</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Account</a></li>
 
-                        </ul>
-                    </div>
 
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Hubungi Kami</h4>

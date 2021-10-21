@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('vacancy.layout2')
 
 @section('title', 'Edit Profil | Lowkerjogja.com')
 
@@ -45,7 +45,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/owner" class="about">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -59,51 +59,13 @@
                                 <div class="">
 
                                     <div class="card-body">
-                                        <i class="fas fa-user-graduate"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="col-sm-6">
-                                <a href="/education" class="about">
-                                    <div class="card-body" style="width: 300px;">
-                                        <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center">
-
-                            <div class="col-sm-2">
-
-
-                                <div class="card-body">
-                                    <i class="far fa-chart-bar"></i>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="col-sm-6">
-                                <a href="/skill" class="about">
-                                    <div class="card-body" style="width: 300px;">
-                                        <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row align-items-center">
-
-                            <div class="col-sm-2">
-                                <div class="">
-
-                                    <div class="card-body">
                                         <i class="fas fa-lock"></i>
                                     </div>
                                 </div>
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="/passwordCorp" class="about">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -111,25 +73,6 @@
                         </div>
                         </div>
 
-                        <div class="row align-items-center">
-
-                            <div class="col-sm-2">
-                                <div class="">
-
-                                    <div class="card-body">
-                                        <i class="fas fa-info-circle"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        <br><br>
-                        <div class="col-sm-6">
-                            <a href="/password" class="about">
-                                <div class="card-body" style="width: 300px;">
-                                    <h6 style="font-weight: bold;">Status</h6>
-                                </div>
-                            </a>
-                        </div>
-                        </div>
                 </div>
 
                 </div>
@@ -154,7 +97,7 @@
                     <div class="card-body">
                         {{-- @foreach ($users as $item) --}}
 
-                        <form method="post" action="/user/{{ (Auth::user()->id) }}" enctype="multipart/form-data">
+                        <form method="post" action="/owner/{{ (Auth::user()->id) }}" enctype="multipart/form-data">
                             @method('PUT')
                                @csrf
                         <div class="row align-items-start" style="padding-top: 20px;">
@@ -171,7 +114,7 @@
 
                         <br>
                         <!-- provinsi dan kota -->
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-6">
                                 <label name="provinsi" for="provinsi">Provinsi</label>
                                 <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
@@ -194,7 +137,7 @@
                             <div class="col">
                                 <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda">
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <!-- email -->
@@ -209,15 +152,18 @@
                         <div class="row align-items-center">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
-                                <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
+                                <div class="col">
+                                     <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
                                 <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">
+                                </div>
+
                             </div>
 
                             <div class="row">
 
                                 <div class="col">
-                                    <a href="/user" style="margin-left: 350px ;" class="btn btn-outline-primary">
+                                    <a href="/owner" style="margin-left: 350px ;" class="btn btn-outline-primary">
                                         <span>Batalkan</span>
                                     </a>
                                     <button type="submit" style="margin-left: 10px;" class="btn btn-primary">

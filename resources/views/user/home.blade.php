@@ -32,36 +32,6 @@
 
 </section><!-- End Hero -->
 
-<!-- ======= Clients Section ======= -->
-<section id="clients" class="clients">
-
-    <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-            <!-- <h2>Our Clients</h2> -->
-            <p>Perusahaan Unggulan</p>
-        </header>
-
-        <div class="clients-slider swiper-container">
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="img/clients/asus.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/oracle.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/gojek.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/fb.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/ig.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/grab.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/client-7.png" class="img-fluid" alt=""></div>
-                <div class="swiper-slide"><img src="img/clients/client-8.png" class="img-fluid" alt=""></div>
-            </div>
-            <br>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-</section><!-- End Clients Section -->
-
-
-
 <!-- ======= Recent Blog Posts Section ======= -->
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
@@ -129,100 +99,6 @@
 </section><!-- End Recent Blog Posts Section -->
 
 
-
-<!-- ======= Counts Section ======= -->
-<section id="counts" class="counts">
-    <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-            <!-- <h2>Our Clients</h2> -->
-            <p>Telusuri Kategori Karir</p>
-        </header>
-
-
-        <div class="clients-slider swiper-container">
-
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-1.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 50px;">Photography</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 70px;">10 Jobs</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-2.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 65px;">Business</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 75px;">8 Jobs</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-6.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 40px;">UI/UX Designer</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 70px;">12 Jobs</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-3.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 65px;">Education</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 75px;">10 Jobs</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-5.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 20px;">Web Development</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 73px;">7 Jobs</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="padding-right: 170px;">
-                    <div class="container " style="width: 250px; height: 200px;border-radius: 5%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); padding-right: 15px;">
-                        <div class="container">
-                            <img src="img/icons/icons-4.png" alt="" style="width: 65px; margin-left: 70px; padding-top: 10px;">
-
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 15px; margin-left: 65px;">Account</p>
-                            <p style="font-size: 18px; font-weight: bold; padding-top: 18px; color: #006AFF; margin-left: 73px;">5 Jobs</p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-            <br><br><br>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-
-
-    </div>
-
-    </div>
-</section><!-- End Counts Section -->
 
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">

@@ -175,7 +175,7 @@ return redirect('/user');
 
         alert()->success('Berhasil', 'Password berhasil diubah');
 
-        return view('user.password');
+        return view('vacancy.passwordCorp');
 
     }
 
