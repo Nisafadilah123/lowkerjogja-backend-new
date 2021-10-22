@@ -35,7 +35,7 @@
                                     </thead>
 
                                     <tbody>
-                                         @foreach ($candidate as $c)
+                                        @foreach ($candidate as $c)
                                     <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$c->name}}</td>
@@ -46,18 +46,7 @@
                                                 View File <span class="glyphicon glyphicon-eye-open">
                                             </a>
                                         </td>
-                                        <td>
-                                            @if($c->status == '0')
-                                                <b>Belum Diverifikasi</b>
-                                            @endif
-                                            @if($c->status == '1')
-                                                <span class="glyphicon glyphicon-ok-sign" style="color:green"> Diterima
-                                            @endif
-
-                                            @if($c->status == '2')
-                                                <span class="glyphicon glyphicon-remove-sign" style="color:red"> Ditolak
-                                            @endif
-                                        </td>
+                                        <td style="vertical-align: middle;">{{$c->status}}</td></td>
 
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
                                             <form action="/kandidat/{{$c->id}}" method="post">

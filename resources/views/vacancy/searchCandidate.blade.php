@@ -55,12 +55,14 @@
     <div class="container" data-aos="fade-up">
         <div class="row">
             {{-- @foreach ($data as $item) --}}
+            @foreach( $kandidat as $k )
             <div class="col-lg-4">
                 <div class="post-box">
                     <div class="row align-items-start">
                         <div class="col">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                         </div>
+                                <input type="hidden" class="form-control" name="iduser" id="iduser" value="{{ $k->id_user }}">
                             <div>
                                 {{-- saved candidate/rekrut atau tidak --}}
                                 <button class="btn" type="button" data-toggle="modal" data-target="#modalSaya" style="float: right">
@@ -70,23 +72,27 @@
 
 
                                 {{-- foto user --}}
-                                <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
+                                
+                                <img src="{{ $k -> profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
                                 {{-- foreach candidate --}}
-                                <h6>Nama Kandidat</h6>
-                                <h6>Lamar sebagai</h6>
+                                <h6>{{ $k -> name}}</h6>
+                                <h6>{{ $k -> position }}</h6>
                             </div>
                     </div>
 
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
                                 {{-- foreach skill --}}
-                                <h1 style="font-weight: bold; font-size: 12px;">Keahlian</h1>
+                                
+                                <h1 style="font-weight: bold; font-size: 12px;">skill</h1>
+                                
                             </div>
                         </div>
+                        <a class="btn btn-primary" href="/profilCandidate{{ $k->id_candidate }}" role="button">Lihat Detail Kandidat</a>
                 </div>
             </div>
             {{-- @endforeach --}}
-
+            @endforeach
             <!-- bikin modal -->
 
         </div>

@@ -5,67 +5,78 @@
 @section('container')
 
 <div class="container" style="position: relative; top: 150px;height:600px">
+@foreach($kandidat as $k)
             <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col-sm-8">
+            <div class="col-sm-8">
                 <div class="card">
                     {{-- foreach candidate --}}
                     {{-- foto --}}
-
                                 <div class="row align-items-start">
                                     <div class="col">
                                         <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                                     </div>
                                         <div class="col-sm-4">
-                                            <button class="btn btn-primary">Download CV</button>
+                                            <a href="/open/{{$k->id}}" target="_blank" class="btn btn-primary">
+                                                Download CV <span class="glyphicon glyphicon-eye-open">
+                                            </a>
                                         </div>
                                         <div>
                                             {{-- foto user --}}
-                                            <img src="img/7.png" style="float:left; margin:0 8px 4px 0;" />
+                                            <img src="{{ $k -> profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
                                             {{-- foreach candidate --}}
-                                            <h6>Nama Kandidat</h6>
-                                            <h6>Lamar sebagai</h6>
+                                            <h6>{{ $k -> name }}</h6>
+                                            <h6>{{ $k -> position }}</h6>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                {{-- email candidate --}}
+                                                {{ $k -> address}}
                                             </div>
                                             <div class="col-sm-6">
-                                                {{-- provinsi candidate --}}
+                                                {{ $k -> provinsi}}
                                             </div>
                                         </div>
                                 </div>
 
                                     <div class="row align-items-start">
+                                        <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/atur">
+                                        {{csrf_field()}}
+                                        <!-- <h6>user_id<h6> -->
+                                        <input type="hidden" class="form-control" name="iduser" id="iduser" value="{{ $k->id }}">
+                                        <!-- <h6>id_apply_job<h6> -->
+                                        <input type="hidden" class="form-control" name="idapplyjob" id="idapplyjob" value="{{ $k->apply_jobs_id }}">
+                                        <!-- <h6>id_candidate<h6> -->
+                                        <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $k->id_candidate }}">
                                         <div class="col-sm-6" style="padding-top: 15px;position: relative;left:300px">
-                                                <button class="btn btn-primary" >Rekrut</button>
+                                            <button type="submit" href="/atur" name="terima" class="btn btn-primary" value="{{$k->id_candidate}}">Rekrut</button>
                                         </div>
                                         <div class="col-sm-6" style="padding-top: 15px;position: relative;left:100px">
-                                            <button class="btn btn-danger" >Tolak</button>
+                                            <button type="submit" href="/atur" name="tolak" class="btn btn-danger" value="{{$k->id_candidate}}">Tolak</button>
                                     </div>
+                                    </form>
                                     </div><br>
 
-
+                
                 </div>
-              </div>
+            </div>
 
 
-              <div class="col-sm-4" style="width: 500px; padding-top: 20px;">
-                  <div class="card">
+            <div class="col-sm-4" style="width: 500px; padding-top: 20px;">
+                <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title" style="font-weight:bold">Bio</h5>
-                      {{-- deskripsi candidate --}}
-                      <p class="card-text"></p>
+                    <h5 class="card-title" style="font-weight:bold">Bio</h5>
+                    {{-- deskripsi candidate --}}
+                    <p class="card-text"></p>
                     <hr>
                     <h5 class="card-title" style="font-weight:bold">Pendidikan</h5>
                     {{-- deskripsi candidate --}}
                     <div class="row">
                         <div class="col-sm-4">
                             {{-- tahun graduate candidate --}}
-                            <h6>Tahun Lulus</h6>
+                            <h6>{{ $k -> lulusan}}</h6>
                         </div>
                         <div class="col-sm-4">
                             {{-- universitas candidate --}}
-                            <h6>Universitas</h6>
+                            <h6>{{ $k -> kampus }}</h6>
                         </div>
                     </div>
 
@@ -77,7 +88,7 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data major --}}
-                            <h6>Jurusan</h6>
+                            <h6>{{ $k -> major}}</h6>
                         </div>
                     </div>
 
@@ -89,7 +100,7 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data ipk --}}
-                            <h6>IPK</h6>
+                            <h6>{{ $k -> gpa}}</h6>
                         </div>
                     </div>
                     <hr>
@@ -99,11 +110,11 @@
                     <div class="row">
                         <div class="col-sm-4">
                             {{-- tingkat skill candidate --}}
-                            <h6>Tingkatan Keahlian</h6>
+                            <h6>{{ $k -> level }}</h6>
                         </div>
                         <div class="col-sm-4">
                             {{-- skill candidate --}}
-                            <h6>Keahlian</h6>
+                            <h6>{{ $k -> skill }}</h6>
                         </div>
                     </div>
                     <hr>
@@ -116,16 +127,17 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data alamat candidate --}}
-                            <h6>Alamat</h6>
+                            <h6>{{ $k -> address }}</h6>
                         </div>
                     </div>
 
 
                     </div>
-                  </div>
+                </div>
                 </div>
             </div>
             <br>
-          </div>
+            @endforeach
+        </div>
 </div>
 @endsection

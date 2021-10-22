@@ -129,10 +129,11 @@ Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 Route::get('/job', [VacancyController::class, 'jobCorp']);
 Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
-Route::get('/profilCandidate', [VacancyController::class, 'profilCandidate']);
+Route::get('/profilCandidate{id}', [VacancyController::class, 'profilCandidate']);
 Route::get('/corp/update/{id}', [VacancyController::class, 'updateCorp']);
 Route::get('/passwordCorp', [VacancyController::class, 'passwordCorp']);
-
+Route::get('/open/{id}', [VacancyController::class, 'open']);
+Route::post('/atur', [VacancyController::class, 'Setatur']);
 
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);
