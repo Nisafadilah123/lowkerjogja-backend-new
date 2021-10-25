@@ -18,12 +18,12 @@ class CreateCorpTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_corp');
-            $table->text('description');
-            $table->string('logo');
-            $table->string('industri');
-            $table->string('location');
-            $table->string('work_day');
-            $table->integer('founded_year');
+            $table->text('description')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('industri')->nullable();
+            $table->string('location')->nullable();
+            $table->string('work_day')->nullable();
+            $table->integer('founded_year')->nullable();
             $table->timestamps();
         });
     }

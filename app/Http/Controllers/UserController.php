@@ -126,13 +126,13 @@ class UserController extends Controller
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')        
-            ->where('position','like',"%".$cari."%")
-            
+            ->where('position','like',"%".$cari."%")            
             ->paginate(6);
+
             if(count($lihatjobs)){
                 return view('user.findjobs',['lihatjobs' => $lihatjobs]);
             }else{ 
-                alert()->error('Data tidak ada', 'Posisi yang anda cari tidak ada');
+                alert()->info('Data tidak ada', 'Posisi yang anda cari tidak ada');
             return redirect('/findjobsUser');
             }
             return view('user.findjobs',['lihatjobs' => $lihatjobs]);

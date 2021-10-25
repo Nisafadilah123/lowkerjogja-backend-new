@@ -4,6 +4,8 @@ namespace App\Actions\Fortify;
 
 use App\Models\Team;
 use App\Models\User;
+use App\Models\Corp;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -45,6 +47,10 @@ class CreateNewUser implements CreatesNewUsers
                 'utype' => $input['utype'],
             ]), function (User $user) {
                 $this->createTeam($user);
+
+                if($user->utype === "CPY"){
+                    $this->createCorp($user);
+                }
             });
         });
     }
@@ -63,4 +69,13 @@ class CreateNewUser implements CreatesNewUsers
             'personal_team' => true,
         ]));
     }
+
+    protected function createCorp(User $user)
+    {
+        $user->ownedTeams()->save(Corp::forceCreate([
+            'user_id' => $user->id,
+            'nama_corp' => explode(' ', $user->name, 2)[0],
+        ]));       
+    }
+
 }
