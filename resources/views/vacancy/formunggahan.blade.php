@@ -28,8 +28,8 @@
                   <div class="container px-4">
                       <div class="row gx-5">
                         <div class="col">
-                          <label for="job" style="padding-bottom: 10px;"><strong>Job Position</strong> </label>
-                          <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Position">
+                          <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
+                          <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Posisi">
                         </div>
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Kuota</strong> </label>
@@ -41,23 +41,23 @@
                   <div class="container px-4">
                     <div class="row gx-5">
                       <div class="col">
-                        <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Last Education</strong> </label>
+                        <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Pendidikan Terakhir</strong> </label>
                         <select name="education" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
-                           <option selected>Select Last Education</option>
+                           <option selected>-- Pilih Pendidikan Terakhir --</option>
                            <option value="1">SMA / SMK</option>
                            <option value="2">D3</option>
-                           <option value="3">D4 /S1</option>
+                           <option value="3">D4 / S1</option>
                            <option value="3">S2</option>
                            <option value="3">S3</option>
                         </select>
                       </div>
                       <div class="col">
-                         <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Job Type</strong> </label>
-                         <select name="job_type" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
-                           <option selected>Select Job Type</option>
-                           <option value="1">One</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
+                         <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tipe Pekerjaan</strong> </label>
+                         <select name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+                           <option selected>-- Pilih Tipe Pekerjaan --</option>
+                           @foreach ($job_types as $job_type)
+                           <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                           @endforeach
                          </select>
                        </div>
                       </div>
@@ -70,12 +70,9 @@
                         <input id="deadline" type="date" class="form-control" name="deadline" placeholder="Deadline" style="width: 400px;">
                       </div>
                       <div class="col">
-                        <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;"><strong>Job Category</strong> </label>
-                        <select name="job_category" class="form-select form-select-sm" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;width: 450px;">
-                          <option selected>Select Job Category</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                        <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;"><strong>Kategori Pekerjaan</strong> </label>
+                        <select name="job_category" class="form-select form-select-sm job_category" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;width: 450px;">
+                          <option selected>-- Pilih Kategori Pekerjaan --</option>
                        </select>
                       </div>
                      </div>
@@ -84,7 +81,7 @@
                   <div class="container px-4">
                     <div class="row gx-5">
                       <div class="col">
-                        <label for="salary"style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;"><strong>Salary Range</strong></label>
+                        <label for="salary"style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;"><strong>Kisaran Gaji</strong></label>
                           <div class="input-group mb-3">
                             <input type="number" name="gaji_awal" class="form-control" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
                             <input type="number" name="gaji_akhir" class="form-control" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
@@ -105,8 +102,8 @@
                               </select>
                             </div>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
-                            <label for="location" style="padding-bottom: 10px;"><strong>Location</strong> </label>
-                            <input id="job_location" type="text" class="form-control" name="job_location" placeholder="Location">
+                            <label for="location" style="padding-bottom: 10px;"><strong>Alamat</strong> </label>
+                            <input id="job_location" type="text" class="form-control" name="job_location" placeholder="Alamat Perusahaan">
                           </div>
                         </div>
                         </div>
@@ -115,17 +112,17 @@
                       <div class="container px-4">
                         <div class="row gx-5">
                           <div class="col">
-                            <label for="gender" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Gender</strong> </label>
+                            <label for="gender" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Jenis Kelamin</strong> </label>
                             <select name="gender" class="form-select form-select-sm" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 250px;">
-                              <option selected>Select Gender</option>
-                              <option value="1">Male</option>
-                              <option value="2">Female</option>
-                              <option value="3">All Gender</option>
+                              <option selected>-- Pilih Jenis Kelamin --</option>
+                              <option value="1">Laki-Laki</option>
+                              <option value="2">Perempuan</option>
+                              <option value="3">Semua Jenis Kelamin</option>
                             </select>
                           </div>
                           <div class="col">
-                            <label for="age" style="padding-bottom: 10px;padding-top: 10px; position: relative; left:2px;bottom: 150px"><strong>Age</strong> </label>
-                            <input id="age" type="text" class="form-control" name="age" placeholder="Age" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 100px;">
+                            <label for="age" style="padding-bottom: 10px;padding-top: 10px; position: relative; left:2px;bottom: 150px"><strong>Umur</strong> </label>
+                            <input id="age" type="text" class="form-control" name="age" placeholder="Umur" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 100px;">
                           </div>
                         </div>
                       </div>
@@ -133,8 +130,8 @@
                       <div class="container px-4">
                         <div class="row gx-5">
                           <div class="col">
-                            <label for="syarat" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Requirement</strong> </label>
-                            <input id="syarat" type="text" class="form-control" name="syarat" placeholder="Enter Company Requirement" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 350px;">
+                            <label for="syarat" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Syarat Pekerjaan</strong> </label>
+                            <input id="syarat" type="text" class="form-control" name="syarat" placeholder="Masukkan Syarat Perusahaan" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 350px;">
                           </div>
                           <div class="col">
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;">
@@ -142,8 +139,8 @@
                               <input id="email" type="text" class="form-control" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;">
                             </div>
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
-                              <label for="telepon" style="padding-bottom: 10px;"><strong>Contact</strong> </label>
-                              <input id="telepon" type="text" class="form-control" name="telepon" placeholder="Enter Contact Company" style="padding-bottom: 10px;padding-top: 10px;">
+                              <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
+                              <input id="telepon" type="text" class="form-control" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
                             </div>
                           </div>
                         </div>
@@ -214,6 +211,24 @@
                     option_prov+=`<option value="${element.city_id}">${element.city_name}</option>`;
                 });
                 $(".kota-data").html(option_prov);
+            }
+        });
+    });
+
+    $(document).on("change",".job_type",function(){
+        var job_type_selected = $(".job_type option:selected").val();
+        console.log("pilih job_type",job_type_selected)
+        $.ajax({
+            "url":"/get-job-category",
+            "data":{job_type_selected:job_type_selected},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("job_category",hasil_result)
+                var option_job_category="<option>-- Pilih Kategori Pekerjaan --</option>";
+                hasil_result.forEach(element => {
+                    option_job_category+=`<option value="${element.id}">${element.kategori_pekerjaan}</option>`;
+                });
+                $(".job_category").html(option_job_category);
             }
         });
     });

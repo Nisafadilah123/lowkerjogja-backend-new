@@ -12,6 +12,7 @@ use App\Http\Controllers\CrudController;
 // use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfillUserController;
 use App\Http\Controllers\ProfilUserCorpController;
+use App\Http\Controllers\FormUnggahanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,6 +135,9 @@ Route::get('/corp/update/{id}', [VacancyController::class, 'updateCorp']);
 Route::get('/passwordCorp', [VacancyController::class, 'passwordCorp']);
 Route::get('/open/{id}', [VacancyController::class, 'open']);
 Route::post('/atur', [VacancyController::class, 'Setatur']);
+Route::get('/get-job-category', [VacancyController::class, 'getJobCategory']);
+//Route FormUnggahan
+Route::post('/formUnggahan', [FormUnggahanController::class, 'store']);
 
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);

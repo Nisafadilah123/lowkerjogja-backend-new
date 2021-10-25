@@ -35,7 +35,7 @@
                                         <th>Deadline</th>
                                         <th>Provinsi</th>
                                         <th>Kota</th>
-                                        <th>Range Gaji</th>
+                                        <th>gaji_awal - gaji_akhir</th>
                                         <th>Kuota</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Umur</th>
@@ -46,6 +46,7 @@
                                         <th>Aksi</th>
                                         {{-- description	position	last_education	job_type	job_category	deadline	job_location	salary_range --}}
                                     </tr>
+                                    @foreach ($jobs as $key =>$job)
                                     </thead>
 
                                     {{-- @php
@@ -55,10 +56,8 @@
                                             $provinceName = $province->province;
                                             $cityName = $city->city_name;
                                     @endphp --}}
-                                    <tbody>
-                                         @foreach ($jobs as $job)
                                     <tr>
-                                        <td style="vertical-align: middle;">{{$i++}}</td>
+                                        <td style="vertical-align: middle;">{{$key+1}}</td>
                                         <td style="vertical-align: middle;">{{$job->nama_corp}}</td>
                                         <td style="vertical-align: middle;">{{$job->description_job}}</td>
                                         <td style="vertical-align: middle;">{{$job->position}}</td>
@@ -89,7 +88,6 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                    </tbody>
 
 
 

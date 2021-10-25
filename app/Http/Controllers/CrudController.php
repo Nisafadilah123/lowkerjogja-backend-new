@@ -11,7 +11,7 @@ use App\Models\Candidate;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
-
+use App\Models\JobVacancy;
 
 class CrudController extends Controller
 {
@@ -163,12 +163,13 @@ class CrudController extends Controller
             'deadline'          => $request['deadline'],
             'provinces'         => $request['provinces'],
             'city'              => $request['city'] ,
-            'starting_salary'   => $request['starting_salary'],
-            'final_salary'      => $request['final_salary'],
+            'starting_salary'   => $request['gaji_awal'],
+            'final_salary'      => $request['gaji_akhir'],
             'kuota'             => $request['kuota'],
             'gender'            => $request['gender'],
             'age'               => $request['age'],
             'location'          => $request['location'],
+            'syarat'            => $request['syarat'],
             'email'             => $request['email'],
             'telp'              => $request['telp']
         ];

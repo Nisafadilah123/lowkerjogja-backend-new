@@ -40,9 +40,10 @@
                                     <select class="form-control" id="last_education" name="last_education">
                                         <option value="0">Pilih Pedidikan Terakhir</option>
                                         <option value="SMA/SMK">SMA/SMK</option>
-                                        <option value="Diploma">Diploma</option>
+                                        <option value="Diploma">D3</option>
                                         <option value="S1/D4">S1/D4</option>
                                         <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
