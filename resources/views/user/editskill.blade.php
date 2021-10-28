@@ -160,7 +160,7 @@
 
       <div class="col-lg-8">
 
-        <div class="post-box" style="height: 400px; background-color: #F9FAFF;">
+        <div class="post-box" style="height: 1000px; background-color: #F9FAFF;">
 
           <div class="row align-items-center">
             <div class="col align-items-center">
@@ -200,7 +200,7 @@
                 </select>
               </div>
               <div class="col-lg-6 align-items-center">
-                <input class="form-control" name="skill" id="skill" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('skill', $item->skill) }}">
+                <input class="form-control" name="ahli" id="ahli" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('ahli', $item->ahli) }}">
               </div>
 
 

@@ -49,16 +49,16 @@ class SkillController extends Controller
         //
         $request->validate([
             'level' => 'required',
-            'skill' => 'required'
+            'ahli' => 'required'
         ], [
             'level.required' => 'Lengkapi Tingkatan Keterampilan Anda',
-            'skill.required' => 'Lengkapi Keterampilan Anda'
+            'ahli.required' => 'Lengkapi Keterampilan Anda'
         ]);
         // return $request;
 
         $skill = new Skill;
         $skill->level = $request->level;
-        $skill->skill = $request->skill;
+        $skill->ahli = $request->ahli;
         $skill->user_id = Auth::user()->id;
         $skill->save();
         alert()->success('Berhasil', 'Data berhasil ditambahkan');
@@ -104,15 +104,15 @@ class SkillController extends Controller
         //
         $request->validate([
             'level' => 'required',
-            'skill' => 'required'
+            'ahli' => 'required'
         ], [
             'level.required' => 'Lengkapi Tingkatan Keterampilan Anda',
-            'skill.required' => 'Lengkapi Keterampilan Anda'
+            'ahli.required' => 'Lengkapi Keterampilan Anda'
         ]);
 
         // return $request;
         $skill->level = $request->level;
-        $skill->skill = $request->skill;
+        $skill->ahli = $request->ahli;
         $skill->user_id = Auth::user()->id;
         $skill->save();
         alert()->success('Berhasil', 'Data berhasil di update');

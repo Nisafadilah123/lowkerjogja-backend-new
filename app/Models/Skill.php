@@ -20,4 +20,9 @@ class Skill extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // public function kandidat()
+    // {
+    //     return $this->hasMany(Candidate::class);
+    // }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.layout3')
+@extends('vacancy.layout2')
 
 @section('title', 'Cari Kandidat | Lowkerjogja.com')
 
@@ -62,7 +62,7 @@
                         <div class="col">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                         </div>
-                                <input type="hidden" class="form-control" name="iduser" id="iduser" value="{{ $k->id_user }}">
+                                <input type="text" class="form-control" name="iduser" id="iduser" value="{{ $k->user_id }}">
                             <div>
                                 {{-- saved candidate/rekrut atau tidak --}}
                                 <button class="btn" type="button" data-toggle="modal" data-target="#modalSaya" style="float: right">
@@ -72,20 +72,26 @@
 
 
                                 {{-- foto user --}}
-                                
-                                <img src="{{ $k -> profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
+
+                                <img src="{{ $k->apply_jobs->user->profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
                                 {{-- foreach candidate --}}
-                                <h6>{{ $k -> name}}</h6>
-                                <h6>{{ $k -> position }}</h6>
+                                <h6>{{ $k->apply_jobs->user->name}}</h6>
+                                <h6>{{ $k->apply_jobs->jobs->position }}</h6>
                             </div>
                     </div>
 
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
                                 {{-- foreach skill --}}
-                                
-                                <h1 style="font-weight: bold; font-size: 12px;">skill</h1>
-                                
+
+                                {{-- @foreach ($skill as $s) --}}
+                                @foreach ( $k->apply_jobs->user->skill as $a )
+                                <h1 style="font-weight: bold; font-size: 12px;">{{ $a->ahli }}</h1>
+
+                                @endforeach
+
+                                {{-- @endforeach --}}
+
                             </div>
                         </div>
                         <a class="btn btn-primary" href="/profilCandidate{{ $k->id_candidate }}" role="button">Lihat Detail Kandidat</a>

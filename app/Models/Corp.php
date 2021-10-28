@@ -20,7 +20,11 @@ class Corp extends Model
     }
 
     public function jobs(){
-        return $this->hasOne(Jobs::class);
+        return $this->belongsTo(Jobs::class, 'id', 'corp_id');
     }
+
+    // public function kandidat(){
+    //     return $this->belongsTo(Jobs::class);
+    // }
 
 }

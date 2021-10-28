@@ -20,11 +20,12 @@ class Apply_job extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function job()
+    public function jobs()
     {
-        return $this->hasOne(Job::class, 'id', 'job_id');
+        return $this->belongsTo(Jobs::class, 'job_id', 'id');
     }
+
 }

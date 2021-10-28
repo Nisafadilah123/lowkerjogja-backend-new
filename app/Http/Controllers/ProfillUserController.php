@@ -132,7 +132,7 @@ class ProfillUserController extends Controller
                 // $user->update($input);
 
 // dd($user);
-        Alert::success('Success', 'You have Successfully Updated');
+        Alert::success('Berhasil', 'Datamu telah terubah');
 return redirect('/user');
     }
 

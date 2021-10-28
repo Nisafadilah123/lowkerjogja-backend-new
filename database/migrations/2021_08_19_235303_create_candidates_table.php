@@ -15,11 +15,11 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
-            $table->integer('user_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('apply_jobs_id');
             $table->string('status');
+            $table->timestamps();
 
             $table->softDeletes();
         });

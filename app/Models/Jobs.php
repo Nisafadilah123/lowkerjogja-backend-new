@@ -15,6 +15,15 @@ class Jobs extends Model
     ];
 
     public function corp(){
-        return $this->belongsTo(Corp::class);
+        return $this->hasMany(Corp::class);
     }
+
+    // public function kandidat()
+    // {
+    //     return $this->belongsTo(Candidate::class, 'id', 'user_id');
+    // }
+
+
+
+
 }

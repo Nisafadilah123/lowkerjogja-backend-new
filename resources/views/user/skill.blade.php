@@ -158,7 +158,7 @@
               </div>
 
               <div class="col-lg-4">
-                <h6 style="font-weight: bold;">{{ $item->skill }}</h6>
+                <h6 style="font-weight: bold;">{{ $item->ahli }}</h6>
               </div>
 
               <div class="col-lg-2">

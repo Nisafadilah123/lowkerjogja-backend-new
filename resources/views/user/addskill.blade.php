@@ -189,7 +189,7 @@
                 </select>
               </div>
               <div class="col-lg-6 align-items-center">
-                <input class="form-control" name="skill" type="text" placeholder="Lengkapi Keterampilan Anda" aria-label="default input example" value="{{ old('skill') }}">
+                <input class="form-control" name="ahli" type="text" placeholder="Lengkapi Keterampilan Anda" aria-label="default input example" value="{{ old('skill') }}">
               </div>
 
             </div>

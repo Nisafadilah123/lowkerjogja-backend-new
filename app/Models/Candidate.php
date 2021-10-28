@@ -17,13 +17,25 @@ class Candidate extends Model
 
     ];
 
-    public function user()
-    {
-        return $this->hasOne(User::class, 'id', 'user_id');
-    }
+    // public function user()
+    // {
+    //     return $this->hasOne(User::class, 'id', 'user_id');
+    // }
+
+    // public function skill()
+    // {
+    //     return $this->belongsTo(Skill::class, 'id', 'user_id');
+    // }
+
+
+
+    // public function jobs()
+    // {
+    //     return $this->belongsTo(Jobs::class, 'id', 'corp_id');
+    // }
 
     public function apply_jobs()
     {
-        return $this->hasOne(Apply_jobs::class, 'id', 'user_id');
+        return $this->belongsTo(Apply_job::class, 'apply_jobs_id', 'id');
     }
 }

@@ -68,15 +68,15 @@ class User extends Authenticatable
     protected $table = "users";
 
     public function education(){
-        return $this->hasOne(Education::class);
+        return $this->hasMany(Education::class);
     }
 
     public function skill(){
-        return $this->hasOne(Skill::class);
+        return $this->hasMany(Skill::class);
     }
 
     public function corp(){
-        return $this->hasOne(Corp::class);
+        return $this->hasOne(Corp::class, 'user_id', 'id');
     }
 
     public function setProvinsiAttribute($value)
@@ -88,4 +88,14 @@ class User extends Authenticatable
     {
         return $this->attributes['provinsi'] = json_decode($value);
     }
+
+    // public function kandidat()
+    // {
+    //     return $this->belongsTo(Candidate::class, 'id', 'user_id');
+    // }
+
+    // public function apply_jobs(){
+    //     return $this->belongsTo(Apply_job::class, 'user_id', 'id');
+    // }
+
 }
