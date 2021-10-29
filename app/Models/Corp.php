@@ -10,10 +10,20 @@ class Corp extends Model
     use HasFactory;
     protected $table ="corp";
     protected $primaryKey ="id";
-    protected $guarded = [
-        'user_id',
-    ];
+    // protected $guarded = [
+    //     'user_id',
+    // ];
 
+    protected $fillable = [
+        'user_id',
+        'nama_corp',
+        'description',
+        'logo',
+        'industri',
+        'location',
+        'work_day',
+        'founded_year',
+    ];
 
     public function user(){
         return $this->belongsTo(User::class);

@@ -71,8 +71,8 @@
               <li style="padding-left: 500px;">
                 <div>
                   <ul>
-                    <li style="text-align: right; padding-right: 10px;"><a href="#"
-                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image" width="20px" height="20px">{{ ucfirst( Auth::user()->name) }}</a><span
+                    <li style="text-align: right; padding-left: 10px;"><a href="#"
+                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image" width="20px" height="20px" style=" position:relative;right: 50px;">{{ ucfirst( Auth::user()->name) }}</a><span
                         style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
                   </ul>
                 </div>
@@ -82,7 +82,7 @@
                 <ul style="width: 250px;">
                     <li><a href="/owner"><i class="fas fa-user-tie"></i><span
                         style="font-size: 13px; padding-right: 118px;">Profil Saya</span></a></li>
-                  <li><a href="/profilCorp"><i class="fas fa-building"></i><span
+                  <li><a href="/perusahaan"><i class="fas fa-building"></i><span
                         style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
                   <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><i class="far fa-bookmark"></i>
                     <span style="font-size: 13px; padding-left: 10px;">Simpan Kandidat</span></a></li>
@@ -250,7 +250,7 @@
             }
         });
     });
-    
+
 </script>
 
 </body>

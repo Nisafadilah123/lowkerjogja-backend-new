@@ -8,6 +8,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CorpController;
 use App\Http\Controllers\CrudController;
 // use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfillUserController;
@@ -127,9 +128,9 @@ Route::get('/succesCorp', [VacancyController::class, 'succes']);
 Route::get('/service', [VacancyController::class, 'service']);
 Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
-Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
+// Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 Route::get('/job', [VacancyController::class, 'jobCorp']);
-Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
+// Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
 Route::get('/profilCandidate{id}', [VacancyController::class, 'profilCandidate']);
 Route::get('/corp/update/{id}', [VacancyController::class, 'updateCorp']);
 Route::get('/passwordCorp', [VacancyController::class, 'passwordCorp']);
@@ -159,3 +160,6 @@ Route::resource('skill', SkillController::class);
 
 // company
 Route::get('/corp', [CompanyController::class, 'home']);
+
+//Profil Perusahaan
+Route::resource('perusahaan', CorpController::class);

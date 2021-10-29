@@ -73,7 +73,7 @@
 
                                 {{-- foto user --}}
 
-                                <img src="{{ $k->apply_jobs->user->profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
+                                <img src="{{asset('profile_photos/'.$k->apply_jobs->user->profile_photo_path)}}" style="float:left;" class="rounded-image" width="20px" height="20px" />
                                 {{-- foreach candidate --}}
                                 <h6>{{ $k->apply_jobs->user->name}}</h6>
                                 <h6>{{ $k->apply_jobs->jobs->position }}</h6>

@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="post-box" style="background-color: #F9FAFF;">
-                    
+
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
@@ -130,7 +130,7 @@
                         </div>
                         </div>
                 </div>
-                
+
                 </div>
             </div>
 

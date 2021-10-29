@@ -78,35 +78,29 @@ class VacancyController extends Controller
 
         $idu = $request->iduser;
 
-        // $kandidat = DB::table('candidates')
-        // ->join('users', 'users.id', '=', 'candidates.user_id')
-        // // ->join('skills', 'skills.user_id', '=', 'users.id')
-        // ->join('jobs', 'jobs.id', '=', 'candidates.apply_jobs_id')
-        // ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        // // ->select('users.id as id_user', 'users.name', 'users.profile_photo_path', 'candidates.id as id_candidate',
-        // // 'jobs.position', 'corp.user_id as id_user_corp', 'skills.user_id as skill_user', 'skills.skill')
-        // ->select('users.id as id_user', 'users.name', 'users.profile_photo_path', 'candidates.id as id_candidate',
-        // 'jobs.position', 'corp.user_id as id_user_corp')
-        // ->get()
-        // ->where('id_user_corp', $uid);
-
-        // $skill = DB::table('skills')
-        // ->join('users', 'users.id', '=', 'skills.user_id')
-        // ->select('users.id as id_user', 'skills.user_id as skill_user', 'skills.skill')
-        // // ->where('skills.user_id', $idu)
-        // ->get()
-        // // ->where('skill_user', "=", 6)
-        // ->toArray();
-
-        // $skill = Skill::with('user')->orderBy('user_id');
-
-        // $kandidat = Candidate::with('user')->with('skill')->with('jobs.corp')->with('corp')->get();
-        // $kandidat = Candidate::with('user.skill')->with('corp.jobs')->get();
-
-        $kandidat = Candidate::with(['apply_jobs' => function($q){
+        $corpId = Auth::user()->corp->id;
+        // dd(Auth::user()->corp->id);
+        $keyword=$request->cari;
+        $kandidat = Candidate::whereHas('apply_jobs', function($q)
+        use ($corpId, $keyword){
+            $q->whereHas('jobs', function ($q)
+            use($corpId){
+                $q->where('position', 'like', $keyword);
+                $q->where('corp_id', $corpId);
+            });
+        })
+        ->with(['apply_jobs' => function ($q){
             $q->with('user.skill')
-            ->with('jobs');
-        }])->get();
+            ->with(['jobs' => function ($q){
+                $q->where('position', 'like', $keyword);
+            }]);
+        }])->where('position', 'like', '%pro%')
+        ->get();
+
+        // $kandidat = Candidate::with(['apply_jobs' => function($q){
+        //     $q->with('user.skill')
+        //     ->with('jobs');
+        // }])->get();
 
         // dd($kandidat);
         return view('vacancy.searchCandidate', ['kandidat' => $kandidat]);
@@ -132,11 +126,11 @@ class VacancyController extends Controller
     }
 
      // halaman profil corp
-    public function profilCorp()
-    {
-        $corps = Corp::all();
-        return view('vacancy.profilCorp', compact('corps'));
-    }
+    // public function profilCorp()
+    // {
+    //     $corps = Corp::all();
+    //     return view('vacancy.profilCorp', compact('corps'));
+    // }
 
      // halaman job corp
     public function jobCorp()
@@ -146,11 +140,11 @@ class VacancyController extends Controller
     }
 
      // halaman job corp
-    public function editCorp($id)
-    {
-        $corps = Corp::findOrFail($id);
-        return view('vacancy.editCorp');
-    }
+    // public function editCorp($id)
+    // {
+    //     $corps = Corp::findOrFail($id);
+    //     return view('vacancy.editCorp');
+    // }
 
      // halaman job corp
     public function updateCorp(Request $request, $id)

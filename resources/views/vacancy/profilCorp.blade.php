@@ -8,15 +8,15 @@
 <div class="container" style="position: relative; top: 130px;height:1000px">
     <div class="row row-cols-1">
 
+        @foreach ($corps as $c )
+
       <div class="col-sm-3">
           <div class="card">
-            @foreach ($corps as $c )
 
-              <img src="logo/{{$c->logo}}"/>
+              <img src="{{asset('logo/'. $c->logo)}}"/>
 
-              @endforeach
             <div class="card-body">
-                <img src="logo/{{$c->logo}}"  id="gambar2" width="50px" style="z-index: 2;top: 140px;position: absolute;"><br>
+                <img src="{{asset('logo/'. $c->logo)}}"  id="gambar2" width="50px" style="z-index: 2;top: 140px;position: absolute;"><br>
               <h5 class="card-title"><strong>{{ $c->nama_corp }}</strong> </h5><br>
               <p class="card-text" style="color: #dcdcdc;">{{ $c->industri }}, {{ $c->location }}</p>
               <p class="card-text">
@@ -36,7 +36,7 @@
 
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{ url('corp/editCorp', $c->id) }}">
+                        <a href="{{ url('perusahaan/'. $c->id.'/edit') }}">
                         <i class="fas fa-edit"style="position:relative;float:right"></i></a>
                     </div>
                 </div>
@@ -60,6 +60,7 @@
         </div>
             <!-- end full time -->
 
+            @endforeach
       </div>
 
   </div>
