@@ -159,10 +159,7 @@
                     <div class="row align-items-center">
                         <div class="col align-items-center">
                             <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
-                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Education
-
-                            <a href="{{ url('education/create') }}" class="btn btn-success" id="tambah" style="position: relative; float: right;"><i class="fas fa-plus" style="position: relative; float: right;">Add</i></a><br><br>
-
+                            <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Status Kandidat Pengguna</h6>
                             <table>
 
                                     <tbody>

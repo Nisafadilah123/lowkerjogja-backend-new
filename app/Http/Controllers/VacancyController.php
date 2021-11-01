@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class VacancyController extends Controller
@@ -84,17 +85,17 @@ class VacancyController extends Controller
         $kandidat = Candidate::whereHas('apply_jobs', function($q)
         use ($corpId, $keyword){
             $q->whereHas('jobs', function ($q)
-            use($corpId){
-                $q->where('position', 'like', $keyword);
+            use($corpId, $keyword){
+                $q->where('position', 'like', '%'.$keyword.'%');
                 $q->where('corp_id', $corpId);
             });
         })
-        ->with(['apply_jobs' => function ($q){
+        ->with(['apply_jobs' => function ($q)use($keyword){
             $q->with('user.skill')
-            ->with(['jobs' => function ($q){
-                $q->where('position', 'like', $keyword);
+            ->with(['jobs' => function ($q)use($keyword){
+                $q->where('position', 'like', '%'.$keyword.'%');
             }]);
-        }])->where('position', 'like', '%pro%')
+        }])
         ->get();
 
         // $kandidat = Candidate::with(['apply_jobs' => function($q){
@@ -103,6 +104,13 @@ class VacancyController extends Controller
         // }])->get();
 
         // dd($kandidat);
+
+        // if($kandidat == true){
+        //     return view('vacancy.searchCandidate', ['kandidat' => $kandidat]);
+        // }else{
+        //     alert()->info('Data tidak ada', 'Posisi yang anda cari tidak ada');
+        // return redirect('/candidate');
+        // }
         return view('vacancy.searchCandidate', ['kandidat' => $kandidat]);
         // return view('vacancy.searchCandidate', ['kandidat' => $kandidat, 'skill' => $skill]);
     }
@@ -133,11 +141,11 @@ class VacancyController extends Controller
     // }
 
      // halaman job corp
-    public function jobCorp()
-    {
-        $corps = Corp::where('user_id', Auth::user()->id)->get();
-        return view('vacancy.jobCorp', compact('corps'));
-    }
+    // public function jobCorp()
+    // {
+    //     $corps = Corp::where('user_id', Auth::user()->id)->get();
+    //     return view('vacancy.jobCorp', compact('corps'));
+    // }
 
      // halaman job corp
     // public function editCorp($id)

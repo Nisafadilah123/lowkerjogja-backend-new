@@ -14,6 +14,7 @@ use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfillUserController;
 use App\Http\Controllers\ProfilUserCorpController;
 use App\Http\Controllers\FormUnggahanController;
+use App\Http\Controllers\JobCorpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,9 +104,11 @@ Route::post('/kirimcv', [UserController::class, 'insertcv']);
 Route::post('/simpanjob', [UserController::class, 'simpanjob']);
 Route::post('/deletejob', [UserController::class, 'deletejob']);
 Route::get('/cari', [USerController::class, 'cari']);
+Route::get('/status_user', [UserController::class, 'statusUser']);
 
 
 // Routes Halaman Profil User
+Route::get('/user/{id}/statusUser', [ProfillUserController::class, 'statusUser']);
 Route::get('/user/{id}/editPassword', [ProfillUserController::class, 'editPassword']);
 Route::post('/user/{id}/updatePassword', [ProfillUserController::class, 'updatePassword']);
 Route::resource('user', ProfillUserController::class);
@@ -129,7 +132,7 @@ Route::get('/service', [VacancyController::class, 'service']);
 Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 // Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
-Route::get('/job', [VacancyController::class, 'jobCorp']);
+// Route::get('/job', [VacancyController::class, 'jobCorp']);
 // Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
 Route::get('/profilCandidate{id}', [VacancyController::class, 'profilCandidate']);
 Route::get('/corp/update/{id}', [VacancyController::class, 'updateCorp']);
@@ -163,3 +166,5 @@ Route::get('/corp', [CompanyController::class, 'home']);
 
 //Profil Perusahaan
 Route::resource('perusahaan', CorpController::class);
+
+Route::resource('karir', JobCorpController::class);

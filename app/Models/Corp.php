@@ -30,7 +30,7 @@ class Corp extends Model
     }
 
     public function jobs(){
-        return $this->belongsTo(Jobs::class, 'id', 'corp_id');
+        return $this->hasMany(Jobs::class, 'corp_id', 'id');
     }
 
     // public function kandidat(){

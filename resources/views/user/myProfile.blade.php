@@ -122,7 +122,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="/status_user" class="about">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>

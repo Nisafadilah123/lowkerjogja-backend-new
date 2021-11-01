@@ -9,40 +9,10 @@
     <div class="container" data-aos="fade-up" style="margin-top: 100px;">
         <div class="row">
             {{-- @foreach ($user as $item ) --}}
-                <form action="/search" method="get">
-                <div class="row">
-                    <div class="col-md-2">
-
-                        <label for="position" style="padding-bottom: 10px;padding-top: 10px;"><strong>Position</strong> </label>
-                        <select id="filter-position" class="form-control" aria-label="form-select-sm example" style="position: relative; width: 220px;height:40px;background-image:url('mortarboard.png');">
-                            <option selected> Semua Lulusan </option>
-                            <option value="1">S3</option>
-                            <option value="2">S2</option>
-                            <option value="3">S1/D4</option>
-                            <option value="4">D3</option>
-                            <option value="5">SMA/SMK</option>
-
-                        </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label name="provinsi" for="provinsi" style="position: relative; left:100px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>Province</strong></label>
-                            <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="form-select-sm example" style="position: relative; left:100px;width: 250px;height:40px">
-                                <option selected>--Pilih Provinsi--</option>
-                            </select>
-                        </div>
-
-                    <div class="col-sm-2">
-                        <label name="kota" for="kota" style="position: relative; left:20px;width: 300px;padding-top:10px;padding-bottom: 10px;"><strong>City</strong></label>
-                        <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example" style="position: relative; left:20px;width: 250px;height:40px">
-                            <option selected>-- Pilih Kota --</option>
-                        </select>
-                    </div>
-
-                        <div class="col-sm-2">
-                            <button type="submit" class="btn btn-primary" style="position: relative; left:150px;width:100px;top:45px"><i class="fas fa-search" style="position: relative;padding-right:5px">   Search</a></i>
-                        </div>
-                </div>
+            <form action="/candidate" method="GET">
+                <label for="posisi" style="position: relative;left:430px; width: 220px;height:40px;"><strong>Posisi Pekerjaan</strong> </label>
+                <input class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative;left:400px; width: 220px;height:40px;background-image:url('mortarboard.png');" id="position-option" name="cari" name="cari" type="search" placeholder="Cari Posisi" aria-label="Search">
+                <button type="submit" class="btn btn-primary" style="position: relative; left:650px;width:100px;bottom:40px"><i class="fas fa-search" style="position: relative;padding-right:5px" value="cari">   Cari</a></i>
             </form>
             {{-- @endforeach --}}
 

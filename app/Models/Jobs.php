@@ -15,7 +15,7 @@ class Jobs extends Model
     ];
 
     public function corp(){
-        return $this->hasMany(Corp::class);
+        return $this->belongsTo(Corp::class);
     }
 
     // public function kandidat()

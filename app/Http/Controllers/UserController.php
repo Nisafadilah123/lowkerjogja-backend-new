@@ -125,18 +125,18 @@ class UserController extends Controller
             $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')        
-            ->where('position','like',"%".$cari."%")            
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')
+            ->where('position','like',"%".$cari."%")
             ->paginate(6);
 
             if(count($lihatjobs)){
                 return view('user.findjobs',['lihatjobs' => $lihatjobs]);
-            }else{ 
+            }else{
                 alert()->info('Data tidak ada', 'Posisi yang anda cari tidak ada');
             return redirect('/findjobsUser');
             }
             return view('user.findjobs',['lihatjobs' => $lihatjobs]);
-    
+
         }
 
         public function lihatjobs(Request $request){
@@ -362,4 +362,7 @@ class UserController extends Controller
             return redirect('/jobsUser');
         }
 
+        public function statusUser(){
+            return view('user.status_user');
+        }
 }

@@ -180,6 +180,7 @@
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
+    @include('sweetalert::alert')
 
  <!-- rev -->
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> <!-- rev -->
