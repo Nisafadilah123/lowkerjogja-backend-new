@@ -32,7 +32,8 @@
                         <div class="col">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                         </div>
-                                <input type="text" class="form-control" name="iduser" id="iduser" value="{{ $k->user_id }}">
+                                <input type="hidden" class="form-control" name="iduser" id="iduser" value="{{ $k->user_id }}">
+                                <input type="hidden" class="form-control" name="ida" id="ida" value="{{ $k->id }}">
                             <div>
                                 {{-- saved candidate/rekrut atau tidak --}}
                                 <button class="btn" type="button" data-toggle="modal" data-target="#modalSaya" style="float: right">
@@ -64,7 +65,7 @@
 
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="/profilCandidate{{ $k->id_candidate }}" role="button">Lihat Detail Kandidat</a>
+                        <a class="btn btn-primary" href="/profilCandidate{{ $k->id }}" role="button">Lihat Detail Kandidat</a>
                 </div>
             </div>
             {{-- @endforeach --}}

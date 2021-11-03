@@ -289,7 +289,7 @@ class UserController extends Controller
                 $data->file = $nama_file;
             }
 
-            DB::table('apply_jobs')->insert(
+            $idapply = DB::table('apply_jobs')->insertGetId(
                 [
                     'user_id' => $uid,
                     'job_id' => $request->idjob,
@@ -301,7 +301,7 @@ class UserController extends Controller
             DB::table('candidates')->insert(
                 [
                     'user_id' => $uid,
-                    'apply_jobs_id' => $i,
+                    'apply_jobs_id' => $idapply,
                     'status' => 'belum diverfikasi ',
                 ]
             );

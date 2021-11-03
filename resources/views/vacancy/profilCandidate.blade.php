@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- skill candidate --}}
-                            <h6>{{ $k -> skill }}</h6>
+                            <h6>{{ $k -> ahli }}</h6>
                         </div>
                     </div>
                     <hr>
