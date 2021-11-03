@@ -27,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\CrudController' => $baseDir . '/app/Http/Controllers/CrudController.php',
     'App\\Http\\Controllers\\EducationController' => $baseDir . '/app/Http/Controllers/EducationController.php',
     'App\\Http\\Controllers\\FormUnggahanController' => $baseDir . '/app/Http/Controllers/FormUnggahanController.php',
+    'App\\Http\\Controllers\\JobCorpController' => $baseDir . '/app/Http/Controllers/JobCorpController.php',
     'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
     'App\\Http\\Controllers\\ProfilUserCorpController' => $baseDir . '/app/Http/Controllers/ProfilUserCorpController.php',
     'App\\Http\\Controllers\\ProfillUserController' => $baseDir . '/app/Http/Controllers/ProfillUserController.php',

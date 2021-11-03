@@ -98,21 +98,14 @@ class VacancyController extends Controller
         }])
         ->get();
 
-        // $kandidat = Candidate::with(['apply_jobs' => function($q){
-        //     $q->with('user.skill')
-        //     ->with('jobs');
-        // }])->get();
+        if(count($kandidat)){
+            return view('vacancy.searchCandidate',['kandidat' => $kandidat]);
+        }else{
+            alert()->info('Data tidak ada', 'Posisi yang anda cari tidak ada');
+        return redirect('/candidate');
+        }
 
-        // dd($kandidat);
-
-        // if($kandidat == true){
-        //     return view('vacancy.searchCandidate', ['kandidat' => $kandidat]);
-        // }else{
-        //     alert()->info('Data tidak ada', 'Posisi yang anda cari tidak ada');
-        // return redirect('/candidate');
-        // }
         return view('vacancy.searchCandidate', ['kandidat' => $kandidat]);
-        // return view('vacancy.searchCandidate', ['kandidat' => $kandidat, 'skill' => $skill]);
     }
 
      //halaman profil candidate
