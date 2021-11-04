@@ -44,18 +44,9 @@
                                         <th>Email</th>
                                         <th>Telp</th>
                                         <th>Aksi</th>
-                                        {{-- description	position	last_education	job_type	job_category	deadline	job_location	salary_range --}}
                                     </tr>
                                     @foreach ($jobs as $key =>$job)
                                     </thead>
-
-                                    {{-- @php
-                                            $provinceId = $job->provinces;
-                                            $province = rajaongkir_point( 'province', 'GET', ['id=' . $provinceId] );
-                                            $city = rajaongkir_point('city', 'GET', ['id=' .$job->city. 'province='.$provinceId]);
-                                            $provinceName = $province->province;
-                                            $cityName = $city->city_name;
-                                    @endphp --}}
                                     <tr>
                                         <td style="vertical-align: middle;">{{$key+1}}</td>
                                         <td style="vertical-align: middle;">{{$job->nama_corp}}</td>

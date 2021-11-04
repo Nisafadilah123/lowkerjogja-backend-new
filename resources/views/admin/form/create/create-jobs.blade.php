@@ -58,14 +58,6 @@
                                     <label for="deadline"><strong>Deadline</strong></label>
                                     <input type="date" name="deadline" id="deadline" placeholder="Deadline" required class="datepicker" data-date-format="mm/dd/yyyy" >
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label for="provinces"><strong>Provinces</strong></label>
-                                    <input type="text" name="provinces" id="provinces" class="form-control" placeholder="Provinces" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="joblocation"><strong>Kota</strong></label>
-                                    <input type="text" name="city" id="city" class="form-control" placeholder="city" required>
-                                </div> --}}
                                 <div class="form-group">
                                     <label for="starting_salary"><strong>Range Gaji</strong></label>
                                     <div class="row">

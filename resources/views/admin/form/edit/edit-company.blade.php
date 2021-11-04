@@ -57,11 +57,8 @@
                     </div>
                 </div>
             </form>
-
-
-
         </div>
-        <section>
+    <section>
             <!-- END Page Content -->
 </div>
 <!-- END Main Container -->
