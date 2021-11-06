@@ -22,17 +22,18 @@
                                         </div>
                                         <div>
                                             {{-- foto user --}}
-                                            <img src="{{ $k -> profile_photo_path }}" style="float:left; margin:0 8px 4px 0;" />
+                                            <img src="{{asset('profile_photos/'.$k->apply_jobs->user->profile_photo_path)}}" style="float:left;" class="rounded-image" width="60px" height="60px" />
                                             {{-- foreach candidate --}}
-                                            <h6>{{ $k -> name }}</h6>
-                                            <h6>{{ $k -> position }}</h6>
+                                            <h6>{{ $k->apply_jobs->user->name }}</h6>
+                                            <h6>{{ $k->apply_jobs->jobs->position }}</h6>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                {{ $k -> address}}
+                                                {{ $k->apply_jobs->user->address}}
                                             </div>
                                             <div class="col-sm-6">
-                                                {{ $k -> provinsi}}
+                                                {{ $k->apply_jobs->user->province_name}}
+                                                harusnya muncul provinsi
                                             </div>
                                         </div>
                                 </div>
@@ -45,18 +46,20 @@
                                         <!-- <h6>id_apply_job<h6> -->
                                         <input type="hidden" class="form-control" name="idapplyjob" id="idapplyjob" value="{{ $k->apply_jobs_id }}">
                                         <!-- <h6>id_candidate<h6> -->
-                                        <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $k->id_candidate }}">
+                                        <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $k->id }}">
                                         <div class="col-sm-6" style="padding-top: 15px;position: relative;left:300px">
-                                            <button type="submit" href="/atur" name="terima" class="btn btn-primary" value="{{$k->id_candidate}}">Rekrut</button>
+                                            <button type="submit" href="/atur" name="terima" class="btn btn-primary" value="{{$k->id}}">Rekrut</button>
                                         </div>
                                         <div class="col-sm-6" style="padding-top: 15px;position: relative;left:100px">
-                                            <button type="submit" href="/atur" name="tolak" class="btn btn-danger" value="{{$k->id_candidate}}">Tolak</button>
+                                            <button type="submit" href="/atur" name="tolak" class="btn btn-danger" value="{{$k->id}}">Tolak</button>
                                     </div>
                                     </form>
                                     </div><br>
 
                 
                 </div>
+                <br>
+                <a class="btn btn-primary" href="/candidate" role="button">Kembali</a>
             </div>
 
 
@@ -70,17 +73,20 @@
                     <h5 class="card-title" style="font-weight:bold">Pendidikan</h5>
                     {{-- deskripsi candidate --}}
                     <div class="row">
+                        @foreach ( $k->apply_jobs->user->education as $e )
                         <div class="col-sm-4">
                             {{-- tahun graduate candidate --}}
-                            <h6>{{ $k -> lulusan}}</h6>
+                            <h6>{{ $e -> graduate }}</h6>
                         </div>
                         <div class="col-sm-4">
                             {{-- universitas candidate --}}
-                            <h6>{{ $k -> kampus }}</h6>
+                            <h6>{{ $e -> name }}</h6>
                         </div>
+                        @endforeach
                     </div>
 
                     <div class="row">
+                        @foreach ( $k->apply_jobs->user->education as $e )
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
                             {{-- major --}}
@@ -88,11 +94,13 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data major --}}
-                            <h6>{{ $k -> major}}</h6>
+                            <h6>{{ $e -> major}}</h6>
                         </div>
+                        @endforeach
                     </div>
 
                     <div class="row">
+                        @foreach ( $k->apply_jobs->user->education as $e )
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
                             {{-- major --}}
@@ -100,22 +108,26 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data ipk --}}
-                            <h6>{{ $k -> gpa}}</h6>
+                            <h6>{{ $e -> gpa}}</h6>
                         </div>
+                        @endforeach
                     </div>
                     <hr>
 
                     <h5 class="card-title" style="font-weight:bold">Skill</h5>
                     {{-- deskripsi candidate --}}
                     <div class="row">
+                        @foreach ( $k->apply_jobs->user->skill as $s )
                         <div class="col-sm-4">
                             {{-- tingkat skill candidate --}}
-                            <h6>{{ $k -> level }}</h6>
+                            <h6>{{ $s -> level }}</h6>
                         </div>
+                        <br>
                         <div class="col-sm-4">
                             {{-- skill candidate --}}
-                            <h6>{{ $k -> ahli }}</h6>
+                            <h6>{{ $s -> ahli }}</h6>
                         </div>
+                        @endforeach
                     </div>
                     <hr>
                     <h5 class="card-title" style="font-weight:bold">Alamat</h5>
@@ -127,7 +139,7 @@
                         </div>
                         <div class="col-sm-4">
                             {{-- data alamat candidate --}}
-                            <h6>{{ $k -> address }}</h6>
+                            <h6>{{ $k->apply_jobs->user->address }}</h6>
                         </div>
                     </div>
 

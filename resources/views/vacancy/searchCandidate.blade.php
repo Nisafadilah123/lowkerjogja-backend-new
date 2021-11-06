@@ -33,7 +33,8 @@
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);"></p>
                         </div>
                                 <input type="hidden" class="form-control" name="iduser" id="iduser" value="{{ $k->user_id }}">
-                                <input type="hidden" class="form-control" name="ida" id="ida" value="{{ $k->id }}">
+                                <input type="hidden" class="form-control" name="ida" id="ida" value="{{ $k->apply_jobs_id }}">
+                                <input type="hidden" class="form-control" name="idc" id="idc" value="">
                             <div>
                                 {{-- saved candidate/rekrut atau tidak --}}
                                 <button class="btn" type="button" data-toggle="modal" data-target="#modalSaya" style="float: right">
@@ -61,6 +62,15 @@
 
                                 @endforeach
 
+                                {{-- @endforeach --}}
+                            
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col" style="padding-top: 15px;">
+                                {{-- foreach skill --}}
+                                <h1 style="font-weight: bold; font-size: 12px;">Status</h1>
+                                <h1 style="font-weight: bold; font-size: 12px;">{{ $k->status }}</h1>
                                 {{-- @endforeach --}}
 
                             </div>

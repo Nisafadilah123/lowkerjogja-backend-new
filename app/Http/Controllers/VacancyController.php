@@ -110,18 +110,86 @@ class VacancyController extends Controller
 
      //halaman profil candidate
     public function profilCandidate($id){
-        $kandidat = DB::table('candidates')
-        ->join('users', 'users.id', '=', 'candidates.user_id')
-        ->join('education', 'education.user_id', '=', 'users.id')
-        ->join('skills', 'skills.user_id', '=', 'users.id')
-        ->join('apply_jobs', 'apply_jobs.user_id', '=', 'users.id')
-        ->join('jobs', 'jobs.id', '=', 'candidates.apply_jobs_id')
-        ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        ->select('users.id', 'users.name', 'users.profile_photo_path', 'users.address', 'users.provinsi', 'users.kota', 'jobs.position',
-        'skills.ahli', 'corp.user_id', 'education.graduate as lulusan', 'education.name as kampus', 'education.graduate', 'education.major', 'education.gpa', 'candidates.apply_jobs_id',
-        'candidates.id as id_candidate', 'skills.level')
-        ->where('candidates.id', $id)
+        $kandidat = Candidate::findorfail($id);
+        $corpId = Auth::user()->corp->id;
+        $kandidat = Candidate::whereHas('apply_jobs', function($q)
+        use ($corpId){
+            $q->whereHas('jobs', function ($q)
+            use($corpId){
+                $q->where('corp_id', $corpId);
+            });
+        })
+        ->with(['apply_jobs' => function ($q){
+            $q->with('user.skill', 'user.education')
+            ->with(['jobs' => function ($q){
+            }]);
+        }])
+        ->where('id', $id)
         ->get();
+
+        // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+        // dd($listProvinceIds);
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+        $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($kandidat as $key => $i) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $i->provinsi;
+            // dd($jobProvinceId);
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $i->kota;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $i->province_name = $provinceName;
+            $i->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
+
+        // $kandidat = DB::table('candidates')
+        // ->join('users', 'users.id', '=', 'candidates.user_id')
+        // ->join('education', 'education.user_id', '=', 'users.id')
+        // ->join('skills', 'skills.user_id', '=', 'users.id')
+        // ->join('apply_jobs', 'apply_jobs.user_id', '=', 'users.id')
+        // ->join('jobs', 'jobs.id', '=', 'candidates.apply_jobs_id')
+        // ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        // ->select('users.id', 'users.name', 'users.profile_photo_path', 'users.address', 'users.provinsi', 'users.kota', 'jobs.position',
+        // 'skills.ahli', 'corp.user_id', 'education.graduate as lulusan', 'education.name as kampus', 'education.graduate', 'education.major', 'education.gpa', 'candidates.apply_jobs_id',
+        // 'candidates.id as id_candidate', 'skills.level')
+        // ->where('apply_jobs.id', $id)
+        // ->get();
+        // dd($kandidat);
 
         return view('vacancy.profilCandidate', ['kandidat' => $kandidat]);
     }
