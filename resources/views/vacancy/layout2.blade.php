@@ -58,7 +58,7 @@
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-          <a href="/" class="logo d-flex align-items-center">
+          <a href="/landingPageCorp" class="logo d-flex align-items-center">
             <img src="{{ asset('img/logo-lowker.png') }}" alt="">
             <!-- <span>FlexStart</span> -->
           </a>

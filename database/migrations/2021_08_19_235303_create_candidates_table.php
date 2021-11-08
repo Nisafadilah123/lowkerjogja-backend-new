@@ -19,6 +19,7 @@ class CreateCandidatesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('apply_jobs_id');
             $table->string('status');
+            $table->date('wawancara')->nullable();
             $table->timestamps();
 
             $table->softDeletes();

@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfillUserController;
 use App\Http\Controllers\ProfilUserCorpController;
 use App\Http\Controllers\FormUnggahanController;
 use App\Http\Controllers\JobCorpController;
+use App\Http\Controllers\wawancaraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -168,3 +169,8 @@ Route::get('/corp', [CompanyController::class, 'home']);
 Route::resource('perusahaan', CorpController::class);
 
 Route::resource('karir', JobCorpController::class);
+
+
+Route::get('/email', [wawancaraController::class, 'email']);
+Route::post('/sendEmail', [wawancaraController::class, 'sendEmail']);
+Route::resource('wawancara', wawancaraController::class);

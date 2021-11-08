@@ -26,6 +26,8 @@
                                             {{-- foreach candidate --}}
                                             <h6>{{ $k->apply_jobs->user->name }}</h6>
                                             <h6>{{ $k->apply_jobs->jobs->position }}</h6>
+                                            <h6>{{ date('d-m-Y', strtotime($k->wawancara)) }}</h6>
+
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -33,7 +35,7 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 {{ $k->apply_jobs->user->province_name}}
-                                                harusnya muncul provinsi
+                                                {{-- harusnya muncul provinsi --}}
                                             </div>
                                         </div>
                                 </div>
@@ -56,7 +58,7 @@
                                     </form>
                                     </div><br>
 
-                
+
                 </div>
                 <br>
                 <a class="btn btn-primary" href="/candidate" role="button">Kembali</a>

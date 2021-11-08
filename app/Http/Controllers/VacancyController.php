@@ -177,43 +177,9 @@ class VacancyController extends Controller
         }
         // -- end --
 
-        // $kandidat = DB::table('candidates')
-        // ->join('users', 'users.id', '=', 'candidates.user_id')
-        // ->join('education', 'education.user_id', '=', 'users.id')
-        // ->join('skills', 'skills.user_id', '=', 'users.id')
-        // ->join('apply_jobs', 'apply_jobs.user_id', '=', 'users.id')
-        // ->join('jobs', 'jobs.id', '=', 'candidates.apply_jobs_id')
-        // ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        // ->select('users.id', 'users.name', 'users.profile_photo_path', 'users.address', 'users.provinsi', 'users.kota', 'jobs.position',
-        // 'skills.ahli', 'corp.user_id', 'education.graduate as lulusan', 'education.name as kampus', 'education.graduate', 'education.major', 'education.gpa', 'candidates.apply_jobs_id',
-        // 'candidates.id as id_candidate', 'skills.level')
-        // ->where('apply_jobs.id', $id)
-        // ->get();
-        // dd($kandidat);
-
         return view('vacancy.profilCandidate', ['kandidat' => $kandidat]);
     }
 
-     // halaman profil corp
-    // public function profilCorp()
-    // {
-    //     $corps = Corp::all();
-    //     return view('vacancy.profilCorp', compact('corps'));
-    // }
-
-     // halaman job corp
-    // public function jobCorp()
-    // {
-    //     $corps = Corp::where('user_id', Auth::user()->id)->get();
-    //     return view('vacancy.jobCorp', compact('corps'));
-    // }
-
-     // halaman job corp
-    // public function editCorp($id)
-    // {
-    //     $corps = Corp::findOrFail($id);
-    //     return view('vacancy.editCorp');
-    // }
 
      // halaman job corp
     public function updateCorp(Request $request, $id)
