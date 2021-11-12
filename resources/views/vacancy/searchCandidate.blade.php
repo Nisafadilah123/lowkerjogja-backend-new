@@ -63,7 +63,7 @@
                                 @endforeach
 
                                 {{-- @endforeach --}}
-                            
+
                             </div>
                         </div>
                         <div class="row align-items-start">
@@ -75,7 +75,7 @@
 
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="/profilCandidate{{ $k->id }}" role="button">Lihat Detail Kandidat</a>
+                        <a class="btn btn-primary" href="/profilCandidate/{{ $k->id }}" role="button">Lihat Detail Kandidat</a>
                 </div>
             </div>
             {{-- @endforeach --}}

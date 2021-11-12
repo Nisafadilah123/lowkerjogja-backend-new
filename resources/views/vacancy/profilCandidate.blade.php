@@ -6,6 +6,7 @@
 
 <div class="container" style="position: relative; top: 150px;height:600px">
 @foreach($kandidat as $k)
+{{-- {{ dd($kandidat) }} --}}
             <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col-sm-8">
                 <div class="card">
@@ -26,7 +27,7 @@
                                             {{-- foreach candidate --}}
                                             <h6>{{ $k->apply_jobs->user->name }}</h6>
                                             <h6>{{ $k->apply_jobs->jobs->position }}</h6>
-                                            <h6>{{ date('d-m-Y', strtotime($k->wawancara)) }}</h6>
+                                            {{-- <h6>{{ date('d-m-Y', strtotime($k->wawancara)) }}</h6> --}}
 
                                         </div>
                                         <div class="row">
@@ -49,13 +50,28 @@
                                         <input type="hidden" class="form-control" name="idapplyjob" id="idapplyjob" value="{{ $k->apply_jobs_id }}">
                                         <!-- <h6>id_candidate<h6> -->
                                         <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $k->id }}">
-                                        <div class="col-sm-6" style="padding-top: 15px;position: relative;left:300px">
+                                    <div class="row">
+                                         <div class="col-sm-6" style="padding-top: 15px;">
                                             <button type="submit" href="/atur" name="terima" class="btn btn-primary" value="{{$k->id}}">Rekrut</button>
                                         </div>
-                                        <div class="col-sm-6" style="padding-top: 15px;position: relative;left:100px">
+                                        <div class="col-sm-6" style="padding-top: 15px;">
                                             <button type="submit" href="/atur" name="tolak" class="btn btn-danger" value="{{$k->id}}">Tolak</button>
                                     </div>
+                                    </div>
+
                                     </form>
+
+                                    <div class="row align-items-start">
+                                        <div class="col-sm-6" style="padding-top: 15px;">
+                                            <a href="{{ url('kandidat/'. $k->id.'/edit') }}" name="wawancara" class="btn btn-success" value="">Set Tanggal Wawancara</a>
+                                        </div>
+
+                                        <div class="col-sm-6" style="padding-top: 15px;">
+                                            <a href="{{ url('kandidat/'.$k->id.'/email') }}" name="wawancara" class="btn btn-success" value="">Kirim Email</a>
+                                        </div>
+
+                                    </div>
+
                                     </div><br>
 
 
@@ -70,7 +86,7 @@
                     <div class="card-body">
                     <h5 class="card-title" style="font-weight:bold">Bio</h5>
                     {{-- deskripsi candidate --}}
-                    <p class="card-text"></p>
+                    <p class="card-text">{{ $k->apply_jobs->status }}</p>
                     <hr>
                     <h5 class="card-title" style="font-weight:bold">Pendidikan</h5>
                     {{-- deskripsi candidate --}}

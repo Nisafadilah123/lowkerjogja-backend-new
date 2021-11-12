@@ -9,8 +9,9 @@
 		<div class="card" style="width: 1000px; position: relative; left: 100px; height: 300px;">
 			<div class="card-body">
                 @foreach ($kandidat as $c )
+{{-- {{ dd($kandidat) }} --}}
+                <form method="post" action="/kandidat/{{ $c->apply_jobs->id }}" enctype="multipart/form-data">
 
-                <form method="post" action="/wawancara/{{ $c->id }}" enctype="multipart/form-data">
                     @method('PUT')
                        @csrf
 
@@ -57,7 +58,7 @@
                         <div class="container px-4">
                             <div class="row gx-5">
                                 <div class="col-sm-6">
-                                    <a href="/user" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
+                                    <a href="/profilCandidate" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
                                     <button type="submit" style="margin-left: 10px;" class="btn btn-primary"><span style="padding: 5px;">Set Tanggal</span>
                                 </div>
                             </div>

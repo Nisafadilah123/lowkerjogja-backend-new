@@ -9,14 +9,15 @@
 		<div class="card" style="width: 1000px; position: relative; left: 100px; height: 300px;">
 			<div class="card-body">
                 @foreach ($kandidat as $c )
-
-                <form method="post" action="{{ url('/sendEmail') }}" enctype="multipart/form-data">
+{{-- {{ dd($kandidat) }} --}}
+                <form method="post" action="{{ url('kandidat/'. $c->apply_jobs->id .'/sendEmail') }}" enctype="multipart/form-data">
                        @csrf
 
 
                        		<div class="form-group">
 								<div class="container px-4">
                                     <input type="text" value="{{$c->apply_jobs->id  }}">
+                                    <input type="text" name="judul" placeholder="Isi Subjek Judul" id="judul">
 									<div class="row gx-5">
 									  <div class="col-sm-6">
 										   <label for="corp" style="padding-bottom: 10px;"><strong>Nama</strong> </label>
