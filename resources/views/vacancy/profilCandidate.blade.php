@@ -63,12 +63,12 @@
 
                                     <div class="row align-items-start">
                                         <div class="col-sm-6" style="padding-top: 15px;">
-                                            <a href="{{ url('kandidat/'. $k->id.'/edit') }}" name="wawancara" class="btn btn-success" value="">Set Tanggal Wawancara</a>
+                                            <a href="{{ url('kandidat/'. $k->id.'/edit') }}" name="wawancara" class="btn btn-success" value="">Kirim Email</a>
                                         </div>
 
-                                        <div class="col-sm-6" style="padding-top: 15px;">
+                                        <!-- <div class="col-sm-6" style="padding-top: 15px;">
                                             <a href="{{ url('kandidat/'.$k->id.'/email') }}" name="wawancara" class="btn btn-success" value="">Kirim Email</a>
-                                        </div>
+                                        </div> -->
 
                                     </div>
 

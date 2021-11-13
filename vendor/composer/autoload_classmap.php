@@ -35,6 +35,7 @@ return array(
     'App\\Http\\Controllers\\SkillController' => $baseDir . '/app/Http/Controllers/SkillController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\VacancyController' => $baseDir . '/app/Http/Controllers/VacancyController.php',
+    'App\\Http\\Controllers\\wawancaraController' => $baseDir . '/app/Http/Controllers/wawancaraController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Livewire\\Login' => $baseDir . '/app/Http/Livewire/Login.php',
     'App\\Http\\Middleware\\AuthAdmin' => $baseDir . '/app/Http/Middleware/AuthAdmin.php',
