@@ -8,7 +8,7 @@
 {{-- @foreach($kandidat as $k) --}}
 {{-- {{ dd($kandidat) }} --}}
             <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <div class="card">
                     {{-- foreach candidate --}}
                     {{-- foto --}}
@@ -22,25 +22,29 @@
                                             </a>
                                         </div>
                                         <div class="row">
-                                            <div class="col-sm-6">
-                                                {{-- foto user --}}
-                                            <img src="{{asset('profile_photos/'.$kandidat->apply_jobs->user->profile_photo_path)}}" style="float:left;" class="rounded-image" width="60px" height="60px" />
-                                            </div>
                                             <div class="col-sm-2">
-                                                {{-- foreach candidate --}}
-                                            <h6>{{ $kandidat->apply_jobs->user->name }}</h6>
+                                                {{-- foto user --}}
+                                            <img src="{{asset('profile_photos/'.$kandidat->apply_jobs->user->profile_photo_path)}}" style="float:left;" width="80px" height="80px" />
                                             </div>
-
-                                            <h6>{{ $kandidat->apply_jobs->jobs->position }}</h6>
-                                            {{-- <h6>{{ date('d-m-Y', strtotime($k->wawancara)) }}</h6> --}}
-
+                                            <div class="col-sm-6">
+                                                {{-- foreach candidate --}}
+                                            <h5 style="color: #006AFF;">{{ $kandidat->apply_jobs->user->name }}</h5>
+                                            </div>
                                         </div>
                                         <div class="row">
+                                            <div class="class col-sm-2"></div>
+                                            <div class="class col-sm-6" >
+                                                <h6>{{ $kandidat->apply_jobs->jobs->position }}</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="class col-sm-2"></div>
                                             <div class="col-sm-6">
                                                 {{ $kandidat->apply_jobs->user->address}}
                                             </div>
-                                            <div class="col-sm-6">
-                                                {{ $kandidat->apply_jobs->user->province_name}}
+                                            <div class="col-sm-2">
+                                                {{ $kandidat->apply_jobs->user->city_name}}
                                                 {{-- harusnya muncul provinsi --}}
                                             </div>
                                         </div>
@@ -86,7 +90,7 @@
             </div>
 
 
-            <div class="col-sm-4" style="width: 500px; padding-top: 20px;">
+            <div class="col-sm-6" style="width: 600px; padding-top: 20px;">
                 <div class="card">
                     <div class="card-body">
                     <h5 class="card-title" style="font-weight:bold">Bio</h5>

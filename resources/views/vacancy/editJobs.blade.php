@@ -17,7 +17,7 @@
 
                        		<div class="form-group">
 								<div class="container px-4">
-                                    <input type="text" value="{{ $c->id }}">
+                                    {{-- <input type="text" value="{{ $c->id }}"> --}}
 									<div class="row gx-5">
 									  <div class="col-sm-6">
 										   <label for="corp" style="padding-bottom: 10px;"><strong>Nama Perusahaan</strong> </label>
