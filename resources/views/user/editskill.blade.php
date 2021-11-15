@@ -160,7 +160,7 @@
 
       <div class="col-lg-8">
 
-        <div class="post-box" style="height: 1000px; background-color: #F9FAFF;">
+        <div class="post-box" style="background-color: #F9FAFF;">
 
           <div class="row align-items-center">
             <div class="col align-items-center">

@@ -71,9 +71,9 @@
               <li style="padding-left: 500px;">
                 <div>
                   <ul>
-                    <li style="text-align: right; padding-left: 10px;"><a href="#"
-                        style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image" width="20px" height="20px" style=" position:relative;right: 50px;">{{ ucfirst( Auth::user()->name) }}</a><span
-                        style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li>
+                    <li style="text-align: right; padding-left: 10px;">
+                        <a href="#" style="font-size: 23px; color: black;"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)}}" class="rounded-image" width="20px" height="20px" style=" position:relative;right: 50px;">{{ ucfirst( Auth::user()->name) }}</a>
+                        {{-- <span style="font-size: 12px; position: absolute; top: 38px; right: 12px; color: #BEBFC0;">Bukalapak</li> --}}
                   </ul>
                 </div>
               </li>

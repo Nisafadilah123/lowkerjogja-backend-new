@@ -6,7 +6,7 @@
 
 <div class="container" style="position: relative; top: 100px; height: 800px;">
 	<div class="col-sm-6">
-		<div class="card" style="width: 1000px; position: relative; left: 100px; height: 500px;">
+		<div class="card" style="width: 1000px; position: relative; left: 100px; height: 600px;">
 			<div class="card-body">
                 @foreach ($corps as $c )
 
@@ -17,7 +17,7 @@
 
                        		<div class="form-group">
 								<div class="container px-4">
-                                    <input type="text" value="{{ $c->id }}">
+                                    {{-- <input type="text" value="{{ $c->id }}"> --}}
 									<div class="row gx-5">
 									  <div class="col-sm-6">
 										   <label for="corp" style="padding-bottom: 10px;"><strong>Nama Perusahaan</strong> </label>
