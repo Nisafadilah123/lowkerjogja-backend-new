@@ -291,8 +291,14 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <p>Hi, <strong>{{ $name }}</strong></p>
-                                        <p>Kami dari LowkerJogja.com, mengundang anda untuk interview sebagai "" pada: </p>
+                                        <img src="{{ asset('img/logo-lowker.png') }}" alt="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Dear, <strong>{{ $name }}</strong></p>
+                                        <p>Terimakasih telah menggunakan website LowkerJogja.com</p>
+                                        <p>Kami dari LowkerJogja.com, mengundang anda untuk interview sebagai <strong>{{ $position }} </strong> pada perusahaan <strong>{{ $nama_corp }}</strong></p>
 
                                         <table border="0" cellpadding="0" cellspacing="0">
                                             <tbody>
@@ -301,14 +307,18 @@
                                                     <table border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td> <div class="container">
-                                                                    <p>Hari : {{ date( 'd F Y', strtotime($wawancara)) }}</p>
+                                                            <td><div class="container">
+                                                                    {{-- <p>Hari : {{ date( 'l, d F Y', strtotime($wawancara)) }}</p> --}}
+                                                                    <p>Hari     : {{ \Carbon\Carbon::parse($wawancara)->isoFormat('dddd, D MMMM Y') }}</p>
+                                                                    <p>Waktu    : {{ $waktu }}</p>
+                                                                    <p>Tempat   : {{ $tempat }}</p>
+                                                                    <p>{{ $catatan }}</p>
                                                                     <hr>
-                                                                    <center><p>Pada perusahaan :</p></center>
+                                                                    <p>Mohon konfirmasi kehadiran anda untuk wawancara di status akun LowkerJogja.com anda</p>
                                                                     <hr>
-                                                                    <center><p>{{ $nama_corp }}</p></center>
-                                                                    <hr>
-                                                                    <center><p>Telah Disampaikan! <br> Terimakasih telah menghubungi kami!</p></center>
+                                                                    <center><p>Terimakasih </p></center><br>
+                                                                    <p style="text-align: right"> Hormat kami, <br>
+                                                                    LowkerJogja.com</p>
                                                                 </div>
                                                             </td>
                                                         </tr>

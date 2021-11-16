@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Carbon;
 class wawancaraController extends Controller
 {
     /**
@@ -128,13 +128,22 @@ class wawancaraController extends Controller
         $kandidat->wawancara = $request->wawancara;
         $kandidat->update();
 
+        // $date = $kandidat->wawancara->isoFormat('dddd, D MMMM Y');
+        // $date = $kandidat->wawancara;
+        // $formattedDate = now()->parse($date)->isoFormat('dddd, D MMMM Y');
+// dd($date);
+
+
         try{
-            Mail::send('email.email', ['name' => $request->name, 'wawancara' => $request->wawancara, 'nama_corp' => $request->nama_corp], function ($message) use ($request)
+            Mail::send('email.email', ['name' => $request->name, 'wawancara' => $request->wawancara, 'nama_corp' => $request->nama_corp,
+            'position' => $request->position, 'waktu' => $request->waktu, 'tempat' =>$request->tempat, 'catatan' => $request->catatan],
+            function ($message) use ($request)
             {
                 $message->subject($request->judul);
                 $message->from('nisafadilah646@gmail.com', 'LowkerJogja.com');
                 $message->to($request->email);
-            });
+            }
+        );
             Alert::success('Berhasil', 'Tanggal wawancara telah di atur dan email telah dikirim');
 
             return redirect('/profilCandidate/'.$kandidat->id);
