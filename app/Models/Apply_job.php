@@ -28,4 +28,8 @@ class Apply_job extends Model
         return $this->belongsTo(Jobs::class, 'job_id', 'id');
     }
 
+    public function corp(){
+        return $this->belongsTo(Corp::class, 'user_id', 'id');
+    }
+
 }

@@ -135,7 +135,7 @@ Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
 // Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
 // Route::get('/job', [VacancyController::class, 'jobCorp']);
 // Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
-Route::get('/profilCandidate{id}', [VacancyController::class, 'profilCandidate']);
+Route::get('/profilCandidate/{id}', [VacancyController::class, 'profilCandidate'])->name('profilCandidate/{id}');
 Route::get('/corp/update/{id}', [VacancyController::class, 'updateCorp']);
 Route::get('/passwordCorp', [VacancyController::class, 'passwordCorp']);
 Route::get('/open/{id}', [VacancyController::class, 'open']);
@@ -171,6 +171,6 @@ Route::resource('perusahaan', CorpController::class);
 Route::resource('karir', JobCorpController::class);
 
 
-Route::get('/email', [wawancaraController::class, 'email']);
-Route::post('/sendEmail', [wawancaraController::class, 'sendEmail']);
-Route::resource('wawancara', wawancaraController::class);
+Route::get('/kandidat/{id}/email', [wawancaraController::class, 'email']);
+Route::post('/kandidat/{id}/sendEmail', [wawancaraController::class, 'sendEmail']);
+Route::resource('kandidat', wawancaraController::class);

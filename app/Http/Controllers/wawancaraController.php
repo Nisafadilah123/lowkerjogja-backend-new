@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
-
 use App\Models\Candidate;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class wawancaraController extends Controller
@@ -19,32 +19,32 @@ class wawancaraController extends Controller
     public function index()
     {
         //
-        $myString = auth()->user()->email;
-        $uid = auth()->user()->id;
+        // $myString = auth()->user()->email;
+        // $uid = auth()->user()->id;
 
-        // $idu = $request->iduser;
+        // // $idu = $request->iduser;
 
-        $corpId = Auth::user()->corp->id;
-        // dd(Auth::user()->corp->id);
-        $kandidat = Candidate::whereHas('apply_jobs', function($q)
-        use ($corpId){
-            $q->whereHas('jobs', function ($q)
-            use($corpId){
-                $q->where('corp_id', $corpId);
-            });
-        })
-        ->with(['apply_jobs' => function ($q){
-            $q->with('user.skill', 'user.education')
-            ->with(['jobs' => function ($q){
-            }])
-            ->with(['corp' => function ($q){
-            }
+        // $corpId = Auth::user()->corp->id;
+        // // dd(Auth::user()->corp->id);
+        // $kandidat = Candidate::whereHas('apply_jobs', function($q)
+        // use ($corpId){
+        //     $q->whereHas('jobs', function ($q)
+        //     use($corpId){
+        //         $q->where('corp_id', $corpId);
+        //     });
+        // })
+        // ->with(['apply_jobs' => function ($q){
+        //     $q->with('user.skill', 'user.education')
+        //     ->with(['jobs' => function ($q){
+        //     }])
+        //     ->with(['corp' => function ($q){
+        //     }
 
-            ]);
-        }])
-        ->get();
-        // dd($kandidat);
-        return view('vacancy.wawancara', compact('kandidat'));
+        //     ]);
+        // }])
+        // ->get();
+        // // dd($kandidat);
+        // return view('vacancy.wawancara', compact('kandidat'));
     }
 
     /**
@@ -85,12 +85,25 @@ class wawancaraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Candidate $wawancara)
+    public function edit(Request $request, $id)
     {
         //
-        $wawancara = Candidate::where('user_id', Auth::user()->id)->get();
+        // $kandidat = Candidate::where('user_id', Auth::user()->id)->get();
+        $myString = auth()->user()->email;
+        $uid = auth()->user()->id;
 
-        return view('vacancy.wawancara', compact('wawancara'));
+        // $idu = $request->iduser;
+
+        $corpId = Auth::user()->corp->id;
+        // dd(Auth::user()->corp->id);
+        $kandidat = Candidate::with(['apply_jobs' => function ($q) use ($corpId) {
+            $q->with(['user.skill', 'user.education',"jobs"=>function($j) use ($corpId){
+                $j->with("corp")->where("corp_id",$corpId);
+            }]);
+        }])->where('id', $id)->get();
+        // dd($kandidat);
+
+        return view('vacancy.wawancara', compact('kandidat'));
     }
 
     /**
@@ -104,16 +117,33 @@ class wawancaraController extends Controller
     {
         //
         $request->validate([
+
             'wawancara' => 'required',
             ], [
                     'wawancara.required' => 'Lengkapi Nama Perusahaan Anda',
         ]);
 
+
+
         $kandidat->wawancara = $request->wawancara;
         $kandidat->update();
 
-        Alert::success('Berhasil', 'Datamu telah terubah');
-        return view('vacancy.profilCandidate', compact('kandidat'));
+        try{
+            Mail::send('email.email', ['name' => $request->name, 'wawancara' => $request->wawancara, 'nama_corp' => $request->nama_corp], function ($message) use ($request)
+            {
+                $message->subject($request->judul);
+                $message->from('nisafadilah646@gmail.com', 'LowkerJogja.com');
+                $message->to($request->email);
+            });
+            Alert::success('Berhasil', 'Tanggal wawancara telah di atur dan email telah dikirim');
+
+            return redirect('/profilCandidate/'.$kandidat->id);
+
+            // return back()->with('alert-success','Berhasil Kirim Email');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -127,49 +157,5 @@ class wawancaraController extends Controller
         //
     }
 
-    public function email(){
 
-        $myString = auth()->user()->email;
-        $uid = auth()->user()->id;
-
-        // $idu = $request->iduser;
-
-        $corpId = Auth::user()->corp->id;
-        // dd(Auth::user()->corp->id);
-        $kandidat = Candidate::whereHas('apply_jobs', function($q)
-        use ($corpId){
-            $q->whereHas('jobs', function ($q)
-            use($corpId){
-                $q->where('corp_id', $corpId);
-            });
-        })
-        ->with(['apply_jobs' => function ($q){
-            $q->with('user.skill', 'user.education')
-            ->with(['jobs' => function ($q){
-            }])
-            ->with(['corp' => function ($q){
-            }
-
-            ]);
-        }])
-        ->get();
-        return view('vacancy.sendWawancara', compact('kandidat'));
-    }
-
-    public function sendEmail(Request $request){
-        try{
-            Mail::send('email.email', ['name' => $request->name, 'wawancara' => $request->wawancara, 'nama_corp' => $request->nama_corp], function ($message) use ($request)
-            {
-                $message->subject($request->judul);
-                $message->from('nisafadilah646@gmail.com', 'LowkerJogja.com');
-                $message->to($request->email);
-            });
-            return back()->with('alert-success','Berhasil Kirim Email');
-        }
-        catch (Exception $e){
-            return response (['status' => false,'errors' => $e->getMessage()]);
-        }
-
-
-    }
 }

@@ -132,8 +132,9 @@ class VacancyController extends Controller
             }]);
         }])
         ->where('id', $id)
-        ->get();
+        ->first();
 
+        // dd($kandidat);
         // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
         $listProvinces = rajaongkir_point( 'province', 'GET', [] );
@@ -148,16 +149,16 @@ class VacancyController extends Controller
         $listCityIds = array_column($listCity, 'city_id');
         // dd($listCityIds);
         // loop data jobs
-        foreach ($kandidat as $key => $i) {
+        // foreach ($kandidat as $key => $k) {
             // set default province-name
             $provinceName = "( Provinsi tidak ditemukan )";
             // set default province-name
             $cityName = "( Kota tidak ditemukan )";
             // ambil id provinsi dari data "job"
-            $jobProvinceId = $i->provinsi;
+            $jobProvinceId = $kandidat->apply_jobs->user->provinsi;
             // dd($jobProvinceId);
             // ambil id kota dari data provinsi "job"
-            $jobCityId = $i->kota;
+            $jobCityId = $kandidat->apply_jobs->user->kota;
             // dd($jobCityId);
             // cari data nama provinsi berdasarkan id
             $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
@@ -173,17 +174,18 @@ class VacancyController extends Controller
             if ($cityIndex) {
                 $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
                 // dd($cityName);
+
             }
 
             // update data jobs dengan menambahkan nama provinsi
-            $i->province_name = $provinceName;
-            $i->city_name = $cityName;
+            $kandidat->apply_jobs->user->province_name = $provinceName;
+            $kandidat->apply_jobs->user->city_name = $cityName;
 
-            // dd($cityName);
+            // dd($provinceName);
             // dd($job);
-        }
+        // }
         // -- end --
-
+// dd($kandidat);
         return view('vacancy.profilCandidate', ['kandidat' => $kandidat]);
     }
 

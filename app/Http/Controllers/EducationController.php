@@ -122,7 +122,7 @@ class EducationController extends Controller
      */
     public function edit(Education $education)
     {
-        $educations = Education::where('user_id', Auth::user()->id)->get();
+        $educations = Education::where('id', Auth::user()->id)->get();
 
         return view('user.editEducation', compact('educations'));
 

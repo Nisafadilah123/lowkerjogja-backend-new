@@ -282,7 +282,7 @@
             <div class="content">
 
                 <!-- START CENTERED WHITE CONTAINER -->
-                <span class="preheader">Email Untuk Kamu !.</span>
+                <span class="preheader">Email Undangan Wawancara </span>
                 <table class="main">
 
                     <!-- START MAIN CONTENT AREA -->
@@ -291,8 +291,8 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <p>Hi {{ $name }}</p>
-                                        <p>Terimakasih telah mengirimkan email :)</p>
+                                        <p>Hi, <strong>{{ $name }}</strong></p>
+                                        <p>Kami dari LowkerJogja.com, mengundang anda untuk interview sebagai "" pada: </p>
 
                                         <table border="0" cellpadding="0" cellspacing="0">
                                             <tbody>
@@ -302,9 +302,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td> <div class="container">
-                                                                    <center><p>Wawancara Anda akan di laksanakan pada tanggal :</p></center>
-                                                                    <hr>
-                                                                    <center><p>{{ $wawancara }}</p></center>
+                                                                    <p>Hari : {{ date( 'd F Y', strtotime($wawancara)) }}</p>
                                                                     <hr>
                                                                     <center><p>Pada perusahaan :</p></center>
                                                                     <hr>

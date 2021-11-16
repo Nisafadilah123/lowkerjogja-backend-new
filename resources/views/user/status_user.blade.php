@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title', 'Education | Lowkerjogja.com')
+@section('title', 'Status User | Lowkerjogja.com')
 
 @section('container')
 
@@ -163,32 +163,32 @@
                             <table>
 
                                     <tbody>
-                                        @foreach ($educations as $item)
+                                        {{-- @foreach ($educations as $item) --}}
 
                                         <tr>
-                                            <td><p style="color: #A5B2C2;font-size:14px;">{{ date('d-m-Y', strtotime($item->graduate )) }}
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Status
+                                                {{-- if wawancara ada tombol terima dan tolak undangan buat wawancara  --}}
+                                                {{-- tgl wawancara --}}
+                                                {{-- kalau udah terima tombol terima hilang secara otomatis saat sudah di klik dan di db sudah berubah statusnya --}}
                                                 </p></td>
                                             <td>
-                                                <strong>{{$item->name }}</strong>
-                                                <p>{{ $item->major }}</p>
+                                                <strong>
+                                                    <button type="submit" class="btn btn-success">
+                                                   Terima
+                                                </button>
+                                            </strong>
                                             </td>
-                                            <td class="text-center">
-                                                <a href="{{ url('education/'.$item->id.'/edit') }}" class="btn btn-warning">
-                                                <i class="fas fa-edit"></i></a>
-                                                <td>
-                                                    <form id="delete-education" action="{{ url('education/'.$item->id) }}" method="POST">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-danger delete">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
-                                                </td>
 
+                                            <td>
+                                                <strong>
+                                                    <button type="submit" class="btn btn-danger">
+                                                   Tolak
+                                                </button>
+                                            </strong>
                                             </td>
                                         </tr>
 
-                                        @endforeach
+                                        {{-- @endforeach --}}
 
                                     </tbody>
 

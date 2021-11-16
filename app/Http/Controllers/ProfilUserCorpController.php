@@ -86,24 +86,13 @@ class ProfilUserCorpController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            // 'address' => 'required',
-            // 'provinsi' => 'required',
-            // 'kota' => 'required',
             ], [
                     'name.required' => 'Lengkapi Nama Anda',
                     'email.required' => 'Lengkapi Email Anda',
-                    // 'address.required' => 'Lengkapi Alamat Anda',
-                    // 'provinsi.required' => 'Lengkapi Provinsi Anda',
-                    // 'kota.required' => 'Lengkapi Kota Anda',
-
         ]);
         // dd($input);
         $owner->name = $request->name;
         $owner->email = $request->email;
-        // $user->address = $request->address;
-        // $user->provinsi = $request->provinsi;
-        // $user->kota = $request->kota;
-
 
         if ($image = $request->file('profile_photo_path')) {
             // $destinationPath = 'profile_photos/';
@@ -118,7 +107,7 @@ class ProfilUserCorpController extends Controller
         // $user->update($input);
 
 // dd($owner);
-Alert::success('Success', 'You have Successfully Updated');
+Alert::success('Berhasil', 'Data Berhasil di Ubah');
 return redirect('/owner');
     }
 

@@ -20,11 +20,22 @@ class JobCorpController extends Controller
     public function index()
     {
         //
+        $corpId = Auth::user()->corp->id;
+        // dd($corpId);
         $corps = Corp::where('user_id', Auth::user()->id)->get();
+        // dd($corps);
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position', 'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type', 'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
+            ->where ('corp.id', $corpId)
             ->paginate(6);
+
+        // $lihatjobs = DB::table('jobs')
+        //     ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        //     ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position', 'jobs.city',
+        //     'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
+        //     ->paginate(6);
             // dd($lihatjobs);
               // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya
