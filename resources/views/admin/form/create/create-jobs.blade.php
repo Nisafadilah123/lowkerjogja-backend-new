@@ -47,12 +47,16 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jobtype"><strong>Tipe Pekerjaan</strong></label>
-                                    <input type="text" name="job_type" id="jobtype" class="form-control" placeholder="Tipe Pekerjaan" required>
+                                    <label name="job_type" for="job_type" style=""><strong>Tipe Pekerjaan</strong></label>
+                                    <select name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                        <option selected>-- Pilih Tipe Pekerjaan --</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jobcategory"><strong>Kategori Pekerjaan</strong></label>
-                                    <input type="text" name="job_category" id="jobcategory" class="form-control" placeholder="Kategori Pekerjaan" required>
+                                    <label name="job_category" for="job_category" style=""><strong>Kategori Pekerjaan</strong></label>
+                                    <select name="job_category" class="form-select form-select-sm job_category" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                        <option selected>-- Pilih Kategori Pekerjaan --</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="deadline"><strong>Deadline</strong></label>
@@ -173,6 +177,23 @@
         });
     });
 
+    $(document).on("change",".job_type",function(){
+        var job_type_selected = $(".job_type option:selected").val();
+        console.log("pilih job_type",job_type_selected)
+        $.ajax({
+            "url":"/get-job-category",
+            "data":{job_type_selected:job_type_selected},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("job_category",hasil_result)
+                var option_job_category="<option>-- Pilih Kategori Pekerjaan --</option>";
+                hasil_result.forEach(element => {
+                    option_job_category+=`<option value="${element.id}">${element.kategori_pekerjaan}</option>`;
+                });
+                $(".job_category").html(option_job_category);
+            }
+        });
+    });
 </script>
 @endpush
 

@@ -56,7 +56,7 @@
                          <select name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
                            <option selected>-- Pilih Tipe Pekerjaan --</option>
                            @foreach ($job_types as $job_type)
-                           <option value="{{ $job_type->id }}">{{ $job_type->job_type }}</option>
+                           <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
                            @endforeach
                          </select>
                        </div>

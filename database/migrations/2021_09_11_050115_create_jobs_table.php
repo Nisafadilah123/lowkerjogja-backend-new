@@ -20,8 +20,6 @@ class CreateJobsTable extends Migration
             $table->text('description_job');
             $table->string('position');
             $table->string('last_education');
-            $table->string('job_type');
-            $table->string('job_category');
             $table->date('deadline');
             $table->string('provinces');
             $table->string('city');

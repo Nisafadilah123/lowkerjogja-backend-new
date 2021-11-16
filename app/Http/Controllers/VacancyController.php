@@ -67,10 +67,17 @@ class VacancyController extends Controller
     public function formUnggahan()
     {
 
-        $job_types = DB::table('jobs')->get();
+        $job_types = DB::table('job_types')->get();
         return view('vacancy.formUnggahan',compact('job_types'));
     }
 
+    // 
+    public function getJobCategory(Request $request)
+    {
+        $job_category = DB::table('job_category')->where('tipe_pekerjaan_id', $request->job_type_selected)->get();
+        return response()->json($job_category);
+    }
+    
      // halaman search candidate
     public function searchCandidate(Request $request)
     {

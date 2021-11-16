@@ -17,6 +17,8 @@ class FormUnggahanController extends Controller
             // yang kiri nama kolom di database
             // yang kanan nama dari blade / view / tampilan 
             $jobVacancy = new JobVacancy();
+            $corpId = auth()->user();
+            dd($corpId);
             $jobVacancy->position = $request->job_position;
             $jobVacancy->kuota = $request->kuota;
             $jobVacancy->last_education = $request->education;
