@@ -73,7 +73,7 @@
                             @endif
                         @endauth
                 @endif --}} -->
-                    <li><a class="job scrollto" href="/signupCorp">Daftar untuk Perusahaan</a></li>
+                    <li><a class="getstarted scrollto" href="/signupCorp" style="background-color: #FA9746;">Daftar untuk Perusahaan</a></li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
