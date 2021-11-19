@@ -26,10 +26,11 @@
               <fieldset>
                 <div class="form-card">
                   <div class="container px-4">
-                      <div class="row gx-5">
+                      <div class="row gx-5">                        
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
                           <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Posisi">
+                          <input id="corp_id" type="text" class="form-control" name="corp_id" placeholder="" value="{{ ucfirst(Auth::user()->corp_id) }}" hidden>
                         </div>
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Kuota</strong> </label>
@@ -53,7 +54,8 @@
                       </div>
                       <div class="col">
                          <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tipe Pekerjaan</strong> </label>
-                         <select name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+                         {{-- <input id="job_type_id" type="text" class="form-control" name="job_type_id" placeholder="" value="{{ $job_types->id }}">{{ $job_types->tipe_pekerjaan }}> --}}
+                         <select id="job_type" name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
                            <option selected>-- Pilih Tipe Pekerjaan --</option>
                            @foreach ($job_types as $job_type)
                            <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
@@ -150,7 +152,7 @@
               </fieldset>
               <!-- fieldsets -->
               <fieldset>
-                <div class="form-card">
+                <div class="form-card"> 
                     <div class="font-weight-bold head pb-1">Description</div> <textarea name="des" id="desc" cols="50" rows="5" placeholder="Description"></textarea>
                 </div> <input type="submit" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
               </fieldset>

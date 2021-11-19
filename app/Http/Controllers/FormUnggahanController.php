@@ -13,13 +13,19 @@ class FormUnggahanController extends Controller
     public function store(Request $request) {
         DB::beginTransaction();
         try {
+
             // init model
             // yang kiri nama kolom di database
-            // yang kanan nama dari blade / view / tampilan 
+            // yang kanan nama dari blade / view / tampilan  
             $jobVacancy = new JobVacancy();
-            $corpId = auth()->user();
-            dd($corpId);
-            $jobVacancy->position = $request->job_position;
+            // $corpId = auth::user()->corp_id; 
+            // Field 'job_type_id' doesn't have a default value -> dia gk ada default value nya alias null
+            // var_dump($corpId);
+            $jobVacancy->corp_id = $request->corp_id;
+            $jobVacancy->job_type_id = $request->job_type;
+            $jobVacancy->job_cat_id = $request->job_category;
+            $jobVacancy->description_job = $request->des;
+            $jobVacancy->position = $request->job_position; 
             $jobVacancy->kuota = $request->kuota;
             $jobVacancy->last_education = $request->education;
             $jobVacancy->job_type = $request->job_type;
@@ -35,6 +41,7 @@ class FormUnggahanController extends Controller
             $jobVacancy->syarat = $request->syarat;
             $jobVacancy->email = $request->email;
             $jobVacancy->telp = $request->telepon;
+            
             $jobVacancy->save();
             DB::commit();
 

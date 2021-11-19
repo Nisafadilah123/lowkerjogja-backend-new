@@ -76,6 +76,7 @@ class VacancyController extends Controller
     {
         $job_category = DB::table('job_category')->where('tipe_pekerjaan_id', $request->job_type_selected)->get();
         return response()->json($job_category);
+        
     }
     
      // halaman search candidate

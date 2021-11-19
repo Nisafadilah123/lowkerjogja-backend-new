@@ -142,7 +142,7 @@ Route::get('/open/{id}', [VacancyController::class, 'open']);
 Route::post('/atur', [VacancyController::class, 'Setatur']);
 Route::get('/get-job-category', [VacancyController::class, 'getJobCategory']);
 //Route FormUnggahan
-Route::post('/formUnggahan', [FormUnggahanController::class, 'store'])->middleware('auth:sanctum');
+Route::post('/formUnggahan', [FormUnggahanController::class, 'store']);
 
 // ajax
 Route::get('/get-provinsi', [MainController::class, 'provinsi']);

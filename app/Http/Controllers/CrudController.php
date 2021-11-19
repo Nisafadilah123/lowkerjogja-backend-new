@@ -109,9 +109,9 @@ class CrudController extends Controller
 
     public function createjobs()
     {
-        $corp = DB::table('corp')
-            ->get();
-        return view('admin/form.create.create-jobs', ['corp' => $corp]);
+        $corp = DB::table('corp')->get();
+        $job_types = DB::table('job_types')->get();
+        return view('admin/form.create.create-jobs', ['corp' => $corp, 'job_types' => $job_types]);
     }
 
     public function addjobs(Request $request)
@@ -121,7 +121,7 @@ class CrudController extends Controller
         $dtUpload->description_job  = $request->description_job;
         $dtUpload->position         = $request->position;
         $dtUpload->last_education   = $request->last_education;
-        $dtUpload->job_type         = $request->job_type;
+        $dtUpload->job_type        = $request->job_type;
         $dtUpload->job_category     = $request->job_category;
         $dtUpload->deadline         = $request->deadline;
         $dtUpload->provinces        = $request->provinces;

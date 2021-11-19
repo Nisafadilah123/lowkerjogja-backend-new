@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
 class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
-=======
-class ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c
->>>>>>> 64d7efc94b9578b60280ad481005322fffaef3d5
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -28,11 +24,6 @@ class ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-<<<<<<< HEAD
-=======
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
->>>>>>> 64d7efc94b9578b60280ad481005322fffaef3d5
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
@@ -213,13 +204,8 @@ class ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-<<<<<<< HEAD
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-=======
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
->>>>>>> 64d7efc94b9578b60280ad481005322fffaef3d5
         ),
         'Whoops\\' => 
         array (
@@ -2712,6 +2698,7 @@ class ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c
         'Illuminate\\Support\\HtmlString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/HtmlString.php',
         'Illuminate\\Support\\InteractsWithTime' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/InteractsWithTime.php',
         'Illuminate\\Support\\ItemNotFoundException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/ItemNotFoundException.php',
+        'Illuminate\\Support\\Js' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Js.php',
         'Illuminate\\Support\\LazyCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/LazyCollection.php',
         'Illuminate\\Support\\Manager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Manager.php',
         'Illuminate\\Support\\MessageBag' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/MessageBag.php',
@@ -6024,17 +6011,10 @@ class ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf04a4ec76de451c6ffbbf7004f104f5c::$classMap;
->>>>>>> 64d7efc94b9578b60280ad481005322fffaef3d5
 
         }, null, ClassLoader::class);
     }
