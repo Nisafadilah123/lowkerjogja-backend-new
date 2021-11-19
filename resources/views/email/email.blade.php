@@ -291,7 +291,7 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('img/logo-lowker.png') }}" alt="">
+                                        <img src="img/logo-lowker.png" alt="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -308,7 +308,6 @@
                                                         <tbody>
                                                         <tr>
                                                             <td><div class="container">
-                                                                    {{-- <p>Hari : {{ date( 'l, d F Y', strtotime($wawancara)) }}</p> --}}
                                                                     <p>Hari     : {{ \Carbon\Carbon::parse($wawancara)->isoFormat('dddd, D MMMM Y') }}</p>
                                                                     <p>Waktu    : {{ $waktu }}</p>
                                                                     <p>Tempat   : {{ $tempat }}</p>

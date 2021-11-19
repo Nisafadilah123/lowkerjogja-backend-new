@@ -26,7 +26,7 @@
               <fieldset>
                 <div class="form-card">
                   <div class="container px-4">
-                      <div class="row gx-5">                        
+                      <div class="row gx-5">
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
                           <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Posisi">
@@ -152,7 +152,7 @@
               </fieldset>
               <!-- fieldsets -->
               <fieldset>
-                <div class="form-card"> 
+                <div class="form-card">
                     <div class="font-weight-bold head pb-1">Description</div> <textarea name="des" id="desc" cols="50" rows="5" placeholder="Description"></textarea>
                 </div> <input type="submit" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
               </fieldset>
