@@ -15,6 +15,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
+    overflow: scroll;
 }
 
 a {
@@ -69,6 +70,13 @@ section {
 }
 
 @media (max-width: 768px) {
+    .section-header p {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 100px) {
     .section-header p {
         font-size: 28px;
         line-height: 32px;
@@ -175,6 +183,7 @@ section {
     transition: all 0.5s;
     z-index: 997;
     padding: 20px 0;
+    display: flex;
 }
 
 .header.header-scrolled {
@@ -296,10 +305,10 @@ section {
     width: 160px;
 }
 
-.navbar .dropdown ul li {
+/* .navbar .dropdown ul li {
     /* min-width: 200px; */
     /* padding-right: 50px; */
-}
+/* } */
 
 .navbar .dropdown ul li span {
     padding-right: 80px;
@@ -552,11 +561,11 @@ section {
     text-align: right;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     .hero {
         /* background-attachment: fixed; */
-    }
-}
+    /* }
+}  */
 
 @media (max-width: 991px) {
     .hero {
@@ -2521,3 +2530,44 @@ section {
     padding: 1px 10px;
     color: #888;
 }
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

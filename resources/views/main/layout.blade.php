@@ -87,8 +87,8 @@
                             <li><a href="{{ route('login') }}" class="nav-link scrollto">Masuk</a></li>
 
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="job scrollto">Daftar</a></li>
-                                <li><a class="getstarted scrollto" href="/landingPage">Posting Lowongan</a></li>
+                                <li><a href="{{ route('register') }}" class="getstarted scrollto">Daftar</a></li>
+                                <li><a class="getstarted scrollto" href="/landingPage" style="background-color: #FA9746">Posting Lowongan</a></li>
 
                             @endif
                         @endauth

@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
+=======
+class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
+>>>>>>> 7248d71060ba5a968aca0baabebd7939cf4bed19
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -35,8 +39,12 @@ class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+<<<<<<< HEAD
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+=======
+>>>>>>> 7248d71060ba5a968aca0baabebd7939cf4bed19
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
+        'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
         '442fcdf8ce6f449ab16dbf81234df998' => __DIR__ . '/../..' . '/app/Http/Helper/Helper.php',
     );
@@ -1101,6 +1109,7 @@ class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
         'Facade\\Ignition\\Logger\\FlareHandler' => __DIR__ . '/..' . '/facade/ignition/src/Logger/FlareHandler.php',
         'Facade\\Ignition\\Middleware\\AddDumps' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddDumps.php',
         'Facade\\Ignition\\Middleware\\AddEnvironmentInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddEnvironmentInformation.php',
+        'Facade\\Ignition\\Middleware\\AddExceptionInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddExceptionInformation.php',
         'Facade\\Ignition\\Middleware\\AddGitInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddGitInformation.php',
         'Facade\\Ignition\\Middleware\\AddJobInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddJobInformation.php',
         'Facade\\Ignition\\Middleware\\AddLogs' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddLogs.php',
@@ -2802,6 +2811,7 @@ class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
         'Illuminate\\View\\Compilers\\Concerns\\CompilesHelpers' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesHelpers.php',
         'Illuminate\\View\\Compilers\\Concerns\\CompilesIncludes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesIncludes.php',
         'Illuminate\\View\\Compilers\\Concerns\\CompilesInjections' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesInjections.php',
+        'Illuminate\\View\\Compilers\\Concerns\\CompilesJs' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesJs.php',
         'Illuminate\\View\\Compilers\\Concerns\\CompilesJson' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesJson.php',
         'Illuminate\\View\\Compilers\\Concerns\\CompilesLayouts' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesLayouts.php',
         'Illuminate\\View\\Compilers\\Concerns\\CompilesLoops' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesLoops.php',
@@ -6011,10 +6021,17 @@ class ComposerStaticInit177de62530ab8163d42b5f5290ea968f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit177de62530ab8163d42b5f5290ea968f::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$classMap;
+>>>>>>> 7248d71060ba5a968aca0baabebd7939cf4bed19
 
         }, null, ClassLoader::class);
     }
