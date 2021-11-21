@@ -18,10 +18,9 @@ class Jobs extends Model
         return $this->belongsTo(Corp::class);
     }
 
-    // public function kandidat()
-    // {
-    //     return $this->belongsTo(Candidate::class, 'id', 'user_id');
-    // }
+    public function job_types(){
+        return $this->belongsTo(job_types::class);
+    }
 
 
 

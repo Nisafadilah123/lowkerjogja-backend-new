@@ -45,11 +45,11 @@
                         <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Pendidikan Terakhir</strong> </label>
                         <select name="education" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
                            <option selected>-- Pilih Pendidikan Terakhir --</option>
-                           <option value="1">SMA / SMK</option>
-                           <option value="2">D3</option>
-                           <option value="3">D4 / S1</option>
-                           <option value="3">S2</option>
-                           <option value="3">S3</option>
+                           <option value="SMA / SMK">SMA / SMK</option>
+                           <option value="D3">D3</option>
+                           <option value="D4">D4 / S1</option>
+                           <option value="S2">S2</option>
+                           <option value="S3">S3</option>
                         </select>
                       </div>
                       <div class="col">
@@ -117,9 +117,9 @@
                             <label for="gender" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Jenis Kelamin</strong> </label>
                             <select name="gender" class="form-select form-select-sm" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 250px;">
                               <option selected>-- Pilih Jenis Kelamin --</option>
-                              <option value="1">Laki-Laki</option>
-                              <option value="2">Perempuan</option>
-                              <option value="3">Semua Jenis Kelamin</option>
+                              <option value="Pria">Pria</option>
+                              <option value="Wanita">Wanita</option>
+                              <option value="Pria/Wanita">Pria/Wanita</option>
                             </select>
                           </div>
                           <div class="col">

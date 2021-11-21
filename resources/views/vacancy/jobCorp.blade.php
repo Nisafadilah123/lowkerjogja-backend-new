@@ -40,13 +40,13 @@
 
                                             <div class="row align-items-start">
                                                 <div class="col">
-                                                    <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $l->job_type }}</p>
+                                                    <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $l->tipe_pekerjaan }}</p>
                                                 </div>
                                                 <div class="col">
                                                     <div></div>
                                                 </div>
                                                 <div class="col">
-                                                    <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ $l->created_at }}</div>
+                                                    <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 2px;" class="bi bi-clock"></i>{{ \Carbon\Carbon::parse($l->created_at)->diffForHumans() }}</div>
                                                     <div class="row">
                                                         <table>
                                                             <tr>
@@ -87,6 +87,7 @@
                                                     <div class="col" style="padding-top: 15px;">
                                                         <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
                                                         <h6 style="color: #000000;">{{$l->last_education}}</h6>
+                                                        <h6 style="color: #BEBFC0;">{{$l->gender}}</h6>
                                                         <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>
                                                         <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->starting_salary) }} - Rp {{ number_format($l->final_salary) }}</h6>
                                                         <!-- Button lamar -->

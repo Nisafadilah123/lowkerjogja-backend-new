@@ -26,16 +26,13 @@ class JobCorpController extends Controller
         // dd($corps);
         $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type', 'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'job_types.tipe_pekerjaan', 'jobs.created_at', 'jobs.last_education', 'jobs.position','jobs.gender',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
             ->where ('corp.id', $corpId)
             ->paginate(6);
 
-        // $lihatjobs = DB::table('jobs')
-        //     ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        //     ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position', 'jobs.city',
-        //     'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
-        //     ->paginate(6);
+
             // dd($lihatjobs);
               // -- start --
         // get seluruh list provinsi dari helper rajaongkir-nya

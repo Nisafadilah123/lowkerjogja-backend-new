@@ -84,8 +84,8 @@
                         style="font-size: 13px; padding-right: 118px;">Profil Saya</span></a></li>
                   <li><a href="/perusahaan"><i class="fas fa-building"></i><span
                         style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
-                  <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><i class="far fa-bookmark"></i>
-                    <span style="font-size: 13px; padding-left: 10px;">Simpan Kandidat</span></a></li>
+                  {{-- <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><i class="far fa-bookmark"></i> --}}
+                    {{-- <span style="font-size: 13px; padding-left: 10px;">Simpan Kandidat</span></a></li> --}}
                         <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
                             @csrf
 

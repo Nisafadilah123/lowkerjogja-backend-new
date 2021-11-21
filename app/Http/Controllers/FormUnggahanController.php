@@ -47,11 +47,11 @@ class FormUnggahanController extends Controller
             $jobVacancy->telp = $request->telepon;
 
             $jobVacancy->save();
-//             Alert::success('Berhasil', 'Data berhasil di tambahkan');
-return view('vacancy.landingPageCorp');
             DB::commit();
 
             // nanti tinggal nambah return view / json / redirect
+
+            return view('vacancy.landingPageCorp');
 
         } catch (\Throwable $th) {
             DB::rollBack();
