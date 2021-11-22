@@ -26,9 +26,21 @@
     <link href="{{ url('css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ url('css/jquery-ui.min.css') }}" rel="stylesheet">
     <link href="{{ url('css/nice-select.css') }}" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> <!-- rev>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/flaticon.css" rel="stylesheet">
+    <link href="css/linearicons.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/nice-select.css" rel="stylesheet">
 
-    <!-Template Main CSS File -->
+    {{-- <!-Template Main CSS File --> --}}
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
     <link href="{{ url('css/style1.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -84,30 +96,34 @@
             </a>
 
             <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="/homeUser">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="/findjobsUser">Temukan karir</a></li>
-                    <li><a class="nav-link scrollto" href="/aboutUser">Tentang Kami</a></li>
-
-                    <li style="position:relative; left:60px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
-                    <li class="dropdown pl-5" style="position:relative;left:50px">{{ ucfirst( Auth::user()->name) }}
-                        <ul>
-                            <li class="align-items-center"><a href="/user "><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
-                            <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
-                            <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                <div class="navbar-bg">
+                    <ul>
+                        <li><a class="nav-link scrollto" href="/homeUser">Beranda</a></li>
+                        <li><a class="nav-link scrollto" href="/findjobsUser">Temukan karir</a></li>
+                        <li><a class="nav-link scrollto" href="/aboutUser">Tentang Kami</a></li>
+                        
+                        <li class="dropdown"><a href="#"><span>Hi..{{ ucfirst( Auth::user()->name) }}</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li class="align-items-center"><a href="/user "><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
+                                <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
+                                <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+    
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                             onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{-- <li><i class="bi bi-grid" style="font-size: 20px;"></i></li>  --}}
                                     {{ __('Log Out') }}
-                                </x-jet-dropdown-link>
-                            </form></i></li>
-
-                        </ul>
-                    </li>
-
+                                    </x-jet-dropdown-link>
+                                </form></i></li>
+                            </ul>
+                        </li>
+                        <li style="position:relative; left:30px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
+                        
+                    </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
+                </div>
+                
             </nav><!-- .navbar -->
 
         </div>

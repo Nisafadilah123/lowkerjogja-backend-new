@@ -15,7 +15,7 @@ function rajaongkir_point($end_point,$method="GET",$body=[]){
         // jadi nanti itu bisa pake awalan / atau engga ada / ga masalah.
     }
 
-    $api_key="65b86474176cb3ac970e11dd36052aa4";
+    $api_key="a7954b3c29239472f70f6846d0507be1";
     $rajaongkir_api = "http://api.rajaongkir.com/starter/"; // url dsar api nya lupa apa nanti coba isi    // body curl dasar
 
 
