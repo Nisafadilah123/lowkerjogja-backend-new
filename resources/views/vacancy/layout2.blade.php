@@ -66,7 +66,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="#hero">Produk & Layanan</a></li>
-              <li><a class="nav-link scrollto" href="corp-faq.html">FAQ</a></li>
+              <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
               <li style="padding-left: 500px;">
                 <div>
