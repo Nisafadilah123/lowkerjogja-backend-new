@@ -156,7 +156,8 @@ class MainController extends Controller
     {
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-        ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+        ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+        ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
         'jobs.city', 'jobs.provinces','jobs.starting_salary', 'jobs.final_salary', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
         ->where('jobs.id', $id)
         ->get();
@@ -168,7 +169,8 @@ class MainController extends Controller
             $cari = $request->cari;
             $lihatjobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary' ,'jobs.final_salary')
             ->where('position','like',"%".$cari."%")
 

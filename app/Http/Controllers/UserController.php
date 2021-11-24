@@ -127,7 +127,53 @@ class UserController extends Controller
             ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
             ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'job_types.tipe_pekerjaan', 'jobs.created_at', 'jobs.last_education', 'jobs.position','jobs.gender',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
+            ->where('position','like',"%".$cari."%")
             ->paginate(6);
+
+        // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($lihatjobs as $key => $l) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $l->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $l->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $l->province_name = $provinceName;
+            $l->city_name = $cityName;
+
+        }
 
             if(count($lihatjobs)){
                 return view('user.findjobs',['lihatjobs' => $lihatjobs]);
@@ -203,7 +249,7 @@ class UserController extends Controller
         public function lamar_view($id){
             $lamarview = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            ->select('corp.nama_corp', 'corp.logo', 'jobs.id', 'jobs.job_type_id',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary')
             ->where('jobs.id', $id)
             ->get();
@@ -316,7 +362,8 @@ class UserController extends Controller
         {
             $jobs = DB::table('jobs')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
-            ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+            ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
             ->where('jobs.id', $id)
             ->get();

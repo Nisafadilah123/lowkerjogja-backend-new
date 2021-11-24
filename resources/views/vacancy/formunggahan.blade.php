@@ -30,7 +30,7 @@
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
                           <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Posisi">
-                          <input id="corp_id" type="text" class="form-control" name="corp_id" placeholder="" value="{{ ucfirst(Auth::user()->corp_id) }}" hidden>
+                          <input id="corp_id" type="text" class="form-control" name="corp_id" placeholder="" value="{{ ucfirst(Auth::user()->id) }}" hidden>
                         </div>
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Kuota</strong> </label>
@@ -47,7 +47,7 @@
                            <option selected>-- Pilih Pendidikan Terakhir --</option>
                            <option value="SMA / SMK">SMA / SMK</option>
                            <option value="D3">D3</option>
-                           <option value="D4">D4 / S1</option>
+                           <option value="D4 / S1">D4 / S1</option>
                            <option value="S2">S2</option>
                            <option value="S3">S3</option>
                         </select>

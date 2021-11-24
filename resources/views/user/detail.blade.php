@@ -39,7 +39,7 @@
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->last_education }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->gender }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->age }}</h4>
-                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->job_type }}</h4>
+                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->tipe_pekerjaan }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: Rp {{ number_format($i->starting_salary) }} - Rp {{ number_format($i->final_salary) }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->deadline }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->location }}<h4>

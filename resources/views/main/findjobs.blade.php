@@ -21,7 +21,7 @@
                         <div class="row">
                         <div class="col-md-2">
 
-                        <form action="/cari" method="GET">
+                        <form action="/carimain" method="GET">
                             <label for="posisi" style="position: relative;left:430px; width: 220px;height:40px;"><strong>Posisi Pekerjaan</strong> </label>
                             <input class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative;left:400px; width: 220px;height:40px;background-image:url('mortarboard.png');" id="position-option" name="cari" name="cari" type="search" placeholder="Cari Posisi" aria-label="Search">
                             <button type="submit" class="btn btn-primary" style="position: relative; left:650px;width:100px;bottom:40px"><i class="fas fa-search" style="position: relative;padding-right:5px" value="cari">   Cari</a></i>
@@ -79,9 +79,9 @@
                                 <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>
                                 <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->starting_salary) }} - Rp {{ number_format($l->final_salary) }}</h6>
                                 <!-- Button lamar -->
-                                <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
+                                <a class="btn btn-primary" href="/login" role="button">Lamar</a>
                                 <!-- Button detail -->
-                                <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
+                                <a class="btn btn-primary" href="/detailmain{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>
                     </div>
