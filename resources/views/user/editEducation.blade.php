@@ -155,7 +155,7 @@
                     </h5>
                     <div class="card-body">
 
-                        <form method="post" action="/education/{{ $item->id }}">
+                        <form method="post" action="/education/{{ $education->id }}">
                          @method('PUT')
                             @csrf
 

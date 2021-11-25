@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label name="job_type" for="job_type" style=""><strong>Tipe Pekerjaan</strong></label>
-                                    <select name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                    <select name="job_type_id" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                         <option selected>-- Pilih Tipe Pekerjaan --</option>
                                         @foreach ($job_types as $job_type)
                                             <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>

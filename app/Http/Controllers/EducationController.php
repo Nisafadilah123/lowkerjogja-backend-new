@@ -123,7 +123,7 @@ class EducationController extends Controller
     public function edit(Education $education)
     {
 
-        return view('user.editEducation', compact('educations'));
+        return view('user.editEducation', compact('education'));
 
     }
 

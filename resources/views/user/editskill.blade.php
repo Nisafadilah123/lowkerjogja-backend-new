@@ -168,7 +168,7 @@
                 <img src="/img/icons/bar-chart.png" width="30px" alt=""> Keahlian
             </div>
 
-            {{-- @foreach ($skills as $item) --}}
+            {{-- @foreach ($skills as $skill) --}}
             <form method="post" action="{{ route('skill.update', $skill->id) }}}}">
                 @method('PUT')
                    @csrf
@@ -200,7 +200,7 @@
                 </select>
               </div>
               <div class="col-lg-6 align-items-center">
-                <input class="form-control" name="ahli" id="ahli" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('ahli', $item->ahli) }}">
+                <input class="form-control" name="ahli" id="ahli" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('ahli', $skill->ahli) }}">
               </div>
 
 

@@ -135,6 +135,8 @@ class CrudController extends Controller
         $dtUpload->syarat           = $request->syarat;
         $dtUpload->email            = $request->email;
         $dtUpload->telp             = $request->telp;
+        $dtUpload->job_type_id      = $request->job_type_id;
+        $dtUpload->job_cat_id            = $request->job_cat_id;
 
 
         $dtUpload->save();
