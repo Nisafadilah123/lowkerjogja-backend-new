@@ -111,7 +111,7 @@ class AdminController extends Controller
     }
 
 
-    public function kandidat()
+    public function candidat()
     {
         $i = 0;
         $i++;

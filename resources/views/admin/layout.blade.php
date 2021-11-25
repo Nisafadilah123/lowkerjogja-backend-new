@@ -94,7 +94,7 @@
                             <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Karir</span></a>
                         </li>
                         <li class="{{ Request::is('kandidat') ? 'active' : '' }}">
-                            <a href="{{ url('/kandidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
+                            <a href="{{ url('/candidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li class="{{ Request::is('users') ? 'active' : '' }}">
                             <a href="{{ url('/users') }}"><i class="fa fa-user"></i><span>Pengguna</span></a>

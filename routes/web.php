@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/company', [AdminController::class, 'company']);
     Route::get('/jobs', [AdminController::class, 'jobs']);
-    Route::get('/kandidat', [AdminController::class, 'kandidat']);
+    Route::get('/candidat', [AdminController::class, 'candidat']);
     Route::get('/users', [AdminController::class, 'user']);
     Route::get('/opencv/{id}', [AdminController::class, 'opencv']);
 
