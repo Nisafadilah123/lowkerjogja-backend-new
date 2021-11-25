@@ -184,7 +184,7 @@
                 <select class="form-select" aria-label="Default select example" name="level">
                   <option selected>-- Pilih Level --</option>
                   <option value="Pemula">Pemula</option>
-                  <option value="Tingkat Menengah">Tingkat Menengah</option>
+                  <option value="Menengah">Menengah</option>
                   <option value="Master">Master</option>
                 </select>
               </div>

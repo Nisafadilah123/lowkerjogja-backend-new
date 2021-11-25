@@ -142,5 +142,23 @@
           });
       });
 
+      $(document).on("change",".job_type",function(){
+        var job_type_selected = $(".job_type option:selected").val();
+        console.log("pilih job_type",job_type_selected)
+        $.ajax({
+            "url":"/get-job-category",
+            "data":{job_type_selected:job_type_selected},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("job_category",hasil_result)
+                var option_job_category="<option>-- Pilih Kategori Pekerjaan --</option>";
+                hasil_result.forEach(element => {
+                    option_job_category+=`<option value="${element.id}">${element.kategori_pekerjaan}</option>`;
+                });
+                $(".job_category").html(option_job_category);
+            }
+        });
+    });
+
 </script>
 @endpush

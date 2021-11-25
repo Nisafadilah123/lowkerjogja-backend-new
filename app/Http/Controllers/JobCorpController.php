@@ -124,9 +124,15 @@ class JobCorpController extends Controller
     public function edit($id)
     {
         //
+        $job_types = DB::table('job_types')->get();
+
         $jobs = Jobs::with('corp')->where('id', $id)->get();
+        // $jobs = Jobs::find($id);
+
+        // $job_type = $jobs->job_type;
+
         // dd($jobs);
-        return view('vacancy.editJobs', compact('jobs'));
+        return view('vacancy.editJobs', compact('jobs', 'job_types'));
     }
 
     /**

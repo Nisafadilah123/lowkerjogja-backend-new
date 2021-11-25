@@ -87,9 +87,8 @@ class SkillController extends Controller
     public function edit(Skill $skill)
     {
         //
-        $skills = Skill::where('id', Auth::user()->id)->get();
 
-        return view('user.editskill', compact('skills'));
+        return view('user.editskill', compact('skill'));
     }
 
     /**

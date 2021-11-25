@@ -51,7 +51,7 @@
                             <div>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                                 <h6 style="font-weight: bold;padding-right:100px; float:right">{{ ucfirst(Auth::user()->name)  }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:50px;padding-right:100px;">Lihat Profil</h6>
                             </div>
                         </div>
 
@@ -168,8 +168,8 @@
                 <img src="/img/icons/bar-chart.png" width="30px" alt=""> Keahlian
             </div>
 
-            @foreach ($skills as $item)
-            <form method="post" action="/skill/{{ $item->id }}">
+            {{-- @foreach ($skills as $item) --}}
+            <form method="post" action="{{ route('skill.update', $skill->id) }}}}">
                 @method('PUT')
                    @csrf
 <div class="row align-items-start" style="padding-top: 20px;">
@@ -186,16 +186,16 @@
 
 
                 <select class="form-select" aria-label="Default select example" name="level">
-                    @if ($item->level==null)
+                    @if ($skill->level==null)
                         <option selected value="" >-- Pilih Level -- </option>
-                        <option value="Pemula" @if ($item->level == 'Pemula')@endif>Pemula</option>
-                        <option value="Tingkat Menengah" @if ($item->level == 'Tingkat Menengah')@endif>Tingkat Menengah</option>
-                        <option value="Master" @if ($item->level == 'Master')@endif>Master</option>
+                        <option value="Pemula" @if ($skill->level == 'Pemula')@endif>Pemula</option>
+                        <option value="Menengah" @if ($skill->level == 'Menengah')@endif>Menengah</option>
+                        <option value="Master" @if ($skill->level == 'Master')@endif>Master</option>
                     @else
-                        <option selected value="{{ $item->level }}" >{{ $item->level }}</option>
-                        <option value="Pemula" @if ($item->level == 'Pemula')@endif>Pemula</option>
-                        <option value="Tingkat Menengah" @if ($item->level == 'Tingkat Menengah')@endif>Tingkat Menengah</option>
-                        <option value="Master" @if ($item->level == 'Master')@endif>Master</option>
+                        <option selected value="{{ $skill->level }}" >{{ $skill->level }}</option>
+                        <option value="Pemula" @if ($skill->level == 'Pemula')@endif>Pemula</option>
+                        <option value="Menengah" @if ($skill->level == 'Menengah')@endif>Menengah</option>
+                        <option value="Master" @if ($skill->level == 'Master')@endif>Master</option>
                     @endif
                 </select>
               </div>
@@ -218,7 +218,7 @@
             </div>
         </form>
 
-            @endforeach
+            {{-- @endforeach --}}
 
           </div>
         </div>

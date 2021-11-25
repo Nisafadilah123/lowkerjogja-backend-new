@@ -104,8 +104,9 @@ class UserController extends Controller
             ->join('jobs', 'jobs.id', '=', 'save_jobs.job_id')
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->join('users', 'users.id', '=', 'save_jobs.user_id')
-            ->select('users.id', 'corp.nama_corp', 'corp.logo', 'jobs.job_type',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
-            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary', 'save_jobs.id')
+            ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+            ->select('users.id', 'corp.nama_corp', 'corp.logo', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary', 'save_jobs.id', 'jobs.gender')
             ->where('save_jobs.user_id', $uid)
             ->paginate(6);
 

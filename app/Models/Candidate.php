@@ -31,4 +31,8 @@ class Candidate extends Model
     {
         return $this->belongsTo(Apply_job::class, 'apply_jobs_id', 'id');
     }
+
+    public function jobs(){
+        return $this->hasOne(Jobs::class);
+    }
 }

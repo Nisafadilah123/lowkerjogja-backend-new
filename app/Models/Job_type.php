@@ -13,7 +13,15 @@ class Job_type extends Model
 
     public function jobs()
     {
-        return $this->hasMany(Jobs::class);
+        return $this->belongsTo(Jobs::class);
+    }
+
+    // public function corp(){
+    //     return $this->hasMany(Corp::class);
+    // }
+
+    public function job_cat(){
+        return $this->hasMany(job_cat::class, 'tipe_pekerjaan_id', 'id');
     }
 
 }

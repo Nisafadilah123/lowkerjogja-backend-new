@@ -18,10 +18,17 @@ class Jobs extends Model
         return $this->belongsTo(Corp::class);
     }
 
-    public function job_types(){
-        return $this->belongsTo(job_types::class);
+    public function job_type(){
+        return $this->hasMany(job_type::class, 'job_type_id', 'id');
     }
 
+    public function job_cat(){
+        return $this->hasMany(job_cat::class, 'job_cat_id', 'id');
+    }
+
+    public function kandidat(){
+        return $this->belongsTo(Candidate::class);
+    }
 
 
 

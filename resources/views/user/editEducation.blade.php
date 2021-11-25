@@ -155,7 +155,6 @@
                     </h5>
                     <div class="card-body">
 
-                    @foreach ($educations as $item)
                         <form method="post" action="/education/{{ $item->id }}">
                          @method('PUT')
                             @csrf
@@ -163,26 +162,26 @@
 
                             <div class="form-group" class="form-label">
                               <label for="institut">Institusi / Universitas</label>
-                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{ucfirst(old('name', $item->name))}}">
+                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{ucfirst(old('name', $education->name))}}">
                             </div>
 
                             <div class="form-group">
                                 <label for="jenjang">Jenjang</label>
                                 <select class="form-select" name="level" id="level">
-                                    @if ($item->level==null)
+                                    @if ($education->level==null)
                                         <option selected value="" >-- Pilih Jenjang -- </option>
-                                    <option value="S3" @if ($item->level == 'S3')@endif>S3</option>
-                                    <option value="S2" @if ($item->level == 'S2')@endif>S2</option>
-                                    <option value="S1/D4" @if ($item->level == 'SI/D4')@endif>S1/D4</option>
-                                    <option value="D3" @if ($item->level == 'D3')@endif>D3</option>
-                                    <option value="SMA/SMK" @if ($item->level == 'SMA/SMK')@endif>SMA/SMK</option>
+                                    <option value="S3" @if ($education->level == 'S3')@endif>S3</option>
+                                    <option value="S2" @if ($education->level == 'S2')@endif>S2</option>
+                                    <option value="S1/D4" @if ($education->level == 'SI/D4')@endif>S1/D4</option>
+                                    <option value="D3" @if ($education->level == 'D3')@endif>D3</option>
+                                    <option value="SMA/SMK" @if ($education->level == 'SMA/SMK')@endif>SMA/SMK</option>
                                         @else
-                                        <option selected value="{{ $item->level }}" >{{ $item->level }}</option>
-                                        <option value="S3" @if ($item->level == 'S3')@endif>S3</option>
-                                        <option value="S2" @if ($item->level == 'S2')@endif>S2</option>
-                                        <option value="S1/D4" @if ($item->level == 'SI/D4')@endif>S1/D4</option>
-                                        <option value="D3" @if ($item->level == 'D3')@endif>D3</option>
-                                        <option value="SMA/SMK" @if ($item->level == 'SMA/SMK')@endif>SMA/SMK</option>
+                                        <option selected value="{{ $education->level }}" >{{ $education->level }}</option>
+                                        <option value="S3" @if ($education->level == 'S3')@endif>S3</option>
+                                        <option value="S2" @if ($education->level == 'S2')@endif>S2</option>
+                                        <option value="S1/D4" @if ($education->level == 'SI/D4')@endif>S1/D4</option>
+                                        <option value="D3" @if ($education->level == 'D3')@endif>D3</option>
+                                        <option value="SMA/SMK" @if ($education->level == 'SMA/SMK')@endif>SMA/SMK</option>
                                     @endif
 
 
@@ -192,21 +191,21 @@
 
                             <div class="form-group">
                                 <label for="graduate" class="form-label">Tanggal Wisuda</label>
-                              <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate', $item->graduate)}}">
+                                <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate', $education->graduate)}}">
                             </div>
 
                             <div class="form-group">
                                 <label for="jurusan" class="form-label">Jurusan</label>
-                                <input type="text" class="form-control" name="major" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level', $item->major)}}">
+                                <input type="text" class="form-control" name="major" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level', $education->major)}}">
                               </div>
                               <div class="form-group">
                                 <label for="nilai" class="form-label">Nilai Akhir</label>
                                 <div class="row">
                                     <div class="col-6">
-                                        <input type="text" class="form-control" name="gpa" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa', $item->gpa)}}">
+                                        <input type="text" class="form-control" name="gpa" id="nilai" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa', $education->gpa)}}">
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" name="gpa_limit" id="gpa_limit" placeholder="Lengkapi Batas Data Nilai Akhir Anda" value="{{old('gpa_limit', $item->gpa_limit)}}">
+                                        <input type="text" class="form-control" name="gpa_limit" id="gpa_limit" placeholder="Lengkapi Batas Data Nilai Akhir Anda" value="{{old('gpa_limit', $education->gpa_limit)}}">
                                     </div>
                                 </div>
                               </div>
@@ -223,7 +222,6 @@
                               </div>
                           </form>
 
-                    @endforeach
                     </div>
                 </div>
             </div>

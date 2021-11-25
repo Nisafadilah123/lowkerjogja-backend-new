@@ -27,12 +27,23 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                             <label for="lasteducation"><strong>Pendidikan Terakhir</strong></label>
-                                            <select class="form-control" id="last_education" name="last_education">{{$c->last_education}}
-                                                <option value="0">-- Pilih Pendidikan Terakhir --</option>
-                                                <option value="SMA/SMK">SMA/SMK</option>
-                                                <option value="D3">D3</option>
-                                                <option value="S1/D4">S1/D4</option>
-                                                <option value="S2">S2</option>
+                                            <select class="form-control" id="last_education" name="last_education">
+                                                @if ($c->last_education==null)
+                                                    <option value="">-- Pilih Pendidikan Terakhir --</option>
+                                                    <option value="SMA/SMK">SMA/SMK</option>
+                                                    <option value="D3">D3</option>
+                                                    <option value="S1/D4">S1/D4</option>
+                                                    <option value="S2">S2</option>
+                                                @else
+                                                    <option selected value="{{ $c->last_education }}" >{{ $c->last_education }}</option>
+                                                    <option value="SMA/SMK" @if($c->level == 'SMA/SMK')@endif>SMA/SMK</option>
+                                                    <option value="D3" @if($c->level == 'D3')@endif>D3</option>
+                                                    <option value="S1/D4" @if($c->level == 'S1/D4')@endif>S1/D4</option>
+                                                    <option value="S2" @if($c->level == 'S2')@endif>S2</option>
+                                                    <option value="S3" @if($c->level == 'S3')@endif>S3</option>
+
+                                                @endif
+
                                             </select>
                                         </div>
                                         </div>
@@ -51,10 +62,12 @@
 									</div>
 
                                     <div class="col-sm-6">
-
-                                        <label for="job_type" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tipe Pekerjaan</strong> </label>
-                                        <input type="text" id="job_type" class="form-control" name="job_type" placeholder="Silahkan isi Tipe Pekerjaan perusahaan anda" value="{{$c->job_type}}">
-                                     </div>
+                                        <div class="form-group">
+                                            <label for="deadline" style="padding-bottom: 10px;padding-top: 10px;"><strong>Deadline</strong></label>
+                                            <br>
+                                            <input type="date" name="deadline" id="deadline" placeholder="Deadline" required class="datepicker" data-date-format="mm/dd/yyyy" value="{{$c->deadline}}" >
+                                        </div>
+                                    </div>
 
 							  </div>
 							</div>
@@ -65,17 +78,38 @@
                     <div class="form-group">
 					    <div class="container px-4">
                             <div class="row gx-5">
-                                <div class="col-sm-6">
-                                    <label for="job_category"><strong>Kategori Pekerjaan</strong></label>
-                                    <input type="text" name="job_category" class="form-control" value="{{$c->job_category}}" placeholder="Silahkan Isi Kategori Pekerjaan Perusahaan Anda">
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="deadline"><strong>Deadline</strong></label>
-                                        <br>
-                                        <input type="date" name="deadline" id="deadline" placeholder="Deadline" required class="datepicker" data-date-format="mm/dd/yyyy" value="{{$c->deadline}}" >
-                                    </div>
-                                </div>
+                                  <div class="col-sm-6">
+                                    <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tipe Pekerjaan</strong> </label>
+                                    {{-- <input id="job_type_id" type="text" class="form-control" name="job_type_id" placeholder="" value="{{ $job_types->id }}">{{ $job_types->tipe_pekerjaan }}> --}}
+                                    <select id="job_type_id" name="job_type_id" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+                                        @if ($c->job_type_id == null)
+                                                <option selected>-- Pilih Tipe Pekerjaan --</option>
+                                                @foreach ($job_types as $job_type)
+                                                <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                                                @endforeach
+
+                                        @else
+
+                                            {{-- <option selected value="{{ $c->job_type_id }}">{{ $c->job_type_id }}</option> --}}
+                                            @foreach ($job_types as $job_type)
+                                                @if($job_type->id == $c->job_type_id)
+                                                    <option selected value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                                                @else
+                                                    <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                                                @endif
+
+
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                  </div>
+
+                                  <div class="col-sm-6">
+                                    <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative;"><strong>Kategori Pekerjaan</strong> </label>
+                                    <select name="job_cat_id" class="form-select form-select-sm job_category" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative;">
+                                      <option selected>-- Pilih Kategori Pekerjaan --</option>
+                                   </select>
+                                  </div>
                             </div>
 
 				        </div>
@@ -134,10 +168,19 @@
                                     <div class="form-group">
                                         <label for="lasteducation"><strong>Jenis Kelamin</strong></label>
                                         <select class="form-control" id="gender" name="gender">
-                                            <option value="0">-- Pilih Jenis Kelamin --</option>
-                                            <option value="Pria">Pria</option>
-                                            <option value="Wanita">Wanita</option>
-                                            <option value="Pria/Wanita">Pria/Wanita</option>
+                                            @if ($c->gender==null)
+                                                <option value="0">-- Pilih Jenis Kelamin --</option>
+                                                <option value="Pria">Pria</option>
+                                                <option value="Wanita">Wanita</option>
+                                                <option value="Pria/Wanita">Pria/Wanita</option>
+
+                                            @else
+                                                    <option selected value="{{ $c->gender }}" >{{ $c->gender }}</option>
+                                                    <option value="Pria" @if($c->gender == 'Pria')@endif>Pria</option>
+                                                    <option value="Wanita" @if($c->gender == 'Wanita')@endif>Wanita</option>
+                                                    <option value="Pria/Wanita" @if($c->gender == 'Pria/Wanita')@endif>Pria/Wanita</option>
+                                            @endif
+
                                         </select>
                                     </div>
                                 </div>
@@ -245,6 +288,25 @@
         changeMonth: true,
         changeYear: true
     });
+
+    $(document).on("change",".job_type",function(){
+        var job_type_selected = $(".job_type option:selected").val();
+        console.log("pilih job_type",job_type_selected)
+        $.ajax({
+            "url":"/get-job-category",
+            "data":{job_type_selected:job_type_selected},
+            "type":"GET",
+            success:function(hasil_result){
+                console.log("job_category",hasil_result)
+                var option_job_category="<option>-- Pilih Kategori Pekerjaan --</option>";
+                hasil_result.forEach(element => {
+                    option_job_category+=`<option value="${element.id}">${element.kategori_pekerjaan}</option>`;
+                });
+                $(".job_category").html(option_job_category);
+            }
+        });
+    });
+
     </script>
 
 
