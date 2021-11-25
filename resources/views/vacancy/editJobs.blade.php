@@ -107,7 +107,13 @@
                                   <div class="col-sm-6">
                                     <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative;"><strong>Kategori Pekerjaan</strong> </label>
                                     <select name="job_cat_id" class="form-select form-select-sm job_category" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative;">
-                                      <option selected>-- Pilih Kategori Pekerjaan --</option>
+                                      {{-- <option selected>-- Pilih Kategori Pekerjaan --</option> --}}
+                                      @if($job_type->id == $c->job_type_id)
+                                                    <option selected value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                                                @else
+                                                    <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
+                                                @endif
+
                                    </select>
                                   </div>
                             </div>

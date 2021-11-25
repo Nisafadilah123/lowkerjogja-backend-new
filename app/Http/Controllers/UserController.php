@@ -387,6 +387,53 @@ class UserController extends Controller
                 ->orWhere('email', $myString)
                 ->orWhere('name', $namauser)
                 ->get();
+                // -- start --
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($userid as $key => $i) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $i->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $i->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $i->province_name = $provinceName;
+            $i->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
+        // -- end --
 
             DB::table('save_jobs')->insert(
                 [
@@ -405,6 +452,7 @@ class UserController extends Controller
                 [
                     'id' => $request->idsimpan
                 ]
+
             );
             alert()->success('Berhasil', 'Karir anda berhasil dihapus');
             return redirect('/jobsUser');

@@ -5,8 +5,15 @@
 @section('container')
 
 <!-- Pencarian -->
+<div style="position: relative;top:150px;">
+
+    <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
+        <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+</div>
+
 <section id="find" class="find">
     <div class="container" data-aos="fade-up" style="margin-top: 100px;">
+
         <div class="row">
             {{-- @foreach ($user as $item ) --}}
             <form action="/candidate" method="GET">

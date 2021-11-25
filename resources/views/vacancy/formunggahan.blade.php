@@ -5,10 +5,17 @@
 @section('container')
 
 <!-- ======= Form Unggahan Section ======= -->
+<div style="position: relative;top:150px;">
+
+    <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
+        <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+</div>
+
 <section>
-    <div class="container-fluid" style="position: relative;right: 200px;">
+    <div class="container-fluid" style="position: relative;right: 200px;top:80px">
       <div class="row justify-content-center">
         <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+
           <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="width: 1000px;">
             <h2 id="heading">Post vacancies and find the best candidates</h2>
             <form id="msform" action="{{ url('/formUnggahan') }}" method="POST" >
@@ -179,6 +186,7 @@
       </div>
     </div>
     </section>
+
 
 <!-- End Form Unggahan Section -->
 
