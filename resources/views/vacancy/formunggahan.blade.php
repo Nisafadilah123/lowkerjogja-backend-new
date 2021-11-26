@@ -5,6 +5,11 @@
 @section('container')
 
 <!-- ======= Form Unggahan Section ======= -->
+<div style="position: relative;top:150px;">
+
+    <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
+        <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+</div>
 <section>
     <div class="container-fluid" style="position: relative;right: 200px;top:80px">
       <div class="row justify-content-center">
@@ -148,12 +153,12 @@
                           </div>
                         </div>
                       </div>
-                </div>        
+                </div>
                 <input type="button" name="next" class="next action-button" value="Lanjut" />
                 <div style="position: relative;top:150px;">
                   <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
                       <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
-              </div>      
+              </div>
               </fieldset>
               <!-- fieldsets -->
               <fieldset>

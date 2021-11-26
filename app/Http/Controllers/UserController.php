@@ -110,6 +110,51 @@ class UserController extends Controller
             ->where('save_jobs.user_id', $uid)
             ->paginate(6);
 
+            // get seluruh list provinsi dari helper rajaongkir-nya
+        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
+        // get seluruh list provinsi dari helper rajaongkir-nya
+        $listCity = rajaongkir_point( 'city', 'GET', [] );
+
+        // dd($listCity);
+        // ambil data id provinsi, untuk memudahkan pencarian provinsi
+        $listProvinceIds = array_column($listProvinces, 'province_id');
+         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
+         $listCityIds = array_column($listCity, 'city_id');
+        // dd($listCityIds);
+        // loop data jobs
+        foreach ($lihatsimpan as $key => $l) {
+            // set default province-name
+            $provinceName = "( Provinsi tidak ditemukan )";
+            // set default province-name
+            $cityName = "( Kota tidak ditemukan )";
+            // ambil id provinsi dari data "job"
+            $jobProvinceId = $l->provinces;
+            // ambil id kota dari data provinsi "job"
+            $jobCityId = $l->city;
+            // dd($jobCityId);
+            // cari data nama provinsi berdasarkan id
+            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
+            // cari data nama kota berdasarkan id
+            $cityIndex = array_search($jobCityId, $listCityIds);
+            // dd($cityIndex);
+
+            if ($provinceIndex) {
+                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
+                // dd($provinceName);
+            }
+
+            if ($cityIndex) {
+                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
+                // dd($cityName);
+            }
+
+            // update data jobs dengan menambahkan nama provinsi
+            $l->province_name = $provinceName;
+            $l->city_name = $cityName;
+
+            // dd($cityName);
+            // dd($job);
+        }
             return view('user.jobs',
             ['lihatsimpan'=> $lihatsimpan]);
         }
