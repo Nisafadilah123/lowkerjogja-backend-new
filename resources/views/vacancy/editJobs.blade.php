@@ -21,7 +21,7 @@
 									<div class="row gx-5">
 									  <div class="col-sm-6">
 										   <label for="corp" style="padding-bottom: 10px;"><strong>Nama Perusahaan</strong> </label>
-										   <input id="corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan Anda" value="{{$c->corp->nama_corp}}">
+										   <input id="corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan Anda" value="{{$c->corp->nama_corp}}" readonly>
 										</div>
 
                                         <div class="col-sm-6">
@@ -269,7 +269,7 @@
                         <div class="container px-4">
                             <div class="row gx-5">
                                 <div class="col-sm-6">
-                                    <a href="/user" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
+                                    <a href="/karir" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
                                     <button type="submit" style="margin-left: 10px;" class="btn btn-primary"><span style="padding: 5px;">Simpan</span>
                                 </div>
                             </div>

@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-12">
                     <div class="block-options p-3">
-                        <a href="{{url('create/company')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Perusahaan</a>
+                        <!-- <a href="{{url('create/company')}}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Perusahaan</a> -->
                     </div>
                     <div class="card">
 
@@ -23,7 +23,7 @@
                             <div class="table-responsive" >
                                 <table class="table table-striped table-bordered data" id="add-row">
                                     <thead>
-                                         <tr>
+                                        <tr>
                                         <th>No</th>
                                         <th>Perusahaan</th>
                                         <th>Desc</th>
@@ -39,7 +39,7 @@
 
                                     <tbody>
                                         @foreach ($corp as $corp)
-                                         <tr>
+                                        <tr>
                                         <td style="vertical-align: middle;">{{$i++}}</td>
                                         <td style="vertical-align: middle;">{{$corp->nama_corp}}</td>
                                         <td style="vertical-align: middle;">{{$corp->description}}</td>
@@ -54,11 +54,11 @@
 
 
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
-                                            <a href="/company/{{$corp->id}}/edit" class="btn btn-sm btn-primary btn-circle " style="float:left"><i class="far fa-edit"></i></a>
+                                            <!-- <a href="/company/{{$corp->id}}/edit" class="btn btn-sm btn-primary btn-circle " style="float:left"><i class="far fa-edit"></i></a> -->
                                             <form id="delete-company" action="/company/{{$corp->id}}" method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-primary btn-circle delete" style="float:right"><span class="far fa-trash-alt"></span></button>
+                                                <button type="submit" class="btn btn-sm btn-primary btn-circle delete" style="float:center"><span class="far fa-trash-alt"></span></button>
                                                 <!-- <input type="submit" class="btn btn-danger btn-sm" value="Delete" onclick="return confirm('anda yakin ingin menghapus data?');"> -->
                                             </form>
                                         </td>

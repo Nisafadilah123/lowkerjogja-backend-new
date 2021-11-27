@@ -29,11 +29,11 @@
                             <div class="row gx-5">
                                 <div class="col-sm-6">
                                     <label for="corp" style="padding-bottom: 10px;padding-top: 10px;"><strong>Nama</strong> </label>
-                                    <input id="name" type="text" class="form-control" name="name" placeholder="Nama Kandidat" value="{{ $c->user->name }}">
+                                    <input id="name" type="text" class="form-control" name="name" placeholder="Nama Kandidat" value="{{ $c->user->name }}" readonly>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="email" style="padding-bottom: 10px;padding-top: 10px;"><strong>Email Kandidat</strong> </label>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="Email Kandidat" value="{{ $c->user->email }}">
+                                    <input id="email" type="email" class="form-control" name="email" placeholder="Email Kandidat" value="{{ $c->user->email }}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -44,11 +44,11 @@
                             <div class="row gx-5">
                                 <div class="col-sm-6">
                                     <label for="corp" style="padding-bottom: 10px;padding-top: 10px;"><strong>Nama Perusahaan</strong> </label>
-                                    <input id="nama_corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan" value="{{ $c->apply_jobs->jobs->corp->nama_corp }}">
+                                    <input id="nama_corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan" value="{{ $c->apply_jobs->jobs->corp->nama_corp }}" readonly>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="corp" style="padding-bottom: 10px;padding-top: 10px;"><strong>Lamar Sebagai</strong> </label>
-                                    <input id="position" type="text" class="form-control" name="position" placeholder="Lamar sebagai" value="{{ $c->apply_jobs->jobs->position }}">
+                                    <input id="position" type="text" class="form-control" name="position" placeholder="Lamar sebagai" value="{{ $c->apply_jobs->jobs->position }}" readonly>
                                 </div>
                             </div>
                         </div>

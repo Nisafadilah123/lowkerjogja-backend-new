@@ -66,9 +66,11 @@ class VacancyController extends Controller
      // halaman formUnggahan
     public function formUnggahan()
     {
+        $myString = auth()->user()->email;
+        $uid = auth()->user()->id;
 
         $job_types = DB::table('job_types')->get();
-        return view('vacancy.formUnggahan',compact('job_types'));
+        return view('vacancy.formUnggahan',compact(array('job_types', 'myString')));
     }
 
     // 

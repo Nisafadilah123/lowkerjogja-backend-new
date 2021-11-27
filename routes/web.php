@@ -106,7 +106,7 @@ Route::post('/simpanjob', [UserController::class, 'simpanjob']);
 Route::post('/deletejob', [UserController::class, 'deletejob']);
 Route::get('/cari', [USerController::class, 'cari']);
 Route::get('/status_user', [UserController::class, 'statusUser']);
-
+Route::post('/aturwawancara', [UserController::class, 'Setwawancara']);
 
 // Routes Halaman Profil User
 Route::get('/user/{id}/statusUser', [ProfillUserController::class, 'statusUser']);

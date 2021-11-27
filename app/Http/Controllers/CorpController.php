@@ -20,7 +20,7 @@ class CorpController extends Controller
     {
         //
         $corps = Corp::where('user_id', Auth::user()->id)->get();
-       return view('vacancy.profilCorp', compact('corps'));
+        return view('vacancy.profilCorp', compact('corps'));
     }
 
     /**
@@ -125,7 +125,7 @@ class CorpController extends Controller
         // dd($perusahaan);
 
                 Alert::success('Berhasil', 'Datamu telah terubah');
-                return redirect('/perusahaan');
+                return redirect('/karir');
     }
 
     /**

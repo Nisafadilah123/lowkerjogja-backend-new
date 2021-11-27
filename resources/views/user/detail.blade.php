@@ -6,9 +6,12 @@
 
 @foreach($jobs as $i)
 <section id="recent-blog-posts" class="recent-blog-posts">
+    <br>
     <div class="container" data-aos="fade-up">
+        <br>
         <div class="row">
             <div class="col-lg-8">
+                <br>
                 <a href="#"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
                     <h5 style="margin-top: 8px; font-weight: normal">Membuka Lowongan</h5>
 
@@ -18,7 +21,7 @@
             <div class="col-4 text-right" style="width: 100px;height: 100px;">
                     <a href="">
                     <img style="width: 25px;height: 25px;margin-bottom: 45%;margin-left: 45%" src="https://areakerja.com/img/link.png" class="position-absolute">
-                    <img class="gg5" src="/logo/{{$i->logo}}" style="margin: auto;margin-top: 3%;margin-left: 5% ">
+                    <img class="gg5" src="/logo/{{$i->logo}}" style="margin: auto;margin-top: 3%;margin-left: 5% " width="100px" height="100px">
                 </a>
             </div>
             <hr class="d-flex flex-row" style="width: 100%; margin-left: 0%; margin-top: 12px">

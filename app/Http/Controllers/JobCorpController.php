@@ -149,8 +149,8 @@ class JobCorpController extends Controller
             'description_job' => 'required',
             'position' => 'required',
             'last_education' => 'required',
-            'job_type' => 'required',
-            'job_category' => 'required',
+            'job_type_id' => 'required',
+            'job_cat_id' => 'required',
             'deadline' => 'required',
             'provinces' => 'required',
             'city' => 'required',
@@ -167,8 +167,8 @@ class JobCorpController extends Controller
                     'description_job.required' => 'Lengkapi Deskripsi Pekerjaan Perusahaan Anda',
                     'position.required' => 'Lengkapi Posisi Pekerjaan Perusahaan Anda',
                     'last_education.required' => 'Lengkapi Pendidikan Terakhir Minimal Pekerjaan Perusahaan Anda',
-                    'job_type.required' => 'Lengkapi Tipe Pekerjaan Perusahaan Anda',
-                    'job_category.required' => 'Lengkapi Kategori Pekerjaan Perusahaan Anda',
+                    'job_type_id.required' => 'Lengkapi Tipe Pekerjaan Perusahaan Anda',
+                    'job_cat_id.required' => 'Lengkapi Kategori Pekerjaan Perusahaan Anda',
                     'deadline.required' => 'Lengkapi Deadline Pekerjaan Yang Akan Dilamar Di Perusahaan Anda',
                     'provinces.required' => 'Lengkapi Provinsi Pekerjaan Perusahaan Anda',
                     'city.required' => 'Lengkapi Kota Pekerjaan Perusahaan Anda',
@@ -186,8 +186,8 @@ class JobCorpController extends Controller
         $karir->description_job = $request->description_job;
         $karir->position = $request->position;
         $karir->last_education = $request->last_education;
-        $karir->job_type = $request->job_type;
-        $karir->job_category = $request->job_category;
+        $karir->job_type_id = $request->job_type_id;
+        $karir->job_cat_id = $request->job_cat_id;
         $karir->deadline = $request->deadline;
         $karir->provinces = $request->provinces;
         $karir->city = $request->city;

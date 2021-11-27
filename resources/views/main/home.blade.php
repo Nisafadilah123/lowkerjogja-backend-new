@@ -37,7 +37,7 @@
         </header>
 
         {{-- menampilkan relasi antar tabel corps dan jobs --}}
-                 <div class="row">
+                <div class="row">
                 @foreach($lihatjobs as $l)
                     <div class="col-sm-4" style="padding-top:10px ">
                         <div class="post-box">

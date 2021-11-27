@@ -4,7 +4,7 @@
 
 @section('container')
 
-<div class="container" style="position: relative; top: 150px;height:900px">
+<div class="container" style="position: relative; top: 150px;height:1050px">
 {{-- @foreach($kandidat as $k) --}}
 {{-- {{ dd($kandidat) }} --}}
             <div class="row row-cols-1 row-cols-md-2 g-4">

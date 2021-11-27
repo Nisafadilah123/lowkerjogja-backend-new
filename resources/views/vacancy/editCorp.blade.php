@@ -12,40 +12,40 @@
 
                 <form method="post" action="/perusahaan/{{ ($c->id) }}" enctype="multipart/form-data">
                     @method('PUT')
-                       @csrf
+                    @csrf
 
 
-                       		<div class="form-group">
+                    <div class="form-group">
 								<div class="container px-4">
                                     {{-- <input type="text" value="{{ $c->id }}"> --}}
 									<div class="row gx-5">
-									  <div class="col-sm-6">
-										   <label for="corp" style="padding-bottom: 10px;"><strong>Nama Perusahaan</strong> </label>
-										   <input id="corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan Anda" value="{{$c->nama_corp}}">
+									<div class="col-sm-6">
+										<label for="corp" style="padding-bottom: 10px;"><strong>Nama Perusahaan</strong> </label>
+										<input id="corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan Anda" value="{{$c->nama_corp}}">
 										</div>
 
-									  {{-- <div class="col-sm-6">
+									{{-- <div class="col-sm-6">
                                             <label for="email" style="padding-bottom: 10px;"><strong>Email Perusahaan</strong> </label>
                                             <input id="email" type="email" class="form-control" name="email" placeholder="Bukalapak">                                          </div>
-									    </div> --}}
+									</div> --}}
                                     </div>
-								  </div>
+								</div>
 							</div>
 
 						<div class="form-group">
 							<div class="container px-4">
 								<div class="row gx-5">
-								  <div class="col-sm-6">
+								<div class="col-sm-6">
 
-									   <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Industri</strong> </label>
-									   <input type="text" id="industri" class="form-control" name="industri" placeholder="Silahkan isi industri perusahaan anda" value="{{$c->industri}}">
+									<label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Industri</strong> </label>
+									<input type="text" id="industri" class="form-control" name="industri" placeholder="Silahkan isi industri perusahaan anda" value="{{$c->industri}}">
 									</div>
 
-								  <div class="col-sm-6">
+								<div class="col-sm-6">
 									<label for="work_day" style="padding-bottom: 10px;padding-top: 10px;"><strong>Hari Kerja</strong></label>
 									<input type="text" class="form-control" id="work_day" name="work_day" placeholder="Silahkan isi data hari kerja perusahaan anda" value="{{$c->work_day}}">
 									</div>
-							  </div>
+							</div>
 							</div>
 						</div>
 
@@ -107,15 +107,15 @@
 		</div>
 	</div>
 </div>
-  @endsection
+@endsection
 
-  @push('script-addon')
+@push('script-addon')
 
 <script>
     $(function() {
-      $( "#datepicker" ).datepicker({
+    $( "#datepicker" ).datepicker({
         format: 'dd-mm-yyyy',
-      });
+    });
         changeMonth: true,
         changeYear: true
     });

@@ -160,41 +160,83 @@
                         <div class="col align-items-center">
                             <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Status Kandidat Pengguna</h6>
+                            <div class="card" style=" background-color: #F9FAFF;">
                             <table>
+                                
 
                                     <tbody>
                                         {{-- @foreach ($educations as $item) --}}
-
+                                        @foreach($status as $i => $s)
                                         <tr>
-                                            <td><p style="color: #A5B2C2;font-size:14px;"> Status
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Nama Perusahaan<td>
+                                            <td>{{ $s->nama_corp }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Posisi<td>
+                                            <td>{{ $s->position }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Tanggal Wawancara<td>
+                                            <td>{{ $s->wawancara }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Status<td>
+                                            <td>{{ $s->status }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><p style="color: #A5B2C2;font-size:14px;"> Aksi
                                                 {{-- if wawancara ada tombol terima dan tolak undangan buat wawancara  --}}
                                                 {{-- tgl wawancara --}}
                                                 {{-- kalau udah terima tombol terima hilang secara otomatis saat sudah di klik dan di db sudah berubah statusnya --}}
                                                 </p></td>
                                             <td>
-                                                <strong>
-                                                    <button type="submit" class="btn btn-success">
-                                                   Terima
-                                                </button>
-                                            </strong>
                                             </td>
-
+                                            <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/aturwawancara">
+                                            {{csrf_field()}}
+                                            
+                                            @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak"]))
+                                            @elseif ($s->wawancara)
+                                            else
                                             <td>
                                                 <strong>
-                                                    <button type="submit" class="btn btn-danger">
-                                                   Tolak
+                                                    <button id="btnTerima" type="submit" name="terima" class="btn btn-success" value="{{$s->id_candidate}}" >
+                                                Terima
+                                                </button>
+                                            </strong>
+                                                <strong>
+                                                    <button id="btnTolak" type="submit" name="tolak" class="btn btn-danger" value="{{$s->id_candidate}}">
+                                                Tolak
                                                 </button>
                                             </strong>
                                             </td>
+                                            @endif
+
+                                            <!-- <td>
+                                                <strong>
+                                                    <button id="btnTerima" type="submit" name="terima" class="btn btn-success" value="{{$s->id_candidate}}">
+                                                Terima
+                                                </button>
+                                            </strong>
+                                                <strong>
+                                                    <button id="btnTolak" type="submit" name="tolak" class="btn btn-danger" value="{{$s->id_candidate}}">
+                                                Tolak
+                                                </button>
+                                            </strong>
+                                            </td> -->
+                                            
+                                            </form>
                                         </tr>
 
                                         {{-- @endforeach --}}
-
+                                        @endforeach
+                                        <div style="padding-left:500px">
+                                            {{ $status->links() }}
+                                        </div>
                                     </tbody>
 
-
+                            
                             </table>
-
+                        </div>
                         </div>
 
                         </div>

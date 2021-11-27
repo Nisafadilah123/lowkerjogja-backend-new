@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-12">
                     <div class="block-options p-3">
-                        <a href="{{url('create/jobs')}}" class="btn btn-primary"><span class="fa fa-plus"></span>   Tambah Karir</a>
+                        <!-- <a href="{{url('create/jobs')}}" class="btn btn-primary"><span class="fa fa-plus"></span>   Tambah Karir</a> -->
                     </div>
                     <div class="card">
 
@@ -53,8 +53,8 @@
                                         <td style="vertical-align: middle;">{{$job->description_job}}</td>
                                         <td style="vertical-align: middle;">{{$job->position}}</td>
                                         <td style="vertical-align: middle;">{{$job->last_education}}</td>
-                                        <td style="vertical-align: middle;">{{$job->job_type}}</td>
-                                        <td style="vertical-align: middle;">{{$job->job_category}}</td>
+                                        <td style="vertical-align: middle;">{{$job->tipe_pekerjaan}}</td>
+                                        <td style="vertical-align: middle;">{{$job->kategori_pekerjaan}}</td>
                                         <td style="vertical-align: middle;">{{date('d-m-Y', strtotime($job->deadline))}}</td>
                                         <td style="vertical-align: middle;">{{$job->province_name}}</td>
                                         <td style="vertical-align: middle;">{{$job->city_name}}</td>
@@ -69,7 +69,7 @@
 
 
                                         <td style="width: 120px;text-align: center;vertical-align: middle; ">
-                                            <a href="/jobs/{{$job->id}}/edit" class="btn btn-sm btn-primary btn-circle"><i class="far fa-edit"></i></a>
+                                            <!-- <a href="/jobs/{{$job->id}}/edit" class="btn btn-sm btn-primary btn-circle"><i class="far fa-edit"></i></a> -->
                                             <form action="/jobs/{{$job->id}}" method="post" id="delete-jobs">
                                                 @method('DELETE')
                                                 @csrf

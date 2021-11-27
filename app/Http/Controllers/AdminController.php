@@ -49,9 +49,11 @@ class AdminController extends Controller
         $i++;
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+        ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
+        ->join('job_category', 'job_category.id', '=', 'jobs.job_cat_id')
         ->select('corp.id', 'corp.nama_corp', 'jobs.corp_id', 'jobs.description_job', 'jobs.position',
-        'jobs.last_education', 'job_type', 'job_category', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.starting_salary','jobs.final_salary', 'jobs.kuota', 'jobs.gender',
-         'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.created_at', 'jobs.updated_at')
+        'jobs.last_education', 'job_types.tipe_pekerjaan', 'job_category.kategori_pekerjaan', 'jobs.deadline', 'jobs.provinces', 'jobs.city', 'jobs.starting_salary','jobs.final_salary', 'jobs.kuota', 'jobs.gender',
+        'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.created_at', 'jobs.updated_at')
         ->get();
 
         // -- start --
@@ -64,7 +66,7 @@ class AdminController extends Controller
         // ambil data id provinsi, untuk memudahkan pencarian provinsi
         $listProvinceIds = array_column($listProvinces, 'province_id');
          // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
-         $listCityIds = array_column($listCity, 'city_id');
+        $listCityIds = array_column($listCity, 'city_id');
         // dd($listCityIds);
         // loop data jobs
         foreach ($jobs as $key => $job) {

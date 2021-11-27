@@ -102,6 +102,11 @@ class wawancaraController extends Controller
             }]);
         }])->where('id', $id)->get();
         // dd($kandidat);
+        DB::table('candidates')
+                ->where('id', $id)
+                ->update([
+                    'status' => 'Validasi Wawancara'
+                ]);
 
         return view('vacancy.wawancara', compact('kandidat'));
     }

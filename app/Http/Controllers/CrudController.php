@@ -202,7 +202,7 @@ class CrudController extends Controller
     {
         $c = DB::table('candidates')->where('id', $id)->delete();
         alert()->success('Berhasil', 'Kandidat berhasil dihapus');
-        return redirect('/kandidat');
+        return redirect('/candidat');
        // $c = DB::table('candidates')->where('id', $id);
        // dd($c);
     }

@@ -37,7 +37,7 @@ class UserController extends Controller
         // ambil data id provinsi, untuk memudahkan pencarian provinsi
         $listProvinceIds = array_column($listProvinces, 'province_id');
          // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
-         $listCityIds = array_column($listCity, 'city_id');
+        $listCityIds = array_column($listCity, 'city_id');
         // dd($listCityIds);
         // loop data jobs
         foreach ($lihatjobs as $key => $l) {
@@ -105,7 +105,7 @@ class UserController extends Controller
             ->join('corp', 'corp.id', '=', 'jobs.corp_id')
             ->join('users', 'users.id', '=', 'save_jobs.user_id')
             ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
-            ->select('users.id', 'corp.nama_corp', 'corp.logo', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+            ->select('users.id', 'corp.nama_corp', 'corp.logo', 'jobs.id as job_id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
             'jobs.city', 'jobs.provinces', 'jobs.starting_salary', 'jobs.final_salary', 'save_jobs.id', 'jobs.gender')
             ->where('save_jobs.user_id', $uid)
             ->paginate(6);
@@ -394,7 +394,7 @@ class UserController extends Controller
                 [
                     'user_id' => $uid,
                     'apply_jobs_id' => $idapply,
-                    'status' => 'belum diverfikasi ',
+                    'status' => 'Sedang Diproses',
                 ]
             );
 
@@ -432,53 +432,6 @@ class UserController extends Controller
                 ->orWhere('email', $myString)
                 ->orWhere('name', $namauser)
                 ->get();
-                // -- start --
-        // get seluruh list provinsi dari helper rajaongkir-nya
-        $listProvinces = rajaongkir_point( 'province', 'GET', [] );
-        // get seluruh list provinsi dari helper rajaongkir-nya
-        $listCity = rajaongkir_point( 'city', 'GET', [] );
-
-        // dd($listCity);
-        // ambil data id provinsi, untuk memudahkan pencarian provinsi
-        $listProvinceIds = array_column($listProvinces, 'province_id');
-         // ambil data id city, dari id provinsi untuk memudahkan pencarian provinsi
-         $listCityIds = array_column($listCity, 'city_id');
-        // dd($listCityIds);
-        // loop data jobs
-        foreach ($userid as $key => $i) {
-            // set default province-name
-            $provinceName = "( Provinsi tidak ditemukan )";
-            // set default province-name
-            $cityName = "( Kota tidak ditemukan )";
-            // ambil id provinsi dari data "job"
-            $jobProvinceId = $i->provinces;
-            // ambil id kota dari data provinsi "job"
-            $jobCityId = $i->city;
-            // dd($jobCityId);
-            // cari data nama provinsi berdasarkan id
-            $provinceIndex = array_search($jobProvinceId, $listProvinceIds);
-            // cari data nama kota berdasarkan id
-            $cityIndex = array_search($jobCityId, $listCityIds);
-            // dd($cityIndex);
-
-            if ($provinceIndex) {
-                $provinceName = $listProvinces[$provinceIndex]->province ?? $provinceName;
-                // dd($provinceName);
-            }
-
-            if ($cityIndex) {
-                $cityName = $listCity[$cityIndex]->city_name ?? $cityName;
-                // dd($cityName);
-            }
-
-            // update data jobs dengan menambahkan nama provinsi
-            $i->province_name = $provinceName;
-            $i->city_name = $cityName;
-
-            // dd($cityName);
-            // dd($job);
-        }
-        // -- end --
 
             DB::table('save_jobs')->insert(
                 [
@@ -504,6 +457,48 @@ class UserController extends Controller
         }
 
         public function statusUser(){
-            return view('user.status_user');
+            $myString = auth()->user()->email;
+            $namauser = auth()->user()->name;
+            $uid = auth()->user()->id;
+
+            $perAktif = DB::table('candidates')
+            ->select('status')
+            ->where('id', $uid)
+            ->where('status', 'diproses')
+            ->get();
+
+            $status = DB::table('candidates')
+            ->join('users', 'users.id', '=', 'candidates.user_id')
+            ->join('apply_jobs', 'apply_jobs.id', '=', 'candidates.apply_jobs_id')
+            ->join('jobs', 'jobs.id', '=', 'apply_jobs.job_id')
+            ->join('corp', 'corp.id', '=', 'jobs.corp_id')
+            ->select('users.id as id_user', 'candidates.id as id_candidate', 'candidates.user_id as candidates_user_id', 'candidates.status', 'candidates.wawancara', 'jobs.position', 'corp.nama_corp')
+            ->where('candidates.user_id', $uid)
+            ->paginate(2);
+
+            return view('user.status_user', ['status' => $status, 'perAktif' => $perAktif]);
         }
+
+        public function Setwawancara(Request $request)
+    {
+        $terima = $request->terima;
+        $tolak = $request->tolak;
+
+        if ($terima) {
+            $status = DB::table('candidates')
+                ->where('id', $terima)
+                ->update([
+                    'status' => 'Terima Wawancara'
+                ]);
+            
+        } else if ($tolak) {
+            $status = DB::table('candidates')
+                ->where('id', $tolak)
+                ->update([
+                    'status' => 'Wawancara Ditolak'
+                ]);
+        }
+        alert()->success('Berhasil', 'Status wawancara berhasil diubah');
+        return redirect('/status_user');
+    }
 }
