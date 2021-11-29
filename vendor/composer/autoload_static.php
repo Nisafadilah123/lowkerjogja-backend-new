@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29
+class ComposerStaticInit21dbabc7d4ceebc8742c4acc174c738d
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -26,8 +26,8 @@ class ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -204,8 +204,8 @@ class ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -1525,7 +1525,6 @@ class ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
-        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -6026,10 +6025,10 @@ class ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit097e4efa074b7b4b9e327f95d11edc29::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit21dbabc7d4ceebc8742c4acc174c738d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit21dbabc7d4ceebc8742c4acc174c738d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit21dbabc7d4ceebc8742c4acc174c738d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit21dbabc7d4ceebc8742c4acc174c738d::$classMap;
 
         }, null, ClassLoader::class);
     }
