@@ -162,7 +162,7 @@
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Status Kandidat Pengguna</h6>
                             <div class="card" style=" background-color: #F9FAFF;">
                             <table>
-                                
+
 
                                     <tbody>
                                         {{-- @foreach ($educations as $item) --}}
@@ -193,8 +193,8 @@
                                             </td>
                                             <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/aturwawancara">
                                             {{csrf_field()}}
-                                            
-                                            @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak"]))
+
+                                            @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak", 'diterima', 'ditolak']))
                                             @elseif ($s->wawancara)
                                             else
                                             <td>
@@ -223,7 +223,7 @@
                                                 </button>
                                             </strong>
                                             </td> -->
-                                            
+
                                             </form>
                                         </tr>
 
@@ -234,7 +234,7 @@
                                         </div>
                                     </tbody>
 
-                            
+
                             </table>
                         </div>
                         </div>

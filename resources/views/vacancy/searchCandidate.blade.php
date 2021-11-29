@@ -30,10 +30,10 @@
 <!-- end Pencarian -->
 <section id="recent-blog-posts" class="recent-blog-posts">
     <div class="container" data-aos="fade-up">
-        <div class="row">
+        <div class="row" style="padding-bottom: 50px">
             {{-- @foreach ($data as $item) --}}
             @foreach( $kandidat as $k )
-            <div class="col-lg-4">
+            <div class="col-lg-4" style="margin-top:30px">
                 <div class="post-box">
                     <div class="row align-items-start">
                         <div class="col">
