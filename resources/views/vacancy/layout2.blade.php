@@ -32,6 +32,9 @@
     <link href="{{ url('css/style1.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
+
+        {{-- FontAwesome --}}
+    <script src="https://kit.fontawesome.com/3288de5ebf.js" crossorigin="anonymous"></script>
     <style>
         .pricing .box .header-new {
 

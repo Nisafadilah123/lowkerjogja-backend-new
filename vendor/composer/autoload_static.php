@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit65942a86e612ff389bbbcaaff005e537
+class ComposerStaticInitb1625867e698e7ccc1ca5469e3b9ce9c
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -204,8 +204,8 @@ class ComposerStaticInit65942a86e612ff389bbbcaaff005e537
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -1525,7 +1525,6 @@ class ComposerStaticInit65942a86e612ff389bbbcaaff005e537
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
-        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -6026,10 +6025,10 @@ class ComposerStaticInit65942a86e612ff389bbbcaaff005e537
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit65942a86e612ff389bbbcaaff005e537::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit65942a86e612ff389bbbcaaff005e537::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit65942a86e612ff389bbbcaaff005e537::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit65942a86e612ff389bbbcaaff005e537::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb1625867e698e7ccc1ca5469e3b9ce9c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb1625867e698e7ccc1ca5469e3b9ce9c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb1625867e698e7ccc1ca5469e3b9ce9c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitb1625867e698e7ccc1ca5469e3b9ce9c::$classMap;
 
         }, null, ClassLoader::class);
     }

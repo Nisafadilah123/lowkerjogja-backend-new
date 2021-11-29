@@ -35,12 +35,12 @@
                       <div class="row gx-5">
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
-                          <input id="job_position" type="text" class="form-control" name="job_position" placeholder="Posisi">
+                          <input id="job_position" type="text" class="form-control posisi_kerja" name="job_position" placeholder="Posisi">
                           <input id="corp_id" type="text" class="form-control" name="corp_id" placeholder="" value="{{ ucfirst(Auth::user()->id) }}" hidden>
                         </div>
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Kuota</strong> </label>
-                          <input id="kuota" type="text" class="form-control" name="kuota" placeholder="Kuota">
+                          <input id="kuota" type="text" class="form-control kuota" name="kuota" placeholder="Kuota">
                         </div>
                       </div>
                   </div>
@@ -49,7 +49,7 @@
                     <div class="row gx-5">
                       <div class="col">
                         <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Pendidikan Terakhir</strong> </label>
-                        <select name="education" class="form-select form-select-sm" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+                        <select name="education" class="form-select form-select-sm pendidikan_terakhir" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
                            <option selected>-- Pilih Pendidikan Terakhir --</option>
                            <option value="SMA / SMK">SMA / SMK</option>
                            <option value="D3">D3</option>
@@ -61,7 +61,7 @@
                       <div class="col">
                          <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tipe Pekerjaan</strong> </label>
                          {{-- <input id="job_type_id" type="text" class="form-control" name="job_type_id" placeholder="" value="{{ $job_types->id }}">{{ $job_types->tipe_pekerjaan }}> --}}
-                         <select id="job_type" name="job_type" class="form-select form-select-sm job_type" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+                         <select id="job_type" name="job_type" class="form-select form-select-sm job_type tipe_pekerjaan" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
                            <option selected>-- Pilih Tipe Pekerjaan --</option>
                            @foreach ($job_types as $job_type)
                            <option value="{{ $job_type->id }}">{{ $job_type->tipe_pekerjaan }}</option>
@@ -75,11 +75,11 @@
                     <div class="row gx-4">
                       <div class="coldeadline">
                         <label for="date" style="padding-bottom: 10px;padding-top: 10px;"><strong>Batas Waktu Pengisian Data Pada Aplikasi</strong> </label>
-                        <input id="deadline" type="date" class="form-control" name="deadline" placeholder="Deadline" style="width: 400px;">
+                        <input id="deadline" type="date" class="form-control batas_waktu_pengisian_data_pada_aplikasi" name="deadline" placeholder="Deadline" style="width: 400px;">
                       </div>
                       <div class="col">
                         <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;"><strong>Kategori Pekerjaan</strong> </label>
-                        <select name="job_category" class="form-select form-select-sm job_category" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;width: 450px;">
+                        <select name="job_category" class="form-select form-select-sm job_category kategori_pekerjaan" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;width: 450px;">
                           <option selected>-- Pilih Kategori Pekerjaan --</option>
                        </select>
                       </div>
@@ -91,27 +91,27 @@
                       <div class="col">
                         <label for="salary"style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;"><strong>Kisaran Gaji</strong></label>
                           <div class="input-group mb-3">
-                            <input type="number" name="gaji_awal" class="form-control" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
-                            <input type="number" name="gaji_akhir" class="form-control" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
+                            <input type="number" name="gaji_awal" class="form-control gaji_awal" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
+                            <input type="number" name="gaji_akhir" class="form-control gaji_akhir" placeholder="Rp xxx.xxx.xxx" aria-label="salary" aria-describedby="basic-addon1" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;">
                           </div>
                         </div>
                         <div class="col">
                           <label for="location" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;"><strong>Lokasi Pekerjaan</strong> </label>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
                             <label name="provinces" for="provinces" style=""><strong>Provinsi</strong></label>
-                                  <select name="provinces" class="form-select form-select-sm prov-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                  <select name="provinces" class="form-select form-select-sm prov-data provinsi" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                       <option selected>-- Pilih Provinsi   --</option>
                                   </select>
                           </div>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
                             <label name="city" for="city"><strong>Kota</strong></label>
-                            <select name="city" class="form-select form-select-sm kota-data" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                            <select name="city" class="form-select form-select-sm kota-data kota" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                 <option selected>-- Pilih Kota --</option>
                               </select>
                             </div>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
                             <label for="location" style="padding-bottom: 10px;"><strong>Alamat</strong> </label>
-                            <input id="job_location" type="text" class="form-control" name="job_location" placeholder="Alamat Perusahaan">
+                            <input id="job_location" type="text" class="form-control alamat" name="job_location" placeholder="Alamat Perusahaan">
                           </div>
                         </div>
                         </div>
@@ -121,7 +121,7 @@
                         <div class="row gx-5">
                           <div class="col">
                             <label for="gender" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Jenis Kelamin</strong> </label>
-                            <select name="gender" class="form-select form-select-sm" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 250px;">
+                            <select name="gender" class="form-select form-select-sm jenis_kelamin" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 250px;">
                               <option selected>-- Pilih Jenis Kelamin --</option>
                               <option value="Pria">Pria</option>
                               <option value="Wanita">Wanita</option>
@@ -130,7 +130,7 @@
                           </div>
                           <div class="col">
                             <label for="age" style="padding-bottom: 10px;padding-top: 10px; position: relative; left:2px;bottom: 150px"><strong>Umur</strong> </label>
-                            <input id="age" type="text" class="form-control" name="age" placeholder="Umur" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 100px;">
+                            <input id="age" type="text" class="form-control umur" name="age" placeholder="Umur" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 100px;">
                           </div>
                         </div>
                       </div>
@@ -139,22 +139,22 @@
                         <div class="row gx-5">
                           <div class="col">
                             <label for="syarat" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;"><strong>Syarat Pekerjaan</strong> </label>
-                            <input id="syarat" type="text" class="form-control" name="syarat" placeholder="Masukkan Syarat Perusahaan" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 350px;">
+                            <input id="syarat" type="text" class="form-control syarat_pekerjaan" name="syarat" placeholder="Masukkan Syarat Perusahaan" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 145px;width: 350px;">
                           </div>
                           <div class="col">
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;">
                               <label for="email" style="padding-bottom: 10px;"><strong>Email</strong> </label>
-                              <input id="email" type="text" class="form-control" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;">
+                              <input id="email" type="text" class="form-control email" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;">
                             </div>
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
                               <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
-                              <input id="telepon" type="text" class="form-control" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
+                              <input id="telepon" type="text" class="form-control telepon" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
                             </div>
                           </div>
                         </div>
                       </div>
                 </div>
-                <input type="button" name="next" class="next action-button" value="Lanjut" />
+                <input type="button" name="next" class="next action-button btn-lanjut" value="Lanjut" />
                 <div style="position: relative;top:150px;">
                   <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
                       <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
@@ -163,8 +163,8 @@
               <!-- fieldsets -->
               <fieldset>
                 <div class="form-card">
-                    <div class="font-weight-bold head pb-1">Deskripsi</div> <textarea name="des" id="desc" cols="50" rows="5" placeholder="Deskripsi"></textarea>
-                </div> <input type="submit" name="next" class="next action-button" value="Lanjut" /> <input type="button" name="previous" class="previous action-button-previous" value="Sebelumnya" />
+                    <div class="font-weight-bold head pb-1">Deskripsi</div> <textarea class="deskripsi" name="des" id="desc" cols="50" rows="5" placeholder="Deskripsi"></textarea>
+                </div> <input type="submit" name="next" class="next action-button btn-lanjut2" value="Lanjut" /> <input type="button" name="previous" class="previous action-button-previous" value="Sebelumnya" />
               </fieldset>
               <!-- fieldsets -->
               <fieldset>
@@ -192,6 +192,62 @@
 
 
 <!-- End Form Unggahan Section -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+  // h1
+  $(".btn-lanjut").click(function(){
+    var posisi_kerja = $(".posisi_kerja").val();
+    var kota = $(".kota").val();
+    var pendidikan_terakhir = $(".pendidikan_terakhir").val();
+    var tipe_pekerjaan = $(".tipe_pekerjaan").val();
+    var batas_waktu_pengisian_data_pada_aplikasi = $(".batas_waktu_pengisian_data_pada_aplikasi").val();
+    var kategori_pekerjaan = $(".kategori_pekerjaan").val();
+    var gaji_awal = $(".gaji_awal").val();
+    var gaji_akhir = $(".gaji_akhir").val();
+    var provinsi = $(".provinsi").val();
+    var kota = $(".kota").val();
+    var alamat = $(".alamat").val();
+    var jenis_kelamin = $(".jenis_kelamin").val();
+    var umur = $(".umur").val();
+    var syarat_pekerjaan = $(".syarat_pekerjaan").val();
+    var email = $(".email").val();
+    var telepon = $(".telepon").val();
+
+    if( 
+      posisi_kerja != null &&
+      kota != null &&
+      pendidikan_terakhir != null &&
+      tipe_pekerjaan != null &&
+      batas_waktu_pengisian_data_pada_aplikasi != null &&
+      kategori_pekerjaan != null &&
+      gaji_awal != null &&
+      gaji_akhir != null &&
+      provinsi != null &&
+      kota != null &&
+      alamat != null &&
+      jenis_kelamin != null &&
+      umur != null &&
+      syarat_pekerjaan != null &&
+      email != null &&
+      telepon != null 
+      ) {
+      $("#account").attr("id", "check");
+    }
+    // alert(posisi_kerja);
+  });
+  
+  // h2
+  $(".btn-lanjut2").click(function(){
+    var deskripsi = $(".deskripsi").val();
+
+  if(deskripsi != null)
+  {
+    $("#personal").attr("id", "check");
+    $("#payment").attr("id", "check");
+  }
+  });
+
+</script>
 
 @endsection
 

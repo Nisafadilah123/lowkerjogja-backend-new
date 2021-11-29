@@ -170,6 +170,11 @@ p {
     content: "\f124"
 }
 
+#progressbar #check:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
 #progressbar #confirm:before {
     font-family: FontAwesome;
     content: "\f00c"
