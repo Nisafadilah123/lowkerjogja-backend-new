@@ -1,6 +1,6 @@
 @extends('vacancy.layout2')
 
-@section('title', 'Produk $ Layanan | Lowkerjogja.com')
+@section('title', 'Produk & Layanan | Lowkerjogja.com')
 
 @section('container')
 
