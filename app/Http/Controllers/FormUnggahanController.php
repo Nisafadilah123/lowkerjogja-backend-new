@@ -32,8 +32,6 @@ class FormUnggahanController extends Controller
             $jobVacancy->position = $request->job_position;
             $jobVacancy->kuota = $request->kuota;
             $jobVacancy->last_education = $request->education;
-            $jobVacancy->job_type = $request->job_type;
-            $jobVacancy->job_category = $request->job_category;
             $jobVacancy->deadline = $request->deadline;
             $jobVacancy->starting_salary = $request->gaji_awal;
             $jobVacancy->final_salary = $request->gaji_akhir;

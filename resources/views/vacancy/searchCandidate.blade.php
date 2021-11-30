@@ -8,7 +8,7 @@
 <div style="position: relative;top:150px;">
 
     <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
-        <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+        <i class="fas fa-long-arrow-alt-left"></i>  Kembali </a>
 </div>
 
 <section id="find" class="find">

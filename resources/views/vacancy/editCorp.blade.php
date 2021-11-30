@@ -24,10 +24,11 @@
 										<input id="corp" type="text" class="form-control" name="nama_corp" placeholder="Nama Perusahaan Anda" value="{{$c->nama_corp}}">
 										</div>
 
-									{{-- <div class="col-sm-6">
-                                            <label for="email" style="padding-bottom: 10px;"><strong>Email Perusahaan</strong> </label>
-                                            <input id="email" type="email" class="form-control" name="email" placeholder="Bukalapak">                                          </div>
-									</div> --}}
+                                        <div class="col-sm-6">
+
+                                            <label for="education" style="padding-bottom: 10px;"><strong>Industri</strong> </label>
+                                            <input type="text" id="industri" class="form-control" name="industri" placeholder="Silahkan isi industri perusahaan anda" value="{{$c->industri}}">
+                                            </div>
                                     </div>
 								</div>
 							</div>
@@ -35,13 +36,11 @@
 						<div class="form-group">
 							<div class="container px-4">
 								<div class="row gx-5">
-								<div class="col-sm-6">
-
-									<label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Industri</strong> </label>
-									<input type="text" id="industri" class="form-control" name="industri" placeholder="Silahkan isi industri perusahaan anda" value="{{$c->industri}}">
-									</div>
-
-								<div class="col-sm-6">
+                                    <div class="col-sm-6">
+                                        <label for="founded_year" style="padding-bottom: 10px;padding-top: 10px;"><strong>Tahun Berdiri Perusahaan</strong></label>
+                                        <input type="text" name="founded_year" class="form-control" value="{{$c->founded_year}}" placeholder="Silahkan Isi Data Tahun Berdiri Perusahaan Anda">
+                                    </div>
+                                    <div class="col-sm-6">
 									<label for="work_day" style="padding-bottom: 10px;padding-top: 10px;"><strong>Hari Kerja</strong></label>
 									<input type="text" class="form-control" id="work_day" name="work_day" placeholder="Silahkan isi data hari kerja perusahaan anda" value="{{$c->work_day}}">
 									</div>
@@ -54,26 +53,10 @@
                     <div class="form-group">
 					    <div class="container px-4">
                             <div class="row gx-5">
-                                <div class="col-sm-6">
-                                    <label for="founded_year"><strong>Tahun Berdiri Perusahaan</strong></label>
-                                    <input type="text" name="founded_year" class="form-control" value="{{$c->founded_year}}" placeholder="Silahkan Isi Data Tahun Berdiri Perusahaan Anda">
-                                </div>
+
                                 <div class="col-sm-6">
                                     <label for="location"><strong>Alamat Perusahaan</strong></label>
                                     <input type="text" class="form-control" id="location" name="location" placeholder="Silahkan isi alamat perusahaan anda" value="{{$c->location}}">
-                                </div>
-                            </div>
-
-				        </div>
-                    </div>
-
-                    <br>
-                    <div class="form-group">
-					    <div class="container px-4">
-                            <div class="row gx-5">
-                                <div class="col-sm-6">
-                                    <label for="description"><strong>Deskripsi Perusahaan</strong></label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="3" name="description" placeholder="Isi Deskripsi Perusahaan Anda">{{$c->description}}</textarea>
                                 </div>
 
                                 <div class="col-sm-6">
@@ -84,6 +67,21 @@
                                         <input name="logo" type="hidden" name="hidden_image" value="{{asset('logo/'. $c->logo)}}" class="form-control-file" id="hidden_image">
                                     </div>
                                 </div>
+                            </div>
+
+				        </div>
+                    </div>
+
+                    <br>
+                    <div class="form-group">
+					    <div class="container px-4">
+                            <div class="row gx-5">
+                                <div class="col-sm-12">
+                                    <label for="description"><strong>Deskripsi Perusahaan</strong></label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="3" name="description" placeholder="Isi Deskripsi Perusahaan Anda">{{$c->description}}</textarea>
+                                </div>
+
+
                             </div>
 
                         </div>

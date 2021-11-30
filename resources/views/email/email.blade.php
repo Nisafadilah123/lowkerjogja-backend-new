@@ -343,13 +343,12 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block">
-                                <span class="apple-link">Anak IT Inc</span>
-                                {{--<br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.--}}
+                                <span class="apple-link">LowkerJogja.com</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="content-block powered-by">
-                                Powered by <a href="http://medium.com/@kiddy.xyz">Anak IT</a>.
+                                Powered by Magangjogja.com.
                             </td>
                         </tr>
                     </table>

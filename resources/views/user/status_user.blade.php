@@ -158,7 +158,7 @@
 
                     <div class="row align-items-center">
                         <div class="col align-items-center">
-                            <img src="img/icons/mortarboard.png" alt="" width="35px" style="float: left;">
+                            <i class="fas fa-info-circle" style="float:left; position: relative;padding-top:10px"></i>
                             <h6 style="font-weight: bold; margin-left: 50px; margin-top: 8px;">Status Kandidat Pengguna</h6>
                             <div class="card" style=" background-color: #F9FAFF;">
                             <table>

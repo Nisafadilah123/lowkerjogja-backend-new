@@ -8,7 +8,7 @@
 <div style="position: relative;top:150px;">
 
     <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
-        <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+        <i class="fas fa-long-arrow-alt-left"></i>  Kembali </a>
 </div>
 <section>
     <div class="container-fluid" style="position: relative;right: 200px;top:80px">
@@ -144,7 +144,7 @@
                           <div class="col">
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;">
                               <label for="email" style="padding-bottom: 10px;"><strong>Email</strong> </label>
-                              <input id="email" type="text" class="form-control email" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;">
+                              <input id="email" type="text" class="form-control email" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;" value="{{ ucfirst(Auth::user()->email) }}">
                             </div>
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
                               <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
@@ -213,7 +213,7 @@
     var email = $(".email").val();
     var telepon = $(".telepon").val();
 
-    if( 
+    if(
       posisi_kerja != null &&
       kota != null &&
       pendidikan_terakhir != null &&
@@ -229,13 +229,13 @@
       umur != null &&
       syarat_pekerjaan != null &&
       email != null &&
-      telepon != null 
+      telepon != null
       ) {
       $("#account").attr("id", "check");
     }
     // alert(posisi_kerja);
   });
-  
+
   // h2
   $(".btn-lanjut2").click(function(){
     var deskripsi = $(".deskripsi").val();
