@@ -33,6 +33,11 @@ class VacancyController extends Controller
         return view('vacancy.service');
     }
 
+    public function servicecorp()
+    {
+        return view('vacancy.servicecorp');
+    }
+
     // halaman about
     public function about()
     {
