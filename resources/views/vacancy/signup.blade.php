@@ -1,6 +1,6 @@
 @extends('vacancy.layout')
 
-@section('title', 'Daftar | Lowkerjogja.com')
+@section('title', 'Daftar Perusahaan | Lowkerjogja.com')
 
 @section('container')
 
@@ -33,6 +33,8 @@
             <div class="class">
                 <p class="mb-3 text-center">DAFTAR</p>
             </div>
+            <div style="font-size: 10px; color:red;"> * Harap menggunakan email dengan eksistensi @company.com untuk mendaftar</div>
+            <br>
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />

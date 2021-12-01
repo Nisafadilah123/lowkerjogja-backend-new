@@ -68,7 +68,7 @@
 
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="#hero">Produk & Layanan</a></li>
+              <li><a class="nav-link scrollto active" href="/service">Produk & Layanan</a></li>
               <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
               <li style="padding-left: 500px;">
@@ -84,7 +84,7 @@
               <li class="dropdown" style="padding-right: 50px;"><a href="#"><i class="bi bi-caret-down-fill"></i></a>
                 <ul style="width: 250px;">
                     <li><a href="/owner"><i class="fas fa-user-tie"></i><span
-                        style="font-size: 13px; padding-right: 118px;">Profil Saya</span></a></li>
+                        style="font-size: 13px; padding-right: 118px;">Akun Saya</span></a></li>
                   <li><a href="/perusahaan"><i class="fas fa-building"></i><span
                         style="font-size: 13px; padding-left: 10px;">Profil Perusahaan</span></a></li>
                   {{-- <li><a href="#"><img src="assets/img/icons/password.png" width="20px" alt=""><i class="far fa-bookmark"></i> --}}

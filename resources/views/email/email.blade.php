@@ -291,7 +291,7 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <img src="img/logo-lowker.png" alt="">
+                                        <img src="{{ asset('img/logo-lowker.png') }}" alt="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -327,8 +327,6 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        {{--<p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>--}}
-                                        {{--<p>Good luck! Hope it works.</p>--}}
                                     </td>
                                 </tr>
                             </table>

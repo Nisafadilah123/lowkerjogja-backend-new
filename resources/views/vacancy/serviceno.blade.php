@@ -1,4 +1,4 @@
-@extends('vacancy.layout2')
+@extends('vacancy.layout')
 
 @section('title', 'Produk dan Layanan | Lowkerjogja.com')
 

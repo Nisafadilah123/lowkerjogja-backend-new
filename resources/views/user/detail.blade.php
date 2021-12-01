@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <br>
-                <a href="#"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
+                <a href="/detailCorp" style="text-decoration:none;"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
                     <h5 style="margin-top: 8px; font-weight: normal">Membuka Lowongan</h5>
 
                     <h1 class="ttl" style="margin-top: 8px">{{ $i->position }}</h1>
@@ -44,7 +44,7 @@
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->age }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->tipe_pekerjaan }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: Rp {{ number_format($i->starting_salary) }} - Rp {{ number_format($i->final_salary) }}</h4>
-                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->deadline }}</h4>
+                    <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ \Carbon\Carbon::parse($i->deadline)->isoFormat('dddd, D MMMM Y') }}</h4>
                     <h4 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->location }}<h4>
                 </ul>
             </div>
