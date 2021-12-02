@@ -26,28 +26,28 @@
                                                 {{-- foto user --}}
                                             <img src="{{asset('profile_photos/'.$kandidat->apply_jobs->user->profile_photo_path)}}" style="float:left;" width="80px" height="80px" />
                                             </div>
-                                            
-                                            
+
+
                                             <div class="col-sm-6">
                                                 {{-- foreach candidate --}}
                                             <h5 style="color: #006AFF;">{{ $kandidat->apply_jobs->user->name }}</h5>
                                             </div>
-                                        </div>                                        
-                                        <br>                                        
+                                        </div>
+                                        <br>
 
                                         <div class="row">
-                                            <div class="col-sm-2">                                            
+                                            <div class="col-sm-2">
                                             <br>
                                                 {{-- major --}}
                                                 <h6>Posisi</h6>
                                             </div>
                                             <div class="col-sm-6">
-                                                {{-- data major --}}                                                
+                                                {{-- data major --}}
                                                 <br>
-                                                <h6>: {{ $kandidat->apply_jobs->jobs->position }}</h6>                        
+                                                <h6>: {{ $kandidat->apply_jobs->jobs->position }}</h6>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 {{-- major --}}
@@ -55,10 +55,10 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 {{-- data major --}}
-                                                <h6>: {{ $kandidat->apply_jobs->user->address}}</h6>                        
+                                                <h6>: {{ $kandidat->apply_jobs->user->address}}</h6>
                                             </div>
                                         </div>
-                                      
+
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 {{-- major --}}
@@ -66,12 +66,12 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 {{-- data major --}}
-                                                <h6>: {{ $kandidat->apply_jobs->user->city_name}}</h6>                        
+                                                <h6>: {{ $kandidat->apply_jobs->user->city_name}}</h6>
                                             </div>
                                         </div>
 
-                                        
-                                        
+
+
                                 </div>
 
                                     <div class="row align-items-start">
@@ -83,9 +83,9 @@
                                         <input type="hidden" class="form-control" name="idapplyjob" id="idapplyjob" value="{{ $kandidat->apply_jobs_id }}">
                                         <!-- <h6>id_candidate<h6> -->
                                         <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $kandidat->id }}">
-                                        
+
                                     <div class="row">
-                                        
+
                                          <div class="col-sm-2" style="padding-top: 15px; position:relative">
                                             <button type="submit" href="/atur" style="position:relative;left:350px" name="terima" class="btn btn-primary" value="{{$kandidat->id}}">Rekrut</button>
                                         </div>
@@ -93,13 +93,13 @@
                                             <button type="submit" href="/atur" style="position:relative;left:350px" name="tolak" class="btn btn-danger" value="{{$kandidat->id}}">Tolak</button>
                                         </div>
                                     </div>
-                                    
+
                                     </form>
 
                                     <div class="row align-items-start">
                                         <div class="col-sm-6" style="padding-top: 15px;">
                                             <a href="{{ url('kandidat/'. $kandidat->id.'/edit') }}" name="wawancara" class="btn btn-success" value="">Kirim Email</a>
-                                        </div>                                       
+                                        </div>
 
                                     </div>
 
@@ -123,7 +123,7 @@
                     {{-- deskripsi candidate --}}
 
                     <div class="row">
-                        
+
                         <div class="row">
                         @foreach ( $kandidat->apply_jobs->user->education as $e )
                         <div class="col-sm-6">
@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-sm-6">
                             {{-- data major --}}
-                            <h6>{{ $e -> graduate }}</h6>                        
+                            <h6>{{ \Carbon\Carbon::parse($e -> graduate)->isoFormat('D MMMM Y')}}</h6>
                         </div>
                         @endforeach
                     </div>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="col-sm-6">
                             {{-- data major --}}
-                            <h6>{{ $e -> name }}</h6>                        
+                            <h6>{{ $e -> name }}</h6>
                         </div>
                         @endforeach
                     </div>

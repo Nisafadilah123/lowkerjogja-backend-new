@@ -27,11 +27,17 @@ class VacancyController extends Controller
         return view('vacancy.landingPage');
     }
 
-    //halaman product & service
+    //halaman product & service yang sudah login
     public function service()
     {
         return view('vacancy.service');
     }
+    //halaman product & service yang belum login
+    public function serviceno()
+    {
+        return view('vacancy.serviceno');
+    }
+
 
     public function servicecorp()
     {
@@ -78,14 +84,14 @@ class VacancyController extends Controller
         return view('vacancy.formUnggahan',compact(array('job_types', 'myString')));
     }
 
-    // 
+    //
     public function getJobCategory(Request $request)
     {
         $job_category = DB::table('job_category')->where('tipe_pekerjaan_id', $request->job_type_selected)->get();
         return response()->json($job_category);
-        
+
     }
-    
+
      // halaman search candidate
     public function searchCandidate(Request $request)
     {

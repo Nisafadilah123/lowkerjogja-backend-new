@@ -51,11 +51,17 @@
 
 
                                 {{-- foto user --}}
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img src="{{asset('profile_photos/'.$k->apply_jobs->user->profile_photo_path)}}" style="float:left;" class="rounded-image" width="20px" height="20px" />
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h6>{{ $k->apply_jobs->user->name}}</h6>
+                                        <h6 style="left:150px">{{ $k->apply_jobs->jobs->position }}</h6>
 
-                                <img src="{{asset('profile_photos/'.$k->apply_jobs->user->profile_photo_path)}}" style="float:left;" class="rounded-image" width="20px" height="20px" />
+                                    </div>
+                                </div>
                                 {{-- foreach candidate --}}
-                                <h6>{{ $k->apply_jobs->user->name}}</h6>
-                                <h6>{{ $k->apply_jobs->jobs->position }}</h6>
                             </div>
                     </div>
 

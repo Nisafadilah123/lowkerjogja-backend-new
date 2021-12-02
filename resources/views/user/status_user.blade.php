@@ -196,7 +196,6 @@
 
                                             @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak", 'diterima', 'ditolak']))
                                             @elseif ($s->wawancara)
-                                            else
                                             <td>
                                                 <strong>
                                                     <button id="btnTerima" type="submit" name="terima" class="btn btn-success" value="{{$s->id_candidate}}" >
