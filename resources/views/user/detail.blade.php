@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <br>
-                <a href="/detailCorp" style="text-decoration:none;"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
+                <a href="/detailCorp{{ $i->id }}" style="text-decoration:none;"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
                     <h5 style="margin-top: 8px; font-weight: normal">Membuka Lowongan</h5>
 
                     <h1 class="ttl" style="margin-top: 8px">{{ $i->position }}</h1>

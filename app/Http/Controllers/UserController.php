@@ -490,7 +490,7 @@ class UserController extends Controller
                 ->update([
                     'status' => 'Terima Wawancara'
                 ]);
-            
+
         } else if ($tolak) {
             $status = DB::table('candidates')
                 ->where('id', $tolak)
@@ -500,5 +500,9 @@ class UserController extends Controller
         }
         alert()->success('Berhasil', 'Status wawancara berhasil diubah');
         return redirect('/status_user');
+    }
+
+    public function detailCorp($id){
+        return view('user.detailCorp');
     }
 }
