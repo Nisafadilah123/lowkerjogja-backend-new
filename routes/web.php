@@ -101,6 +101,7 @@ Route::get('/password', [UserController::class, 'password']);
 Route::get('/editPassword/{$id}', [UserController::class, 'edit']);
 Route::get('/lamar{id}', [UserController::class, 'lamar_view']);
 Route::get('/detail{id}', [UserController::class, 'detail_view']);
+Route::get('/detailCorp{id}', [UserController::class, 'detailCorp']);
 Route::post('/kirimcv', [UserController::class, 'insertcv']);
 Route::post('/simpanjob', [UserController::class, 'simpanjob']);
 Route::post('/deletejob', [UserController::class, 'deletejob']);

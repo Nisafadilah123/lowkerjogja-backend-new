@@ -1,6 +1,6 @@
 @extends('main.layout')
 
-@section('title', 'Login Page | Lowkerjogja.com')
+@section('title', 'Masuk | Lowkerjogja.com')
 
 @section('container')
 
@@ -36,7 +36,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <p class="mb-4 text-center">Login</p>
+            <p class="mb-4 text-center">Masuk</p>
 
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />

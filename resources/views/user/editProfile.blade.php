@@ -28,9 +28,8 @@
                         <div class="col">
                             <div>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
-                                <h6 style="font-weight: bold;padding-right:100px; float:right">{{ ucfirst(Auth::user()->name)  }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
-                            </div>
+                                <h6 style="font-weight: bold;position:relative; left:120px;bottom:70px;">{{ ucfirst(Auth::user()->name)  }}</h6>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>                            </div>
                         </div>
 
                         <div class="row align-items-center mt-4">
@@ -206,7 +205,7 @@
                         </div>
 
 
-                        <div class="row align-items-center">
+                        <div class="row align-items-center" style="padding-top: 20px;">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
                                 <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
