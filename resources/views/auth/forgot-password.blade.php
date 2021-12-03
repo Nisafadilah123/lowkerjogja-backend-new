@@ -29,7 +29,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Tautan Email Ulang Kata Sandi') }}
                 </x-jet-button>
             </div>
         </form>
