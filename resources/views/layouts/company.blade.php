@@ -88,15 +88,14 @@
 
 
 
-        <div class="footer-top">
+        <div class="footer-top" style="padding-left: 250px">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
                         <a href="index.html" class="logo d-flex align-items-center">
                             <img src="img/logo-lowker.png" alt="">
-
                         </a>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <p>Lowkerjogja.com adalah website yang dibuat sebagai penyedia informasi bagi para pencari karir khususnya di daerah Yogyakarta. </p>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -148,7 +147,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>2021</span></strong>. Team Slytherin
+                &copy; Copyright <strong><span>2021</span></strong>. Team LOWKERJOGJA
             </div>
             <div class="credits">
                 Designed by Arabi Rizki

@@ -136,15 +136,14 @@
 
 
 
-        <div class="footer-top">
+        <div class="footer-top" style="padding-left: 200px">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
                         <a href="index.html" class="logo d-flex align-items-center">
                             <img src="img/logo-lowker.png" alt="">
-
                         </a>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <p>Lowkerjogja merupakan salah satu perusahaan penyedia informasi lowongan pekerjaan terkemuka di Yogyakarta. Kami berperan sebagai fasilitator pencocokan dan komunikasi lapangan kerja antara pencari kerja dan perusahaan di Yogyakarta. </p>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -170,13 +169,10 @@
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Hubungi Kami</h4>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            Karangjambe, Gg. Arjuna No.59, Jaranan, Banguntapan, Kec. Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198<br>
+                            <strong>Phone:</strong> (0274) 4534571 (Seven INC)<br>
                             <strong>Email:</strong> info@example.com<br>
                         </p>
-
                     </div>
 
                 </div>
@@ -185,7 +181,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>2021</span></strong>. Team Slytherin
+                &copy; Copyright <strong><span>2021</span></strong>. Team LOWKERJOGJA
             </div>
             <div class="credits">
                 Designed by Arabi Rizki
