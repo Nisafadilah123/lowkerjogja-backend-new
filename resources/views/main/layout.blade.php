@@ -108,7 +108,7 @@
 
 
 
-        <div class="footer-top">
+        <div class="footer-top" style="padding-left: 250px">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
@@ -116,7 +116,7 @@
                             <img src="img/logo-lowker.png" alt="">
 
                         </a>
-                        <p>Lowkerjogja merupakan salah satu perusahaan penyedia informasi lowongan pekerjaan terkemuka di Yogyakarta. Kami berperan sebagai fasilitator pencocokan dan komunikasi lapangan kerja antara pencari kerja dan perusahaan, di Yogyakarta..</p>
+                        <p>Lowkerjogja merupakan salah satu perusahaan penyedia informasi lowongan pekerjaan terkemuka di Yogyakarta. Kami berperan sebagai fasilitator pencocokan dan komunikasi lapangan kerja antara pencari kerja dan perusahaan di Yogyakarta.</p>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -143,7 +143,6 @@
                         <p>
                             Karangjambe, Gg. Arjuna No.59, Jaranan, Banguntapan, Kec. Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198
                             <strong>Phone:</strong> (0274) 4534571 (Seven INC) <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
                             <strong>Email:</strong> info@example.com<br>
                         </p>
 
