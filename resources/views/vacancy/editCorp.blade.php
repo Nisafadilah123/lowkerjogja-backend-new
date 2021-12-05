@@ -92,7 +92,7 @@
                         <div class="container px-4">
                             <div class="row gx-5">
                                 <div class="col-sm-6">
-                                    <a href="/user" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
+                                    <a href="/perusahaan" style="margin-left: 10px ;" class="btn btn-outline-primary"><span>Batalkan</span></a>
                                     <button type="submit" style="margin-left: 10px;" class="btn btn-primary"><span style="padding: 5px;">Simpan</span>
                                 </div>
                             </div>

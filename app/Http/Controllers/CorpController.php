@@ -125,7 +125,7 @@ class CorpController extends Controller
         // dd($perusahaan);
 
                 Alert::success('Berhasil', 'Datamu telah terubah');
-                return redirect('/karir');
+                return redirect('/perusahaan');
     }
 
     /**

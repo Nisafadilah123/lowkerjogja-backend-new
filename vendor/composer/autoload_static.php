@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
+class ComposerStaticInit7349130fd8e1c3666f16700e44e60399
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -34,8 +34,8 @@ class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
-        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '442fcdf8ce6f449ab16dbf81234df998' => __DIR__ . '/../..' . '/app/Http/Helper/Helper.php',
@@ -1520,6 +1520,7 @@ class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -4212,6 +4213,8 @@ class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
         'PhpParser\\Builder\\ClassConst' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/ClassConst.php',
         'PhpParser\\Builder\\Class_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Class_.php',
         'PhpParser\\Builder\\Declaration' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Declaration.php',
+        'PhpParser\\Builder\\EnumCase' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/EnumCase.php',
+        'PhpParser\\Builder\\Enum_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Enum_.php',
         'PhpParser\\Builder\\FunctionLike' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/FunctionLike.php',
         'PhpParser\\Builder\\Function_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Function_.php',
         'PhpParser\\Builder\\Interface_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Interface_.php',
@@ -6021,10 +6024,10 @@ class ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit25ab8ee89fb3153269fa4cb60fd67903::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7349130fd8e1c3666f16700e44e60399::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7349130fd8e1c3666f16700e44e60399::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7349130fd8e1c3666f16700e44e60399::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7349130fd8e1c3666f16700e44e60399::$classMap;
 
         }, null, ClassLoader::class);
     }

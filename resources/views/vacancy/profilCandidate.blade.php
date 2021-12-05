@@ -115,7 +115,7 @@
             <div class="col-sm-4" style="width: 500px; padding-top: 20px;">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title" style="font-weight:bold">Bio</h5>
+                    <h5 class="card-title" style="font-weight:bold">Deskripsi Anda</h5>
                     {{-- deskripsi candidate --}}
                     <p class="card-text">{{ $kandidat->apply_jobs->status }}</p>
                     <hr>
@@ -143,7 +143,7 @@
                         @foreach ( $kandidat->apply_jobs->user->education as $e )
                         <div class="col-sm-6">
                             {{-- major --}}
-                            <h6>Universitas</h6>
+                            <h6>Institusi/Universitas</h6>
                         </div>
                         <div class="col-sm-6">
                             {{-- data major --}}

@@ -9,7 +9,7 @@
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-8">
-                <a href="#"><h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
+                <h2 class="cmp" style="font-weight: normal">{{ $i->nama_corp}}</h2></a>
                     <h5 style="margin-top: 8px; font-weight: normal">Membuka Lowongan</h5>
 
                     <h6 class="ttl" style="margin-top: 8px">{{ $i->position }}</h6>
@@ -34,6 +34,8 @@
                     <li><h6 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-money"></span><span style="display:inline-block; width: 15px;"></span>Besaran Gaji</h6></li>
                     <li><h6 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-calendar"></span><span style="display:inline-block; width: 15px;"></span>Batas Lamaran</h6></li>
                     <li><h6 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-map-marker"></span><span style="display:inline-block; width: 15px;"></span>Lokasi Kerja</h6></li>
+                    <li><h6 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fas fa-briefcase"></span><span style="display:inline-block; width: 15px;"></span>Hari Kerja</h6></li>
+
                 </ul>
                 <ul class="col-6 ">
                     <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->last_education }}</h6>
@@ -41,8 +43,10 @@
                     <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->age }}</h6>
                     <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->tipe_pekerjaan }}</h6>
                     <h6 class="gg" style="margin-top: 10px; font-weight: normal">: Rp {{ number_format($i->starting_salary) }} - Rp {{ number_format($i->final_salary) }}</h5>
-                    <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->deadline }}</h5>
+                    <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{\Carbon\Carbon::parse( $i->deadline)->isoFormat('dddd, D MMMM Y') }}</h5>
                     <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->location }}<h4>
+                    <h6 class="gg" style="margin-top: 10px; font-weight: normal">: {{ $i->work_day }}<h4>
+
                 </ul>
             </div>
             <hr class="d-flex flex-row" style="width: 100%; margin-left: 0%;">
@@ -84,7 +88,7 @@
 
             <div class="row">
                 <div class="col">
-                        <a href="/findjobs" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                        <a href="/" style="margin-left: 350px ;" class="btn-get-started-new scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                             <span>Kembali</span>
                         </a>
                         <a href="/login" style="margin-left: 10px;" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">

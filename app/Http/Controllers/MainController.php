@@ -19,7 +19,7 @@ class MainController extends Controller
         $hasil = rajaongkir_point("city",["province=$request->prov_id"]);
         return response()->json($hasil);
     }
-    //
+
     public function home(Request $request)
     {
         $lihatjobs = DB::table('jobs')
@@ -154,15 +154,26 @@ class MainController extends Controller
 
     public function detailmain($id)
     {
+
+        $corps = Corp::all();
+
         $jobs = DB::table('jobs')
         ->join('corp', 'corp.id', '=', 'jobs.corp_id')
         ->join('job_types', 'job_types.id', '=', 'jobs.job_type_id')
-        ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'jobs.description_job', 'jobs.id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
+        ->select('corp.nama_corp', 'corp.description', 'corp.logo', 'corp.work_day','jobs.description_job', 'jobs.id', 'job_types.tipe_pekerjaan',  'jobs.created_at', 'jobs.last_education', 'jobs.position',
         'jobs.city', 'jobs.provinces','jobs.starting_salary', 'jobs.final_salary', 'jobs.gender', 'jobs.age', 'jobs.location', 'jobs.syarat', 'jobs.email', 'jobs.telp', 'jobs.deadline')
         ->where('jobs.id', $id)
         ->get();
-        return view('main.detailmain', ['jobs' => $jobs]);
+        return view('main.detailmain', compact('jobs', 'corps'));
     }
+
+    // public function detailCorpmain($id){
+    //     $corps = Corp::all();
+
+    //     // dd($corps);
+    //     return view('main.detailCorpMain', ['corps' => $corps]);
+
+    // }
 
     public function carimain(Request $request)
         {

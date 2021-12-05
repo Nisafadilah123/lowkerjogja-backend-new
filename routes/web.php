@@ -88,6 +88,7 @@ Route::get('/findjobs', [MainController::class, 'findjobs']);
 Route::get('/succes', [MainController::class, 'succes']);
 Route::get('/detailmain{id}', [MainController::class, 'detailmain']);
 Route::get('/carimain', [MainController::class, 'carimain']);
+Route::get('/detailCorpmain{id}', [MainController::class, 'detailCorpmain']);
 
 
 

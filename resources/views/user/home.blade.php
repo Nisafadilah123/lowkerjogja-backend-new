@@ -47,7 +47,7 @@
             <div class="col-sm-4" style="padding-top:10px ">
                 <div class="post-box">
                     <div class="row align-items-start">
-                        <div class="col">
+                        <div class="col-sm-12">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $l->tipe_pekerjaan }}</p>
                         </div>
                         <div class="col">
@@ -58,7 +58,6 @@
                         <div class="col-sm-6"></div>
                         <div class="col-sm-6">
                             <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-right: 10px;" class="bi bi-clock"></i>{{ \Carbon\Carbon::parse($l->created_at)->diffForHumans() }}</div>
-
                         </div>
                     </div>
                     <div class="row align-items-start">
@@ -70,15 +69,14 @@
                                 <button class="btn" style="float: right;">
                                     <i class="bi bi-plus-square-fill"></i>
                                 </button>
-                                <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px"/>
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
-                            </div>
-                            </form>
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
+                                <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="100px" height="80px" />
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="row align-items-start">
+                                    <div class="col" style="padding-top: 15px;">
+                                        <a href="/detail{{ $l->id }}" style="text-decoration: none">{{ $l->nama_corp }}</a>
+                                <h6 style="font-weight: bold;">{{ $l->position }}</h6>
                                 <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->gender}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>

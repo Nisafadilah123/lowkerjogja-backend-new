@@ -43,7 +43,7 @@
             <div class="col-sm-4">
                 <div class="post-box">
                     <div class="row align-items-start">
-                        <div class="col">
+                        <div class="col-sm-12">
                             <p style="background-color: #F9FAFF; text-align: center; border-radius: 13%; box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);">{{ $l->tipe_pekerjaan }}</p>
                         </div>
                         <div class="col">
@@ -66,15 +66,15 @@
                                 <button class="btn" style="float: right;">
                                     <i class="bi bi-plus-square-fill"></i>
                                 </button>
-                                <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="60px" height="60px" />
-                                <br>
-                                <h6 style="color:#4154f1; font-weight: bold;">{{$l->nama_corp}}</h6>
+                                <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="100px" height="80px" />
+
                             </div>
                             </form>
                         </div>
                         <div class="row align-items-start">
                             <div class="col" style="padding-top: 15px;">
-                                <h1 style="font-weight: bold; font-size: 27px;">{{ $l->position }}</h1>
+                                <a href="/detailmain{{ $l->id }}">{{ $l->nama_corp }}</a>
+                                <h6 style="font-weight: bold;">{{ $l->position }}</h6>
                                 <h6 style="color: #000000;">{{$l->last_education}}</h6>
                                 <h6 style="color: #BEBFC0;">{{$l->city_name}}, {{$l->province_name}}</h6>
                                 <h6 style="color: #28A59F; padding-top: 5px;">Rp {{ number_format($l->starting_salary) }} - Rp {{ number_format($l->final_salary) }}</h6>

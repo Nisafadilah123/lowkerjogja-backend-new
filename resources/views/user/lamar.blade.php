@@ -13,18 +13,16 @@
                 <div class="post-box">
                     <div class="row align-items-start">
                         <div class="col">
-                        </div>
-                        <div class="col">
-                            <div style="color: #BEBFC0; font-size: 12px;"><i style="padding-left: 400px;" class="bi bi-clock"></i>{{ $i->created_at}}</div>
+                            <div style="color: #BEBFC0; font-size: 12px;float:right"><i style="padding-right: 10px;" class="bi bi-clock"></i>{{ \Carbon\Carbon::parse($i->created_at)->diffForHumans() }}</div>
                         </div>
                     </div>
                     <div class="row align-items-start">
                         <div class="col">
                             <div>
-                                <img src="logo/{{$i->logo}}" width="150px" height="150px" alt="400" style="float:left; margin:0 10px 10px 0;" />
+                                <img src="logo/{{$i->logo}}" width="200px" height="150px" alt="400" style="float:left; margin:0 10px 10px 0;" />
                                 <br>
-                                <h1><b>{{ $i->position }}<b></h1>
-                                <h5>{{ $i->nama_corp }}</h5>
+                                <h6><b>{{ $i->position }}<b></h1>
+                                <h6>{{ $i->nama_corp }}</h6>
                                 <h6 style="color:#808080;">{{ $i->city_name }}, {{ $i->province_name }}</h6>
                                 <h6 style="color:#4154f1;">Rp {{ number_format($i->starting_salary) }} - Rp {{ number_format($i->final_salary) }}</h6>
                             </div>
@@ -38,11 +36,6 @@
             <div class="col-lg-12">
                 <div class="post-box">
                     <div class="row align-items-start">
-                        <div class="col">
-                        </div>
-                        <div class="col">
-                            <h1></h1>
-                    </div>
                     <!-- Foreac disini -->
                     <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/kirimcv">
                     {{csrf_field()}}

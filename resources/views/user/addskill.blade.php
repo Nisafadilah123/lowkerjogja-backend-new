@@ -1,47 +1,31 @@
 @extends('user.layout')
 
-@section('title', 'Tambah Keahlian | Lowkerjogja.com')
+@section('title', 'Edit Keahlian | Lowkerjogja.com')
 
 @section('container')
+
+<!-- ======= Recent Blog Posts Section ======= -->
 <style>
-  #formFile {
-    width: 300px;
-  }
+    .image{
+                border-radius: 50%;
+                -webkit-border-radius: 200px;
+                -moz-border-radius: 200px;
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+            }
+            .col-6{
+                grid-column: 1 / 2;
+            }
 
-  .about h6 {
-    font-weight: bold;
-    color: black;
-  }
-
-  .about h6:hover {
-    /* background-color: #fff; */
-    color: #4154f1;
-
-  }
-
-  .about:active {
-    color: #4154f1;
-  }
-
-  .col{
-            padding-top: 20px;
-        }
-
-.image{
-            border-radius: 50%;
-            -webkit-border-radius: 200px;
-            -moz-border-radius: 200px;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-        }
-</style>
-<!-- ======= Edit Skill Section ======= -->
+    </style>
 <section id="recent-blog-posts" class="recent-blog-posts" style="padding-top: 150px;">
 
-    <div class="container" data-aos="fade-up" style="width: 100%">
+    <div class="container" data-aos="fade-up">
+
+
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-lg-4">
                 <div class="post-box" style="background-color: #F9FAFF;">
 
                     <div class="row align-items-start">
@@ -150,22 +134,25 @@
                         </div>
                         </div>
                 </div>
-        </div>
-      </div>
-
-
-
-      <div class="col-lg-8">
-
-        <div class="post-box" style="height: 400px; background-color: #F9FAFF;">
-
-          <div class="row align-items-center">
-            <div class="col align-items-center">
-              <h6 style="font-weight: bold; margin-top: 8px;">
-                <img src="/img/icons/bar-chart.png" width="30px" alt=""> Keahlian
-
-
+                </div>
             </div>
+
+            <div class="col-lg-8">
+
+                <div class="card">
+                    <h5 class="card-header">
+                        <div class="container px-1">
+                            <div class="row">
+                                <div class="col align-items-center">
+                                    <h6 style="font-weight: bold; margin-top: 8px;">
+                                        <img src="/img/icons/bar-chart.png" width="30px" alt=""> Keahlian
+                                </div>
+                            </div>
+                        </div>
+                    </h5>
+                    <div class="card-body">
+
+
             <form action="{{ url('skill/') }}" method="post">
                 @csrf
                  <div class="row align-items-start" style="padding-top: 20px;">
@@ -190,9 +177,9 @@
               <div class="col-lg-6 align-items-center">
                 <input class="form-control" name="ahli" type="text" placeholder="Lengkapi Keterampilan Anda" aria-label="default input example" value="{{ old('skill') }}">
               </div>
-
             </div>
 
+            <br>
             <div class="row">
 
                 <div class="col">
@@ -207,17 +194,27 @@
 
 
 
-          </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
     </div>
-  </div>
 
-  </div>
-
-  </div>
-
-</section>
-<!-- End Recent Blog Posts Section -->
+</section><!-- End Recent Blog Posts Section -->
 @endsection
+
+
+@push('script-addon')
+
+<script>
+    $(function() {
+      $( "#datepicker" ).datepicker({
+        format: 'dd-mm-yyyy',
+      });
+        changeMonth: true,
+        changeYear: true
+    });
+    </script>
+@endpush
