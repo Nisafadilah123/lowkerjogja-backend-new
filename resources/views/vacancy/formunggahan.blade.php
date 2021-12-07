@@ -148,7 +148,7 @@
                             </div>
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
                               <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
-                              <input id="telepon" type="text" class="form-control telepon" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
+                              <input id="telepon" type="number" class="form-control telepon" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
                             </div>
                           </div>
                         </div>
