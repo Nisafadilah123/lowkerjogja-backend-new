@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('templates/dist/modules/ionicons/css/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{ asset('templates/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('templates/dist/css/demo.css')}}">
     <link rel="stylesheet" href="{{ asset('templates/dist/css/style.css')}}">
 
     {{-- <link rel="stylesheet" href="{{ asset('templates/dist/modules/bootstrap/css/bootstrap.css') }}"> --}}
@@ -93,7 +92,7 @@
                         <li class="{{ Request::is('jobs') ? 'active' : '' }}">
                             <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Karir</span></a>
                         </li>
-                        <li class="{{ Request::is('kandidat') ? 'active' : '' }}">
+                        <li class="{{ Request::is('candidat') ? 'active' : '' }}">
                             <a href="{{ url('/candidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li class="{{ Request::is('users') ? 'active' : '' }}">
@@ -115,7 +114,6 @@
 
             <script src="{{ asset('templates/dist/js/scripts.js')}}"></script>
             <script src="{{ asset('templates/dist/js/custom.js')}}"></script>
-            <script src="{{ asset('templates/dist/js/demo.js')}}"></script>
 
             {{-- js datatables --}}
             <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
