@@ -73,7 +73,7 @@
             </div>
             <div class="row no-gutters">
                 <ul class="col-4" style="overflow: unset; white-space: nowrap;">
-                    <li id="telepon1"><h5 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block;" class="fa fa-phone"></span><span style="display:inline-block; width: 15px;"></span>Nomor Telepon</h4></li>
+                    <li id="telepon1"><h6 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block;" class="fa fa-phone"></span><span style="display:inline-block; width: 15px;"></span>Nomor Telepon</h6></li>
                     <li style="display: none" id="telepon2"><h4 class="gg" style="margin-top: 10px; font-weight: normal"><span style="display:inline-block; width: 15px;" class="fa fa-phone"></span><span style="display:inline-block; width: 15px;"></span>Telepon</h4></li>
                 </ul>
                 <ul class="col-auto" style="overflow: unset; white-space: nowrap;">
