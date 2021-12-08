@@ -64,7 +64,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/passwordCorp" class="about">
+                            <a href="{{ url('owner/'.Auth::user()->id.'/editPasswordCorp') }}">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -105,45 +105,20 @@
                         <div class="row">
                             <label for="nama">Nama Lengkap</label>
                             <div class="col-12">
-                                <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda">
+                                <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda" required>
                             </div>
                         </div>
                           </div>
                     </div>
 
                         <br>
-                        <!-- provinsi dan kota -->
-                        {{-- <div class="row">
-                            <div class="col-6">
-                                <label name="provinsi" for="provinsi">Provinsi</label>
-                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
-                                    <option selected>-- Pilih Provinsi --</option>
-                                </select>
-                            </div>
-
-                            <div class="col-6">
-                                <label name="kota" for="kota">Kota</label>
-                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
-                                <option selected>-- Pilih Kota --</option>
-                            </select>
-                            </div>
-                        </div>
-                        <br>
-
-                        <!-- email -->
-                        <div class="row">
-                            <label for="nama">Alamat</label>
-                            <div class="col">
-                                <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda">
-                            </div>
-                        </div> --}}
-
+                      
 
                         <!-- email -->
                         <div class="row" style="padding-top: 20px;">
                             <label for="nama">Email</label>
                             <div class="col">
-                                <input name="email" type="text" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda">
+                                <input name="email" type="email" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda" required>
                             </div>
                         </div>
 
@@ -152,16 +127,17 @@
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
                                 <div class="col">
-                                     <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
+                                     <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path" required>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
                                 <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">
                                 </div>
 
                             </div>
-
+                            
                             <div class="row">
-
                                 <div class="col">
+                                <br>
+
                                     <a href="/owner" style="margin-left: 350px ;" class="btn btn-outline-primary">
                                         <span>Batalkan</span>
                                     </a>

@@ -50,6 +50,8 @@ class CreateNewUser implements CreatesNewUsers
 
                 if($user->utype === "CPY"){
                     $this->createCorp($user);
+                    Alert::success('Selamat', 'Register Berhasil');
+
                 }
             });
         });

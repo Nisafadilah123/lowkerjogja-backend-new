@@ -84,9 +84,11 @@
                                         <!-- <h6>id_candidate<h6> -->
                                         <input type="hidden" class="form-control" name="idcandidate" id="idcandidate" value="{{ $kandidat->id }}">
 
-                                    <div class="row">
+                                        @if ($kandidat->status != "Diterima" )
+                                        <div class="row">
 
                                          <div class="col-sm-2" style="padding-top: 15px; position:relative">
+
                                             <button type="submit" href="/atur" style="position:relative;left:350px" name="terima" class="btn btn-primary" value="{{$kandidat->id}}">Rekrut</button>
                                         </div>
                                         <div class="col-sm-2" style="padding-top: 15px;">
@@ -94,14 +96,17 @@
                                         </div>
                                     </div>
 
-                                    </form>
+                                    @endif
 
+                                    </form>
+                                    @if ($kandidat->status != "Terima Wawancara" )
                                     <div class="row align-items-start">
                                         <div class="col-sm-6" style="padding-top: 15px;">
                                             <a href="{{ url('kandidat/'. $kandidat->id.'/edit') }}" name="wawancara" class="btn btn-success" value="">Kirim Email</a>
                                         </div>
 
                                     </div>
+                                    @endif
 
                                     </div><br>
 

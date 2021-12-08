@@ -232,13 +232,13 @@ class VacancyController extends Controller
             $status = DB::table('candidates')
                 ->where('id', $terima)
                 ->update([
-                    'status' => 'diterima'
+                    'status' => 'Diterima'
                 ]);
         } else if ($tolak) {
             $status = DB::table('candidates')
                 ->where('id', $tolak)
                 ->update([
-                    'status' => 'ditolak'
+                    'status' => 'Ditolak'
                 ]);
         }
         alert()->success('Berhasil', 'Status Verfikasi berhasil diubah');

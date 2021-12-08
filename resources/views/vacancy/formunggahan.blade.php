@@ -35,13 +35,19 @@
                       <div class="row gx-5">
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Posisi Kerja</strong> </label>
+<<<<<<< HEAD
                           {{-- <input id="job_position" type="text" class="form-control posisi_kerja" name="job_position" placeholder="Posisi"> --}}
+=======
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                           <input id="job_position" type="text" class="form-control posisi_kerja border-info placeicon" name="job_position" placeholder="Posisi">
                           <input id="corp_id" type="text" class="form-control" name="corp_id" placeholder="" value="{{ ucfirst(Auth::user()->id) }}" hidden>
                         </div>
                         <div class="col">
                           <label for="job" style="padding-bottom: 10px;"><strong>Kuota</strong> </label>
+<<<<<<< HEAD
                           {{-- <input id="kuota" type="text" class="form-control kuota" name="kuota" placeholder="Kuota"> --}}
+=======
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                           <input id="kuota" type="text" class="form-control kuota border-info placeicon" name="kuota" placeholder="Kuota">
                         </div>
                       </div>
@@ -52,7 +58,11 @@
                       <div class="col">
                         <label for="education" style="padding-bottom: 10px;padding-top: 10px;"><strong>Pendidikan Terakhir</strong> </label>
                         <select name="education" class="form-select form-select-sm pendidikan_terakhir border-info placeicon" aria-label=".form-select-sm example" style="position: relative; width: 435px;">
+<<<<<<< HEAD
                            <option selected>-- Pilih Pendidikan Terakhir --</option>
+=======
+                            <option selected>-- Pilih Pendidikan Terakhir --</option>
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                            <option value="SMA / SMK">SMA / SMK</option>
                            <option value="D3">D3</option>
                            <option value="D4 / S1">D4 / S1</option>
@@ -82,7 +92,11 @@
                       <div class="col">
                         <label for="education" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;"><strong>Kategori Pekerjaan</strong> </label>
                         <select name="job_category" class="form-select form-select-sm job_category kategori_pekerjaan  border-info placeicon" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 500px;bottom: 110px;width: 450px;">
+<<<<<<< HEAD
                           <option selected>-- Pilih Kategori Pekerjaan --</option>
+=======
+                            <option selected>-- Pilih Kategori Pekerjaan --</option>
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                        </select>
                       </div>
                      </div>
@@ -101,8 +115,13 @@
                           <label for="location" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 110px;"><strong>Lokasi Pekerjaan</strong> </label>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
                             <label name="provinces" for="provinces" style=""><strong>Provinsi</strong></label>
+<<<<<<< HEAD
                                   <select name="provinces" class="form-select form-select-sm prov-data provinsi  border-info placeicon" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
                                       <option selected>-- Pilih Provinsi   --</option>
+=======
+                            <select name="provinces" class="form-select form-select-sm prov-data provinsi  border-info placeicon" aria-label=".form-select-sm example" style="position: relative; width: 250px;height:25px">
+                                <option selected>-- Pilih Provinsi   --</option>
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                                   </select>
                           </div>
                           <div class="form-group" style="padding-bottom: 5px;padding-top: 5px; position: relative; left: 2px;bottom: 110px;">
@@ -123,8 +142,12 @@
                         <div class="row gx-5">
                           <div class="col">
                             <label for="gender" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 220px;"><strong>Jenis Kelamin</strong> </label>
+<<<<<<< HEAD
                             <select name="gender" class="form-select form-select-sm jenis_kelamin  border-info placeicon" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 225px;width: 250px;">
                               <option selected>-- Pilih Jenis Kelamin --</option>
+=======
+                            <select name="gender" class="form-select form-select-sm jenis_kelamin  border-info placeicon" aria-label=".form-select-sm example" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 5px;bottom: 225px;width: 250px;">                              <option selected>-- Pilih Jenis Kelamin --</option>
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                               <option value="Pria">Pria</option>
                               <option value="Wanita">Wanita</option>
                               <option value="Pria/Wanita">Pria/Wanita</option>
@@ -146,11 +169,19 @@
                           <div class="col">
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 150px;">
                               <label for="email" style="padding-bottom: 10px;"><strong>Email</strong> </label>
+<<<<<<< HEAD
                               <input id="email" type="text" class="form-control email  border-info placeicon" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;" value="{{ ucfirst(Auth::user()->email) }}">
                             </div>
                             <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
                               <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
                               <input id="telepon" type="text" class="form-control telepon  border-info placeicon" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
+=======
+                              <input id="email" type="email" class="form-control email  border-info placeicon" name="email" placeholder="Email" style="padding-bottom: 10px;padding-top: 10px;" value="{{ ucfirst(Auth::user()->email) }}">
+                            </div>
+                            <div class="form-group" style="padding-bottom: 10px;padding-top: 10px; position: relative; left: 2px;bottom: 170px;">
+                              <label for="telepon" style="padding-bottom: 10px;"><strong>Telepon</strong> </label>
+                              <input id="telepon" type="number" class="form-control telepon  border-info placeicon" name="telepon" placeholder="Masukkan No. Telp Perusahaan" style="padding-bottom: 10px;padding-top: 10px;">
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                             </div>
                           </div>
                         </div>
@@ -159,13 +190,17 @@
                 <input type="button" name="next" class="next action-button btn-lanjut" value="Lanjut">
                 <div style="position: relative;top:150px;">
                   <a href="/landingPageCorp" class="btn btn-secondary" style="position: relative; left:20px">
-                      <i class="fas fa-long-arrow-alt-left"></i>  Back </a>
+                      <i class="fas fa-long-arrow-alt-left"></i>  Kembali </a>
               </div>
               </fieldset>
               <!-- fieldsets -->
               <fieldset>
                 <div class="form-card">
+<<<<<<< HEAD
                     <div class="font-weight-bold head pb-1 ">Deskripsi</div> <textarea class="deskripsi border-info placeicon" name="des" id="desc" cols="50" rows="5" placeholder="Deskripsi"></textarea>
+=======
+                    <div class="font-weight-bold head pb-1">Deskripsi Pekerjaan</div> <textarea class="deskripsi" name="des" id="desc" cols="50" rows="5" placeholder="Deskripsi"></textarea>
+>>>>>>> 6fc39d814c7f636006a59204bb035758551c3e00
                 </div> <input type="submit" name="next" class="next action-button btn-lanjut2" value="Lanjut" /> <input type="button" name="previous" class="previous action-button-previous" value="Sebelumnya" />
               </fieldset>
               <!-- fieldsets -->
@@ -175,14 +210,14 @@
                   <div class="row justify-content-center">
                     <div class="col-5"> <img src="img/check.jpg" class="fit-image"> </div>
                   </div> <br><br>
-                  <div class="row justify-content-center">
+                  {{-- <div class="row justify-content-center">
                     <div class="col-10 text-center">
                       <h5 class="purple-text text-center">Postingan Pekerjaan</h5>
                       <a href="index.html" class="btn btn-primary" style="width: 350px;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Lihat Postingan Pekerjaan
                         </a>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </fieldset>
             </form>

@@ -47,7 +47,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -67,7 +67,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -86,7 +86,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -105,7 +105,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}"class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -125,7 +125,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>
@@ -169,17 +169,17 @@
 
                               <div class="form-group">
                                 <label for="institut" class="form-label">Institusi / Universitas</label>
-                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" value="{{old('name')}}">
+                              <input type="text" name="name" class="form-control" id="univ" placeholder="Lengkapi Data Asal Institusi / Universitas Anda" required>
                             </div>
 
                             <div class="form-group" >
                               <label for="graduate" class="form-label">Tanggal Wisuda</label>
-                              <input type="date" name="graduate" class="form-control" id="datepicker" value="{{old('graduate')}}">
+                              <input type="date" name="graduate" class="form-control" id="datepicker" required>
                             </div>
 
                             <div class="form-group" class="form-label">
                                 <label for="jenjang">Jenjang</label>
-                                <select class="form-select" name="level">
+                                <select class="form-select" name="level" required>
                                     <option selected value="{{old('level')}}">-- Pilih Jenjang --</option>
                                     <option value="S3">S3</option>
                                     <option value="S2">S2</option>
@@ -192,17 +192,17 @@
 
                             <div class="form-group">
                                 <label for="jurusan" class="form-label">Jurusan</label>
-                                <input type="text" name="major" class="form-control" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" value="{{old('level')}}">
+                                <input type="text" name="major" class="form-control" id="jurusan" placeholder="Lengkapi Data Jurusan Anda" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="nilai" class="form-label">Nilai Akhir</label>
                                 <div class="row">
                                     <div class="col-6">
-                                        <input type="text" name="gpa" class="form-control" id="gpa" placeholder="Lengkapi Data Nilai Akhir Anda" value="{{old('gpa')}}">
+                                        <input type="text" name="gpa" class="form-control" id="gpa" placeholder="Lengkapi Data Nilai Akhir Anda" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" name="gpa_limit" class="form-control" id="gpa_limit" placeholder="Lengkapi Batas Data Nilai Akhir Anda" value="{{old('gpa_limit')}}">
+                                        <input type="text" name="gpa_limit" class="form-control" id="gpa_limit" placeholder="Lengkapi Batas Data Nilai Akhir Anda" required>
                                     </div>
                                 </div>
 
