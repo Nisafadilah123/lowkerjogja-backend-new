@@ -44,7 +44,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -64,7 +64,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -83,7 +83,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -102,7 +102,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}" class="about"style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -122,7 +122,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>
@@ -151,7 +151,6 @@
                         </div>
                     </h5>
                     <div class="card-body">
-                        {{-- @foreach ($users as $item) --}}
 
                         <form method="post" action="/user/{{ (Auth::user()->id) }}" enctype="multipart/form-data">
                             @method('PUT')
@@ -161,8 +160,9 @@
                             <!-- nama -->
                         <div class="row">
                             <label for="nama">Nama Lengkap</label>
+                            <p style="font"></p>
                             <div class="col-12">
-                                <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda">
+                                <input name="name" type="text" class="form-control" value="{{ ucfirst(Auth::user()->name) }}" placeholder="Silahkan Isi Data Nama Anda" required>
                             </div>
                         </div>
                           </div>
@@ -173,14 +173,14 @@
                         <div class="row">
                             <div class="col-6">
                                 <label name="provinsi" for="provinsi">Provinsi</label>
-                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example">
+                                <select name="provinsi" class="form-select form-select-sm prov-data" aria-label="Default select example" required>
                                     <option selected>-- Pilih Provinsi --</option>
                                 </select>
                             </div>
 
                             <div class="col-6">
                                 <label name="kota" for="kota">Kota</label>
-                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example">
+                            <select name="kota" class="form-select form-select-sm kota-data" aria-label="form-select-sm example" required>
                                 <option selected>-- Pilih Kota --</option>
                             </select>
                             </div>
@@ -191,7 +191,7 @@
                         <div class="row">
                             <label for="nama">Alamat</label>
                             <div class="col">
-                                <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda">
+                                <input name="address" type="text" class="form-control" value="{{ (Auth::user()->address) }}" placeholder="Silahkan Isi Data Alamat Anda" required>
                             </div>
                         </div>
 
@@ -200,7 +200,7 @@
                         <div class="row" style="padding-top: 20px;">
                             <label for="nama">Email</label>
                             <div class="col">
-                                <input name="email" type="text" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda">
+                                <input name="email" type="email" class="form-control" value="{{ (Auth::user()->email) }}" placeholder="Silahkan Isi Data Email Anda" required>
                             </div>
                         </div>
 
@@ -208,6 +208,7 @@
                         <div class="row align-items-center" style="padding-top: 20px;">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
+                                <p style="font-size: 11px; color:red">* Harap memasukkan foto</p>
                                 <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
                                 <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">

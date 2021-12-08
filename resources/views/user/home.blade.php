@@ -66,8 +66,10 @@
                                 {{csrf_field()}}
                                 <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $l->id }}">
                             <div>
-                                <button class="btn" style="float: right;">
-                                    <i class="bi bi-plus-square-fill"></i>
+                            <br>
+                            
+                                <button class="btn btn-outline-primary" style="float: right;">
+                                        <i class="bi bi-plus-square-fill"> Simpan karir</i>
                                 </button>
                                 <img src="logo/{{$l->logo}}" style="float:left; margin:0 8px 4px 0;" width="100px" height="80px" />
                                     </div>
@@ -84,7 +86,7 @@
                                 <!-- Button lamar -->
                                 <a class="btn btn-primary" href="/lamar{{ $l->id }}" role="button">Lamar</a>
                                 <!-- Button detail -->
-                                <a class="btn btn-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
+                                <a class="btn btn-outline-primary" href="/detail{{ $l->id }}" role="button">Detail</a>
                             </div>
                         </div>
                     </div>

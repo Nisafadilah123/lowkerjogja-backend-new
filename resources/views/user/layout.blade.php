@@ -101,14 +101,14 @@
                         <li><a class="nav-link scrollto" href="/homeUser">Beranda</a></li>
                         <li><a class="nav-link scrollto" href="/findjobsUser">Temukan karir</a></li>
                         <li><a class="nav-link scrollto" href="/aboutUser">Tentang Kami</a></li>
-                        
-                        <li class="dropdown"><a href="#"><span>Hi..{{ ucfirst( Auth::user()->name) }}</span> <i class="bi bi-chevron-down"></i></a>
+
+                        <li class="dropdown"><a href="#" class="about" style="text-decoration: none"><span>Hi..{{ ucfirst( Auth::user()->name) }}</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li class="align-items-center"><a href="/user "><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
-                                <li class="align-items-center"><a href="/jobsUser"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
-                                <li class="align-items-center"><form method="POST" action="{{ route('logout') }}">
+                                <li class="align-items-center"><a href="/user " class="about" style="text-decoration: none"><i class="bi bi-person-circle" style="font-size: 20px;"></i>Lihat Profil</a></li>
+                                <li class="align-items-center"><a href="/jobsUser" class="about" style="text-decoration: none"><i class="bi bi-grid" style="font-size: 20px;"></i>Simpan Karir</a></li>
+                                <li class="align-items-center"><form method="POST" action="{{ route('logout') }}" class="about" style="text-decoration: none">
                                     @csrf
-    
+
                                     <x-jet-dropdown-link href="{{ route('logout') }}"
                                              onclick="event.preventDefault();
                                                     this.closest('form').submit();">
@@ -119,11 +119,11 @@
                             </ul>
                         </li>
                         <li style="position:relative; left:30px"><img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="rounded-image"></li>
-                        
+
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </div>
-                
+
             </nav><!-- .navbar -->
 
         </div>

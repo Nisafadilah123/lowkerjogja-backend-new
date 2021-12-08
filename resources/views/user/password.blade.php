@@ -28,7 +28,8 @@
                             <div>
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="image">
                                 <h6 style="font-weight: bold;position:relative; left:120px;bottom:70px;">{{ ucfirst(Auth::user()->name)  }}</h6>
-                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>                            </div>
+                                <h6 style="color:#A5B2C2; font-size: 15px; float:right;position:relative; bottom:70px;padding-right:100px;">Lihat Profil</h6>
+                            </div>
                         </div>
 
                         <div class="row align-items-center mt-4">
@@ -43,7 +44,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -63,7 +64,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -82,7 +83,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -101,7 +102,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -121,7 +122,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>

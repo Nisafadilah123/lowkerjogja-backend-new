@@ -48,7 +48,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -68,7 +68,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -87,7 +87,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -106,7 +106,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}"class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -126,7 +126,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>
@@ -167,7 +167,7 @@
             <div class="row align-items-center" style="padding-top: 20px;">
               <div class="col-lg-5 align-items-center">
 
-                <select class="form-select" aria-label="Default select example" name="level">
+                <select class="form-select" aria-label="Default select example" name="level" required>
                   <option selected>-- Pilih Level --</option>
                   <option value="Pemula">Pemula</option>
                   <option value="Menengah">Menengah</option>
@@ -175,7 +175,7 @@
                 </select>
               </div>
               <div class="col-lg-6 align-items-center">
-                <input class="form-control" name="ahli" type="text" placeholder="Lengkapi Keterampilan Anda" aria-label="default input example" value="{{ old('skill') }}">
+                <input class="form-control" name="ahli" type="text" placeholder="Lengkapi Keterampilan Anda" required>
               </div>
             </div>
 

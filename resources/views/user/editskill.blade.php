@@ -48,7 +48,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -68,7 +68,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -87,7 +87,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -106,7 +106,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -126,7 +126,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>
@@ -168,9 +168,9 @@
                           <div class="col-lg-4 align-items-center">
 
 
-                            <select class="form-select" aria-label="Default select example" name="level">
+                            <select class="form-select" aria-label="Default select example" name="level" required>
                                 @if ($skill->level==null)
-                                    <option selected value="" >-- Pilih Level -- </option>
+                                    <option selected>-- Pilih Level -- </option>
                                     <option value="Pemula" @if ($skill->level == 'Pemula')@endif>Pemula</option>
                                     <option value="Menengah" @if ($skill->level == 'Menengah')@endif>Menengah</option>
                                     <option value="Master" @if ($skill->level == 'Master')@endif>Master</option>
@@ -183,7 +183,7 @@
                             </select>
                           </div>
                           <div class="col-lg-6 align-items-center">
-                            <input class="form-control" name="ahli" id="ahli" type="text" placeholder="Default input" aria-label="default input example" value="{{ old('ahli', $skill->ahli) }}">
+                            <input class="form-control" name="ahli" id="ahli" type="text" placeholder="Masukkan Keahlian Anda" value="{{ old('ahli', $skill->ahli) }}" required>
                           </div>
 
 

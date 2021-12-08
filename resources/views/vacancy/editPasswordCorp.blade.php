@@ -44,7 +44,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/owner" class="about">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -64,7 +64,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/passwordCorp" class="about">
+                            <a href="{{ url('owner/'.Auth::user()->id.'/editPasswordCorp') }}">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>

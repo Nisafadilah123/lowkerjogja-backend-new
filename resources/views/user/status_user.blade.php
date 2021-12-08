@@ -58,7 +58,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/user" class="about">
+                                <a href="/user" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Profil Saya</h6>
                                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/education" class="about">
+                                <a href="/education" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Pendidikan</h6>
                                     </div>
@@ -97,7 +97,7 @@
                             </div>
                             <br><br>
                             <div class="col-sm-6">
-                                <a href="/skill" class="about">
+                                <a href="/skill" class="about" style="text-decoration: none">
                                     <div class="card-body" style="width: 300px;">
                                         <h6 style="font-weight: bold;" style="text-decoration:none">Keahlian</h6>
                                     </div>
@@ -116,7 +116,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/password" class="about">
+                            <a href="{{ url('user/'.Auth::user()->id.'/editPassword') }}" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 200px;">
                                     <h6 style="font-weight: bold;">Kata Sandi</h6>
                                 </div>
@@ -136,7 +136,7 @@
                             </div>
                         <br><br>
                         <div class="col-sm-6">
-                            <a href="/status_user" class="about">
+                            <a href="/status_user" class="about" style="text-decoration: none">
                                 <div class="card-body" style="width: 300px;">
                                     <h6 style="font-weight: bold;">Status</h6>
                                 </div>
@@ -183,17 +183,17 @@
                                             <td>{{ $s->status }}</td>
                                         </tr>
                                         <tr>
-                                            <td><p style="color: #A5B2C2;font-size:14px;"> Aksi
+                                            {{-- <td><p style="color: #A5B2C2;font-size:14px;"> Aksi --}}
                                                 {{-- if wawancara ada tombol terima dan tolak undangan buat wawancara  --}}
                                                 {{-- tgl wawancara --}}
                                                 {{-- kalau udah terima tombol terima hilang secara otomatis saat sudah di klik dan di db sudah berubah statusnya --}}
-                                                </p></td>
+                                                {{-- </p></td> --}}
                                             <td>
                                             </td>
                                             <form method="post" enctype="multipart/form-data" action="{{ URL::to('/') }}/aturwawancara">
                                             {{csrf_field()}}
 
-                                            @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak", 'diterima', 'ditolak']))
+                                            @if (in_array($s->status,["Terima Wawancara", "Wawancara Ditolak", 'Diterima', 'Ditolak']))
                                             @elseif ($s->wawancara)
                                             <td>
                                                 <strong>

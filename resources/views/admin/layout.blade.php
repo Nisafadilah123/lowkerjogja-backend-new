@@ -93,7 +93,7 @@
                         <li class="{{ Request::is('jobs') ? 'active' : '' }}">
                             <a href="{{ url('/jobs') }}"><i class="fa fa-briefcase"></i><span>Karir</span></a>
                         </li>
-                        <li class="{{ Request::is('kandidat') ? 'active' : '' }}">
+                        <li class="{{ Request::is('candidat') ? 'active' : '' }}">
                             <a href="{{ url('/candidat') }}"><i class="fa fa-users"></i><span>Kandidat</span></a>
                         </li>
                         <li class="{{ Request::is('users') ? 'active' : '' }}">

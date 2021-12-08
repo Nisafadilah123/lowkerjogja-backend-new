@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="foundedyear"><strong>Tahun Berdiri</strong></label>
-                                    <input type="text" name="founded_year" id="foundedyear" class="form-control" placeholder="Tahun Berdiri" required>
+                                    <input type="number" name="founded_year" id="foundedyear" class="form-control" placeholder="Tahun Berdiri" required>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-sm btn-primary btn-circle " style="float:left"><span class="fas fa-plus"> </span>  Tambah Perusahaan</button>

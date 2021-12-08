@@ -94,13 +94,14 @@ class ProfillUserController extends Controller
                     'address' => 'required',
                     'provinsi' => 'required',
                     'kota' => 'required',
+                    'profile_photo_path' => 'required|image'
                     ], [
                             'name.required' => 'Lengkapi Nama Anda',
                             'email.required' => 'Lengkapi Email Anda',
                             'address.required' => 'Lengkapi Alamat Anda',
                             'provinsi.required' => 'Lengkapi Provinsi Anda',
                             'kota.required' => 'Lengkapi Kota Anda',
-
+                            'profile_photo_path.required' => 'Harap diisi file image'
                 ]);
                 // $input = array(
                 //     'name' => $request->name,
@@ -175,7 +176,7 @@ return redirect('/user');
 
         alert()->success('Berhasil', 'Password berhasil diubah');
 
-        return view('vacancy.passwordCorp');
+        return view('user.password');
 
     }
 

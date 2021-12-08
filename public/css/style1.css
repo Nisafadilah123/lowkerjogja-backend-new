@@ -1,14 +1,14 @@
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 html {
-    height: 100%
+    height: 100%;
 }
 
 p {
-    color: grey
+    color: grey;
 }
 
 #heading {
@@ -20,7 +20,7 @@ p {
 #msform {
     text-align: center;
     position: relative;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 #msform fieldset {
@@ -31,15 +31,15 @@ p {
     width: 100%;
     margin: 0;
     padding-bottom: 20px;
-    position: relative
+    position: relative;
 }
 
 .form-card {
-    text-align: left
+    text-align: left;
 }
 
 #msform fieldset:not(:first-of-type) {
-    display: none
+    display: none;
 }
 
 #msform input,
@@ -52,10 +52,10 @@ p {
     width: 100%;
     box-sizing: border-box;
     font-family: montserrat;
-    color: #2C3E50;
-    background-color: #ECEFF1;
+    color: #000000;
+    background-color: #ffffff;
     font-size: 16px;
-    letter-spacing: 1px
+    letter-spacing: 1px;
 }
 
 #msform input:focus,
@@ -63,9 +63,8 @@ p {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #006AFF;
-    ;
-    outline-width: 0
+    border: 1px solid #006aff;
+    outline-width: 0;
 }
 
 #msform .action-button {
@@ -78,12 +77,12 @@ p {
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 0px 10px 5px;
-    float: right
+    float: right;
 }
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    background-color: #006AFF
+    background-color: #006aff;
 }
 
 #msform .action-button-previous {
@@ -96,31 +95,31 @@ p {
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px 10px 0px;
-    float: right
+    float: right;
 }
 
 #msform .action-button-previous:hover,
 #msform .action-button-previous:focus {
-    background-color: #000000
+    background-color: #000000;
 }
 
 .card {
     z-index: 0;
     border: none;
-    position: relative
+    position: relative;
 }
 
 .fs-title {
     font-size: 25px;
-    color: #006AFF;
+    color: #006aff;
     margin-bottom: 15px;
     font-weight: normal;
-    text-align: left
+    text-align: left;
 }
 
 .purple-text {
-    color: #006AFF;
-    font-weight: normal
+    color: #006aff;
+    font-weight: normal;
 }
 
 .steps {
@@ -128,22 +127,22 @@ p {
     color: gray;
     margin-bottom: 10px;
     font-weight: normal;
-    text-align: right
+    text-align: right;
 }
 
 .fieldlabels {
     color: gray;
-    text-align: left
+    text-align: left;
 }
 
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
-    color: lightgrey
+    color: lightgrey;
 }
 
 #progressbar .active {
-    color: #006AFF
+    color: #006aff;
 }
 
 #progressbar li {
@@ -152,32 +151,32 @@ p {
     width: 25%;
     float: left;
     position: relative;
-    font-weight: 400
+    font-weight: 400;
 }
 
 #progressbar #account:before {
     font-family: FontAwesome;
-    content: "\f061"
+    content: "\f061";
 }
 
 #progressbar #personal:before {
     font-family: FontAwesome;
-    content: "\f187"
+    content: "\f187";
 }
 
 #progressbar #payment:before {
     font-family: FontAwesome;
-    content: "\f124"
+    content: "\f124";
 }
 
 #progressbar #check:before {
     font-family: FontAwesome;
-    content: "\f00c"
+    content: "\f00c";
 }
 
 #progressbar #confirm:before {
     font-family: FontAwesome;
-    content: "\f00c"
+    content: "\f00c";
 }
 
 #progressbar li:before {
@@ -190,34 +189,34 @@ p {
     background: lightgray;
     border-radius: 50%;
     margin: 0 auto 10px auto;
-    padding: 2px
+    padding: 2px;
 }
 
 #progressbar li:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: lightgray;
     position: absolute;
     left: 0;
     top: 25px;
-    z-index: -1
+    z-index: -1;
 }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #006AFF
+    background: #006aff;
 }
 
 .progress {
-    height: 20px
+    height: 20px;
 }
 
 .progress-bar {
-    background-color: #006AFF
+    background-color: #006aff;
 }
 
 .fit-image {
     width: 100%;
-    object-fit: cover
+    object-fit: cover;
 }
