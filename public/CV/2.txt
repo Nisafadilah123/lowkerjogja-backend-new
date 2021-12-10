@@ -1,0 +1,25 @@
+Target minggu ini :
+
+- Nisa : 
+-> konfigurasi jetstream
+-> costumisasi tampilan login dan sign up
+-> menambahkan profile photo user
+-> crud company
+
+- Delia
+-> analisis database
+-> membuat erd
+-> migrations database
+-> membuat models
+-> crud admin
+
+- Hiza
+-> membuat roles user (admin, user dan company)
+-> costumisasi tampilan halaman admin dan user 
+ 
+- Fatimah
+-> crud user
+-> costumisasi tampilan crud user
+
+-> BREFIENG 19.30 WIB 19/08/2021
+-> Pembahasan Alur Project 

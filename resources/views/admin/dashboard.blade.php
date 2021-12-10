@@ -1,7 +1,5 @@
 @extends('admin.layout')
-
 @section('title' , 'Dashboard | Admin')
-
 @section('container')
 
 <div class="main-content">

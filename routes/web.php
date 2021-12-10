@@ -84,6 +84,7 @@ Route::get('/', [MainController::class, 'home']);
 Route::get('/aboutus', [MainController::class, 'about']);
 Route::get('/findjobs', [MainController::class, 'findjobs']);
 // Route::get('/login', [MainController::class, 'login']);
+// Route::post('/keluar', [MainController::class, 'Logout'])->name('keluar');
 // Route::get('/signup', [MainController::class, 'signup']);
 Route::get('/succes', [MainController::class, 'succes']);
 Route::get('/detailmain{id}', [MainController::class, 'detailmain']);

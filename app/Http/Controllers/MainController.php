@@ -6,10 +6,20 @@ use App\Models\Corp;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
+    // public function Logout(Request $request)
+    // {
+    //     Auth::logout();
+    //     $request->session()->invalidate();
+    //     $request->session()->regenerateToken();
+    //     return redirect()->route('login')->with(['success' => 'Selamat, anda berhasil logout. Silahkan login untuk melanjutkan!']);
+
+    // }
+
     public function provinsi(){
         $hasil = rajaongkir_point("province");
         return response()->json($hasil);
