@@ -57,22 +57,10 @@
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
                                     class="ion ion-navicon-round"></i></a></li>
                         <ul class="navbar-nav navbar-right ml-3">
-                            <li class="dropdown"><a href="#" data-toggle="dropdown"
-                                    class="nav-link dropdown-toggle nav-link-lg">
-                                    <i class="ion ion-android-person d-lg-none"></i>
-                                    <div class="d-sm-none d-lg-inline-block" style="padding-left: 800px;bottom: 110px;">Hi,
+                            <li><a href="#" class="nav-link">
+                                    <div class="d-sm-none d-lg-inline-block" style=" left: 500px;bottom: 110px;">Hi...
                                         {{ auth()->user()->name }}</div>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    {{-- <a href="{{ route('logout') }}">Logout</a> --}}
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
-                                            {{ __('Logout') }}
-                                        </x-jet-dropdown-link>
-                                    </form>
-                                </div>
                             </li>
                         </ul>
                     </ul>
@@ -112,6 +100,16 @@
                         </li>
                         <li class="{{ Request::is('users') ? 'active' : '' }}">
                             <a href="{{ url('/users') }}"><i class="fa fa-user"></i><span>Pengguna</span></a>
+                        </li>
+                        <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                                        <i class="fas fa-sign-out-alt"></i></i><span>Logout</span></a>
+                                                {{-- {{ __('Logout') }} --}}
+                                            </x-jet-dropdown-link>
+                                        </form>
                         </li>
                 </aside>
             </div>
