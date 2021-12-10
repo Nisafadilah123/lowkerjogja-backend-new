@@ -57,7 +57,8 @@
                 <x-jet-input id="utype" class="block mt-1 w-full" type="hidden" name="utype" value="USR" required autocomplete="utype" />
             </div>
 
-
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

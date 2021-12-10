@@ -68,7 +68,8 @@
 
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="/service">Produk & Layanan</a></li>
+              {{-- <li><a class="nav-link scrollto active" href="/service">Produk & Layanan</a></li> --}}
+              <li><a class="nav-link scrollto" href="/about_login">Tentang</a></li>
               <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 
               <li style="padding-left: 300px;">

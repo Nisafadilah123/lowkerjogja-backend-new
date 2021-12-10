@@ -45,7 +45,7 @@
                                 <br>
                                 <input type="hidden" class="form-control" name="idjob" id="idjob" value="{{ $i->id }}">
                                 <h2><b>UNGGAH CV<b></h2>
-                                <input type="file" class="form-control-file" id="cv" name="cv" required="required">
+                                <input type="file" class="form-control-file" id="cv" name="cv" required accept=".pdf">
                                 <p style="font-size: 10px; color :red">* Harap Mengupload File Pdf</p>
                                 <br>
                                 <strong>Deskripsi Anda</strong>

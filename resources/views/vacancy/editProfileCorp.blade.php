@@ -112,7 +112,7 @@
                     </div>
 
                         <br>
-                      
+
 
                         <!-- email -->
                         <div class="row" style="padding-top: 20px;">
@@ -127,13 +127,13 @@
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
                                 <div class="col">
-                                     <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path" required>
+                                     <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path" accept=".img, .jpg, .jpeg, .png">
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
                                 <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">
                                 </div>
 
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col">
                                 <br>
