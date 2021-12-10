@@ -60,7 +60,7 @@
                             <li class="dropdown"><a href="#" data-toggle="dropdown"
                                     class="nav-link dropdown-toggle nav-link-lg">
                                     <i class="ion ion-android-person d-lg-none"></i>
-                                    <div class="d-sm-none d-lg-inline-block" style=" left: 500px;bottom: 110px;">Hi,
+                                    <div class="d-sm-none d-lg-inline-block" style="padding-left: 800px;bottom: 110px;">Hi,
                                         {{ auth()->user()->name }}</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
