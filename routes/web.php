@@ -136,7 +136,7 @@ Route::get('/service', [VacancyController::class, 'service']);
 Route::get('/serviceno', [VacancyController::class, 'serviceno']);
 Route::get('/formUnggahan', [VacancyController::class, 'formUnggahan']);
 Route::get('/candidate', [VacancyController::class, 'searchCandidate']);
-// Route::get('/profilCorp', [VacancyController::class, 'profilCorp']);
+Route::get('/about_login', [VacancyController::class, 'about_login']);
 // Route::get('/job', [VacancyController::class, 'jobCorp']);
 // Route::get('/corp/editCorp/{id}', [VacancyController::class, 'editCorp']);
 Route::get('/profilCandidate/{id}', [VacancyController::class, 'profilCandidate'])->name('profilCandidate/{id}');

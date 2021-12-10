@@ -58,7 +58,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="/serviceno">Produk & Layanan</a></li>
+                    {{-- <li><a class="nav-link scrollto" href="/serviceno">Produk & Layanan</a></li> --}}
                     <li><a class="nav-link scrollto" href="/about">Tentang</a></li>
                     <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
 

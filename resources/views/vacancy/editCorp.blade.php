@@ -62,7 +62,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1"><strong>Logo Perusahaan</strong> </label>
-                                        <input name="logo" type="file" class="form-control-file" id="profile_photo_path" required>
+                                        <input name="logo" type="file" class="form-control-file" id="profile_photo_path" accept=".img, .jpg, .jpeg, .png">
                                         <img src="{{asset('logo/'. $c->logo)}}" class="img-thumbnail" width="100px">
                                         <input name="logo" type="hidden" name="hidden_image" value="{{asset('logo/'. $c->logo)}}" class="form-control-file" id="hidden_image">
                                     </div>

@@ -10,6 +10,18 @@
         'dev' => true,
     ),
     'versions' => array(
+<<<<<<< HEAD
+=======
+        'anhskohbo/no-captcha' => array(
+            'pretty_version' => '3.3.0',
+            'version' => '3.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../anhskohbo/no-captcha',
+            'aliases' => array(),
+            'reference' => 'f654a4093bd2e9ddbdfad3297bb7aa142a55e611',
+            'dev_requirement' => false,
+        ),
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.3',
             'version' => '2.0.3.0',
@@ -521,12 +533,21 @@
             'dev_requirement' => false,
         ),
         'league/flysystem' => array(
+<<<<<<< HEAD
             'pretty_version' => '1.1.9',
             'version' => '1.1.9.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/flysystem',
             'aliases' => array(),
             'reference' => '094defdb4a7001845300334e7c1ee2335925ef99',
+=======
+            'pretty_version' => '1.1.8',
+            'version' => '1.1.8.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/flysystem',
+            'aliases' => array(),
+            'reference' => 'c995bb0c23c58c9813d081f9523c9b7bb496698e',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             'dev_requirement' => false,
         ),
         'league/mime-type-detection' => array(
@@ -857,19 +878,33 @@
             ),
         ),
         'psr/log' => array(
+<<<<<<< HEAD
             'pretty_version' => '1.1.4',
             'version' => '1.1.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/log',
             'aliases' => array(),
             'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+=======
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'reference' => 'ef29f6d262798707a9edd554e2b82517ef3a9376',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             'dev_requirement' => false,
         ),
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
+<<<<<<< HEAD
                 0 => '1.0|2.0',
                 1 => '1.0.0 || 2.0.0 || 3.0.0',
+=======
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             ),
         ),
         'psr/simple-cache' => array(
@@ -1101,6 +1136,7 @@
             'dev_requirement' => false,
         ),
         'symfony/css-selector' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v5.4.0',
             'version' => '5.4.0.0',
             'type' => 'library',
@@ -1116,6 +1152,23 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
+=======
+            'pretty_version' => 'v6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/css-selector',
+            'aliases' => array(),
+            'reference' => '3a61e2e4fbda3fb7fb5d83620c30fef726139e1c',
+            'dev_requirement' => false,
+        ),
+        'symfony/deprecation-contracts' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
+            'aliases' => array(),
+            'reference' => 'c726b64c1ccfe2896cb7df2e1331c357ad1c8ced',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             'dev_requirement' => false,
         ),
         'symfony/error-handler' => array(
@@ -1128,6 +1181,7 @@
             'dev_requirement' => false,
         ),
         'symfony/event-dispatcher' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v5.4.0',
             'version' => '5.4.0.0',
             'type' => 'library',
@@ -1143,12 +1197,33 @@
             'install_path' => __DIR__ . '/../symfony/event-dispatcher-contracts',
             'aliases' => array(),
             'reference' => '66bea3b09be61613cd3b4043a65a8ec48cfa6d2a',
+=======
+            'pretty_version' => 'v6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/event-dispatcher',
+            'aliases' => array(),
+            'reference' => '2774908d5ae32fd94e363e7cbbd87462712c4576',
+            'dev_requirement' => false,
+        ),
+        'symfony/event-dispatcher-contracts' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/event-dispatcher-contracts',
+            'aliases' => array(),
+            'reference' => 'aa5422287b75594b90ee9cd807caf8f0df491385',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             'dev_requirement' => false,
         ),
         'symfony/event-dispatcher-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
+<<<<<<< HEAD
                 0 => '2.0',
+=======
+                0 => '2.0|3.0',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             ),
         ),
         'symfony/finder' => array(
@@ -1296,6 +1371,7 @@
             'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v2.5.0',
             'version' => '2.5.0.0',
             'type' => 'library',
@@ -1329,12 +1405,51 @@
             'install_path' => __DIR__ . '/../symfony/translation-contracts',
             'aliases' => array(),
             'reference' => 'd28150f0f44ce854e942b671fc2620a98aae1b1e',
+=======
+            'pretty_version' => 'v2.4.1',
+            'version' => '2.4.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/service-contracts',
+            'aliases' => array(),
+            'reference' => 'd664541b99d6fb0247ec5ff32e87238582236204',
+            'dev_requirement' => false,
+        ),
+        'symfony/string' => array(
+            'pretty_version' => 'v6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/string',
+            'aliases' => array(),
+            'reference' => 'ba727797426af0f587f4800566300bdc0cda0777',
+            'dev_requirement' => false,
+        ),
+        'symfony/translation' => array(
+            'pretty_version' => 'v6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/translation',
+            'aliases' => array(),
+            'reference' => '5e3848083ef1abc4814be154095946b8193f41d6',
+            'dev_requirement' => false,
+        ),
+        'symfony/translation-contracts' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/translation-contracts',
+            'aliases' => array(),
+            'reference' => '1b6ea5a7442af5a12dba3dbd6d71034b5b234e77',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             'dev_requirement' => false,
         ),
         'symfony/translation-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
+<<<<<<< HEAD
                 0 => '2.3',
+=======
+                0 => '2.3|3.0',
+>>>>>>> 6abf85365e8997bb363b8915e318365357758375
             ),
         ),
         'symfony/var-dumper' => array(

@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
-
+            'g-recaptcha-response' => 'required|captcha'
         ])->validate();
 
         // memberi pesan sukses
@@ -77,7 +77,7 @@ class CreateNewUser implements CreatesNewUsers
         $user->ownedTeams()->save(Corp::forceCreate([
             'user_id' => $user->id,
             'nama_corp' => explode(' ', $user->name, 2)[0],
-        ]));       
+        ]));
     }
 
 }

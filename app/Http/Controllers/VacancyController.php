@@ -50,6 +50,11 @@ class VacancyController extends Controller
         return view('vacancy.about');
     }
 
+    public function about_login()
+    {
+        return view('vacancy.about_login');
+    }
+
     // halaman faq
     public function faq()
     {

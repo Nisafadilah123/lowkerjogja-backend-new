@@ -209,7 +209,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Foto Profil Pengguna</label>
                                 <p style="font-size: 11px; color:red">* Harap memasukkan foto</p>
-                                <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path">
+                                <input name="profile_photo_path" type="file" class="form-control-file" id="profile_photo_path" accept=".img, .jpg, .jpeg, .png">
                                 <img src="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="img-thumbnail" width="100px">
                                 <input name="profile_photo_path" type="hidden" name="hidden_image" value="{{asset('profile_photos/'. Auth::user()->profile_photo_path)     }}" class="form-control-file" id="hidden_image">
                             </div>

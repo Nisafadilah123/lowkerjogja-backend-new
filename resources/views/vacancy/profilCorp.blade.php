@@ -16,7 +16,7 @@
               <img src="{{asset('logo/'. $c->logo)}}" height="300px"/>
 
             <div class="card-body">
-                <img src="{{asset('logo/'. $c->logo)}}"  id="gambar2" width="50px" style="z-index: 2;top: 140px;position: absolute;"><br>
+                {{-- <img src="{{asset('logo/'. $c->logo)}}"  id="gambar2" width="50px" style="z-index: 2;top: 140px;position: absolute;"><br> --}}
               <h5 class="card-title"><strong>{{ $c->nama_corp }}</strong> </h5><br>
               <p class="card-text" style="color: #dcdcdc;">{{ $c->industri }}, {{ $c->location }}</p>
               <p class="card-text">
